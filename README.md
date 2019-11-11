@@ -39,11 +39,11 @@ The following is the general form of citation for Part I, where the correspondin
 * Latest released revision: Version 1.0, Onto-Med Report Nr. 8, 01.07.2006 [PDF](http://www.onto-med.de/Archiv/ontomed2002/en/publications/scientific-reports/om-report-no8.pdf) [HTML](http://www.onto-med.de/Archiv/ontomed2002/en/theories/gfo/part1/index.html)
 
 ### Other Publications Exclusively Presenting GFO
-> **Herre, H. 2010**. General Formal Ontology (GFO): A Foundational Ontology for Conceptual Modelling, *to appear 2010* [PDF](http://www.onto-med.de/publications/2010/gfo-basic-principles.pdf)
+> **Herre, H. 2010**. General Formal Ontology (GFO): A Foundational Ontology for Conceptual Modelling. *Theory and Applications of Ontology: Computer Applications*. Springer, Dordrecht. https://doi.org/10.1007/978-90-481-8847-5_14
 
-> **Heller, B. & Herre, H. 2004**. Ontological Categories in GOL. *Axiomathes* 14(1):57-76 Kluwer Academic Publishers. [PDF](http://www.onto-med.de/Archiv/ontomed2002/en/publications/refereed-papers-in-journals/heller-b-2004-57-a.pdf)
+> **Heller, B. & Herre, H. 2004**. Ontological Categories in GOL. *Axiomathes* 14(1):57-76 Kluwer Academic Publishers. https://doi.org/10.1023/B:AXIO.0000006788.44025.49
 
-> **Heller, B. & Herre, H. 2003**. Formal Ontology and Principles of GOL. *Onto-Med Report Nr. 1*. Research Group Ontologies in Medicine (Onto-Med), University of Leipzig.
+> **Heller, B. & Herre, H. 2003**. Formal Ontology and Principles of GOL. *Onto-Med Report Nr. 1*. Research Group Ontologies in Medicine (Onto-Med), University of Leipzig. http://www.onto-med.de/publications/2003/heller-b-2003-a.pdf
 
 ### Further Documentation
-Apart from the GFO reports, we have not yet completed the work on more introductory or tutorial material. This is going to happen in the nearer future. Currently, the easiest way to access the basic categories of GFO is to view the file *gfo-basic.owl* in an ontology editor (e.g. [OwlSight](https://www.w3.org/2001/sw/wiki/OWLSight)). In particular, that file provides short descriptions for each category.
+Apart from the GFO reports, we have not yet completed the work on more introductory or tutorial material. This is going to happen in the nearer future. Currently, the easiest way to access the basic categories of GFO is to view the file *gfo-basic.owl* in an ontology editor (e.g. [OwlSight](https://www.w3.org/2001/sw/wiki/OWLSight) or [Protégé](https://protege.stanford.edu)). In particular, that file provides short descriptions for each category.
