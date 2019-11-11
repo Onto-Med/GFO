@@ -34,7 +34,7 @@ The following is the general form of citation for Part I, where the correspondin
 
 > **Herre, H.; Heller, B.; Burek, P.; Hoehndorf, R.; Loebe, F. & Michalek, H.**. General Formal Ontology (GFO): A Foundational Ontology Integrating Objects and Processes. Part I: Basic Principles. Research Group Ontologies in Medicine (Onto-Med), University of Leipzig.
 
-### Latest Revisions
+#### Latest Revisions
 * Latest intermediate revision: Version 1.0.1, Draft, 14.02.2007 [PDF](http://www.onto-med.de/Archiv/ontomed2002/en/theories/gfo/part1-drafts/gfo-part1-v1-0-1.pdf) (changes: primarily sect. 2.3, 3.5, 3.6, 8 and 16)
 * Latest released revision: Version 1.0, Onto-Med Report Nr. 8, 01.07.2006 [PDF](http://www.onto-med.de/Archiv/ontomed2002/en/publications/scientific-reports/om-report-no8.pdf) [HTML](http://www.onto-med.de/Archiv/ontomed2002/en/theories/gfo/part1/index.html)
 
