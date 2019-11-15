@@ -13,7 +13,7 @@ The General Formal Ontology is a [top-level ontology](http://en.wikipedia.org/wi
 Work on GFO has started in 1999 in the context of the GOL project (General Ontological Language). Meanwhile, several directions of research have been recognized and divided the initial project, such that GFO is now one component of a larger framework. Work on GFO remains in progress, because the development of top-level ontologies is a long-term research effort.
 
 ## Axiomatizations and Implementations
-The "native" formalization language for GFO is first-order logic (FOL). Partial axiomatizations of GFO in FOL exist in report working drafts, but are not yet available to the public.
+The "native" formalization language for GFO is [first-order logic (FOL)](https://en.wikipedia.org/wiki/First-order_logic). Partial axiomatizations of GFO in FOL exist in report working drafts, but are not yet available to the public.
 
 ### OWL
 There is an [OWL](http://en.wikipedia.org/wiki/Web_Ontology_Language) version of GFO, which currently comprises a stable core called *gfo-basic.owl* and a more extensive version called *gfo.owl*.
