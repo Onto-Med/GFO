@@ -1,4 +1,4 @@
-cff-version: 1.1.0
+cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Herre"
@@ -14,7 +14,7 @@ authors:
   given-names: "Frank"
 - family-names: "Michalek"
   given-names: "Hannes"
-title: Onto-Med/GFO: version 1.0, build 9
+title: "Onto-Med/GFO: version 1.0, build 9"
 version: v1.0.9
 doi: 10.5281/zenodo.5205420
 date-released: 2006-08-28
