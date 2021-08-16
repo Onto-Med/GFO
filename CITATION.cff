@@ -1,21 +1,27 @@
-cff-version: 1.1.0
-message: "If you use this software, please cite it as below."
+# CFF: https://citation-file-format.github.io/
+
+cff-version: 1.2.0
+message: If you use the content of this repository, please cite it as below.
+title: General Formal Ontology (GFO)
+abstract: The General Formal Ontology is a top-level ontology for conceptual modeling. It includes elaborations of categories like objects, processes, time and space, properties, relations, roles, functions, facts, and situations.
 authors:
-- family-names: "Herre"
-  given-names: "Heinrich"
-- family-names: "Heller"
-  given-names: "Barbara"
-- family-names: "Burek"
-  given-names: "Patryk"
-- family-names: "Hoehndorf"
-  given-names: "Robert"
-  orcid: "https://orcid.org/0000-0001-8149-5890"
-- family-names: "Loebe"
-  given-names: "Frank"
-- family-names: "Michalek"
-  given-names: "Hannes"
-title: Onto-Med/GFO: version 1.0, build 9
+- family-names: Herre
+  given-names: Heinrich
+- family-names: Heller
+  given-names: Barbara
+- family-names: Burek
+  given-names: Patryk
+- family-names: Hoehndorf
+  given-names: Robert
+  orcid: https://orcid.org/0000-0001-8149-5890
+- family-names: Loebe
+  given-names: Frank
+- family-names: Michalek
+  given-names: Hannes
 version: v1.0.9
 doi: 10.5281/zenodo.5205420
 date-released: 2006-08-28
-url: "https://github.com/Onto-Med/GFO"
+keywords:
+- ontology
+- top-level-ontology
+- ontology-languages
