@@ -1,5 +1,7 @@
 # General Formal Ontology (GFO)
 
+[![DOI](https://zenodo.org/badge/220933953.svg)](https://zenodo.org/badge/latestdoi/220933953)
+
 ## Introduction
 The General Formal Ontology is a [top-level ontology](http://en.wikipedia.org/wiki/Upper_ontology_%28computer_science%29) for conceptual modeling, which is being constantly further developed by Onto-Med. It includes elaborations of categories like objects, processes, time and space, properties, relations, roles, functions, facts, and situations. Moreover, we are working on an integration with the notion of *levels of reality* in order to more appropriately capture entities in the material, mental, and social areas. Outstanding features of GFO are:
 
