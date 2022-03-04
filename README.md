@@ -41,7 +41,7 @@ The following is the general form of citation for Part I, where the correspondin
 * Latest released revision: Version 1.0, Onto-Med Report Nr. 8, 01.07.2006 [PDF](https://www.onto-med.de/sites/www.onto-med.de/files/files/uploads/Publications/2006/om-report-no8.pdf)
 
 ### Other Publications Exclusively Presenting GFO
-> **Burek P, Loebe, F & Herre, H. 2020** Towards GFO 2.0: Architecture, Modules and Applications. In: Brodaric B & Neuhaus F Formal Ontology in Information Systems: Proceedings of the 11th International Conference, FOIS 2020. Frontiers in Artificial Intelligence and Applications, Vol. 330, pp. 32–45. Amsterdam: IOS Press. https://doi.org/10.3233/FAIA200658
+> **Burek P, Loebe, F & Herre, H. 2020** Towards GFO 2.0: Architecture, Modules and Applications. *In: Brodaric B & Neuhaus F Formal Ontology in Information Systems: Proceedings of the 11th International Conference, FOIS 2020.* Frontiers in Artificial Intelligence and Applications, Vol. 330, pp. 32–45. Amsterdam: IOS Press. https://doi.org/10.3233/FAIA200658
 
 > **Herre, H. 2010**. General Formal Ontology (GFO): A Foundational Ontology for Conceptual Modelling. *Theory and Applications of Ontology: Computer Applications*. Springer, Dordrecht. https://doi.org/10.1007/978-90-481-8847-5_14
 
