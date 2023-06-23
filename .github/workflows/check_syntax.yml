@@ -1,0 +1,24 @@
+name: Check syntax
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.owl'
+      - '**.rdf'
+      - '**.ttl'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**.owl'
+      - '**.rdf'
+      - '**.ttl'
+
+jobs:
+  rdf-syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: RDF syntax check
+        uses: AtomGraph/RDF-syntax-check@v1.0.4
