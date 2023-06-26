@@ -19,7 +19,7 @@ Work on GFO has started in 1999 in the context of the GOL project (General Ontol
 The "native" formalization language for GFO is [first-order logic (FOL)](https://en.wikipedia.org/wiki/First-order_logic). Partial axiomatizations of GFO in FOL exist in report working drafts, but are not yet available to the public.
 
 ### OWL
-There is an [OWL](http://en.wikipedia.org/wiki/Web_Ontology_Language) version of GFO, which currently comprises a stable core called *gfo-basic.owl* and a more extensive version called *gfo.owl*.
+There is an [OWL](http://en.wikipedia.org/wiki/Web_Ontology_Language) version of GFO, which currently comprises a stable core called *gfo-basic.owl* and a more extensive version called *gfo.owl*. *gfo-light.owl* contains basic concepts and axioms described in the current GFO papers and is primarily intended to found domain or application ontologies.
 
 ### Release Strategy
 *gfo-basic.owl* forms the core of the coming releases. We are going to continually provide several extensions to *gfo-basic.owl*, dedicated to several of our research domains, like time, space, processes, etc. There may be parallel extensions for these domains, and not all extensions will be consistent with each other. All files are provided with the GFO namespace, http://www.onto-med.de/ontologies/gfo as their base namespace. All extensions should import *gfo-basic.owl*. Eventually, a selection of those extensions will be unified in the next version of *gfo.owl*. Note that the latter has not yet been adapted to *gfo-basic.owl*.
