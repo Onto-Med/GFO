@@ -18,11 +18,8 @@ Work on GFO has started in 1999 in the context of the GOL project (General Ontol
 ## Axiomatizations and Implementations
 The "native" formalization language for GFO is [first-order logic (FOL)](https://en.wikipedia.org/wiki/First-order_logic). Partial axiomatizations of GFO in FOL exist in report working drafts, but are not yet available to the public.
 
-### OWL
-There is an [OWL](http://en.wikipedia.org/wiki/Web_Ontology_Language) version of GFO, which currently comprises a stable core called *gfo-basic.owl* and a more extensive version called *gfo.owl*. *gfo-light.owl* contains basic concepts and axioms described in the current GFO papers and is primarily intended to found domain or application ontologies.
-
 ### Release Strategy
-*gfo-basic.owl* forms the core of the coming releases. We are going to continually provide several extensions to *gfo-basic.owl*, dedicated to several of our research domains, like time, space, processes, etc. There may be parallel extensions for these domains, and not all extensions will be consistent with each other. All files are provided with the GFO namespace, http://www.onto-med.de/ontologies/gfo as their base namespace. All extensions should import *gfo-basic.owl*. Eventually, a selection of those extensions will be unified in the next version of *gfo.owl*. Note that the latter has not yet been adapted to *gfo-basic.owl*.
+*gfo-basic.owl* forms the core module of GFO. We are going to continually provide further modules/extensions, dedicated to several of our research domains, like time, space, processes, etc. There may be parallel extensions for these domains, and not all extensions will be consistent with each other. All module files are provided with their own namespaces (e.g., http://purl.org/ontology/gfo-time) and can be used separately. A selection of those modules will be unified in the next version of *gfo.owl* (under the namespace http://purl.org/ontology/gfo). *gfo-light.owl* is a simplified view of the entire GFO. It does not build on single modules but combines all basic concepts and simplified axioms of the GFO. *gfo-light.owl* is primarily intended to found domain or application ontologies.
 
 ### Release History
 Work on the OWL version of GFO started in early 2006 in the context of the [GFO-Bio](http://www.onto-med.de/ontologies/gfo-bio/index.jsp) project, resulting in the 1.0 release of *gfo.owl*. The renewed release strategy in 2008 lead to *gfo-basic.owl*, a corrected and slightly simplified version.
