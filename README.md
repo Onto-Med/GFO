@@ -1,5 +1,6 @@
 # General Formal Ontology (GFO)
 
+[![Syntax Check](https://github.com/Onto-Med/GFO/actions/workflows/check_syntax.yml/badge.svg)](https://github.com/Onto-Med/GFO/actions/workflows/check_syntax.yml)
 [![DOI](https://zenodo.org/badge/220933953.svg)](https://zenodo.org/badge/latestdoi/220933953)
 
 ## Introduction
