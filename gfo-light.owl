@@ -1,0 +1,1112 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/ontology/gfo-light/"
+     xml:base="http://purl.org/ontology/gfo-light/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://purl.org/ontology/gfo-light">
+        <owl:versionIRI rdf:resource="http://purl.org/ontology/gfo-light/0.0.1"/>
+        <owl:versionInfo>2023-06-23T12:00</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/attributiveOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/attributiveOf">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/hasAttributive"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Attributive"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/ComplexIndividual"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/before -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/before">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/TimeEntity"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/TimeEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/boundaryOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/boundaryOf">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/hasBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/consistsOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/consistsOf">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/MaterialObject"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Stuff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/exhibitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/exhibitedBy">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/exhibits"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Presential"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Continuant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/exhibits -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/exhibits">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Continuant"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Presential"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/functionOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/functionOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/attributiveOf"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/hasFunction"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Function"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/ComplexIndividual"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasAttributive -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasAttributive">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/ComplexIndividual"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Attributive"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasBoundary -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasBoundary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasFunction -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasFunction">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/hasAttributive"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/ComplexIndividual"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Function"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasLeftTimeBoundary -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasLeftTimeBoundary">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/hasTimeBoundary"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/leftTimeBoundaryOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasLifetime -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasLifetime">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/lifetimeOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Continuant"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Chronoid"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasMaterialBoundary -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasMaterialBoundary">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/hasBoundary"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/materialBoundaryOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/MaterialLine"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/MaterialObject"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/MaterialSurface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/MaterialBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasPart">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/partOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasParticipant">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/participatesIn"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/ProcessualComplex"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://purl.org/ontology/gfo-light/ProcessualComplex"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasProcessBoundary -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasProcessBoundary">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/hasBoundary"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/processBoundaryOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Process"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Presential"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasRightTimeBoundary -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasRightTimeBoundary">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/hasTimeBoundary"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/rightTimeBoundaryOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasRole">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/roleOf"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasSpatialBoundary -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasSpatialBoundary">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/hasBoundary"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/spatialBoundaryOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/LineRegion"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/SpaceRegion"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/SurfaceRegion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/SpatialBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasTemporalExtension -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasTemporalExtension">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/temporalExtensionOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Process"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Chronoid"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/hasTimeBoundary -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/hasTimeBoundary">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/hasBoundary"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/timeBoundaryOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Chronoid"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/TimeBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/instanceOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/instanceOf">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/instantiatedBy"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Category"/>
+        <rdfs:comment xml:lang="en">The instantiation relation holds between a category and an item. It is not a relation between categories and individuals due to higher order categories such as &quot;species&quot;.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/instantiatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/instantiatedBy">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/leftTimeBoundaryOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/leftTimeBoundaryOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/timeBoundaryOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:comment xml:lang="en">Left boundary of a chronoid.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/lifetimeOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/lifetimeOf">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Chronoid"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Continuant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/materialBoundaryOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/materialBoundaryOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/boundaryOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/MaterialBoundary"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/MaterialLine"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/MaterialObject"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/MaterialSurface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/occupiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/occupiedBy">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/occupies"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/SpaceRegion"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/MaterialStructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/occupies -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/occupies">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/MaterialStructure"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/SpaceRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/partOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/partOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/participatesIn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/participatesIn">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://purl.org/ontology/gfo-light/ProcessualComplex"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/ProcessualComplex"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/playedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/playedBy">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/gfo-light/plays"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Role"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/plays -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/plays">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Entity"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/presentAt -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/presentAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Presential"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/TimeBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/processBoundaryOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/processBoundaryOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/boundaryOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Presential"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/rightTimeBoundaryOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/rightTimeBoundaryOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/timeBoundaryOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:comment xml:lang="en">Right boundary of a chronoid.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/roleOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/roleOf">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/spatialBoundaryOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/spatialBoundaryOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/boundaryOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/SpatialBoundary"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/LineRegion"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/SpaceRegion"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/SurfaceRegion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/temporalExtensionOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/temporalExtensionOf">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/Chronoid"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/temporallyCoincidesWith -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/temporallyCoincidesWith">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/TimeBoundary"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/TimeBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/timeBoundaryOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/gfo-light/timeBoundaryOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/gfo-light/boundaryOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/gfo-light/TimeBoundary"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/gfo-light/Chronoid"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/AbstractIndividual -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/AbstractIndividual">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Individual"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/SpaceTimeEntity"/>
+        <rdfs:comment xml:lang="en">Abstract individuals are independent of space and time, for example the number number &apos;2&apos; or pi.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Attributive -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Attributive">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Individual"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/attributiveOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/ComplexIndividual"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Individuals that are related to other individuals by some kind of dependency relation are called attributives.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Category -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Category">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Entity"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/Individual"/>
+        <rdfs:comment xml:lang="en">The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Chronoid -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Chronoid">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/TimeEntity"/>
+        <rdfs:comment xml:lang="en">Chronoids may be understood as closely similar to real-valued intervals with endpoints.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/ComplexConcreteIndividual -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/ComplexConcreteIndividual">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ComplexIndividual"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/ComplexIndividual -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/ComplexIndividual">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Individual"/>
+        <rdfs:comment xml:lang="en">Complex individuals are composed of elementary ones or components.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Complex individuals are constituents of situations (with a high degree of independence).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Concept -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Concept">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Category"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/SymbolStructure"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/Universal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/ConcreteIndividual -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/ConcreteIndividual">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Individual"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/SpaceTimeEntity"/>
+        <rdfs:comment xml:lang="en">Concrete individuals have an immediate relation to time or to time and space.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Continuant -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Continuant">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/exhibits"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/Presential"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/hasLifetime"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/Chronoid"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Continuants persist through time and are wholly present at every time point of their lifetime.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Disposition -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Disposition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Attributive"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Entity -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Entity">
+        <rdfs:comment xml:lang="en">Everything which exists is called an entity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Fact -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Fact">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Individual"/>
+        <rdfs:comment xml:lang="en">Material facts are composed of a relator and material objects playing the corresponding roles. Material facts are continuants.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Function -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Function">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Attributive"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/functionOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/ComplexIndividual"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The notion of function is built upon that of role: we introduce a function as a category that captures a role played by some entity in the context of a goal achievement (GA), where the GA provides a teleological specification of transitioning to something that is intended to be achieved.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Individual -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Individual">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Entity"/>
+        <rdfs:comment xml:lang="en">Individuals are entities which cannot be further instantiated.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/LineRegion -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/LineRegion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/SpatialBoundary"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/spatialBoundaryOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/SurfaceRegion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/MaterialBoundary -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/MaterialBoundary">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ComplexConcreteIndividual"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/materialBoundaryOf"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/MaterialLine"/>
+                            <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/MaterialObject"/>
+                            <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/MaterialSurface"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/MaterialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/MaterialLine -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/MaterialLine">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/MaterialBoundary"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/materialBoundaryOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/MaterialSurface"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/MaterialPoint"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/MaterialSurface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/MaterialObject -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/MaterialObject">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ComplexConcreteIndividual"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Continuant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/consistsOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/Stuff"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/exhibits"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/MaterialStructure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Every material object consists of an amount of stuff.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Material objects are solid material entities.</rdfs:comment>
+        <rdfs:comment>Material objects have a natural boundary.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The lifetime of a material object is a chronoid.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/MaterialPoint -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/MaterialPoint">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/MaterialBoundary"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/materialBoundaryOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/MaterialLine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/MaterialSurface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/MaterialProcess -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/MaterialProcess">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ComplexConcreteIndividual"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/MaterialStructure -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/MaterialStructure">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Presential"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/exhibitedBy"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/MaterialObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/occupies"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/SpaceRegion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Presentials exhibited by material objects are called material structures.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/MaterialSurface -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/MaterialSurface">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/MaterialBoundary"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/materialBoundaryOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/MaterialObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Number -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Number">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/AbstractIndividual"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/ObjectSituation -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/ObjectSituation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Continuant"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Situation"/>
+        <rdfs:comment xml:lang="en">Object situations consist of material objects and relations between them.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/PointRegion -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/PointRegion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/SpatialBoundary"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/spatialBoundaryOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/LineRegion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Presential -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Presential">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/presentAt"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/TimeBoundary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/ProcessualComplex"/>
+        <rdfs:comment xml:lang="en">A presential is wholly present at exactly one time point.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/PresenticSituation -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/PresenticSituation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Presential"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Situation"/>
+        <rdfs:comment xml:lang="en">A presentic situation is a snapshot of an object situation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Process -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Process">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ProcessualComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/hasTemporalExtension"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/Chronoid"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Processes are a special kind of processual complexes. Processes are directly in time, they have characteristics which cannot be captured by a collection of time boundaries.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/ProcessualComplex -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/ProcessualComplex">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+        <rdfs:comment xml:lang="en">Processual complexes are concrete individuals that have a temporal extension.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/ProcessualRole -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/ProcessualRole">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Process"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/roleOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/RelationalRole"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/SocialRole"/>
+        <rdfs:comment xml:lang="en">Processual roles corresponds to the manner in which a single participant behaves in some process.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Quality -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Quality">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Attributive"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/Relator"/>
+        <rdfs:comment>Qualities are attributives and, typically, a quality inheres in its bearer.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/RelationalRole -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/RelationalRole">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Attributive"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/roleOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/Relator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/SocialRole"/>
+        <rdfs:comment xml:lang="en">Relational role corresponds to the way in which an argument participates in some relation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Relator -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Relator">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Attributive"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/hasRole"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/RelationalRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Relators connects entities (role players) via roles (they depend on more than one player via their roles).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Role -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Role">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Individual"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/playedBy"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A role individual is defined as a relational entity that links any entity, called the role player (or filler), with some context, in which the entity plays that role.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Situation -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Situation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Individual"/>
+        <rdfs:comment xml:lang="en">Material situations are parts of the material world (at the macroscopic level) that can be consistently comprehended as a whole.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Situoid -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Situoid">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Process"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Situation"/>
+        <rdfs:comment xml:lang="en">A situoid (or processual situation) is a part of the spatiotemporal world that arises from an object situation if all objects are replaced by the corresponding processes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/SocialObject -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/SocialObject">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ComplexConcreteIndividual"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/SocialProcess -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/SocialProcess">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ComplexConcreteIndividual"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/SocialRole -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/SocialRole">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Role"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/SocialObject"/>
+        <rdfs:comment xml:lang="en">Social role corresponds to the involvement of a social object within some society.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/SpaceEntity -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/SpaceEntity">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/SpaceTimeEntity"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/TimeEntity"/>
+        <rdfs:comment xml:lang="en">phenomenal space</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/SpaceRegion -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/SpaceRegion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/SpaceEntity"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/SpatialBoundary"/>
+        <rdfs:comment xml:lang="en">While every space region has an extension, there is an idealization of a greatest space region, containing any space region as part.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/SpaceTimeEntity -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/SpaceTimeEntity">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Individual"/>
+        <rdfs:comment xml:lang="en">homogeneous four-dimensional space-time continuum</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/SpatialBoundary -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/SpatialBoundary">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/SpaceEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/spatialBoundaryOf"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/LineRegion"/>
+                            <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/SpaceRegion"/>
+                            <rdf:Description rdf:about="http://purl.org/ontology/gfo-light/SurfaceRegion"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Boundaries of regions are surfaces, boundaries of surfaces are lines, and boundaries of lines are points. As in the case of time-boundaries, spatial boundaries have no independent existence, i.e. they depend on the spatial entity of which they are boundaries.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Stuff -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Stuff">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/ConcreteIndividual"/>
+        <rdfs:comment>The concept of stuff has instances that are amounts of stuff. Accordingly,“Gold is a stuff”, for example, is read as “Every amount of gold is an amount of stuff”.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/SurfaceRegion -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/SurfaceRegion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/SpatialBoundary"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/spatialBoundaryOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/SpaceRegion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/SymbolStructure -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/SymbolStructure">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Category"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontology/gfo-light/Universal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/TimeBoundary -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/TimeBoundary">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/TimeEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/gfo-light/timeBoundaryOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontology/gfo-light/Chronoid"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">time point</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/TimeEntity -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/TimeEntity">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/SpaceTimeEntity"/>
+        <rdfs:comment xml:lang="en">The time model of GFO is based on Brentano and the glass continuum of Allen&amp;Hayes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/gfo-light/Universal -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/gfo-light/Universal">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/gfo-light/Category"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
