@@ -11,17 +11,38 @@ authors:
   given-names: Barbara
 - family-names: Burek
   given-names: Patryk
+  orcid: https://orcid.org/0000-0001-8165-0272
 - family-names: Hoehndorf
   given-names: Robert
   orcid: https://orcid.org/0000-0001-8149-5890
 - family-names: Loebe
   given-names: Frank
+  orcid: https://orcid.org/0000-0003-4537-5212
 - family-names: Michalek
   given-names: Hannes
 version: v1.0.9
-doi: 10.5281/zenodo.5205420
+doi: 10.5281/zenodo.5205419
 date-released: 2006-08-28
 keywords:
 - ontology
 - top-level-ontology
 - ontology-languages
+preferred-citation:
+  type: article
+  authors:
+  - family-names: Loebe
+    given-names: Frank
+    orcid: https://orcid.org/0000-0003-4537-5212
+  - family-names: Burek
+    given-names: Patryk
+    orcid: https://orcid.org/0000-0001-8165-0272
+  - family-names: Herre
+    given-names: Heinrich
+  doi: 10.3233/AO-220264
+  journal: "Applied Ontology"
+  month: 3
+  start: 71
+  end: 106
+  title: "GFO: The General Formal Ontology"
+  volume: 17
+  year: 2022
