@@ -35,20 +35,22 @@ The series comprises reports with respect to three components: Part I (Basic Pri
 
 The following is the general form of citation for Part I, where the corresponding version and, for releases, the number in the series should be added.
 
-> **Herre, H.; Heller, B.; Burek, P.; Hoehndorf, R.; Loebe, F. & Michalek, H.**. General Formal Ontology (GFO): A Foundational Ontology Integrating Objects and Processes. Part I: Basic Principles. Research Group Ontologies in Medicine (Onto-Med), University of Leipzig.
+> **Herre H, Heller B, Burek P, Hoehndorf R, Loebe F, Michalek H**. General Formal Ontology (GFO): A Foundational Ontology Integrating Objects and Processes. Part I: Basic Principles. Research Group Ontologies in Medicine (Onto-Med), University of Leipzig.
 
 #### Latest Revisions
 * Latest intermediate revision: Version 1.0.1, Draft, 14.02.2007 [PDF](https://www.onto-med.de/sites/www.onto-med.de/files/files/uploads/Publications/2007/gfo-part1-v1-0-1.pdf) (changes: primarily sect. 2.3, 3.5, 3.6, 8 and 16)
 * Latest released revision: Version 1.0, Onto-Med Report Nr. 8, 01.07.2006 [PDF](https://www.onto-med.de/sites/www.onto-med.de/files/files/uploads/Publications/2006/om-report-no8.pdf)
 
 ### Other Publications Exclusively Presenting GFO
-> **Burek P, Loebe, F & Herre, H. 2020** Towards GFO 2.0: Architecture, Modules and Applications. *In: Brodaric B & Neuhaus F Formal Ontology in Information Systems: Proceedings of the 11th International Conference, FOIS 2020.* Frontiers in Artificial Intelligence and Applications, Vol. 330, pp. 32–45. Amsterdam: IOS Press. https://doi.org/10.3233/FAIA200658
+> **Loebe F, Burek P, Herre H**. GFO: The General Formal Ontology. AO 2022;17:71–106. https://doi.org/10.3233/AO-220264.
 
-> **Herre, H. 2010**. General Formal Ontology (GFO): A Foundational Ontology for Conceptual Modelling. *Theory and Applications of Ontology: Computer Applications*. Springer, Dordrecht. https://doi.org/10.1007/978-90-481-8847-5_14
+> **Burek P, Loebe F, Herre H**. Towards GFO 2.0: Architecture, Modules and Applications. In: Brodaric B, Neuhaus F, editors. Frontiers in Artificial Intelligence and Applications, IOS Press; 2020. https://doi.org/10.3233/FAIA200658.
 
-> **Heller, B. & Herre, H. 2004**. Ontological Categories in GOL. *Axiomathes* 14(1):57-76 Kluwer Academic Publishers. https://doi.org/10.1023/B:AXIO.0000006788.44025.49
+> **Herre H**. General Formal Ontology (GFO): A Foundational Ontology for Conceptual Modelling. In: Poli R, Healy M, Kameas A, editors. Theory and Applications of Ontology: Computer Applications, Dordrecht: Springer Netherlands; 2010, p. 297–345. https://doi.org/10.1007/978-90-481-8847-5_14.
 
-> **Heller, B. & Herre, H. 2003**. Formal Ontology and Principles of GOL. *Onto-Med Report Nr. 1*. Research Group Ontologies in Medicine (Onto-Med), University of Leipzig.
+> **Heller B, Herre H**. Ontological Categories in GOL. Axiomathes 2004;14:57–76. https://doi.org/10.1023/B:AXIO.0000006788.44025.49.
+
+> **Heller B, Herre H**. Formal Ontology and Principles of GOL. Onto-Med Report Nr. 1. Research Group Ontologies in Medicine (Onto-Med), University of Leipzig.
 
 ### Further Documentation
 Apart from the GFO reports, we have not yet completed the work on more introductory or tutorial material. This is going to happen in the nearer future. Currently, the easiest way to access the basic categories of GFO is to view the file *gfo-basic.owl* in an ontology editor (e.g. [OwlSight](https://www.w3.org/2001/sw/wiki/OWLSight) or [Protégé](https://protege.stanford.edu)). In particular, that file provides short descriptions for each category.
