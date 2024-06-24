@@ -1,6 +1,6 @@
 # General Formal Ontology (GFO)
 
-[![Test ontology](https://github.com/Onto-Med/GFO/actions/workflows/test.yml/badge.svg)](https://github.com/Onto-Med/GFO/actions/workflows/test.yml)
+[![Test ontology](https://github.com/Onto-Med/GFO/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Onto-Med/GFO/actions/workflows/test.yml)
 [![DOI](https://zenodo.org/badge/220933953.svg)](https://zenodo.org/badge/latestdoi/220933953)
 
 ## Introduction
