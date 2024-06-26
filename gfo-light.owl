@@ -10,7 +10,8 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:doap="http://usefulinc.com/ns/doap#"
-     xmlns:bibo="http://purl.org/ontology/bibo/">
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/gfo/light">
         <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-05</dc:modified>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-05</owl:versionInfo>
@@ -23,6 +24,7 @@
         <foaf:homepage>https://github.com/Onto-Med/GFO</foaf:homepage>
         <doap:repository rdf:resource="https://github.com/Onto-Med/GFO"/>
         <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205419"/>
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
     </owl:Ontology>
     
 
