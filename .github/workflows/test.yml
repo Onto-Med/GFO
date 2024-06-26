@@ -1,4 +1,5 @@
-name: Check syntax
+---
+name: Test ontology
 
 on:
   push:
@@ -17,8 +18,9 @@ on:
       - '**.ttl'
 
 jobs:
-  rdf-syntax-check:
+  syntax-check:
     runs-on: ubuntu-latest
+    container: obolibrary/odklite
     steps:
-      - name: RDF syntax check
-        uses: AtomGraph/RDF-syntax-check@v1.0.4
+      - uses: actions/checkout@v4
+      - run: check-rdfxml gfo.owl
