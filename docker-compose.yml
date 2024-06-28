@@ -1,0 +1,16 @@
+services:
+  rickview:
+    image: ghcr.io/konradhoeffner/rickview
+    environment:
+      - RICKVIEW_KB_FILE=https://github.com/Onto-Med/GFO/releases/latest/download/gfo.owl
+      - RICKVIEW_NAMESPACE=http://purl.org/ontology/gfo/
+      - RICKVIEW_BASE=/ontology/gfo
+      - RICKVIEW_TITLE=GFO
+      - RICKVIEW_SUBTITLE=General Formal Ontology
+      - RICKVIEW_EXAMPLES=Category Continuous_process Individual
+      - RICKVIEW_HOMEPAGE=https://onto-med.github.io/GFO/
+      - RICKVIEW_GITHUB=https://github.com/Onto-Med/GFO
+      - RICKVIEW_DOC=https://onto-med.github.io/GFO/
+    ports:
+      - "127.0.0.1:8080:8080"
+    restart: unless-stopped
