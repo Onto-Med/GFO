@@ -1,0 +1,1060 @@
+<http://www.onto-med.de/ontologies/gfo.owl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.onto-med.de/ontologies/gfo.owl> <http://www.w3.org/2000/01/rdf-schema#comment> "Copyright (c) 2006, Regents of the Research Group Ontologies in Medicine (Onto-Med), University of Leipzig, Germany.\n       All rights reserved.  \n\n       Redistribution and use in source and binary forms, with or without modification,\n       are permitted provided that the following conditions are met:\n       \n       1. Redistributions of source code must retain the above copyright notice, this list\n          of conditions and the following disclaimer.\n       \n       2. Redistributions in binary form must reproduce the above copyright notice, this list\n          of conditions and the following disclaimer in the documentation and/or other\n          materials provided with the distribution.\n          \n       3. Neither the name of the Research Group Ontologies in Medicine (Onto-Med), University\n          of Leipzig nor the names of its contributors may be used to endorse or promote products\n          derived from this software without specific prior written permission.\n\n       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS\n       OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY\n       AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\n       CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n       DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n       DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER\n       IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\n       OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."@en .
+<http://www.onto-med.de/ontologies/gfo.owl> <http://www.w3.org/2002/07/owl#versionInfo> "Version 1.0 ($Revision: 1.9 $)" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2000/01/rdf-schema#comment
+<http://www.w3.org/2000/01/rdf-schema#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionInfo
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#abstract_has_part
+<http://www.onto-med.de/ontologies/gfo.owl#abstract_has_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#abstract_has_part> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#abstract_has_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#abstract_has_part> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+<http://www.onto-med.de/ontologies/gfo.owl#abstract_has_part> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of
+<http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+<http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+<http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> <http://www.w3.org/2000/01/rdf-schema#comment> "The abstract part-of relation is denoted by p(x,y);\nthe argument-types of this relation are not specified, i.e. we allow\narbitrary entities to be arguments. We assume that p(x,y) satisfies\nthe condition of a partial ordering, .i.e. the following axioms: reflexivity, antisymmetry and transitivity." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#agent_in
+<http://www.onto-med.de/ontologies/gfo.owl#agent_in> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#agent_in> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#causes> .
+<http://www.onto-med.de/ontologies/gfo.owl#agent_in> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#participates_in> .
+<http://www.onto-med.de/ontologies/gfo.owl#agent_in> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#has_agent> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#boundary_of
+<http://www.onto-med.de/ontologies/gfo.owl#boundary_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#boundary_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#depends_on> .
+<http://www.onto-med.de/ontologies/gfo.owl#boundary_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#has_boundary> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#categorial_part_of
+<http://www.onto-med.de/ontologies/gfo.owl#categorial_part_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#categorial_part_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#categorial_part_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#has_categorial_part> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#category_in_layer
+<http://www.onto-med.de/ontologies/gfo.owl#category_in_layer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#category_in_layer> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#categorial_part_of> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#caused_by
+<http://www.onto-med.de/ontologies/gfo.owl#caused_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#caused_by> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Occurrent> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#caused_by> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#causes
+<http://www.onto-med.de/ontologies/gfo.owl#causes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#causes> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#caused_by> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#constituent_part_of
+<http://www.onto-med.de/ontologies/gfo.owl#constituent_part_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#constituent_part_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#proper_part_of> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#depends_on
+<http://www.onto-med.de/ontologies/gfo.owl#depends_on> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#depends_on> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+<http://www.onto-med.de/ontologies/gfo.owl#depends_on> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+<http://www.onto-med.de/ontologies/gfo.owl#depends_on> <http://www.w3.org/2000/01/rdf-schema#comment> "This relation captures the notion of existential dependence." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#exists_at
+<http://www.onto-med.de/ontologies/gfo.owl#exists_at> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#exists_at> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#exists_at> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+<http://www.onto-med.de/ontologies/gfo.owl#exists_at> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Time_boundary> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#framed_by
+<http://www.onto-med.de/ontologies/gfo.owl#framed_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#framed_by> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#occupies> .
+<http://www.onto-med.de/ontologies/gfo.owl#framed_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#frames> .
+<http://www.onto-med.de/ontologies/gfo.owl#framed_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#framed_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Material_object> .
+<http://www.onto-med.de/ontologies/gfo.owl#framed_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Topoid> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#frames
+<http://www.onto-med.de/ontologies/gfo.owl#frames> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#frames> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#frames> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Topoid> .
+<http://www.onto-med.de/ontologies/gfo.owl#frames> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Material_object> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#function_determinant_of
+<http://www.onto-med.de/ontologies/gfo.owl#function_determinant_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#function_determinant_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Function> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#function_of
+<http://www.onto-med.de/ontologies/gfo.owl#function_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#functional_item_of
+<http://www.onto-med.de/ontologies/gfo.owl#functional_item_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#functional_item_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#function_determinant_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#functional_item_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#has_functional_item> .
+<http://www.onto-med.de/ontologies/gfo.owl#functional_item_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Role> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#goal_of
+<http://www.onto-med.de/ontologies/gfo.owl#goal_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#goal_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#function_determinant_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#goal_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#has_goal> .
+<http://www.onto-med.de/ontologies/gfo.owl#goal_of> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Configuroid> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Configuration> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#goal_of> <http://www.w3.org/2000/01/rdf-schema#comment> "\"goal\" here refers to \"final state\" in (Burek, 2006)."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_agent
+<http://www.onto-med.de/ontologies/gfo.owl#has_agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_boundary
+<http://www.onto-med.de/ontologies/gfo.owl#has_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_categorial_part
+<http://www.onto-med.de/ontologies/gfo.owl#has_categorial_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_categorial_part> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#abstract_has_part> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_categorial_part> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Category> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_categorial_part> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Category> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_category
+<http://www.onto-med.de/ontologies/gfo.owl#has_category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_category> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#category_in_layer> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_category> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_category> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Category> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_constituent_part
+<http://www.onto-med.de/ontologies/gfo.owl#has_constituent_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_constituent_part> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#has_proper_part> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_constituent_part> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#constituent_part_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_constituent_part> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Configuroid> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Configuration> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_function
+<http://www.onto-med.de/ontologies/gfo.owl#has_function> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_function> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#function_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_function> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_function> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Function> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_function_determinant
+<http://www.onto-med.de/ontologies/gfo.owl#has_function_determinant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_function_determinant> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#function_determinant_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_function_determinant> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Function> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_function_determinant> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_functional_item
+<http://www.onto-med.de/ontologies/gfo.owl#has_functional_item> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_functional_item> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#has_function_determinant> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_functional_item> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_functional_item> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Function> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_functional_item> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Role> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_goal
+<http://www.onto-med.de/ontologies/gfo.owl#has_goal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_goal> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#has_function_determinant> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_goal> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Function> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_left_time_boundary
+<http://www.onto-med.de/ontologies/gfo.owl#has_left_time_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_left_time_boundary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#has_time_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_left_time_boundary> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#left_boundary_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_left_time_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_member
+<http://www.onto-med.de/ontologies/gfo.owl#has_member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_member> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Set> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_member> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Entity> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_part
+<http://www.onto-med.de/ontologies/gfo.owl#has_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_part> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#abstract_has_part> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_part> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_part> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_participant
+<http://www.onto-med.de/ontologies/gfo.owl#has_participant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_participant> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#participates_in> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_participant> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Occurrent> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_participant> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_proper_part
+<http://www.onto-med.de/ontologies/gfo.owl#has_proper_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_proper_part> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#has_part> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_proper_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_requirement
+<http://www.onto-med.de/ontologies/gfo.owl#has_requirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_requirement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#has_function_determinant> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_requirement> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#requirement_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_requirement> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Function> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_right_time_boundary
+<http://www.onto-med.de/ontologies/gfo.owl#has_right_time_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_right_time_boundary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#has_time_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_right_time_boundary> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#right_boundary_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_right_time_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_sequence_constituent
+<http://www.onto-med.de/ontologies/gfo.owl#has_sequence_constituent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_sequence_constituent> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#sequence_constituent_of> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_spatial_boundary
+<http://www.onto-med.de/ontologies/gfo.owl#has_spatial_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_spatial_boundary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#has_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_spatial_boundary> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_spatial_boundary> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_time_boundary
+<http://www.onto-med.de/ontologies/gfo.owl#has_time_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_time_boundary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#has_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_time_boundary> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#time_boundary_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_time_boundary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Chronoid> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_time_boundary> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Time_boundary> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_token
+<http://www.onto-med.de/ontologies/gfo.owl#has_token> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_token> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#instance_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_token> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#token_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_token> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Symbol_structure> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_token> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#has_value
+<http://www.onto-med.de/ontologies/gfo.owl#has_value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_value> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Property> .
+<http://www.onto-med.de/ontologies/gfo.owl#has_value> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Property_value> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#instance_of
+<http://www.onto-med.de/ontologies/gfo.owl#instance_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#instance_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#instantiated_by> .
+<http://www.onto-med.de/ontologies/gfo.owl#instance_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Entity> .
+<http://www.onto-med.de/ontologies/gfo.owl#instance_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Category> .
+<http://www.onto-med.de/ontologies/gfo.owl#instance_of> <http://www.w3.org/2000/01/rdf-schema#comment> "The instantiation relation holds between a category and an item. It is not a relation between categories and individuals due to higher order categories such as \"species\"." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#instantiated_by
+<http://www.onto-med.de/ontologies/gfo.owl#instantiated_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#instantiated_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Category> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#layer_of
+<http://www.onto-med.de/ontologies/gfo.owl#layer_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#layer_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer> .
+<http://www.onto-med.de/ontologies/gfo.owl#layer_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#left_boundary_of
+<http://www.onto-med.de/ontologies/gfo.owl#left_boundary_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#left_boundary_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#left_boundary_of> <http://www.w3.org/2000/01/rdf-schema#comment> "Left boundary of a chronoid." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#level_of
+<http://www.onto-med.de/ontologies/gfo.owl#level_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#level_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#layer_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#level_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#on_level> .
+<http://www.onto-med.de/ontologies/gfo.owl#level_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Level> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#member_of
+<http://www.onto-med.de/ontologies/gfo.owl#member_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#member_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#has_member> .
+<http://www.onto-med.de/ontologies/gfo.owl#member_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Entity> .
+<http://www.onto-med.de/ontologies/gfo.owl#member_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Set> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#necessary_for
+<http://www.onto-med.de/ontologies/gfo.owl#necessary_for> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#necessary_for> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#depends_on> .
+<http://www.onto-med.de/ontologies/gfo.owl#necessary_for> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+<http://www.onto-med.de/ontologies/gfo.owl#necessary_for> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#occupied_by
+<http://www.onto-med.de/ontologies/gfo.owl#occupied_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#occupied_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#occupies> .
+<http://www.onto-med.de/ontologies/gfo.owl#occupied_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#occupied_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Space> .
+<http://www.onto-med.de/ontologies/gfo.owl#occupied_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#occupies
+<http://www.onto-med.de/ontologies/gfo.owl#occupies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#occupies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#occupies> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+<http://www.onto-med.de/ontologies/gfo.owl#occupies> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Space> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#on_layer
+<http://www.onto-med.de/ontologies/gfo.owl#on_layer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#on_layer> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#layer_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#on_layer> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+<http://www.onto-med.de/ontologies/gfo.owl#on_layer> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#on_level
+<http://www.onto-med.de/ontologies/gfo.owl#on_level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#on_level> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#on_layer> .
+<http://www.onto-med.de/ontologies/gfo.owl#on_level> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Level> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#on_stratum
+<http://www.onto-med.de/ontologies/gfo.owl#on_stratum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#on_stratum> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#on_layer> .
+<http://www.onto-med.de/ontologies/gfo.owl#on_stratum> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Stratum> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#part_of
+<http://www.onto-med.de/ontologies/gfo.owl#part_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#part_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#part_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#has_part> .
+<http://www.onto-med.de/ontologies/gfo.owl#part_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#part_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+<http://www.onto-med.de/ontologies/gfo.owl#part_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#participates_in
+<http://www.onto-med.de/ontologies/gfo.owl#participates_in> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#participates_in> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+<http://www.onto-med.de/ontologies/gfo.owl#participates_in> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Occurrent> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#plays_role
+<http://www.onto-med.de/ontologies/gfo.owl#plays_role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#plays_role> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.onto-med.de/ontologies/gfo.owl#plays_role> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Role> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#projection_of
+<http://www.onto-med.de/ontologies/gfo.owl#projection_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#projection_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#projects_to
+<http://www.onto-med.de/ontologies/gfo.owl#projects_to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#projects_to> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#projection_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#projects_to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#projects_to> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Occurrent> .
+<http://www.onto-med.de/ontologies/gfo.owl#projects_to> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Temporal_region> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#proper_part_of
+<http://www.onto-med.de/ontologies/gfo.owl#proper_part_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#proper_part_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#part_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#proper_part_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#has_proper_part> .
+<http://www.onto-med.de/ontologies/gfo.owl#proper_part_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#realized_by
+<http://www.onto-med.de/ontologies/gfo.owl#realized_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#realized_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#realizes> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#realizes
+<http://www.onto-med.de/ontologies/gfo.owl#realizes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#realizes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+<http://www.onto-med.de/ontologies/gfo.owl#realizes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Function> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#requirement_of
+<http://www.onto-med.de/ontologies/gfo.owl#requirement_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#requirement_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#function_determinant_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#requirement_of> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Configuroid> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Configuration> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.onto-med.de/ontologies/gfo.owl#requirement_of> <http://www.w3.org/2000/01/rdf-schema#comment> "\"requirement\" here refers to \"initial state\" in (Burek, 2006)."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#right_boundary_of
+<http://www.onto-med.de/ontologies/gfo.owl#right_boundary_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#right_boundary_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#right_boundary_of> <http://www.w3.org/2000/01/rdf-schema#comment> "Right boundary of a chronoid." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#role_of
+<http://www.onto-med.de/ontologies/gfo.owl#role_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#role_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Role> .
+<http://www.onto-med.de/ontologies/gfo.owl#role_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#sequence_constituent_of
+<http://www.onto-med.de/ontologies/gfo.owl#sequence_constituent_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#sequence_constituent_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#part_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#sequence_constituent_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Token> .
+<http://www.onto-med.de/ontologies/gfo.owl#sequence_constituent_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Symbol_sequence> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of
+<http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#boundary_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Space> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#stratum_of
+<http://www.onto-med.de/ontologies/gfo.owl#stratum_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#stratum_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#layer_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#stratum_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#on_stratum> .
+<http://www.onto-med.de/ontologies/gfo.owl#stratum_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Stratum> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#time_boundary_of
+<http://www.onto-med.de/ontologies/gfo.owl#time_boundary_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#time_boundary_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.onto-med.de/ontologies/gfo.owl#boundary_of> .
+<http://www.onto-med.de/ontologies/gfo.owl#time_boundary_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Time_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#time_boundary_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Chronoid> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#token_of
+<http://www.onto-med.de/ontologies/gfo.owl#token_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#value_of
+<http://www.onto-med.de/ontologies/gfo.owl#value_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.onto-med.de/ontologies/gfo.owl#value_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.onto-med.de/ontologies/gfo.owl#has_value> .
+<http://www.onto-med.de/ontologies/gfo.owl#value_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.onto-med.de/ontologies/gfo.owl#Property_value> .
+<http://www.onto-med.de/ontologies/gfo.owl#value_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.onto-med.de/ontologies/gfo.owl#Property> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Abstract
+<http://www.onto-med.de/ontologies/gfo.owl#Abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Abstract> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+<http://www.onto-med.de/ontologies/gfo.owl#Abstract> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+<http://www.onto-med.de/ontologies/gfo.owl#Abstract> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Space_time> .
+<http://www.onto-med.de/ontologies/gfo.owl#Abstract> <http://www.w3.org/2000/01/rdf-schema#comment> "Abstract individuals are independent from time and space (they are not in time and space).\nExamples: the number \"2\" or pi."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Action
+<http://www.onto-med.de/ontologies/gfo.owl#Action> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Action> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Occurrent> .
+<http://www.onto-med.de/ontologies/gfo.owl#Action> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#has_agent> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Action> <http://www.w3.org/2000/01/rdf-schema#comment> "Actions are occurents which are caused by some presential (the agent) at every (inner and outer) time-boundary of the chronoid framing the occurent."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Amount_of_substrate
+<http://www.onto-med.de/ontologies/gfo.owl#Amount_of_substrate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Amount_of_substrate> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.onto-med.de/ontologies/gfo.owl#Mass_entity> .
+<http://www.onto-med.de/ontologies/gfo.owl#Amount_of_substrate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Continuous> .
+<http://www.onto-med.de/ontologies/gfo.owl#Amount_of_substrate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Awareness_level
+<http://www.onto-med.de/ontologies/gfo.owl#Awareness_level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Awareness_level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Level> .
+<http://www.onto-med.de/ontologies/gfo.owl#Awareness_level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Mental_stratum> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Biological_level
+<http://www.onto-med.de/ontologies/gfo.owl#Biological_level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Biological_level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Level> .
+<http://www.onto-med.de/ontologies/gfo.owl#Biological_level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Material_stratum> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Category
+<http://www.onto-med.de/ontologies/gfo.owl#Category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Category> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+<http://www.onto-med.de/ontologies/gfo.owl#Category> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+<http://www.onto-med.de/ontologies/gfo.owl#Category> <http://www.w3.org/2000/01/rdf-schema#comment> "Categories satisfy the following conditions: (1) Categories can be instantiated; (2) Categories can be predicated of other entities.\nCategories are defined intensional-with-an-s. They are, therefore, closely related to language." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Change
+<http://www.onto-med.de/ontologies/gfo.owl#Change> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Change> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Occurrent> .
+<http://www.onto-med.de/ontologies/gfo.owl#Change> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#History> .
+<http://www.onto-med.de/ontologies/gfo.owl#Change> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Process> .
+<http://www.onto-med.de/ontologies/gfo.owl#Change> <http://www.w3.org/2000/01/rdf-schema#comment> "A change in the technical sense refers to a pair of process\nboundaries. Either at coinciding boundaries (then it comes close to\nnotions like ``punctual'' or ``instantaneous event'' as well as\n``moment'' -- in a temporal reading), or at boundaries at the opposite\nends of a process of arbitrary extension.\n\nThe notion of change is relative to contradictory conditions\nbetween which a transition takes place. These contradictions refer to\nsome collection of pairwise disjoint universals." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Chemical_level
+<http://www.onto-med.de/ontologies/gfo.owl#Chemical_level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Chemical_level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Level> .
+<http://www.onto-med.de/ontologies/gfo.owl#Chemical_level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Material_stratum> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Chronoid
+<http://www.onto-med.de/ontologies/gfo.owl#Chronoid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Chronoid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Temporal_region> .
+<http://www.onto-med.de/ontologies/gfo.owl#Chronoid> <http://www.w3.org/2000/01/rdf-schema#comment> "Chronoids are entities sui generis.\n\nEvery chronoid has exactly two extremal and\ninfinitely many inner time boundaries which are\nequivalently called time-points." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Concept
+<http://www.onto-med.de/ontologies/gfo.owl#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Concept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Category> .
+<http://www.onto-med.de/ontologies/gfo.owl#Concept> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Symbol_structure> .
+<http://www.onto-med.de/ontologies/gfo.owl#Concept> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Universal> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Concrete
+<http://www.onto-med.de/ontologies/gfo.owl#Concrete> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Concrete> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+<http://www.onto-med.de/ontologies/gfo.owl#Concrete> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Space_time> .
+<http://www.onto-med.de/ontologies/gfo.owl#Concrete> <http://www.w3.org/2000/01/rdf-schema#comment> "Concrete individuals have a relation to time or space (they are in time and space)." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Configuration
+<http://www.onto-med.de/ontologies/gfo.owl#Configuration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Configuration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+<http://www.onto-med.de/ontologies/gfo.owl#Configuration> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Material_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#Configuration> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Material_object> .
+<http://www.onto-med.de/ontologies/gfo.owl#Configuration> <http://www.w3.org/2000/01/rdf-schema#comment> "We consider a collection of presential facts which exist at the same time-boundary. Such collections may be considered themselves as presentials, and we call them configurations.\n\nIt is further required that configurations contain at least one material object." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Configuroid
+<http://www.onto-med.de/ontologies/gfo.owl#Configuroid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Configuroid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Process> .
+<http://www.onto-med.de/ontologies/gfo.owl#Configuroid> <http://www.w3.org/2000/01/rdf-schema#comment> "Configuroids are, in the simplest case, integrated wholes made up of material structure processes and property processes." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Continuous
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid15 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#complementOf> <http://www.onto-med.de/ontologies/gfo.owl#Discrete> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Continuous_change
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous_change> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous_change> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.onto-med.de/ontologies/gfo.owl#Intrinsic_change> .
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous_change> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Change> .
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous_change> <http://www.w3.org/2000/01/rdf-schema#comment> "For the purpose of formalizing continuous changes, a minimal chronoid universal D(c) is employed in order to capture the idea of observable differences during certain chronoids, whereas the change itself does not allow the observation of a difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this approach. Continous changes occur over time (a chronoid)."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Continuous_process
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous_process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous_process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Continuous> .
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous_process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Process> .
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous_process> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Discrete_process> .
+<http://www.onto-med.de/ontologies/gfo.owl#Continuous_process> <http://www.w3.org/2000/01/rdf-schema#comment> "Processes where all non-coinciding internal boundaries are intrinsic changes. \nThese turn out as purely continuous processes, described e.g.\nin physics by differential equations." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Dependent
+<http://www.onto-med.de/ontologies/gfo.owl#Dependent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Dependent> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#depends_on> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Dependent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+<http://www.onto-med.de/ontologies/gfo.owl#Dependent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Independent> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Discrete
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Discrete_presential
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete_presential> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete_presential> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Discrete> .
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete_presential> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete_presential> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Persistant> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#instance_of> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete_presential> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Mass_entity> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Discrete_process
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete_process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete_process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Discrete> .
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete_process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Process> .
+<http://www.onto-med.de/ontologies/gfo.owl#Discrete_process> <http://www.w3.org/2000/01/rdf-schema#comment> "Discrete processes are made up of alterations of extrinsic changes and states." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Entity
+<http://www.onto-med.de/ontologies/gfo.owl#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Entity> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#unionOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Set> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "Everything which exists is called an entity." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Extrinsic_change
+<http://www.onto-med.de/ontologies/gfo.owl#Extrinsic_change> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Extrinsic_change> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.onto-med.de/ontologies/gfo.owl#Instantanuous_change> .
+<http://www.onto-med.de/ontologies/gfo.owl#Extrinsic_change> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Change> .
+<http://www.onto-med.de/ontologies/gfo.owl#Extrinsic_change> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Intrinsic_change> .
+<http://www.onto-med.de/ontologies/gfo.owl#Extrinsic_change> <http://www.w3.org/2000/01/rdf-schema#comment> "Deprecated. Extrinsic changes are represented by change(e1,e2, u1, u2, u), where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are disjoint sub-universals of u."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Function
+<http://www.onto-med.de/ontologies/gfo.owl#Function> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Function> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Concept> .
+<http://www.onto-med.de/ontologies/gfo.owl#Function> <http://www.w3.org/2000/01/rdf-schema#comment> "A function F is a universal (conceptual structure) defined in purely teleological terms with respect to a given goal G which commonly is ascribed by means of has-function relation to entities that are the realizations of the function F, execute such a realization or are intended to do it." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#History
+<http://www.onto-med.de/ontologies/gfo.owl#History> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#History> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Occurrent> .
+<http://www.onto-med.de/ontologies/gfo.owl#History> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Process> .
+<http://www.onto-med.de/ontologies/gfo.owl#History> <http://www.w3.org/2000/01/rdf-schema#comment> "Histories consist of a number of process boundaries.\n\nWe assume that any history can be embedded into a process, which then\nforms a foundation of the history. If it were not for this foundation,\none would face the problem of singling out the right boundaries in\norder to get a natural history: It is not sensible to measure the\ntemperature of a patient first, then determine his weight, followed by\nmeasuring his blood pressure and to consider these strangely arbitrary\nprocess boundaries as a history of the patient's body data." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Independent
+<http://www.onto-med.de/ontologies/gfo.owl#Independent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Independent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Individual
+<http://www.onto-med.de/ontologies/gfo.owl#Individual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Individual> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid24 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#unionOf> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid28 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#complementOf> <http://www.onto-med.de/ontologies/gfo.owl#Role> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Role> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid34 .
+_:genid34 <http://www.w3.org/2002/07/owl#unionOf> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Independent> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Dependent> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#unionOf> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Space_time> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Abstract> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.onto-med.de/ontologies/gfo.owl#Individual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+<http://www.onto-med.de/ontologies/gfo.owl#Individual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid42 .
+_:genid42 <http://www.w3.org/2002/07/owl#complementOf> _:genid43 .
+_:genid43 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+_:genid43 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#instantiated_by> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Individual> <http://www.w3.org/2000/01/rdf-schema#comment> "Individuals are entities which cannot be further instantiated." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Instantanuous_change
+<http://www.onto-med.de/ontologies/gfo.owl#Instantanuous_change> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Instantanuous_change> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Change> .
+<http://www.onto-med.de/ontologies/gfo.owl#Instantanuous_change> <http://www.w3.org/2000/01/rdf-schema#comment> "Instantanuous changes are represented by change(e1,e2, u1, u2, u), where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are disjoint sub-universals of u. Instantanuous changes are therefore changes of properties on two coinciding time boundaries."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Intrinsic_change
+<http://www.onto-med.de/ontologies/gfo.owl#Intrinsic_change> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Intrinsic_change> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Change> .
+<http://www.onto-med.de/ontologies/gfo.owl#Intrinsic_change> <http://www.w3.org/2000/01/rdf-schema#comment> "Deprecated. \nFor the purpose of formalizing intrinsic changes, a minimal chronoid universal D(c) is employed in order to capture the idea of observable differences during certain chronoids, whereas the change itself does not allow the observation of a difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this approach."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Item
+<http://www.onto-med.de/ontologies/gfo.owl#Item> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Item> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid44 .
+_:genid44 <http://www.w3.org/2002/07/owl#unionOf> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.onto-med.de/ontologies/gfo.owl#Category> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Item> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Entity> .
+<http://www.onto-med.de/ontologies/gfo.owl#Item> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid47 .
+_:genid47 <http://www.w3.org/2002/07/owl#complementOf> _:genid48 .
+_:genid48 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Entity> .
+_:genid48 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#has_member> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Item> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Set> .
+<http://www.onto-med.de/ontologies/gfo.owl#Item> <http://www.w3.org/2000/01/rdf-schema#comment> "An item is everything which is not a set. Also called ur-element." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Level
+<http://www.onto-med.de/ontologies/gfo.owl#Level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer> .
+<http://www.onto-med.de/ontologies/gfo.owl#Level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid49 .
+_:genid49 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Stratum> .
+_:genid49 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Level> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Stratum> .
+<http://www.onto-med.de/ontologies/gfo.owl#Level> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontological level, which is sth. more restricted and \"part of\" some gfo:Stratum." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Line
+<http://www.onto-med.de/ontologies/gfo.owl#Line> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Line> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid50 .
+_:genid50 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Surface> .
+_:genid50 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Line> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Mass_entity
+<http://www.onto-med.de/ontologies/gfo.owl#Mass_entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Mass_entity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Continuous> .
+<http://www.onto-med.de/ontologies/gfo.owl#Mass_entity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Material_boundary
+<http://www.onto-med.de/ontologies/gfo.owl#Material_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_boundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Dependent> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_boundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_boundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid51 .
+_:genid51 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Material_object> .
+_:genid51 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#depends_on> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_boundary> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Material_object> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Material_line
+<http://www.onto-med.de/ontologies/gfo.owl#Material_line> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_line> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Material_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_line> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid52 .
+_:genid52 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Material_surface> .
+_:genid52 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#boundary_of> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_line> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Material_point> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_line> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Material_surface> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Material_object
+<http://www.onto-med.de/ontologies/gfo.owl#Material_object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_object> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.onto-med.de/ontologies/gfo.owl#Material_structure> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Discrete_presential> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid53 .
+_:genid53 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Topoid> .
+_:genid53 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#framed_by> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid54 .
+_:genid54 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid54 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#framed_by> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_object> <http://www.w3.org/2000/01/rdf-schema#comment> "A material structure is an individual which satisfies the following conditions: \nit is a presential, it occupies space, it is a bearer of qualities,  but other entities cannot have\nit as quality, and it consists of an amount of substrate, and it instantiates a persistant (\"has identity\")." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Material_persistant
+<http://www.onto-med.de/ontologies/gfo.owl#Material_persistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_persistant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Persistant> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_persistant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid55 .
+_:genid55 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Material_object> .
+_:genid55 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#instantiated_by> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_persistant> <http://www.w3.org/2000/01/rdf-schema#comment> "Material persistants are particular universals whose instances are \nmaterial structures; they are related to those entities which are called \nsometimes continuants or objects, as apples, cars or houses. \nMaterial persistants capture the phenomenon of persistance through time of a material \nobject. A material persistant P satisfies a number of neccessary conditions. For every\nmaterial persistant P there exists a process P such that\nthe set of instances of P coincides with the set of process-boundaries\nof P. This implies the existence of a chronoid c\nsuch that for every time-point t of c there exists exactly \none instance of P at time point t." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Material_point
+<http://www.onto-med.de/ontologies/gfo.owl#Material_point> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Material_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid56 .
+_:genid56 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Material_line> .
+_:genid56 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#boundary_of> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_point> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Material_surface> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Material_stratum
+<http://www.onto-med.de/ontologies/gfo.owl#Material_stratum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_stratum> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Stratum> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_stratum> <http://www.w3.org/2000/01/rdf-schema#comment> "According to (Poli,2001), the basic structure of the material stratum is a distinction of physical, chemical and biological levels.\nThese levels can be further refined."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Material_structure
+<http://www.onto-med.de/ontologies/gfo.owl#Material_structure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_structure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Discrete_presential> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Material_surface
+<http://www.onto-med.de/ontologies/gfo.owl#Material_surface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_surface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Material_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#Material_surface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid57 .
+_:genid57 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Material_object> .
+_:genid57 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#boundary_of> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Mental_stratum
+<http://www.onto-med.de/ontologies/gfo.owl#Mental_stratum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Mental_stratum> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Stratum> .
+<http://www.onto-med.de/ontologies/gfo.owl#Mental_stratum> <http://www.w3.org/2000/01/rdf-schema#comment> "In accordance with the work of R. Poli, we divide the\npsychological/mental stratum into the layer of\nawareness and the layer of\npersonality. Awareness comprises most\nof what is studied by cognitive science (perception, memory,\nreasoning, etc). Personality on the other hand concerns the phenomenon\nof will and the way in which someone reacts to her experiences."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Occurrent
+<http://www.onto-med.de/ontologies/gfo.owl#Occurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Occurrent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+<http://www.onto-med.de/ontologies/gfo.owl#Occurrent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+<http://www.onto-med.de/ontologies/gfo.owl#Occurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Occurents have temporal parts and thus cannot be present at a time-boundary. Time\nbelongs to them, because they happen in time and the time of the occurent\nis built into it. The relation between an occurent and a chronoid is\ndetermined by the projection relation.\n\nOccurents are also called generalized processes in the GFO." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer
+<http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Category> .
+<http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontological_layer, all of its subconcepts and the properties layer_of and on_layer are work in progress in a premature beta state."@en .
+<http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer> <http://www.w3.org/2000/01/rdf-schema#comment> "a collective term for gfo:stratum and gfo:level" .
+<http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer> <http://www.w3.org/2002/07/owl#versionInfo> "Beta"@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Persistant
+<http://www.onto-med.de/ontologies/gfo.owl#Persistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Persistant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Universal> .
+<http://www.onto-med.de/ontologies/gfo.owl#Persistant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid58 .
+_:genid58 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Presential> .
+_:genid58 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#instantiated_by> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Persistant> <http://www.w3.org/2000/01/rdf-schema#comment> "Persistants are GFO's way to capture identity over time.\n\nGFO pursues an approach which\naccounts for persistence by means of a suitable\nuniversal whose instances are presentials. Such universals are called\npersistants. These do not change and they can be used to\nexplain how presentials which have different properties at different\ntimes can nevertheless be the same." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Personality_level
+<http://www.onto-med.de/ontologies/gfo.owl#Personality_level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Personality_level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Level> .
+<http://www.onto-med.de/ontologies/gfo.owl#Personality_level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid59 .
+_:genid59 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Mental_stratum> .
+_:genid59 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Physical_level
+<http://www.onto-med.de/ontologies/gfo.owl#Physical_level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Physical_level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Level> .
+<http://www.onto-med.de/ontologies/gfo.owl#Physical_level> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid60 .
+_:genid60 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Material_stratum> .
+_:genid60 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Point
+<http://www.onto-med.de/ontologies/gfo.owl#Point> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Point> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid61 .
+_:genid61 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Line> .
+_:genid61 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Presential
+<http://www.onto-med.de/ontologies/gfo.owl#Presential> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Presential> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+<http://www.onto-med.de/ontologies/gfo.owl#Presential> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+<http://www.onto-med.de/ontologies/gfo.owl#Presential> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid62 .
+_:genid62 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Time_boundary> .
+_:genid62 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#exists_at> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Presential> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid63 .
+_:genid63 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid63 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#exists_at> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Presential> <http://www.w3.org/2000/01/rdf-schema#comment> "A presential exists wholly at exactly one time boundary." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Process
+<http://www.onto-med.de/ontologies/gfo.owl#Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Occurrent> .
+<http://www.onto-med.de/ontologies/gfo.owl#Process> <http://www.w3.org/2000/01/rdf-schema#comment> "Processes are a special kind of occurent. Processes are directly in time, they have characteristics which cannot be captured by a collection of time boundaries." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Processual_role
+<http://www.onto-med.de/ontologies/gfo.owl#Processual_role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Processual_role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Process> .
+<http://www.onto-med.de/ontologies/gfo.owl#Processual_role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Role> .
+<http://www.onto-med.de/ontologies/gfo.owl#Processual_role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid64 .
+_:genid64 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Process> .
+_:genid64 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#role_of> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Processual_role> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Relational_role> .
+<http://www.onto-med.de/ontologies/gfo.owl#Processual_role> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Social_role> .
+<http://www.onto-med.de/ontologies/gfo.owl#Processual_role> <http://www.w3.org/2000/01/rdf-schema#comment> "Processual roles are dependent processes. They are roles with a process as context." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Property
+<http://www.onto-med.de/ontologies/gfo.owl#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+<http://www.onto-med.de/ontologies/gfo.owl#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Dependent> .
+<http://www.onto-med.de/ontologies/gfo.owl#Property> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Relator> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Property_value
+<http://www.onto-med.de/ontologies/gfo.owl#Property_value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Property_value> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid65 .
+_:genid65 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Property> .
+_:genid65 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#value_of> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Property_value> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+<http://www.onto-med.de/ontologies/gfo.owl#Property_value> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Dependent> .
+<http://www.onto-med.de/ontologies/gfo.owl#Property_value> <http://www.w3.org/2000/01/rdf-schema#comment> "The concept of a property value reflects a relationship between the property of x and the same property as exhibited by another entity y." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Relational_role
+<http://www.onto-med.de/ontologies/gfo.owl#Relational_role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Relational_role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Dependent> .
+<http://www.onto-med.de/ontologies/gfo.owl#Relational_role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Role> .
+<http://www.onto-med.de/ontologies/gfo.owl#Relational_role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid66 .
+_:genid66 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Relator> .
+_:genid66 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#role_of> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Relational_role> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Social_role> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Relator
+<http://www.onto-med.de/ontologies/gfo.owl#Relator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Relator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Role
+<http://www.onto-med.de/ontologies/gfo.owl#Role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Set
+<http://www.onto-med.de/ontologies/gfo.owl#Set> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Set> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Entity> .
+<http://www.onto-med.de/ontologies/gfo.owl#Set> <http://www.w3.org/2000/01/rdf-schema#comment> "Set is a category pertaining to the individuals in the ZFC set theory." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Situation
+<http://www.onto-med.de/ontologies/gfo.owl#Situation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Situation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Configuration> .
+<http://www.onto-med.de/ontologies/gfo.owl#Situation> <http://www.w3.org/2000/01/rdf-schema#comment> "A situation is a special configuration which can be comprehended as a whole and satisfies certain conditions of unity, which are imposed by relations and categories associated with the situation. Herein, we consider situations to be the most complex kind of presentials." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Situoid
+<http://www.onto-med.de/ontologies/gfo.owl#Situoid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Situoid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Configuroid> .
+<http://www.onto-med.de/ontologies/gfo.owl#Situoid> <http://www.w3.org/2000/01/rdf-schema#comment> "Situoids are processes whose boundaries are situations and which satisfy certain principles of coherence, comprehensibility, and continuity. They are regarded as the most complex integrated wholes of the world. A situoid is, intuitively, a part of the\nworld which is a coherent and comprehensible whole and does not need other entities in order to exist. Every situoid has a temporal extent and is framed by a topoid." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Social_role
+<http://www.onto-med.de/ontologies/gfo.owl#Social_role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Social_role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Independent> .
+<http://www.onto-med.de/ontologies/gfo.owl#Social_role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Role> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Social_stratum
+<http://www.onto-med.de/ontologies/gfo.owl#Social_stratum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Social_stratum> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Stratum> .
+<http://www.onto-med.de/ontologies/gfo.owl#Social_stratum> <http://www.w3.org/2000/01/rdf-schema#comment> "On the one hand, the social stratum is\ndivided into Agents and\nInstitutions. Agents are the bearers of the social\nroles that humans play. Institutions are defined as systems of\ninterrelated social components. On the other hand, a social system can\nbe seen as a network in which businesses, politics, art, language (and\nmany other facets) both present their own features and\ninfluence each other."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Space
+<http://www.onto-med.de/ontologies/gfo.owl#Space> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Space> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Space_time> .
+<http://www.onto-med.de/ontologies/gfo.owl#Space> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Time> .
+<http://www.onto-med.de/ontologies/gfo.owl#Space> <http://www.w3.org/2000/01/rdf-schema#comment> "GFO uses Brentano space." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Space_time
+<http://www.onto-med.de/ontologies/gfo.owl#Space_time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Space_time> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Individual> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary
+<http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid67 .
+_:genid67 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Space> .
+_:genid67 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Space> .
+<http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Spatial_region> .
+<http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary> <http://www.w3.org/2000/01/rdf-schema#comment> "Boundaries of regions are surfaces, boundaries of\nsurfaces are lines, and boundaries of lines are\npoints. As in the case of time-boundaries, spatial\nboundaries have no independent existence, i.e. they depend on the\nspatial entity of which they are  boundaries." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Spatial_region
+<http://www.onto-med.de/ontologies/gfo.owl#Spatial_region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Spatial_region> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Space> .
+<http://www.onto-med.de/ontologies/gfo.owl#Spatial_region> <http://www.w3.org/2000/01/rdf-schema#comment> "Space regions are mereological sums of topoids." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#State
+<http://www.onto-med.de/ontologies/gfo.owl#State> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#State> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Process> .
+<http://www.onto-med.de/ontologies/gfo.owl#State> <http://www.w3.org/2000/01/rdf-schema#comment> "A process without an instantanuous change at any of its inner time boundaries is called a state."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Stratum
+<http://www.onto-med.de/ontologies/gfo.owl#Stratum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Stratum> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer> .
+<http://www.onto-med.de/ontologies/gfo.owl#Stratum> <http://www.w3.org/2000/01/rdf-schema#comment> "According to (Poli, 2001, 2002)  (based \non the philosopher Hartmann) we distinguish at least three ontological\nstrata of the world: the material stratum, the\nmental/psychological stratum, and the\nsocial stratum stratum. \n\nEvery entity of the world participates in certain\nstrata and levels. We take the position that the layers are\ncharacterized by integrated systems of categories. Hence, a layer can\nbe understood as a meta-category whose instances are categories of\ncertain kinds. Among these levels specific forms of categorial and\nexistential dependencies hold. For example, a mental entity requires\nan animate material object as its existential bearer."@en .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Surface
+<http://www.onto-med.de/ontologies/gfo.owl#Surface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Surface> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid68 .
+_:genid68 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Topoid> .
+_:genid68 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Surface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Symbol
+<http://www.onto-med.de/ontologies/gfo.owl#Symbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Symbol> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Symbol_structure> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Symbol_sequence
+<http://www.onto-med.de/ontologies/gfo.owl#Symbol_sequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Symbol_sequence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Symbol_structure> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Symbol_structure
+<http://www.onto-med.de/ontologies/gfo.owl#Symbol_structure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Symbol_structure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Category> .
+<http://www.onto-med.de/ontologies/gfo.owl#Symbol_structure> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Universal> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Temporal_region
+<http://www.onto-med.de/ontologies/gfo.owl#Temporal_region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Temporal_region> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Time> .
+<http://www.onto-med.de/ontologies/gfo.owl#Temporal_region> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.onto-med.de/ontologies/gfo.owl#Time_boundary> .
+<http://www.onto-med.de/ontologies/gfo.owl#Temporal_region> <http://www.w3.org/2000/01/rdf-schema#comment> "Time Regions are defined as the mereological sum of chronoids,\ni.e. time regions may consist of non-connected intervals of time." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Time
+<http://www.onto-med.de/ontologies/gfo.owl#Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Time> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Space_time> .
+<http://www.onto-med.de/ontologies/gfo.owl#Time> <http://www.w3.org/2000/01/rdf-schema#comment> "The time model of GFO is based on Brentano and the glass continuum of Allen&Hayes." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Time_boundary
+<http://www.onto-med.de/ontologies/gfo.owl#Time_boundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Time_boundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Time> .
+<http://www.onto-med.de/ontologies/gfo.owl#Time_boundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid69 .
+_:genid69 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Chronoid> .
+_:genid69 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#time_boundary_of> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Time_boundary> <http://www.w3.org/2000/01/rdf-schema#comment> "Time boundaries depend on a chronoids (i.e. they have no independent\nexistence) and can coincide." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Token
+<http://www.onto-med.de/ontologies/gfo.owl#Token> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Token> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Concrete> .
+<http://www.onto-med.de/ontologies/gfo.owl#Token> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid70 .
+_:genid70 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Symbol_structure> .
+_:genid70 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#instance_of> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Topoid
+<http://www.onto-med.de/ontologies/gfo.owl#Topoid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Topoid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Spatial_region> .
+<http://www.onto-med.de/ontologies/gfo.owl#Topoid> <http://www.w3.org/2000/01/rdf-schema#comment> "Topoids are connected compact regions of space. They have spatial boundaries." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Universal
+<http://www.onto-med.de/ontologies/gfo.owl#Universal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Universal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Category> .
+<http://www.onto-med.de/ontologies/gfo.owl#Universal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid71 .
+_:genid71 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.onto-med.de/ontologies/gfo.owl#Item> .
+_:genid71 <http://www.w3.org/2002/07/owl#onProperty> <http://www.onto-med.de/ontologies/gfo.owl#instantiated_by> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.onto-med.de/ontologies/gfo.owl#Universal> <http://www.w3.org/2000/01/rdf-schema#comment> "Universals are immanent universals. They exist in re." .
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#Value_space
+<http://www.onto-med.de/ontologies/gfo.owl#Value_space> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.onto-med.de/ontologies/gfo.owl#Value_space> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.onto-med.de/ontologies/gfo.owl#Universal> .
+<http://www.onto-med.de/ontologies/gfo.owl#Value_space> <http://www.w3.org/2000/01/rdf-schema#comment> "Property values usually appear in groups which are called value structures, value spaces or measurement systems.\nEach of these structures corresponds to some property. More intuitively, one could say that the property may be measured with respect to some measurement system.\nFor instance, sizes may be measured with the values ``small'' ``big'' or ``very big'', which are the elements of one value structure.\n\nThe notion of a value structure of a property is similar to a quality dimension in (Gardenfors, 2000).\n\nFurther, value structures are related to quality spaces in DOLCE (Masolo, 2003}. A quality space consists of all ``quales'' (our property values) of some ``quality'' (our property).\n\nOften it seems to be the case that a notion of distance can be defined, and that certain layers of value structures are isomorphic to some subset of real numbers, which allows for a mapping of values to pairs of a real number and a unit, as in the case of ``10 kg''." .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.onto-med.de/ontologies/gfo.owl#empty_set
+<http://www.onto-med.de/ontologies/gfo.owl#empty_set> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.onto-med.de/ontologies/gfo.owl#empty_set> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.onto-med.de/ontologies/gfo.owl#Set> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

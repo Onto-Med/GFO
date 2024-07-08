@@ -1,0 +1,1268 @@
+@prefix : <http://www.onto-med.de/ontologies/gfo.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.onto-med.de/ontologies/gfo.owl#> .
+
+<http://www.onto-med.de/ontologies/gfo.owl> rdf:type owl:Ontology ;
+                                             rdfs:comment """Copyright (c) 2006, Regents of the Research Group Ontologies in Medicine (Onto-Med), University of Leipzig, Germany.
+       All rights reserved.  
+
+       Redistribution and use in source and binary forms, with or without modification,
+       are permitted provided that the following conditions are met:
+       
+       1. Redistributions of source code must retain the above copyright notice, this list
+          of conditions and the following disclaimer.
+       
+       2. Redistributions in binary form must reproduce the above copyright notice, this list
+          of conditions and the following disclaimer in the documentation and/or other
+          materials provided with the distribution.
+          
+       3. Neither the name of the Research Group Ontologies in Medicine (Onto-Med), University
+          of Leipzig nor the names of its contributors may be used to endorse or promote products
+          derived from this software without specific prior written permission.
+
+       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS
+       OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+       AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+       CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+       DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+       DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+       IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+       OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."""@en ;
+                                             owl:versionInfo "Version 1.0 ($Revision: 1.9 $)" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.onto-med.de/ontologies/gfo.owl#abstract_has_part
+:abstract_has_part rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :abstract_part_of ;
+                   rdf:type owl:TransitiveProperty ;
+                   rdfs:domain :Item ;
+                   rdfs:range :Item .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of
+:abstract_part_of rdf:type owl:ObjectProperty ,
+                           owl:TransitiveProperty ;
+                  rdfs:domain :Item ;
+                  rdfs:range :Item ;
+                  rdfs:comment """The abstract part-of relation is denoted by p(x,y);
+the argument-types of this relation are not specified, i.e. we allow
+arbitrary entities to be arguments. We assume that p(x,y) satisfies
+the condition of a partial ordering, .i.e. the following axioms: reflexivity, antisymmetry and transitivity.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#agent_in
+:agent_in rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :causes ,
+                             :participates_in ;
+          owl:inverseOf :has_agent .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#boundary_of
+:boundary_of rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :depends_on ;
+             owl:inverseOf :has_boundary .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#categorial_part_of
+:categorial_part_of rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :abstract_part_of ;
+                    owl:inverseOf :has_categorial_part .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#category_in_layer
+:category_in_layer rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :categorial_part_of .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#caused_by
+:caused_by rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Occurrent
+                                       :Presential
+                                     )
+                       ] ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Occurrent
+                                      :Presential
+                                    )
+                      ] .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#causes
+:causes rdf:type owl:ObjectProperty ;
+        owl:inverseOf :caused_by .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#constituent_part_of
+:constituent_part_of rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :proper_part_of .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#depends_on
+:depends_on rdf:type owl:ObjectProperty ;
+            rdfs:domain :Item ;
+            rdfs:range :Item ;
+            rdfs:comment "This relation captures the notion of existential dependence." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#exists_at
+:exists_at rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Presential ;
+           rdfs:range :Time_boundary .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#framed_by
+:framed_by rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :occupies ;
+           owl:inverseOf :frames ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Material_object ;
+           rdfs:range :Topoid .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#frames
+:frames rdf:type owl:ObjectProperty ,
+                 owl:InverseFunctionalProperty ;
+        rdfs:domain :Topoid ;
+        rdfs:range :Material_object .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#function_determinant_of
+:function_determinant_of rdf:type owl:ObjectProperty ;
+                         rdfs:range :Function .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#function_of
+:function_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#functional_item_of
+:functional_item_of rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :function_determinant_of ;
+                    owl:inverseOf :has_functional_item ;
+                    rdfs:domain :Role .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#goal_of
+:goal_of rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :function_determinant_of ;
+         owl:inverseOf :has_goal ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Configuration
+                                     :Configuroid
+                                   )
+                     ] ;
+         rdfs:comment "\"goal\" here refers to \"final state\" in (Burek, 2006)."@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_agent
+:has_agent rdf:type owl:ObjectProperty .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_boundary
+:has_boundary rdf:type owl:ObjectProperty ,
+                       owl:InverseFunctionalProperty .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_categorial_part
+:has_categorial_part rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :abstract_has_part ;
+                     rdfs:domain :Category ;
+                     rdfs:range :Category .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_category
+:has_category rdf:type owl:ObjectProperty ;
+              owl:inverseOf :category_in_layer ;
+              rdfs:domain :Ontological_layer ;
+              rdfs:range :Category .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_constituent_part
+:has_constituent_part rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :has_proper_part ;
+                      owl:inverseOf :constituent_part_of ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( :Configuration
+                                                  :Configuroid
+                                                )
+                                  ] .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_function
+:has_function rdf:type owl:ObjectProperty ;
+              owl:inverseOf :function_of ;
+              rdfs:domain :Individual ;
+              rdfs:range :Function .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_function_determinant
+:has_function_determinant rdf:type owl:ObjectProperty ;
+                          owl:inverseOf :function_determinant_of ;
+                          rdfs:domain :Function ;
+                          rdfs:range :Individual .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_functional_item
+:has_functional_item rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :has_function_determinant ;
+                     rdf:type owl:FunctionalProperty ;
+                     rdfs:domain :Function ;
+                     rdfs:range :Role .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_goal
+:has_goal rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :has_function_determinant ;
+          rdfs:domain :Function .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_left_time_boundary
+:has_left_time_boundary rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :has_time_boundary ;
+                        owl:inverseOf :left_boundary_of ;
+                        rdf:type owl:FunctionalProperty .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_member
+:has_member rdf:type owl:ObjectProperty ;
+            rdfs:domain :Set ;
+            rdfs:range :Entity .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_part
+:has_part rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :abstract_has_part ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:domain :Concrete ;
+          rdfs:range :Concrete .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_participant
+:has_participant rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :participates_in ;
+                 rdfs:domain :Occurrent ;
+                 rdfs:range :Presential .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_proper_part
+:has_proper_part rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :has_part ;
+                 rdf:type owl:TransitiveProperty .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_requirement
+:has_requirement rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :has_function_determinant ;
+                 owl:inverseOf :requirement_of ;
+                 rdfs:domain :Function .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_right_time_boundary
+:has_right_time_boundary rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :has_time_boundary ;
+                         owl:inverseOf :right_boundary_of ;
+                         rdf:type owl:FunctionalProperty .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_sequence_constituent
+:has_sequence_constituent rdf:type owl:ObjectProperty ;
+                          owl:inverseOf :sequence_constituent_of .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_spatial_boundary
+:has_spatial_boundary rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :has_boundary ;
+                      owl:inverseOf :spatial_boundary_of ;
+                      rdfs:range :Spatial_boundary .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_time_boundary
+:has_time_boundary rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :has_boundary ;
+                   owl:inverseOf :time_boundary_of ;
+                   rdfs:domain :Chronoid ;
+                   rdfs:range :Time_boundary .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_token
+:has_token rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :instance_of ;
+           owl:inverseOf :token_of ;
+           rdfs:domain :Symbol_structure ;
+           rdfs:range :Concrete .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#has_value
+:has_value rdf:type owl:ObjectProperty ;
+           rdfs:domain :Property ;
+           rdfs:range :Property_value .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#instance_of
+:instance_of rdf:type owl:ObjectProperty ;
+             owl:inverseOf :instantiated_by ;
+             rdfs:domain :Entity ;
+             rdfs:range :Category ;
+             rdfs:comment "The instantiation relation holds between a category and an item. It is not a relation between categories and individuals due to higher order categories such as \"species\"." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#instantiated_by
+:instantiated_by rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Category .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#layer_of
+:layer_of rdf:type owl:ObjectProperty ;
+          rdfs:domain :Ontological_layer ;
+          rdfs:range :Individual .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#left_boundary_of
+:left_boundary_of rdf:type owl:ObjectProperty ,
+                           owl:InverseFunctionalProperty ;
+                  rdfs:comment "Left boundary of a chronoid." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#level_of
+:level_of rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :layer_of ;
+          owl:inverseOf :on_level ;
+          rdfs:domain :Level .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#member_of
+:member_of rdf:type owl:ObjectProperty ;
+           owl:inverseOf :has_member ;
+           rdfs:domain :Entity ;
+           rdfs:range :Set .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#necessary_for
+:necessary_for rdf:type owl:ObjectProperty ;
+               owl:inverseOf :depends_on ;
+               rdfs:domain :Item ;
+               rdfs:range :Item .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#occupied_by
+:occupied_by rdf:type owl:ObjectProperty ;
+             owl:inverseOf :occupies ;
+             rdf:type owl:InverseFunctionalProperty ;
+             rdfs:domain :Space ;
+             rdfs:range :Presential .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#occupies
+:occupies rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Presential ;
+          rdfs:range :Space .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#on_layer
+:on_layer rdf:type owl:ObjectProperty ;
+          owl:inverseOf :layer_of ;
+          rdfs:domain :Individual ;
+          rdfs:range :Ontological_layer .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#on_level
+:on_level rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :on_layer ;
+          rdfs:range :Level .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#on_stratum
+:on_stratum rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :on_layer ;
+            rdfs:range :Stratum .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#part_of
+:part_of rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :abstract_part_of ;
+         owl:inverseOf :has_part ;
+         rdf:type owl:TransitiveProperty ;
+         rdfs:domain :Concrete ;
+         rdfs:range :Concrete .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#participates_in
+:participates_in rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Presential ;
+                 rdfs:range :Occurrent .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#plays_role
+:plays_role rdf:type owl:ObjectProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range :Role .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#projection_of
+:projection_of rdf:type owl:ObjectProperty ,
+                        owl:InverseFunctionalProperty .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#projects_to
+:projects_to rdf:type owl:ObjectProperty ;
+             owl:inverseOf :projection_of ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Occurrent ;
+             rdfs:range :Temporal_region .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#proper_part_of
+:proper_part_of rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :part_of ;
+                owl:inverseOf :has_proper_part ;
+                rdf:type owl:TransitiveProperty .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#realized_by
+:realized_by rdf:type owl:ObjectProperty ;
+             owl:inverseOf :realizes .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#realizes
+:realizes rdf:type owl:ObjectProperty ;
+          rdfs:domain :Individual ;
+          rdfs:range :Function .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#requirement_of
+:requirement_of rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :function_determinant_of ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Configuration
+                                            :Configuroid
+                                          )
+                            ] ;
+                rdfs:comment "\"requirement\" here refers to \"initial state\" in (Burek, 2006)."@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#right_boundary_of
+:right_boundary_of rdf:type owl:ObjectProperty ,
+                            owl:InverseFunctionalProperty ;
+                   rdfs:comment "Right boundary of a chronoid." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#role_of
+:role_of rdf:type owl:ObjectProperty ;
+         rdfs:domain :Role ;
+         rdfs:range :Individual .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#sequence_constituent_of
+:sequence_constituent_of rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :part_of ;
+                         rdfs:domain :Token ;
+                         rdfs:range :Symbol_sequence .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#spatial_boundary_of
+:spatial_boundary_of rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :boundary_of ;
+                     rdfs:domain :Spatial_boundary ;
+                     rdfs:range :Space .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#stratum_of
+:stratum_of rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :layer_of ;
+            owl:inverseOf :on_stratum ;
+            rdfs:domain :Stratum .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#time_boundary_of
+:time_boundary_of rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :boundary_of ;
+                  rdfs:domain :Time_boundary ;
+                  rdfs:range :Chronoid .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#token_of
+:token_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#value_of
+:value_of rdf:type owl:ObjectProperty ;
+          owl:inverseOf :has_value ;
+          rdfs:domain :Property_value ;
+          rdfs:range :Property .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Abstract
+:Abstract rdf:type owl:Class ;
+          rdfs:subClassOf :Individual ;
+          owl:disjointWith :Concrete ,
+                           :Space_time ;
+          rdfs:comment """Abstract individuals are independent from time and space (they are not in time and space).
+Examples: the number \"2\" or pi."""@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Action
+:Action rdf:type owl:Class ;
+        rdfs:subClassOf :Occurrent ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :has_agent ;
+                          owl:someValuesFrom :Presential
+                        ] ;
+        rdfs:comment "Actions are occurents which are caused by some presential (the agent) at every (inner and outer) time-boundary of the chronoid framing the occurent."@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Amount_of_substrate
+:Amount_of_substrate rdf:type owl:Class ;
+                     owl:equivalentClass :Mass_entity ;
+                     rdfs:subClassOf :Continuous ,
+                                     :Presential .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Awareness_level
+:Awareness_level rdf:type owl:Class ;
+                 rdfs:subClassOf :Level ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :abstract_part_of ;
+                                   owl:someValuesFrom :Mental_stratum
+                                 ] .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Biological_level
+:Biological_level rdf:type owl:Class ;
+                  rdfs:subClassOf :Level ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :abstract_part_of ;
+                                    owl:someValuesFrom :Material_stratum
+                                  ] .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Category
+:Category rdf:type owl:Class ;
+          rdfs:subClassOf :Item ;
+          owl:disjointWith :Individual ;
+          rdfs:comment """Categories satisfy the following conditions: (1) Categories can be instantiated; (2) Categories can be predicated of other entities.
+Categories are defined intensional-with-an-s. They are, therefore, closely related to language.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Change
+:Change rdf:type owl:Class ;
+        rdfs:subClassOf :Occurrent ;
+        owl:disjointWith :History ,
+                         :Process ;
+        rdfs:comment """A change in the technical sense refers to a pair of process
+boundaries. Either at coinciding boundaries (then it comes close to
+notions like ``punctual'' or ``instantaneous event'' as well as
+``moment'' -- in a temporal reading), or at boundaries at the opposite
+ends of a process of arbitrary extension.
+
+The notion of change is relative to contradictory conditions
+between which a transition takes place. These contradictions refer to
+some collection of pairwise disjoint universals.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Chemical_level
+:Chemical_level rdf:type owl:Class ;
+                rdfs:subClassOf :Level ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :abstract_part_of ;
+                                  owl:someValuesFrom :Material_stratum
+                                ] .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Chronoid
+:Chronoid rdf:type owl:Class ;
+          rdfs:subClassOf :Temporal_region ;
+          rdfs:comment """Chronoids are entities sui generis.
+
+Every chronoid has exactly two extremal and
+infinitely many inner time boundaries which are
+equivalently called time-points.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Concept
+:Concept rdf:type owl:Class ;
+         rdfs:subClassOf :Category ;
+         owl:disjointWith :Symbol_structure ,
+                          :Universal .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Concrete
+:Concrete rdf:type owl:Class ;
+          rdfs:subClassOf :Individual ;
+          owl:disjointWith :Space_time ;
+          rdfs:comment "Concrete individuals have a relation to time or space (they are in time and space)." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Configuration
+:Configuration rdf:type owl:Class ;
+               rdfs:subClassOf :Presential ;
+               owl:disjointWith :Material_boundary ,
+                                :Material_object ;
+               rdfs:comment """We consider a collection of presential facts which exist at the same time-boundary. Such collections may be considered themselves as presentials, and we call them configurations.
+
+It is further required that configurations contain at least one material object.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Configuroid
+:Configuroid rdf:type owl:Class ;
+             rdfs:subClassOf :Process ;
+             rdfs:comment "Configuroids are, in the simplest case, integrated wholes made up of material structure processes and property processes." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Continuous
+:Continuous rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Individual
+                                                       [ rdf:type owl:Class ;
+                                                         owl:complementOf :Discrete
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Individual .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Continuous_change
+:Continuous_change rdf:type owl:Class ;
+                   owl:equivalentClass :Intrinsic_change ;
+                   rdfs:subClassOf :Change ;
+                   rdfs:comment "For the purpose of formalizing continuous changes, a minimal chronoid universal D(c) is employed in order to capture the idea of observable differences during certain chronoids, whereas the change itself does not allow the observation of a difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this approach. Continous changes occur over time (a chronoid)."@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Continuous_process
+:Continuous_process rdf:type owl:Class ;
+                    rdfs:subClassOf :Continuous ,
+                                    :Process ;
+                    owl:disjointWith :Discrete_process ;
+                    rdfs:comment """Processes where all non-coinciding internal boundaries are intrinsic changes. 
+These turn out as purely continuous processes, described e.g.
+in physics by differential equations.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Dependent
+:Dependent rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :depends_on ;
+                                 owl:someValuesFrom :Item
+                               ] ;
+           rdfs:subClassOf :Individual ;
+           owl:disjointWith :Independent .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Discrete
+:Discrete rdf:type owl:Class ;
+          rdfs:subClassOf :Individual .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Discrete_presential
+:Discrete_presential rdf:type owl:Class ;
+                     rdfs:subClassOf :Discrete ,
+                                     :Presential ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :instance_of ;
+                                       owl:someValuesFrom :Persistant
+                                     ] ;
+                     owl:disjointWith :Mass_entity .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Discrete_process
+:Discrete_process rdf:type owl:Class ;
+                  rdfs:subClassOf :Discrete ,
+                                  :Process ;
+                  rdfs:comment "Discrete processes are made up of alterations of extrinsic changes and states." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Entity
+:Entity rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:unionOf ( :Item
+                                            :Set
+                                          )
+                            ] ;
+        rdfs:comment "Everything which exists is called an entity." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Extrinsic_change
+:Extrinsic_change rdf:type owl:Class ;
+                  owl:equivalentClass :Instantanuous_change ;
+                  rdfs:subClassOf :Change ;
+                  owl:disjointWith :Intrinsic_change ;
+                  rdfs:comment "Deprecated. Extrinsic changes are represented by change(e1,e2, u1, u2, u), where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are disjoint sub-universals of u."@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Function
+:Function rdf:type owl:Class ;
+          rdfs:subClassOf :Concept ;
+          rdfs:comment "A function F is a universal (conceptual structure) defined in purely teleological terms with respect to a given goal G which commonly is ascribed by means of has-function relation to entities that are the realizations of the function F, execute such a realization or are intended to do it." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#History
+:History rdf:type owl:Class ;
+         rdfs:subClassOf :Occurrent ;
+         owl:disjointWith :Process ;
+         rdfs:comment """Histories consist of a number of process boundaries.
+
+We assume that any history can be embedded into a process, which then
+forms a foundation of the history. If it were not for this foundation,
+one would face the problem of singling out the right boundaries in
+order to get a natural history: It is not sensible to measure the
+temperature of a patient first, then determine his weight, followed by
+measuring his blood pressure and to consider these strangely arbitrary
+process boundaries as a history of the patient's body data.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Independent
+:Independent rdf:type owl:Class ;
+             rdfs:subClassOf :Individual .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Individual
+:Individual rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                         owl:unionOf ( :Abstract
+                                                                       :Concrete
+                                                                       :Space_time
+                                                                     )
+                                                       ]
+                                                       [ rdf:type owl:Class ;
+                                                         owl:unionOf ( :Dependent
+                                                                       :Independent
+                                                                     )
+                                                       ]
+                                                       [ rdf:type owl:Class ;
+                                                         owl:unionOf ( :Role
+                                                                       [ owl:intersectionOf ( :Individual
+                                                                                              [ rdf:type owl:Class ;
+                                                                                                owl:complementOf :Role
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ]
+                                                                     )
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Item ,
+                            [ rdf:type owl:Class ;
+                              owl:complementOf [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :instantiated_by ;
+                                                 owl:someValuesFrom :Item
+                                               ]
+                            ] ;
+            rdfs:comment "Individuals are entities which cannot be further instantiated." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Instantanuous_change
+:Instantanuous_change rdf:type owl:Class ;
+                      rdfs:subClassOf :Change ;
+                      rdfs:comment "Instantanuous changes are represented by change(e1,e2, u1, u2, u), where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are disjoint sub-universals of u. Instantanuous changes are therefore changes of properties on two coinciding time boundaries."@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Intrinsic_change
+:Intrinsic_change rdf:type owl:Class ;
+                  rdfs:subClassOf :Change ;
+                  rdfs:comment """Deprecated. 
+For the purpose of formalizing intrinsic changes, a minimal chronoid universal D(c) is employed in order to capture the idea of observable differences during certain chronoids, whereas the change itself does not allow the observation of a difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this approach."""@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Item
+:Item rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:unionOf ( :Category
+                                          :Individual
+                                        )
+                          ] ;
+      rdfs:subClassOf :Entity ,
+                      [ rdf:type owl:Class ;
+                        owl:complementOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty :has_member ;
+                                           owl:someValuesFrom :Entity
+                                         ]
+                      ] ;
+      owl:disjointWith :Set ;
+      rdfs:comment "An item is everything which is not a set. Also called ur-element." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Level
+:Level rdf:type owl:Class ;
+       rdfs:subClassOf :Ontological_layer ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :abstract_part_of ;
+                         owl:someValuesFrom :Stratum
+                       ] ;
+       owl:disjointWith :Stratum ;
+       rdfs:comment "An ontological level, which is sth. more restricted and \"part of\" some gfo:Stratum." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Line
+:Line rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty :spatial_boundary_of ;
+                            owl:someValuesFrom :Surface
+                          ] ;
+      rdfs:subClassOf :Spatial_boundary .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Mass_entity
+:Mass_entity rdf:type owl:Class ;
+             rdfs:subClassOf :Continuous ,
+                             :Presential .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Material_boundary
+:Material_boundary rdf:type owl:Class ;
+                   rdfs:subClassOf :Dependent ,
+                                   :Presential ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :depends_on ;
+                                     owl:someValuesFrom :Material_object
+                                   ] ;
+                   owl:disjointWith :Material_object .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Material_line
+:Material_line rdf:type owl:Class ;
+               rdfs:subClassOf :Material_boundary ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :boundary_of ;
+                                 owl:someValuesFrom :Material_surface
+                               ] ;
+               owl:disjointWith :Material_point ,
+                                :Material_surface .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Material_object
+:Material_object rdf:type owl:Class ;
+                 owl:equivalentClass :Material_structure ;
+                 rdfs:subClassOf :Discrete_presential ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :framed_by ;
+                                   owl:someValuesFrom :Topoid
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :framed_by ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:comment """A material structure is an individual which satisfies the following conditions: 
+it is a presential, it occupies space, it is a bearer of qualities,  but other entities cannot have
+it as quality, and it consists of an amount of substrate, and it instantiates a persistant (\"has identity\").""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Material_persistant
+:Material_persistant rdf:type owl:Class ;
+                     rdfs:subClassOf :Persistant ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :instantiated_by ;
+                                       owl:allValuesFrom :Material_object
+                                     ] ;
+                     rdfs:comment """Material persistants are particular universals whose instances are 
+material structures; they are related to those entities which are called 
+sometimes continuants or objects, as apples, cars or houses. 
+Material persistants capture the phenomenon of persistance through time of a material 
+object. A material persistant P satisfies a number of neccessary conditions. For every
+material persistant P there exists a process P such that
+the set of instances of P coincides with the set of process-boundaries
+of P. This implies the existence of a chronoid c
+such that for every time-point t of c there exists exactly 
+one instance of P at time point t.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Material_point
+:Material_point rdf:type owl:Class ;
+                rdfs:subClassOf :Material_boundary ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :boundary_of ;
+                                  owl:someValuesFrom :Material_line
+                                ] ;
+                owl:disjointWith :Material_surface .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Material_stratum
+:Material_stratum rdf:type owl:Class ;
+                  rdfs:subClassOf :Stratum ;
+                  rdfs:comment """According to (Poli,2001), the basic structure of the material stratum is a distinction of physical, chemical and biological levels.
+These levels can be further refined."""@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Material_structure
+:Material_structure rdf:type owl:Class ;
+                    rdfs:subClassOf :Discrete_presential .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Material_surface
+:Material_surface rdf:type owl:Class ;
+                  rdfs:subClassOf :Material_boundary ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :boundary_of ;
+                                    owl:someValuesFrom :Material_object
+                                  ] .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Mental_stratum
+:Mental_stratum rdf:type owl:Class ;
+                rdfs:subClassOf :Stratum ;
+                rdfs:comment """In accordance with the work of R. Poli, we divide the
+psychological/mental stratum into the layer of
+awareness and the layer of
+personality. Awareness comprises most
+of what is studied by cognitive science (perception, memory,
+reasoning, etc). Personality on the other hand concerns the phenomenon
+of will and the way in which someone reacts to her experiences."""@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Occurrent
+:Occurrent rdf:type owl:Class ;
+           rdfs:subClassOf :Concrete ;
+           owl:disjointWith :Presential ;
+           rdfs:comment """Occurents have temporal parts and thus cannot be present at a time-boundary. Time
+belongs to them, because they happen in time and the time of the occurent
+is built into it. The relation between an occurent and a chronoid is
+determined by the projection relation.
+
+Occurents are also called generalized processes in the GFO.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Ontological_layer
+:Ontological_layer rdf:type owl:Class ;
+                   rdfs:subClassOf :Category ;
+                   rdfs:comment "Ontological_layer, all of its subconcepts and the properties layer_of and on_layer are work in progress in a premature beta state."@en ,
+                                "a collective term for gfo:stratum and gfo:level" ;
+                   owl:versionInfo "Beta"@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Persistant
+:Persistant rdf:type owl:Class ;
+            rdfs:subClassOf :Universal ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :instantiated_by ;
+                              owl:someValuesFrom :Presential
+                            ] ;
+            rdfs:comment """Persistants are GFO's way to capture identity over time.
+
+GFO pursues an approach which
+accounts for persistence by means of a suitable
+universal whose instances are presentials. Such universals are called
+persistants. These do not change and they can be used to
+explain how presentials which have different properties at different
+times can nevertheless be the same.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Personality_level
+:Personality_level rdf:type owl:Class ;
+                   rdfs:subClassOf :Level ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :abstract_part_of ;
+                                     owl:someValuesFrom :Mental_stratum
+                                   ] .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Physical_level
+:Physical_level rdf:type owl:Class ;
+                rdfs:subClassOf :Level ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :abstract_part_of ;
+                                  owl:someValuesFrom :Material_stratum
+                                ] .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Point
+:Point rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :spatial_boundary_of ;
+                             owl:someValuesFrom :Line
+                           ] ;
+       rdfs:subClassOf :Spatial_boundary .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Presential
+:Presential rdf:type owl:Class ;
+            rdfs:subClassOf :Concrete ,
+                            :Individual ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :exists_at ;
+                              owl:someValuesFrom :Time_boundary
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :exists_at ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:comment "A presential exists wholly at exactly one time boundary." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf :Occurrent ;
+         rdfs:comment "Processes are a special kind of occurent. Processes are directly in time, they have characteristics which cannot be captured by a collection of time boundaries." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Processual_role
+:Processual_role rdf:type owl:Class ;
+                 rdfs:subClassOf :Process ,
+                                 :Role ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :role_of ;
+                                   owl:someValuesFrom :Process
+                                 ] ;
+                 owl:disjointWith :Relational_role ,
+                                  :Social_role ;
+                 rdfs:comment "Processual roles are dependent processes. They are roles with a process as context." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Property
+:Property rdf:type owl:Class ;
+          rdfs:subClassOf :Concrete ,
+                          :Dependent ;
+          owl:disjointWith :Relator .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Property_value
+:Property_value rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :value_of ;
+                                      owl:someValuesFrom :Property
+                                    ] ;
+                rdfs:subClassOf :Concrete ,
+                                :Dependent ;
+                rdfs:comment "The concept of a property value reflects a relationship between the property of x and the same property as exhibited by another entity y." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Relational_role
+:Relational_role rdf:type owl:Class ;
+                 rdfs:subClassOf :Dependent ,
+                                 :Role ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :role_of ;
+                                   owl:someValuesFrom :Relator
+                                 ] ;
+                 owl:disjointWith :Social_role .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Relator
+:Relator rdf:type owl:Class ;
+         rdfs:subClassOf :Individual .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Role
+:Role rdf:type owl:Class ;
+      rdfs:subClassOf :Concrete .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Set
+:Set rdf:type owl:Class ;
+     rdfs:subClassOf :Entity ;
+     rdfs:comment "Set is a category pertaining to the individuals in the ZFC set theory." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Situation
+:Situation rdf:type owl:Class ;
+           rdfs:subClassOf :Configuration ;
+           rdfs:comment "A situation is a special configuration which can be comprehended as a whole and satisfies certain conditions of unity, which are imposed by relations and categories associated with the situation. Herein, we consider situations to be the most complex kind of presentials." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Situoid
+:Situoid rdf:type owl:Class ;
+         rdfs:subClassOf :Configuroid ;
+         rdfs:comment """Situoids are processes whose boundaries are situations and which satisfy certain principles of coherence, comprehensibility, and continuity. They are regarded as the most complex integrated wholes of the world. A situoid is, intuitively, a part of the
+world which is a coherent and comprehensible whole and does not need other entities in order to exist. Every situoid has a temporal extent and is framed by a topoid.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Social_role
+:Social_role rdf:type owl:Class ;
+             rdfs:subClassOf :Independent ,
+                             :Role .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Social_stratum
+:Social_stratum rdf:type owl:Class ;
+                rdfs:subClassOf :Stratum ;
+                rdfs:comment """On the one hand, the social stratum is
+divided into Agents and
+Institutions. Agents are the bearers of the social
+roles that humans play. Institutions are defined as systems of
+interrelated social components. On the other hand, a social system can
+be seen as a network in which businesses, politics, art, language (and
+many other facets) both present their own features and
+influence each other."""@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Space
+:Space rdf:type owl:Class ;
+       rdfs:subClassOf :Space_time ;
+       owl:disjointWith :Time ;
+       rdfs:comment "GFO uses Brentano space." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Space_time
+:Space_time rdf:type owl:Class ;
+            rdfs:subClassOf :Individual .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Spatial_boundary
+:Spatial_boundary rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty :spatial_boundary_of ;
+                                        owl:someValuesFrom :Space
+                                      ] ;
+                  rdfs:subClassOf :Space ;
+                  owl:disjointWith :Spatial_region ;
+                  rdfs:comment """Boundaries of regions are surfaces, boundaries of
+surfaces are lines, and boundaries of lines are
+points. As in the case of time-boundaries, spatial
+boundaries have no independent existence, i.e. they depend on the
+spatial entity of which they are  boundaries.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Spatial_region
+:Spatial_region rdf:type owl:Class ;
+                rdfs:subClassOf :Space ;
+                rdfs:comment "Space regions are mereological sums of topoids." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#State
+:State rdf:type owl:Class ;
+       rdfs:subClassOf :Process ;
+       rdfs:comment "A process without an instantanuous change at any of its inner time boundaries is called a state."@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Stratum
+:Stratum rdf:type owl:Class ;
+         rdfs:subClassOf :Ontological_layer ;
+         rdfs:comment """According to (Poli, 2001, 2002)  (based 
+on the philosopher Hartmann) we distinguish at least three ontological
+strata of the world: the material stratum, the
+mental/psychological stratum, and the
+social stratum stratum. 
+
+Every entity of the world participates in certain
+strata and levels. We take the position that the layers are
+characterized by integrated systems of categories. Hence, a layer can
+be understood as a meta-category whose instances are categories of
+certain kinds. Among these levels specific forms of categorial and
+existential dependencies hold. For example, a mental entity requires
+an animate material object as its existential bearer."""@en .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Surface
+:Surface rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :spatial_boundary_of ;
+                               owl:someValuesFrom :Topoid
+                             ] ;
+         rdfs:subClassOf :Spatial_boundary .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Symbol
+:Symbol rdf:type owl:Class ;
+        rdfs:subClassOf :Symbol_structure .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Symbol_sequence
+:Symbol_sequence rdf:type owl:Class ;
+                 rdfs:subClassOf :Symbol_structure .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Symbol_structure
+:Symbol_structure rdf:type owl:Class ;
+                  rdfs:subClassOf :Category ;
+                  owl:disjointWith :Universal .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Temporal_region
+:Temporal_region rdf:type owl:Class ;
+                 rdfs:subClassOf :Time ;
+                 owl:disjointWith :Time_boundary ;
+                 rdfs:comment """Time Regions are defined as the mereological sum of chronoids,
+i.e. time regions may consist of non-connected intervals of time.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Time
+:Time rdf:type owl:Class ;
+      rdfs:subClassOf :Space_time ;
+      rdfs:comment "The time model of GFO is based on Brentano and the glass continuum of Allen&Hayes." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Time_boundary
+:Time_boundary rdf:type owl:Class ;
+               rdfs:subClassOf :Time ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :time_boundary_of ;
+                                 owl:someValuesFrom :Chronoid
+                               ] ;
+               rdfs:comment """Time boundaries depend on a chronoids (i.e. they have no independent
+existence) and can coincide.""" .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Token
+:Token rdf:type owl:Class ;
+       rdfs:subClassOf :Concrete ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :instance_of ;
+                         owl:someValuesFrom :Symbol_structure
+                       ] .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Topoid
+:Topoid rdf:type owl:Class ;
+        rdfs:subClassOf :Spatial_region ;
+        rdfs:comment "Topoids are connected compact regions of space. They have spatial boundaries." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Universal
+:Universal rdf:type owl:Class ;
+           rdfs:subClassOf :Category ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :instantiated_by ;
+                             owl:someValuesFrom :Item
+                           ] ;
+           rdfs:comment "Universals are immanent universals. They exist in re." .
+
+
+###  http://www.onto-med.de/ontologies/gfo.owl#Value_space
+:Value_space rdf:type owl:Class ;
+             rdfs:subClassOf :Universal ;
+             rdfs:comment """Property values usually appear in groups which are called value structures, value spaces or measurement systems.
+Each of these structures corresponds to some property. More intuitively, one could say that the property may be measured with respect to some measurement system.
+For instance, sizes may be measured with the values ``small'' ``big'' or ``very big'', which are the elements of one value structure.
+
+The notion of a value structure of a property is similar to a quality dimension in (Gardenfors, 2000).
+
+Further, value structures are related to quality spaces in DOLCE (Masolo, 2003}. A quality space consists of all ``quales'' (our property values) of some ``quality'' (our property).
+
+Often it seems to be the case that a notion of distance can be defined, and that certain layers of value structures are isomorphic to some subset of real numbers, which allows for a mapping of values to pairs of a real number and a unit, as in the case of ``10 kg''.""" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.onto-med.de/ontologies/gfo.owl#empty_set
+:empty_set rdf:type owl:NamedIndividual ,
+                    :Set .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
