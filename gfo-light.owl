@@ -5,10 +5,24 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:bibo="http://purl.org/ontology/bibo/">
     <owl:Ontology rdf:about="https://w3id.org/gfo/light">
-        <owl:versionIRI rdf:resource="https://w3id.org/gfo/light/release/2023-07-04/"/>
-        <owl:versionInfo>2023-07-04</owl:versionInfo>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-05</dc:modified>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-05</owl:versionInfo>
+        <owl:versionIRI rdf:resource="https://w3id.org/gfo/light/release/2024-07-05"/>
+        <dc:title xml:lang="en">General Formal Ontology Light (GFO-light)</dc:title>
+        <rdfs:label xml:lang="en">General Formal Ontology Light (GFO-light)</rdfs:label>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-08-28</dc:created>
+        <vann:preferredNamespaceURI>https://w3id.org/gfo/light/</vann:preferredNamespaceURI>
+        <vann:preferredNamespacePrefix>gfo-light</vann:preferredNamespacePrefix>
+        <foaf:homepage>https://github.com/Onto-Med/GFO</foaf:homepage>
+        <doap:repository rdf:resource="https://github.com/Onto-Med/GFO"/>
+        <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205419"/>
     </owl:Ontology>
     
 

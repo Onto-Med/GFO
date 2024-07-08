@@ -4,7 +4,12 @@
          xmlns:owl="http://www.w3.org/2002/07/owl#"
          xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:vann="http://purl.org/vocab/vann/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:doap="http://usefulinc.com/ns/doap#"
+         xmlns:bibo="http://purl.org/ontology/bibo/">
 
 <!-- Ontology Information -->
   <owl:Ontology rdf:about="https://w3id.org/gfo/base">
@@ -33,7 +38,17 @@
        DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
        IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
        OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</rdfs:comment>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2024-07-05</owl:versionInfo>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-05</dc:modified>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-05</owl:versionInfo>
+    <owl:versionIRI rdf:resource="https://w3id.org/gfo/base/release/2024-07-05"/>
+    <dc:title xml:lang="en">General Formal Ontology Base (GFO-base)</dc:title>
+    <rdfs:label xml:lang="en">General Formal Ontology Base (GFO-base)</rdfs:label>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-08-28</dc:created>
+    <vann:preferredNamespaceURI>https://w3id.org/gfo/base/</vann:preferredNamespaceURI>
+    <vann:preferredNamespacePrefix>gfo-base</vann:preferredNamespacePrefix>
+    <foaf:homepage>https://github.com/Onto-Med/GFO</foaf:homepage>
+    <doap:repository rdf:resource="https://github.com/Onto-Med/GFO"/>
+    <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205419"/>
   </owl:Ontology>
 
 <!-- Classes -->
