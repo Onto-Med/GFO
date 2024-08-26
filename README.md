@@ -1,6 +1,6 @@
 # General Formal Ontology (GFO)
 
-[![Test ontology](https://github.com/Onto-Med/GFO/actions/workflows/test.yml/badge.svg)](https://github.com/Onto-Med/GFO/actions/workflows/test.yml)
+[![Test ontology](https://github.com/Onto-Med/GFO/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Onto-Med/GFO/actions/workflows/test.yml)
 [![DOI](https://zenodo.org/badge/220933953.svg)](https://zenodo.org/badge/latestdoi/220933953)
 
 ## Introduction
@@ -12,6 +12,11 @@ The General Formal Ontology is a [top-level ontology](http://en.wikipedia.org/wi
 * elaborate accounts of functions and roles
 * openness regarding philosophical positions such as realism, conceptualism, or nominalism by the provision of different kinds of categories as universals, concepts, or symbolic structures
 
+## How to Use
+The entire GFO ontology can be imported via IRI https://w3id.org/gfo. GFO is divided into modules, which are stored in separate OWL files under [modules/](modules/). Modules of interest can be imported into your ontology via their IRI (e.g., https://w3id.org/gfo/base).
+
+**GFO-light** is a simplified view of the entire GFO. It does not build on single modules but combines all basic concepts and simplified axioms of the GFO. It is primarily intended to found domain or application ontologies and can be imported via IRI https://w3id.org/gfo/light.
+
 ## Brief History
 Work on GFO has started in 1999 in the context of the GOL project (General Ontological Language). Meanwhile, several directions of research have been recognized and divided the initial project, such that GFO is now one component of a larger framework. Work on GFO remains in progress, because the development of top-level ontologies is a long-term research effort.
 
@@ -19,10 +24,12 @@ Work on GFO has started in 1999 in the context of the GOL project (General Ontol
 The "native" formalization language for GFO is [first-order logic (FOL)](https://en.wikipedia.org/wiki/First-order_logic). Partial axiomatizations of GFO in FOL exist in report working drafts, but are not yet available to the public.
 
 ### Release Strategy
-*gfo-basic.owl* forms the core module of GFO. We are going to continually provide further modules/extensions, dedicated to several of our research domains, like time, space, processes, etc. There may be parallel extensions for these domains, and not all extensions will be consistent with each other. All module files are provided with their own namespaces (e.g., http://purl.org/ontology/gfo-time) and can be used separately. A selection of those modules will be unified in the next version of *gfo.owl* (under the namespace http://purl.org/ontology/gfo). *gfo-light.owl* is a simplified view of the entire GFO. It does not build on single modules but combines all basic concepts and simplified axioms of the GFO. *gfo-light.owl* is primarily intended to found domain or application ontologies.
+[modules/gfo-base.owl](modules/gfo-base.owl) forms the core module of GFO. We are going to continually provide further modules/extensions, dedicated to several of our research domains, like time, space, processes, etc. There may be parallel extensions for these domains, and not all extensions will be consistent with each other. All module files are provided with their own namespaces (e.g., https://w3id.org/gfo/time) and can be used separately. A selection of those modules will be unified in the next version of [gfo.owl](gfo.owl) (under the namespace https://w3id.org/gfo).
+
+All versions of GFO and it's modules are available via `owl:versionIRI`. e.g.: https://w3id.org/gfo/release/2024-07-05
 
 ### Release History
-Work on the OWL version of GFO started in early 2006 in the context of the [GFO-Bio](http://www.onto-med.de/ontologies/gfo-bio/index.jsp) project, resulting in the 1.0 release of *gfo.owl*. The renewed release strategy in 2008 lead to *gfo-basic.owl*, a corrected and slightly simplified version.
+Work on the OWL version of GFO started in early 2006 in the context of the [GFO-Bio](http://www.onto-med.de/ontologies/gfo-bio/index.jsp) project, resulting in the 1.0 release of [gfo.owl](gfo.owl).
 
 ## Documentation and Publications
 ### Onto-Med Report Series on GFO
@@ -50,4 +57,4 @@ The following is the general form of citation for Part I, where the correspondin
 > **Heller B, Herre H**. Formal Ontology and Principles of GOL. Onto-Med Report Nr. 1. Research Group Ontologies in Medicine (Onto-Med), University of Leipzig.
 
 ### Further Documentation
-Apart from the GFO reports, we have not yet completed the work on more introductory or tutorial material. This is going to happen in the nearer future. Currently, the easiest way to access the basic categories of GFO is to view the file *gfo-basic.owl* in an ontology editor (e.g. [OwlSight](https://www.w3.org/2001/sw/wiki/OWLSight) or [Protégé](https://protege.stanford.edu)). In particular, that file provides short descriptions for each category.
+Apart from the GFO reports, we have not yet completed the work on more introductory or tutorial material. This is going to happen in the nearer future. Currently, the easiest way to access the basic categories of GFO is to view the file [gfo-light.owl] in an ontology editor (e.g. [Protégé](https://protege.stanford.edu)). In particular, that file provides short descriptions for each category.
