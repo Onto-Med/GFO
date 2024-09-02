@@ -1,0 +1,854 @@
+@prefix : <https://w3id.org/gfo/light/football_match_exam/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix gfo-light: <https://w3id.org/gfo/light/> .
+@prefix gfo-light-exam: <https://w3id.org/gfo/light/football_match_exam/> .
+@base <https://w3id.org/gfo/light/football_match_exam> .
+
+<https://w3id.org/gfo/light/football_match_exam> rdf:type owl:Ontology ;
+                                                  owl:versionIRI <https://w3id.org/gfo/light/football_match_exam/release/2024-08-29> ;
+                                                  owl:imports <https://w3id.org/gfo/light/release/2024-08-29> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#qualifiedCardinality
+owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/gfo/light/football_match_exam/distance
+gfo-light-exam:distance rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf gfo-light:decimalValue ;
+                        rdfs:domain gfo-light-exam:RelativeLocationRelator .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/numberOfSpectators
+gfo-light-exam:numberOfSpectators rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf gfo-light:decimalValue ;
+                                  rdfs:domain gfo-light-exam:Match ;
+                                  rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/gfo/light/football_match_exam/AssistantRole
+gfo-light-exam:AssistantRole rdf:type owl:Class ;
+                             rdfs:subClassOf gfo-light-exam:PlayerRoleInGoal .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/Assists
+gfo-light-exam:Assists rdf:type owl:Class ;
+                       rdfs:subClassOf gfo-light-exam:PlayerQuality .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/BallPossession
+gfo-light-exam:BallPossession rdf:type owl:Class ;
+                              rdfs:subClassOf gfo-light-exam:TeamQuality .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/Defender
+gfo-light-exam:Defender rdf:type owl:Class ;
+                        rdfs:subClassOf gfo-light-exam:PlayerRoleInTeam .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/EndOfFirstHalf
+gfo-light-exam:EndOfFirstHalf rdf:type owl:Class ;
+                              rdfs:subClassOf gfo-light:TimeBoundary ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty gfo-light:endPointInTimeOf ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass gfo-light-exam:FirstHalf
+                                              ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/EndOfMatch
+gfo-light-exam:EndOfMatch rdf:type owl:Class ;
+                          rdfs:subClassOf gfo-light:TimeBoundary ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty gfo-light:endPointInTimeOf ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass gfo-light-exam:Match
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty gfo-light:endPointInTimeOf ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass gfo-light-exam:SecondHalf
+                                          ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/FirstHalf
+gfo-light-exam:FirstHalf rdf:type owl:Class ;
+                         rdfs:subClassOf gfo-light:Process ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty gfo-light:hasEndPointInTime ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass gfo-light-exam:EndOfFirstHalf
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty gfo-light:hasStartPointInTime ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass gfo-light-exam:StartOfMatch
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty gfo-light:partOf ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass gfo-light-exam:Match
+                                         ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/FootballFieldBoundaryLine
+gfo-light-exam:FootballFieldBoundaryLine rdf:type owl:Class ;
+                                         rdfs:subClassOf gfo-light:Line ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty gfo-light:boundaryOf ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass gfo-light-exam:FootballFieldSurface
+                                                         ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/FootballFieldSurface
+gfo-light-exam:FootballFieldSurface rdf:type owl:Class ;
+                                    rdfs:subClassOf gfo-light:Surface ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty gfo-light:hasOwner ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass gfo-light-exam:Stadium
+                                                    ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/Forward
+gfo-light-exam:Forward rdf:type owl:Class ;
+                       rdfs:subClassOf gfo-light-exam:PlayerRoleInTeam .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/Goal
+gfo-light-exam:Goal rdf:type owl:Class ;
+                    rdfs:subClassOf gfo-light:Event ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty gfo-light:partOf ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass gfo-light-exam:Match
+                                    ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/Goalkeeper
+gfo-light-exam:Goalkeeper rdf:type owl:Class ;
+                          rdfs:subClassOf gfo-light-exam:PlayerRoleInTeam .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/HomeTeamRole
+gfo-light-exam:HomeTeamRole rdf:type owl:Class ;
+                            rdfs:subClassOf gfo-light-exam:TeamRoleInMatch .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/LoserRole
+gfo-light-exam:LoserRole rdf:type owl:Class ;
+                         rdfs:subClassOf gfo-light-exam:TeamRoleInWinnerLoserRelator .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/Match
+gfo-light-exam:Match rdf:type owl:Class ;
+                     rdfs:subClassOf gfo-light:Process ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty gfo-light:hasEndPointInTime ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass gfo-light-exam:EndOfMatch
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty gfo-light:hasPart ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass gfo-light-exam:FirstHalf
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty gfo-light:hasPart ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass gfo-light-exam:SecondHalf
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty gfo-light:hasParticipant ;
+                                       owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                       owl:onClass gfo-light-exam:Team
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty gfo-light:hasStartPointInTime ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass gfo-light-exam:StartOfMatch
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty gfo-light:locatedIn ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass gfo-light-exam:Stadium
+                                     ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/MatchSituation
+gfo-light-exam:MatchSituation rdf:type owl:Class ;
+                              rdfs:subClassOf gfo-light:Situation ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty gfo-light:hasPart ;
+                                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( gfo-light-exam:PlayerQuality
+                                                                                   gfo-light-exam:PlayerRoleInTeam
+                                                                                   gfo-light-exam:TeamQuality
+                                                                                   gfo-light-exam:TeamRoleInMatch
+                                                                                   gfo-light-exam:TeamRoleInWinnerLoserRelator
+                                                                                   gfo-light-exam:WinnerLoserRelator
+                                                                                 )
+                                                                   ]
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty gfo-light:existsIn ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass gfo-light-exam:Match
+                                              ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/Midfielder
+gfo-light-exam:Midfielder rdf:type owl:Class ;
+                          rdfs:subClassOf gfo-light-exam:PlayerRoleInTeam .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/Player
+gfo-light-exam:Player rdf:type owl:Class ;
+                      rdfs:subClassOf gfo-light:MaterialObject ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty gfo-light:memberOf ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass gfo-light-exam:Team
+                                      ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/PlayerGoals
+gfo-light-exam:PlayerGoals rdf:type owl:Class ;
+                           rdfs:subClassOf gfo-light-exam:PlayerQuality .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/PlayerQuality
+gfo-light-exam:PlayerQuality rdf:type owl:Class ;
+                             rdfs:subClassOf gfo-light:Quality ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty gfo-light:existsIn ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass gfo-light-exam:Match
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty gfo-light:qualityOf ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass gfo-light-exam:Player
+                                             ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/PlayerRoleInGoal
+gfo-light-exam:PlayerRoleInGoal rdf:type owl:Class ;
+                                rdfs:subClassOf gfo-light:ProcessualRole ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty gfo-light:playedBy ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass gfo-light-exam:Player
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty gfo-light:roleOf ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass gfo-light-exam:Goal
+                                                ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/PlayerRoleInTeam
+gfo-light-exam:PlayerRoleInTeam rdf:type owl:Class ;
+                                rdfs:subClassOf gfo-light:ContinuantPartRole ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty gfo-light:existsIn ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass gfo-light-exam:Match
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty gfo-light:playedBy ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass gfo-light-exam:Player
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty gfo-light:roleOf ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass gfo-light-exam:Team
+                                                ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/ReferenceObjectRole
+gfo-light-exam:ReferenceObjectRole rdf:type owl:Class ;
+                                   rdfs:subClassOf gfo-light:RelationalRole ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty gfo-light:roleOf ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass gfo-light-exam:RelativeLocationRelator
+                                                   ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/RelativeLocationRelator
+gfo-light-exam:RelativeLocationRelator rdf:type owl:Class ;
+                                       rdfs:subClassOf gfo-light:Relator .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/ScorerRole
+gfo-light-exam:ScorerRole rdf:type owl:Class ;
+                          rdfs:subClassOf gfo-light-exam:PlayerRoleInGoal .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/SecondHalf
+gfo-light-exam:SecondHalf rdf:type owl:Class ;
+                          rdfs:subClassOf gfo-light:Process ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty gfo-light:hasEndPointInTime ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass gfo-light-exam:EndOfMatch
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty gfo-light:hasStartPointInTime ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass gfo-light-exam:StartOfSecondHalf
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty gfo-light:partOf ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass gfo-light-exam:Match
+                                          ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/Stadium
+gfo-light-exam:Stadium rdf:type owl:Class ;
+                       rdfs:subClassOf gfo-light:MaterialObject .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/StartOfMatch
+gfo-light-exam:StartOfMatch rdf:type owl:Class ;
+                            rdfs:subClassOf gfo-light:TimeBoundary ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty gfo-light:startPointInTimeOf ;
+                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass gfo-light-exam:FirstHalf
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty gfo-light:startPointInTimeOf ;
+                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass gfo-light-exam:Match
+                                            ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/StartOfSecondHalf
+gfo-light-exam:StartOfSecondHalf rdf:type owl:Class ;
+                                 rdfs:subClassOf gfo-light:TimeBoundary ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty gfo-light:startPointInTimeOf ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onClass gfo-light-exam:SecondHalf
+                                                 ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/TargetObjectRole
+gfo-light-exam:TargetObjectRole rdf:type owl:Class ;
+                                rdfs:subClassOf gfo-light:RelationalRole ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty gfo-light:roleOf ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass gfo-light-exam:RelativeLocationRelator
+                                                ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/Team
+gfo-light-exam:Team rdf:type owl:Class ;
+                    rdfs:subClassOf gfo-light:MaterialAggregate ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty gfo-light:hasMember ;
+                                      owl:someValuesFrom gfo-light-exam:Player
+                                    ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/TeamGoals
+gfo-light-exam:TeamGoals rdf:type owl:Class ;
+                         rdfs:subClassOf gfo-light-exam:TeamQuality .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/TeamQuality
+gfo-light-exam:TeamQuality rdf:type owl:Class ;
+                           rdfs:subClassOf gfo-light:Quality ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty gfo-light:existsIn ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass gfo-light-exam:Match
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty gfo-light:qualityOf ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass gfo-light-exam:Team
+                                           ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/TeamRoleInMatch
+gfo-light-exam:TeamRoleInMatch rdf:type owl:Class ;
+                               rdfs:subClassOf gfo-light:ProcessualRole ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty gfo-light:playedBy ;
+                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass gfo-light-exam:Team
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty gfo-light:roleOf ;
+                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass gfo-light-exam:Match
+                                               ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/TeamRoleInWinnerLoserRelator
+gfo-light-exam:TeamRoleInWinnerLoserRelator rdf:type owl:Class ;
+                                            rdfs:subClassOf gfo-light:RelationalRole ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty gfo-light:existsIn ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onClass gfo-light-exam:Match
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty gfo-light:playedBy ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onClass gfo-light-exam:Team
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty gfo-light:roleOf ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onClass gfo-light-exam:WinnerLoserRelator
+                                                            ] .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/VisitingTeamRole
+gfo-light-exam:VisitingTeamRole rdf:type owl:Class ;
+                                rdfs:subClassOf gfo-light-exam:TeamRoleInMatch .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/WinnerLoserRelator
+gfo-light-exam:WinnerLoserRelator rdf:type owl:Class ;
+                                  rdfs:subClassOf gfo-light:Relator .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/WinnerRole
+gfo-light-exam:WinnerRole rdf:type owl:Class ;
+                          rdfs:subClassOf gfo-light-exam:TeamRoleInWinnerLoserRelator .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/gfo/light/football_match_exam/RedBullArenaLeipzig
+gfo-light-exam:RedBullArenaLeipzig rdf:type owl:NamedIndividual ,
+                                            gfo-light-exam:Stadium .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1GoalsEndOfFirstHalf
+gfo-light-exam:a1GoalsEndOfFirstHalf rdf:type owl:NamedIndividual ,
+                                              gfo-light-exam:PlayerGoals ;
+                                     gfo-light:existsIn gfo-light-exam:matchX ;
+                                     gfo-light:qualityOf gfo-light-exam:playerA1 ;
+                                     gfo-light:decimalValue 1 ;
+                                     gfo-light:endDateTimeValue "2020-05-05T22:30:00"^^xsd:dateTime ;
+                                     gfo-light:startDateTimeValue "2020-05-05T21:20:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1GoalsEndOfMatch
+gfo-light-exam:a1GoalsEndOfMatch rdf:type owl:NamedIndividual ,
+                                          gfo-light-exam:PlayerGoals ;
+                                 gfo-light:existsIn gfo-light-exam:matchX ;
+                                 gfo-light:qualityOf gfo-light-exam:playerA1 ;
+                                 gfo-light:decimalValue 2 ;
+                                 gfo-light:startDateTimeValue "2020-05-05T22:30:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1LocationSituationAtGoal1
+gfo-light-exam:a1LocationSituationAtGoal1 rdf:type owl:NamedIndividual ,
+                                                   gfo-light-exam:MatchSituation ;
+                                          gfo-light:existsIn gfo-light-exam:aGoal1 ;
+                                          gfo-light:hasPart gfo-light-exam:a1LocationToSectorABoundaryAtGoal1 ,
+                                                            gfo-light-exam:a1LocationToSectorBBoundaryAtGoal1 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1LocationToSectorABoundaryAtGoal1
+gfo-light-exam:a1LocationToSectorABoundaryAtGoal1 rdf:type owl:NamedIndividual ,
+                                                           gfo-light-exam:RelativeLocationRelator ;
+                                                  gfo-light:existsIn gfo-light-exam:aGoal1 ;
+                                                  gfo-light:unit "m"^^xsd:string ;
+                                                  gfo-light-exam:distance 20 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1LocationToSectorBBoundaryAtGoal1
+gfo-light-exam:a1LocationToSectorBBoundaryAtGoal1 rdf:type owl:NamedIndividual ,
+                                                           gfo-light-exam:RelativeLocationRelator ;
+                                                  gfo-light:existsIn gfo-light-exam:aGoal1 ;
+                                                  gfo-light:unit "m"^^xsd:string ;
+                                                  gfo-light-exam:distance 10 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1ReferenceRoleToSectorABoundaryAtGoal1
+gfo-light-exam:a1ReferenceRoleToSectorABoundaryAtGoal1 rdf:type owl:NamedIndividual ,
+                                                                gfo-light-exam:ReferenceObjectRole ;
+                                                       gfo-light:playedBy gfo-light-exam:sectorAFieldBoundary ;
+                                                       gfo-light:roleOf gfo-light-exam:a1LocationToSectorABoundaryAtGoal1 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1ReferenceRoleToSectorBBoundaryAtGoal1
+gfo-light-exam:a1ReferenceRoleToSectorBBoundaryAtGoal1 rdf:type owl:NamedIndividual ,
+                                                                gfo-light-exam:ReferenceObjectRole ;
+                                                       gfo-light:playedBy gfo-light-exam:sectorBFieldBoundary ;
+                                                       gfo-light:roleOf gfo-light-exam:a1LocationToSectorBBoundaryAtGoal1 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1RoleImTeam
+gfo-light-exam:a1RoleImTeam rdf:type owl:NamedIndividual ,
+                                     gfo-light-exam:Forward ;
+                            gfo-light:existsIn gfo-light-exam:matchX ;
+                            gfo-light:playedBy gfo-light-exam:playerA1 ;
+                            gfo-light:roleOf gfo-light-exam:teamA .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1ScorerRoleInGoal1
+gfo-light-exam:a1ScorerRoleInGoal1 rdf:type owl:NamedIndividual ,
+                                            gfo-light-exam:ScorerRole ;
+                                   gfo-light:playedBy gfo-light-exam:playerA1 ;
+                                   gfo-light:roleOf gfo-light-exam:aGoal1 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1ScorerRoleInGoal2
+gfo-light-exam:a1ScorerRoleInGoal2 rdf:type owl:NamedIndividual ,
+                                            gfo-light-exam:ScorerRole ;
+                                   gfo-light:playedBy gfo-light-exam:playerA1 ;
+                                   gfo-light:roleOf gfo-light-exam:aGoal2 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1TargetRoleToSectorABoundaryAtGoal1
+gfo-light-exam:a1TargetRoleToSectorABoundaryAtGoal1 rdf:type owl:NamedIndividual ,
+                                                             gfo-light-exam:TargetObjectRole ;
+                                                    gfo-light:playedBy gfo-light-exam:playerA1 ;
+                                                    gfo-light:roleOf gfo-light-exam:a1LocationToSectorABoundaryAtGoal1 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a1TargetRoleToSectorBBoundaryAtGoal1
+gfo-light-exam:a1TargetRoleToSectorBBoundaryAtGoal1 rdf:type owl:NamedIndividual ,
+                                                             gfo-light-exam:TargetObjectRole ;
+                                                    gfo-light:playedBy gfo-light-exam:playerA1 ;
+                                                    gfo-light:roleOf gfo-light-exam:a1LocationToSectorBBoundaryAtGoal1 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a22RoleImTeam
+gfo-light-exam:a22RoleImTeam rdf:type owl:NamedIndividual ,
+                                      gfo-light-exam:Defender ;
+                             gfo-light:existsIn gfo-light-exam:matchX ;
+                             gfo-light:playedBy gfo-light-exam:playerA22 ;
+                             gfo-light:roleOf gfo-light-exam:teamA ;
+                             gfo-light:startDateTimeValue "2020-05-05T22:40:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a2AssistantRoleInGoal1
+gfo-light-exam:a2AssistantRoleInGoal1 rdf:type owl:NamedIndividual ,
+                                               gfo-light-exam:AssistantRole ;
+                                      gfo-light:playedBy gfo-light-exam:playerA2 ;
+                                      gfo-light:roleOf gfo-light-exam:aGoal1 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a2AssistantRoleInGoal2
+gfo-light-exam:a2AssistantRoleInGoal2 rdf:type owl:NamedIndividual ,
+                                               gfo-light-exam:AssistantRole ;
+                                      gfo-light:playedBy gfo-light-exam:playerA2 ;
+                                      gfo-light:roleOf gfo-light-exam:aGoal2 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a2AssistsEndOfFirstHalf
+gfo-light-exam:a2AssistsEndOfFirstHalf rdf:type owl:NamedIndividual ,
+                                                gfo-light-exam:Assists ;
+                                       gfo-light:existsIn gfo-light-exam:matchX ;
+                                       gfo-light:qualityOf gfo-light-exam:playerA2 ;
+                                       gfo-light:decimalValue 1 ;
+                                       gfo-light:endDateTimeValue "2020-05-05T22:30:00"^^xsd:dateTime ;
+                                       gfo-light:startDateTimeValue "2020-05-05T21:20:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a2AssistsEndOfMatch
+gfo-light-exam:a2AssistsEndOfMatch rdf:type owl:NamedIndividual ,
+                                            gfo-light-exam:Assists ;
+                                   gfo-light:existsIn gfo-light-exam:matchX ;
+                                   gfo-light:qualityOf gfo-light-exam:playerA2 ;
+                                   gfo-light:decimalValue 2 ;
+                                   gfo-light:startDateTimeValue "2020-05-05T22:30:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a2RoleImTeam
+gfo-light-exam:a2RoleImTeam rdf:type owl:NamedIndividual ,
+                                     gfo-light-exam:Midfielder ;
+                            gfo-light:existsIn gfo-light-exam:matchX ;
+                            gfo-light:playedBy gfo-light-exam:playerA2 ;
+                            gfo-light:roleOf gfo-light-exam:teamA ;
+                            gfo-light:endDateTimeValue "2020-05-05T22:40:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a33RoleImTeam
+gfo-light-exam:a33RoleImTeam rdf:type owl:NamedIndividual ,
+                                      gfo-light-exam:Defender ;
+                             gfo-light:existsIn gfo-light-exam:matchX ;
+                             gfo-light:playedBy gfo-light-exam:playerA33 ;
+                             gfo-light:roleOf gfo-light-exam:teamA ;
+                             gfo-light:startDateTimeValue "2020-05-05T22:45:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/a3RoleImTeam
+gfo-light-exam:a3RoleImTeam rdf:type owl:NamedIndividual ,
+                                     gfo-light-exam:Defender ;
+                            gfo-light:existsIn gfo-light-exam:matchX ;
+                            gfo-light:playedBy gfo-light-exam:playerA3 ;
+                            gfo-light:roleOf gfo-light-exam:teamA ;
+                            gfo-light:endDateTimeValue "2020-05-05T22:45:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/aBallPossessionEndOfFirstHalf
+gfo-light-exam:aBallPossessionEndOfFirstHalf rdf:type owl:NamedIndividual ,
+                                                      gfo-light-exam:BallPossession ;
+                                             gfo-light:existsIn gfo-light-exam:matchX ;
+                                             gfo-light:hasPointInTime gfo-light-exam:endOfFirstHalf ;
+                                             gfo-light:qualityOf gfo-light-exam:teamA ;
+                                             gfo-light:decimalValue 60 ;
+                                             gfo-light:unit "%"^^xsd:string .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/aBallPossessionEndOfMatch
+gfo-light-exam:aBallPossessionEndOfMatch rdf:type owl:NamedIndividual ,
+                                                  gfo-light-exam:BallPossession ;
+                                         gfo-light:existsIn gfo-light-exam:matchX ;
+                                         gfo-light:hasPointInTime gfo-light-exam:endOfMatch ;
+                                         gfo-light:qualityOf gfo-light-exam:teamA ;
+                                         gfo-light:decimalValue 70 ;
+                                         gfo-light:unit "%"^^xsd:string .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/aGoal1
+gfo-light-exam:aGoal1 rdf:type owl:NamedIndividual ,
+                               gfo-light-exam:Goal ;
+                      gfo-light:partOf gfo-light-exam:half1 ;
+                      gfo-light:dateTimeValue "2020-05-05T21:20:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/aGoal2
+gfo-light-exam:aGoal2 rdf:type owl:NamedIndividual ,
+                               gfo-light-exam:Goal ;
+                      gfo-light:partOf gfo-light-exam:half2 ;
+                      gfo-light:dateTimeValue "2020-05-05T22:30:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/aGoalsEndOfFirstHalf
+gfo-light-exam:aGoalsEndOfFirstHalf rdf:type owl:NamedIndividual ,
+                                             gfo-light-exam:TeamGoals ;
+                                    gfo-light:existsIn gfo-light-exam:matchX ;
+                                    gfo-light:qualityOf gfo-light-exam:teamA ;
+                                    gfo-light:decimalValue 1 ;
+                                    gfo-light:endDateTimeValue "2020-05-05T22:30:00"^^xsd:dateTime ;
+                                    gfo-light:startDateTimeValue "2020-05-05T21:20:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/aGoalsEndOfMatch
+gfo-light-exam:aGoalsEndOfMatch rdf:type owl:NamedIndividual ,
+                                         gfo-light-exam:TeamGoals ;
+                                gfo-light:existsIn gfo-light-exam:matchX ;
+                                gfo-light:qualityOf gfo-light-exam:teamA ;
+                                gfo-light:decimalValue 2 ;
+                                gfo-light:startDateTimeValue "2020-05-05T22:30:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/aWinnerRole
+gfo-light-exam:aWinnerRole rdf:type owl:NamedIndividual ,
+                                    gfo-light-exam:WinnerRole ;
+                           gfo-light:playedBy gfo-light-exam:teamA ;
+                           gfo-light:roleOf gfo-light-exam:winnerLoserRelatorEndOfMatch .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/bLoserRole
+gfo-light-exam:bLoserRole rdf:type owl:NamedIndividual ,
+                                   gfo-light-exam:LoserRole ;
+                          gfo-light:playedBy gfo-light-exam:teamB ;
+                          gfo-light:roleOf gfo-light-exam:winnerLoserRelatorEndOfMatch .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/endOfFirstHalf
+gfo-light-exam:endOfFirstHalf rdf:type owl:NamedIndividual ,
+                                       gfo-light-exam:EndOfFirstHalf ;
+                              gfo-light:dateTimeValue "2020-05-05T21:50:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/endOfMatch
+gfo-light-exam:endOfMatch rdf:type owl:NamedIndividual ,
+                                   gfo-light-exam:EndOfMatch ;
+                          gfo-light:dateTimeValue "2020-05-05T22:55:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/fieldOfRbArena
+gfo-light-exam:fieldOfRbArena rdf:type owl:NamedIndividual ,
+                                       gfo-light-exam:FootballFieldSurface ;
+                              gfo-light:hasOwner gfo-light-exam:RedBullArenaLeipzig .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/half1
+gfo-light-exam:half1 rdf:type owl:NamedIndividual ,
+                              gfo-light-exam:FirstHalf ;
+                     gfo-light:hasEndPointInTime gfo-light-exam:endOfFirstHalf ;
+                     gfo-light:hasStartPointInTime gfo-light-exam:startOfMatch ;
+                     gfo-light:partOf gfo-light-exam:matchX .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/half2
+gfo-light-exam:half2 rdf:type owl:NamedIndividual ,
+                              gfo-light-exam:SecondHalf ;
+                     gfo-light:hasEndPointInTime gfo-light-exam:endOfMatch ;
+                     gfo-light:hasStartPointInTime gfo-light-exam:startOfSecondHalf ;
+                     gfo-light:partOf gfo-light-exam:matchX .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/matchX
+gfo-light-exam:matchX rdf:type owl:NamedIndividual ,
+                               gfo-light-exam:Match ;
+                      gfo-light:hasEndPointInTime gfo-light-exam:endOfMatch ;
+                      gfo-light:hasStartPointInTime gfo-light-exam:startOfMatch ;
+                      gfo-light:locatedIn gfo-light-exam:RedBullArenaLeipzig ;
+                      gfo-light-exam:numberOfSpectators "40000"^^xsd:int .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/playerA1
+gfo-light-exam:playerA1 rdf:type owl:NamedIndividual ,
+                                 gfo-light-exam:Player ;
+                        gfo-light:memberOf gfo-light-exam:teamA ;
+                        gfo-light:participatesIn gfo-light-exam:aGoal1 ,
+                                                 gfo-light-exam:aGoal2 .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/playerA2
+gfo-light-exam:playerA2 rdf:type owl:NamedIndividual ,
+                                 gfo-light-exam:Player ;
+                        gfo-light:memberOf gfo-light-exam:teamA .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/playerA22
+gfo-light-exam:playerA22 rdf:type owl:NamedIndividual ,
+                                  gfo-light-exam:Player ;
+                         gfo-light:memberOf gfo-light-exam:teamA .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/playerA3
+gfo-light-exam:playerA3 rdf:type owl:NamedIndividual ,
+                                 gfo-light-exam:Player ;
+                        gfo-light:memberOf gfo-light-exam:teamA .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/playerA33
+gfo-light-exam:playerA33 rdf:type owl:NamedIndividual ,
+                                  gfo-light-exam:Player ;
+                         gfo-light:memberOf gfo-light-exam:teamA .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/sectorAFieldBoundary
+gfo-light-exam:sectorAFieldBoundary rdf:type owl:NamedIndividual ,
+                                             gfo-light-exam:FootballFieldBoundaryLine ;
+                                    gfo-light:boundaryOf gfo-light-exam:fieldOfRbArena .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/sectorBFieldBoundary
+gfo-light-exam:sectorBFieldBoundary rdf:type owl:NamedIndividual ,
+                                             gfo-light-exam:FootballFieldBoundaryLine ;
+                                    gfo-light:boundaryOf gfo-light-exam:fieldOfRbArena .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/situationEndOfFirstHalf
+gfo-light-exam:situationEndOfFirstHalf rdf:type owl:NamedIndividual ,
+                                                gfo-light-exam:MatchSituation ;
+                                       gfo-light:existsIn gfo-light-exam:matchX ;
+                                       gfo-light:hasPart gfo-light-exam:a1GoalsEndOfFirstHalf ,
+                                                         gfo-light-exam:a1RoleImTeam ,
+                                                         gfo-light-exam:a2AssistsEndOfFirstHalf ,
+                                                         gfo-light-exam:a2RoleImTeam ,
+                                                         gfo-light-exam:a3RoleImTeam ,
+                                                         gfo-light-exam:aBallPossessionEndOfFirstHalf ,
+                                                         gfo-light-exam:aGoalsEndOfFirstHalf ;
+                                       gfo-light:hasPointInTime gfo-light-exam:endOfFirstHalf .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/situationEndOfMatch
+gfo-light-exam:situationEndOfMatch rdf:type owl:NamedIndividual ,
+                                            gfo-light-exam:MatchSituation ;
+                                   gfo-light:existsIn gfo-light-exam:matchX ;
+                                   gfo-light:hasPart gfo-light-exam:a1GoalsEndOfMatch ,
+                                                     gfo-light-exam:a1RoleImTeam ,
+                                                     gfo-light-exam:a22RoleImTeam ,
+                                                     gfo-light-exam:a2AssistsEndOfMatch ,
+                                                     gfo-light-exam:a33RoleImTeam ,
+                                                     gfo-light-exam:aBallPossessionEndOfMatch ,
+                                                     gfo-light-exam:aGoalsEndOfMatch ,
+                                                     gfo-light-exam:teamARole ,
+                                                     gfo-light-exam:teamBRole ,
+                                                     gfo-light-exam:winnerLoserRelatorEndOfMatch ;
+                                   gfo-light:hasPointInTime gfo-light-exam:endOfMatch .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/startOfMatch
+gfo-light-exam:startOfMatch rdf:type owl:NamedIndividual ,
+                                     gfo-light-exam:StartOfMatch ;
+                            gfo-light:startPointInTimeOf gfo-light-exam:half1 ,
+                                                         gfo-light-exam:matchX ;
+                            gfo-light:dateTimeValue "2020-05-05T21:00:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/startOfSecondHalf
+gfo-light-exam:startOfSecondHalf rdf:type owl:NamedIndividual ,
+                                          gfo-light-exam:StartOfSecondHalf ;
+                                 gfo-light:dateTimeValue "2020-05-05T22:05:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/teamA
+gfo-light-exam:teamA rdf:type owl:NamedIndividual ,
+                              gfo-light-exam:Team ;
+                     gfo-light:participatesIn gfo-light-exam:matchX .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/teamARole
+gfo-light-exam:teamARole rdf:type owl:NamedIndividual ,
+                                  gfo-light-exam:HomeTeamRole ;
+                         gfo-light:playedBy gfo-light-exam:teamA ;
+                         gfo-light:roleOf gfo-light-exam:matchX .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/teamB
+gfo-light-exam:teamB rdf:type owl:NamedIndividual ,
+                              gfo-light-exam:Team ;
+                     gfo-light:participatesIn gfo-light-exam:matchX .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/teamBRole
+gfo-light-exam:teamBRole rdf:type owl:NamedIndividual ,
+                                  gfo-light-exam:VisitingTeamRole ;
+                         gfo-light:playedBy gfo-light-exam:teamB ;
+                         gfo-light:roleOf gfo-light-exam:matchX .
+
+
+###  https://w3id.org/gfo/light/football_match_exam/winnerLoserRelatorEndOfMatch
+gfo-light-exam:winnerLoserRelatorEndOfMatch rdf:type owl:NamedIndividual ,
+                                                     gfo-light-exam:WinnerLoserRelator ;
+                                            gfo-light:existsIn gfo-light-exam:matchX ;
+                                            gfo-light:hasPointInTime gfo-light-exam:endOfMatch .
+
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
