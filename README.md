@@ -59,4 +59,4 @@ The following is the general form of citation for Part I, where the correspondin
 > **Heller B, Herre H**. Formal Ontology and Principles of GOL. Onto-Med Report Nr. 1. Research Group Ontologies in Medicine (Onto-Med), University of Leipzig.
 
 ### Further Documentation
-Apart from the GFO reports, we have not yet completed the work on more introductory or tutorial material. This is going to happen in the nearer future. Currently, the easiest way to access the basic categories of GFO is to view the file [gfo-light.owl] in an ontology editor (e.g. [Protégé](https://protege.stanford.edu)). In particular, that file provides short descriptions for each category.
+Apart from the GFO reports, we have not yet completed the work on more introductory or tutorial material. This is going to happen in the nearer future. Currently, the easiest way to access the basic categories of GFO is to view the file [gfo-light.owl](./gfo-light.owl) in an ontology editor (e.g. [Protégé](https://protege.stanford.edu)). In particular, that file provides short descriptions for each category.
