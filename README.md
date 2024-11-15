@@ -46,7 +46,7 @@ The following is the general form of citation for Part I, where the correspondin
 * Latest released revision: Version 1.0, Onto-Med Report Nr. 8, 01.07.2006 [PDF](https://www.onto-med.de/sites/www.onto-med.de/files/files/uploads/Publications/2006/om-report-no8.pdf)
 
 ### Other Publications Exclusively Presenting GFO
-> **Burek P, Loebe F, Herre H**. Ontology patterns for function modeling with GFO. 2023. Provided via ResearchGate.
+> **Burek P, Loebe F, Herre H**. Ontology patterns for function modeling with GFO. 2023. [Provided via ResearchGate](https://www.researchgate.net/publication/378214193_Ontology_patterns_for_function_modeling_with_GFO).
 
 > **Loebe F, Burek P, Herre H**. GFO: The General Formal Ontology. AO 2022;17:71–106. https://doi.org/10.3233/AO-220264.
 
