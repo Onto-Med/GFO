@@ -13,10 +13,10 @@
     xmlns:terms="http://purl.org/dc/terms/">
 
     <owl:Ontology rdf:about="https://w3id.org/gfo">
-        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-05</dc:modified>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-05</owl:versionInfo>
-        <owl:versionIRI rdf:resource="https://w3id.org/gfo/release/2023-07-05"/>
-        <owl:priorVersion rdf:resource="https://w3id.org/gfo/release/1.0.9"/>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-18</dc:modified>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-18</owl:versionInfo>
+        <owl:versionIRI rdf:resource="https://w3id.org/gfo/release/2024-11-18"/>
+        <owl:priorVersion rdf:resource="https://w3id.org/gfo/release/2024-07-05"/>
         <owl:imports rdf:resource="https://w3id.org/gfo/base/"/>
         <dc:title xml:lang="en">General Formal Ontology (GFO)</dc:title>
         <rdfs:label xml:lang="en">General Formal Ontology (GFO)</rdfs:label>
