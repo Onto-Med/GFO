@@ -9,6 +9,7 @@ on:
       - '**.owl'
       - '**.rdf'
       - '**.ttl'
+      - '.github/workflows/test.yml'
   pull_request:
     branches:
       - main
@@ -16,11 +17,15 @@ on:
       - '**.owl'
       - '**.rdf'
       - '**.ttl'
+      - '.github/workflows/test.yml'
 
 jobs:
-  syntax-check:
+  test:
     runs-on: ubuntu-latest
     container: obolibrary/odklite
     steps:
       - uses: actions/checkout@v4
-      - run: check-rdfxml gfo.owl
+      - run: check-rdfxml gfo-light.owl
+      - run: check-rdfxml modules/gfo-base.owl
+      - run: robot reason --input gfo-light.owl
+      - run: robot reason --input modules/gfo-base.owl

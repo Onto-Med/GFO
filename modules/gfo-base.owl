@@ -1045,8 +1045,8 @@ the condition of a partial ordering, .i.e. the following axioms: reflexivity, an
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_token">
     <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Symbol_structure"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Concrete"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/instance_of"/>
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Token"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/instantiated_by"/>
     <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/token_of"/>
   </owl:ObjectProperty>
 
@@ -1195,9 +1195,9 @@ the condition of a partial ordering, .i.e. the following axioms: reflexivity, an
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/sequence_constituent_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Token"/>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Symbol"/>
     <rdfs:range rdf:resource="https://w3id.org/gfo/base/Symbol_sequence"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/part_of"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/categorial_part_of"/>
     <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_sequence_constituent"/>
   </owl:ObjectProperty>
 
