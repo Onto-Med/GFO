@@ -20,6 +20,9 @@
     <owl:imports rdf:resource="https://w3id.org/gfo/base/" />
     <dc:title xml:lang="en">General Formal Ontology (GFO)</dc:title>
     <rdfs:label xml:lang="en">General Formal Ontology (GFO)</rdfs:label>
+    <dc:description xml:lang="en">The General Formal Ontology is a top-level ontology for conceptual
+      modeling. It includes elaborations of categories like objects, processes, time and space,
+      properties, relations, roles, functions, facts, and situations.</dc:description>
     <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-08-28</dc:created>
     <vann:preferredNamespaceURI>https://w3id.org/gfo/</vann:preferredNamespaceURI>
     <vann:preferredNamespacePrefix>gfo</vann:preferredNamespacePrefix>

@@ -49,6 +49,8 @@
     <owl:versionIRI rdf:resource="https://w3id.org/gfo/base/release/2024-11-18" />
     <dc:title xml:lang="en">General Formal Ontology Base (GFO-base)</dc:title>
     <rdfs:label xml:lang="en">General Formal Ontology Base (GFO-base)</rdfs:label>
+    <dc:description>The module GFO-base of the General Formal Ontology contains all fundamental
+      classes, properties, and axioms that are relevant for all other GFO modules.</dc:description>
     <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-08-28</dc:created>
     <vann:preferredNamespaceURI>https://w3id.org/gfo/base/</vann:preferredNamespaceURI>
     <vann:preferredNamespacePrefix>gfo-base</vann:preferredNamespacePrefix>
