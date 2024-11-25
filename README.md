@@ -17,6 +17,9 @@ The entire GFO ontology can be imported via IRI https://w3id.org/gfo. GFO is div
 
 **GFO-light** is a simplified view of the entire GFO. It does not build on single modules but combines all basic concepts and simplified axioms of the GFO. It is primarily intended to found domain or application ontologies and can be imported via IRI https://w3id.org/gfo/light.
 
+## How to Contribute
+Please see our [Contributing Guide](CONTRIBUTING.md).
+
 ## Brief History
 Work on GFO has started in 1999 in the context of the GOL project (General Ontological Language). Meanwhile, several directions of research have been recognized and divided the initial project, such that GFO is now one component of a larger framework. Work on GFO remains in progress, because the development of top-level ontologies is a long-term research effort.
 
