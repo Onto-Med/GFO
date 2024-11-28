@@ -32,9 +32,5 @@ jobs:
       - run: robot reason --input gfo-light.owl
       - run: robot reason --input modules/gfo-base.owl
 
-      # - run: |
-      #     result=$(robot report --input gfo-light.owl --profile qc_report/profile.txt)
-      #     echo "::notice file=gfo-light.owl::$result"
-      - run: |
-          result=$(robot report --input modules/gfo-base.owl --profile qc_report/profile.txt)
-          echo "::notice file=modules/gfo-base.owl::$result"
+      # - run: robot report --input gfo-light.owl --profile qc_report/profile.txt
+      - run: robot report --input modules/gfo-base.owl --profile qc_report/profile.txt
