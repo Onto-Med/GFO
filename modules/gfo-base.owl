@@ -1,304 +1,337 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns="https://w3id.org/gfo/base/"
-         xml:base="https://w3id.org/gfo/base/"
-         xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:dc="http://purl.org/dc/elements/1.1/"
-         xmlns:vann="http://purl.org/vocab/vann/"
-         xmlns:foaf="http://xmlns.com/foaf/0.1/"
-         xmlns:doap="http://usefulinc.com/ns/doap#"
-         xmlns:bibo="http://purl.org/ontology/bibo/">
+  xml:base="https://w3id.org/gfo/base/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:vann="http://purl.org/vocab/vann/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:doap="http://usefulinc.com/ns/doap#"
+  xmlns:bibo="http://purl.org/ontology/bibo/"
+  xmlns:terms="http://purl.org/dc/terms/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#">
 
-<!-- Ontology Information -->
+  <!-- Ontology Information -->
   <owl:Ontology rdf:about="https://w3id.org/gfo/base">
-    <rdfs:comment xml:lang="en">Copyright (c) 2006, Regents of the Research Group Ontologies in Medicine (Onto-Med), University of Leipzig, Germany.
-       All rights reserved.  
-
-       Redistribution and use in source and binary forms, with or without modification,
-       are permitted provided that the following conditions are met:
-       
-       1. Redistributions of source code must retain the above copyright notice, this list
-          of conditions and the following disclaimer.
-       
-       2. Redistributions in binary form must reproduce the above copyright notice, this list
-          of conditions and the following disclaimer in the documentation and/or other
-          materials provided with the distribution.
-          
-       3. Neither the name of the Research Group Ontologies in Medicine (Onto-Med), University
-          of Leipzig nor the names of its contributors may be used to endorse or promote products
-          derived from this software without specific prior written permission.
-
-       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
-       OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
-       AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
-       CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-       DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-       DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
-       IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
-       OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</rdfs:comment>
     <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-18</dc:modified>
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-18</owl:versionInfo>
-    <owl:versionIRI rdf:resource="https://w3id.org/gfo/base/release/2024-11-18"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/gfo/base/release/2024-11-18" />
     <dc:title xml:lang="en">General Formal Ontology Base (GFO-base)</dc:title>
     <rdfs:label xml:lang="en">General Formal Ontology Base (GFO-base)</rdfs:label>
+    <dc:description>The module GFO-base of the General Formal Ontology contains all fundamental
+      classes, properties, and axioms that are relevant for all other GFO modules.</dc:description>
     <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-08-28</dc:created>
     <vann:preferredNamespaceURI>https://w3id.org/gfo/base/</vann:preferredNamespaceURI>
     <vann:preferredNamespacePrefix>gfo-base</vann:preferredNamespacePrefix>
     <foaf:homepage>https://github.com/Onto-Med/GFO</foaf:homepage>
-    <doap:repository rdf:resource="https://github.com/Onto-Med/GFO"/>
-    <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205419"/>
+    <doap:repository rdf:resource="https://github.com/Onto-Med/GFO" />
+    <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205419" />
+    <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
   </owl:Ontology>
 
-<!-- Classes -->
+  <!-- Classes -->
   <owl:Class rdf:about="https://w3id.org/gfo/base/Abstract">
-    <rdfs:comment xml:lang="en">Abstract individuals are independent from time and space (they are not in time and space).
-Examples: the number "2" or pi.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concrete"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Space_time"/>
+    <rdfs:label xml:lang="en">Abstract</rdfs:label>
+    <skos:definition xml:lang="en">Abstract individuals are independent from time and space (they are
+      not in time and space).
+      Examples: the number "2" or pi.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concrete" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Space_time" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Action">
-    <rdfs:comment xml:lang="en">Actions are occurents which are caused by some presential (the agent) at every (inner and outer) time-boundary of the chronoid framing the occurent.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent"/>
+    <rdfs:label xml:lang="en">Action</rdfs:label>
+    <skos:definition xml:lang="en">Actions are occurrents which are caused by some presential (the
+      agent) at every (inner and outer) time-boundary of the chronoid framing the occurrent.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/has_agent"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Presential"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/has_agent" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Presential" />
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Amount_of_substrate">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Continuous"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential"/>
-    <owl:equivalentClass rdf:resource="https://w3id.org/gfo/base/Mass_entity"/>
+    <rdfs:label xml:lang="en">Amount of substrate</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Continuous" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential" />
+    <owl:equivalentClass rdf:resource="https://w3id.org/gfo/base/Mass_entity" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Awareness_level">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Level"/>
+    <rdfs:label xml:lang="en">Awareness level</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Level" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Mental_stratum"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Mental_stratum" />
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Biological_level">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Level"/>
+    <rdfs:label xml:lang="en">Biological level</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Level" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_stratum"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_stratum" />
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Category">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Categories satisfy the following conditions: (1) Categories can be instantiated; (2) Categories can be predicated of other entities.
-Categories are defined intensional-with-an-s. They are, therefore, closely related to language.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Item"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Individual"/>
+    <rdfs:label xml:lang="en">Category</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Categories satisfy the
+      following conditions: (1) Categories can be instantiated; (2) Categories can be predicated of
+      other entities.
+      Categories are defined intensional-with-an-s. They are, therefore, closely related to
+      language.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Item" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Individual" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Change">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A change in the technical sense refers to a pair of process
-boundaries. Either at coinciding boundaries (then it comes close to
-notions like ``punctual'' or ``instantaneous event'' as well as
-``moment'' -- in a temporal reading), or at boundaries at the opposite
-ends of a process of arbitrary extension.
+    <rdfs:label xml:lang="en">Change</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A change in the technical
+      sense refers to a pair of process
+      boundaries. Either at coinciding boundaries (then it comes close to
+      notions like ``punctual'' or ``instantaneous event'' as well as
+      ``moment'' -- in a temporal reading), or at boundaries at the opposite
+      ends of a process of arbitrary extension.
 
-The notion of change is relative to contradictory conditions
-between which a transition takes place. These contradictions refer to
-some collection of pairwise disjoint universals.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/History"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Process"/>
+      The notion of change is relative to contradictory conditions
+      between which a transition takes place. These contradictions refer to
+      some collection of pairwise disjoint universals.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/History" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Process" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Chemical_level">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Level"/>
+    <rdfs:label xml:lang="en">Chemical level</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Level" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_stratum"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_stratum" />
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Chronoid">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chronoids are entities sui generis.
+    <rdfs:label xml:lang="en">Chronoid</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chronoids are entities sui
+      generis.
 
-Every chronoid has exactly two extremal and
-infinitely many inner time boundaries which are
-equivalently called time-points.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Temporal_region"/>
+      Every chronoid has exactly two extremal and
+      infinitely many inner time boundaries which are
+      equivalently called time-points.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Temporal_region" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Concept">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Symbol_structure"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Universal"/>
+    <rdfs:label xml:lang="en">Concept</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Symbol_structure" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Universal" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Concrete">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concrete individuals have a relation to time or space (they are in time and space).</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Abstract"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Space_time"/>
+    <rdfs:label xml:lang="en">Concrete</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concrete individuals have a
+      relation to time or space (they are in time and space).</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Abstract" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Space_time" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Configuration">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We consider a collection of presential facts which exist at the same time-boundary. Such collections may be considered themselves as presentials, and we call them configurations.
+    <rdfs:label xml:lang="en">Configuration</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We consider a collection of
+      presential facts which exist at the same time-boundary. Such collections may be considered
+      themselves as presentials, and we call them configurations.
 
-It is further required that configurations contain at least one material object.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_boundary"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_object"/>
+      It is further required that configurations contain at least one material object.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_boundary" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_object" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Configuroid">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Configuroids are, in the simplest case, integrated wholes made up of material structure processes and property processes.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process"/>
+    <rdfs:label xml:lang="en">Configuroid</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Configuroids are, in the
+      simplest case, integrated wholes made up of material structure processes and property
+      processes.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Continuous">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual"/>
+    <rdfs:label xml:lang="en">Continuous</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
     <owl:intersectionOf rdf:parseType="Collection">
-      <rdf:Description rdf:about="https://w3id.org/gfo/base/Individual"/>
+      <rdf:Description rdf:about="https://w3id.org/gfo/base/Individual" />
       <owl:Class>
-        <owl:complementOf rdf:resource="https://w3id.org/gfo/base/Discrete"/>
+        <owl:complementOf rdf:resource="https://w3id.org/gfo/base/Discrete" />
       </owl:Class>
     </owl:intersectionOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Continuous_change">
-    <rdfs:comment xml:lang="en">For the purpose of formalizing continuous changes, a minimal chronoid universal D(c) is employed in order to capture the idea of observable differences during certain chronoids, whereas the change itself does not allow the observation of a difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this approach. Continous changes occur over time (a chronoid).</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change"/>
-    <owl:equivalentClass rdf:resource="https://w3id.org/gfo/base/Intrinsic_change"/>
+    <rdfs:label xml:lang="en">Continuous change</rdfs:label>
+    <skos:definition xml:lang="en">For the purpose of formalizing continuous changes, a minimal
+      chronoid universal D(c) is employed in order to capture the idea of observable differences
+      during certain chronoids, whereas the change itself does not allow the observation of a
+      difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this
+      approach. Continuous changes occur over time (a chronoid).</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change" />
+    <owl:equivalentClass rdf:resource="https://w3id.org/gfo/base/Intrinsic_change" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Continuous_process">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processes where all non-coinciding internal boundaries are intrinsic changes. 
-These turn out as purely continuous processes, described e.g.
-in physics by differential equations.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Continuous"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Discrete_process"/>
+    <rdfs:label xml:lang="en">Continuous process</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processes where all
+      non-coinciding internal boundaries are intrinsic changes.
+      These turn out as purely continuous processes, described e.g.
+      in physics by differential equations.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Continuous" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Discrete_process" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Dependent">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Independent"/>
+    <rdfs:label xml:lang="en">Dependent</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Independent" />
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/depends_on"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Item"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/depends_on" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Item" />
       </owl:Restriction>
     </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Discrete">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual"/>
+    <rdfs:label xml:lang="en">Discrete</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Discrete_presential">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential"/>
+    <rdfs:label xml:lang="en">Discrete presential</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instance_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Persistant"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instance_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Persistant" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Mass_entity"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Mass_entity" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Discrete_process">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discrete processes are made up of alterations of extrinsic changes and states.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Continuous_process"/>
+    <rdfs:label xml:lang="en">Discrete process</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discrete processes are made
+      up of alterations of extrinsic changes and states.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Continuous_process" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Entity">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everything which exists is called an entity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Entity</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everything which exists is
+      called an entity.</skos:definition>
     <owl:unionOf rdf:parseType="Collection">
-      <rdf:Description rdf:about="https://w3id.org/gfo/base/Item"/>
-      <rdf:Description rdf:about="https://w3id.org/gfo/base/Set"/>
+      <rdf:Description rdf:about="https://w3id.org/gfo/base/Item" />
+      <rdf:Description rdf:about="https://w3id.org/gfo/base/Set" />
     </owl:unionOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Extrinsic_change">
-    <rdfs:comment xml:lang="en">Deprecated. Extrinsic changes are represented by change(e1,e2, u1, u2, u), where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are disjoint sub-universals of u.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Intrinsic_change"/>
+    <rdfs:label xml:lang="en">obsolete: Extrinsic change</rdfs:label>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    <skos:definition xml:lang="en">Extrinsic changes are represented by change(e1,e2, u1,
+      u2, u), where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are
+      disjoint sub-universals of u.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Intrinsic_change" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Function">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A function F is a universal (conceptual structure) defined in purely teleological terms with respect to a given goal G which commonly is ascribed by means of has-function relation to entities that are the realizations of the function F, execute such a realization or are intended to do it.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concept"/>
+    <rdfs:label xml:lang="en">Function</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A function F is a universal
+      (conceptual structure) defined in purely teleological terms with respect to a given goal G
+      which commonly is ascribed by means of has-function relation to entities that are the
+      realizations of the function F, execute such a realization or are intended to do it.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concept" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/History">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Histories consist of a number of process boundaries.
+    <rdfs:label xml:lang="en">History</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Histories consist of a
+      number of process boundaries.
 
-We assume that any history can be embedded into a process, which then
-forms a foundation of the history. If it were not for this foundation,
-one would face the problem of singling out the right boundaries in
-order to get a natural history: It is not sensible to measure the
-temperature of a patient first, then determine his weight, followed by
-measuring his blood pressure and to consider these strangely arbitrary
-process boundaries as a history of the patient's body data.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Change"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Process"/>
+      We assume that any history can be embedded into a process, which then
+      forms a foundation of the history. If it were not for this foundation,
+      one would face the problem of singling out the right boundaries in
+      order to get a natural history: It is not sensible to measure the
+      temperature of a patient first, then determine his weight, followed by
+      measuring his blood pressure and to consider these strangely arbitrary
+      process boundaries as a history of the patient's body data.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Change" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Process" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Independent">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Dependent"/>
+    <rdfs:label xml:lang="en">Independent</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Dependent" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Individual">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Individuals are entities which cannot be further instantiated.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Item"/>
+    <rdfs:label xml:lang="en">Individual</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Individuals are entities
+      which cannot be further instantiated.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Item" />
     <rdfs:subClassOf>
       <owl:Class>
         <owl:complementOf>
           <owl:Restriction>
-            <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instantiated_by"/>
-            <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Item"/>
+            <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instantiated_by" />
+            <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Item" />
           </owl:Restriction>
         </owl:complementOf>
       </owl:Class>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Category"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Category" />
     <owl:intersectionOf rdf:parseType="Collection">
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="https://w3id.org/gfo/base/Dependent"/>
-          <rdf:Description rdf:about="https://w3id.org/gfo/base/Independent"/>
+          <rdf:Description rdf:about="https://w3id.org/gfo/base/Dependent" />
+          <rdf:Description rdf:about="https://w3id.org/gfo/base/Independent" />
         </owl:unionOf>
       </owl:Class>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="https://w3id.org/gfo/base/Abstract"/>
-          <rdf:Description rdf:about="https://w3id.org/gfo/base/Concrete"/>
-          <rdf:Description rdf:about="https://w3id.org/gfo/base/Space_time"/>
+          <rdf:Description rdf:about="https://w3id.org/gfo/base/Abstract" />
+          <rdf:Description rdf:about="https://w3id.org/gfo/base/Concrete" />
+          <rdf:Description rdf:about="https://w3id.org/gfo/base/Space_time" />
         </owl:unionOf>
       </owl:Class>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="https://w3id.org/gfo/base/Role"/>
+          <rdf:Description rdf:about="https://w3id.org/gfo/base/Role" />
           <owl:Class>
             <owl:intersectionOf rdf:parseType="Collection">
-              <rdf:Description rdf:about="https://w3id.org/gfo/base/Individual"/>
+              <rdf:Description rdf:about="https://w3id.org/gfo/base/Individual" />
               <owl:Class>
-                <owl:complementOf rdf:resource="https://w3id.org/gfo/base/Role"/>
+                <owl:complementOf rdf:resource="https://w3id.org/gfo/base/Role" />
               </owl:Class>
             </owl:intersectionOf>
           </owl:Class>
@@ -307,930 +340,1100 @@ process boundaries as a history of the patient's body data.</rdfs:comment>
     </owl:intersectionOf>
   </owl:Class>
 
-  <owl:Class rdf:about="https://w3id.org/gfo/base/Instantanuous_change">
-    <rdfs:comment xml:lang="en">Instantanuous changes are represented by change(e1,e2, u1, u2, u), where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are disjoint sub-universals of u. Instantanuous changes are therefore changes of properties on two coinciding time boundaries.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change"/>
-    <owl:equivalentClass rdf:resource="https://w3id.org/gfo/base/Extrinsic_change"/>
+  <owl:Class rdf:about="https://w3id.org/gfo/base/Instantaneous_change">
+    <rdfs:label xml:lang="en">Instantaneous change</rdfs:label>
+    <skos:definition xml:lang="en">Instantaneous changes are represented by change(e1,e2, u1, u2, u),
+      where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are disjoint
+      sub-universals of u. Instantaneous changes are therefore changes of properties on two
+      coinciding time boundaries.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change" />
+    <owl:equivalentClass rdf:resource="https://w3id.org/gfo/base/Extrinsic_change" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Intrinsic_change">
-    <rdfs:comment xml:lang="en">Deprecated. 
-For the purpose of formalizing intrinsic changes, a minimal chronoid universal D(c) is employed in order to capture the idea of observable differences during certain chronoids, whereas the change itself does not allow the observation of a difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this approach.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Extrinsic_change"/>
+    <rdfs:label xml:lang="en">obsolete: Intrinsic change</rdfs:label>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    <skos:definition xml:lang="en">For the purpose of formalizing intrinsic changes, a
+      minimal chronoid universal D(c) is employed in order to capture the idea of observable
+      differences during certain chronoids, whereas the change itself does not allow the observation
+      of a difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this
+      approach.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Extrinsic_change" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Item">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An item is everything which is not a set. Also called ur-element.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Entity"/>
+    <rdfs:label xml:lang="en">Item</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An item is everything which
+      is not a set. Also called ur-element.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Entity" />
     <rdfs:subClassOf>
       <owl:Class>
         <owl:complementOf>
           <owl:Restriction>
-            <owl:onProperty rdf:resource="https://w3id.org/gfo/base/has_member"/>
-            <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Entity"/>
+            <owl:onProperty rdf:resource="https://w3id.org/gfo/base/has_member" />
+            <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Entity" />
           </owl:Restriction>
         </owl:complementOf>
       </owl:Class>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Set"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Set" />
     <owl:unionOf rdf:parseType="Collection">
-      <rdf:Description rdf:about="https://w3id.org/gfo/base/Category"/>
-      <rdf:Description rdf:about="https://w3id.org/gfo/base/Individual"/>
+      <rdf:Description rdf:about="https://w3id.org/gfo/base/Category" />
+      <rdf:Description rdf:about="https://w3id.org/gfo/base/Individual" />
     </owl:unionOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Level">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontological level, which is sth. more restricted and "part of" some gfo:Stratum.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Ontological_layer"/>
+    <rdfs:label xml:lang="en">Level</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontological level, which
+      is sth. more restricted and "part of" some gfo:Stratum.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Stratum"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Stratum" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Stratum"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Stratum" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Line">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Spatial_boundary"/>
+    <rdfs:label xml:lang="en">Line</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Spatial_boundary" />
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/spatial_boundary_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Surface"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/spatial_boundary_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Surface" />
       </owl:Restriction>
     </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Mass_entity">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Continuous"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Discrete_presential"/>
+    <rdfs:label xml:lang="en">Mass entity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Continuous" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Discrete_presential" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_boundary">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential"/>
+    <rdfs:label xml:lang="en">Material boundary</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/depends_on"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_object"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/depends_on" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_object" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Configuration"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_object"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Configuration" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_object" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_line">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Material_boundary"/>
+    <rdfs:label xml:lang="en">Material line</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Material_boundary" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/boundary_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_surface"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/boundary_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_surface" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_point"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_surface"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_point" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_surface" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_object">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material structure is an individual which satisfies the following conditions: 
-it is a presential, it occupies space, it is a bearer of qualities,  but other entities cannot have
-it as quality, and it consists of an amount of substrate, and it instantiates a persistant ("has identity").</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete_presential"/>
+    <rdfs:label xml:lang="en">Material object</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material structure is an
+      individual which satisfies the following conditions:
+      it is a presential, it occupies space, it is a bearer of qualities, but other entities cannot
+      have
+      it as quality, and it consists of an amount of substrate, and it instantiates a persistant
+      ("has identity").</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete_presential" />
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/framed_by"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/framed_by" />
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/framed_by"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Topoid"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/framed_by" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Topoid" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Configuration"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_boundary"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Configuration" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_boundary" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_persistant">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Material persistants are particular universals whose instances are 
-material structures; they are related to those entities which are called 
-sometimes continuants or objects, as apples, cars or houses. 
-Material persistants capture the phenomenon of persistance through time of a material 
-object. A material persistant P satisfies a number of neccessary conditions. For every
-material persistant P there exists a process P such that
-the set of instances of P coincides with the set of process-boundaries
-of P. This implies the existence of a chronoid c
-such that for every time-point t of c there exists exactly 
-one instance of P at time point t.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Persistant"/>
+    <rdfs:label xml:lang="en">Material persistant</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Material persistants are
+      particular universals whose instances are
+      material structures; they are related to those entities which are called
+      sometimes continuants or objects, as apples, cars or houses.
+      Material persistants capture the phenomenon of persistance through time of a material
+      object. A material persistant P satisfies a number of necessary conditions. For every
+      material persistant P there exists a process P such that
+      the set of instances of P coincides with the set of process-boundaries
+      of P. This implies the existence of a chronoid c
+      such that for every time-point t of c there exists exactly
+      one instance of P at time point t.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Persistant" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:allValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_object"/>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instantiated_by"/>
+        <owl:allValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_object" />
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instantiated_by" />
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_point">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Material_boundary"/>
+    <rdfs:label xml:lang="en">Material point</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Material_boundary" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/boundary_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_line"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/boundary_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_line" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_line"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_surface"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_line" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_surface" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_stratum">
-    <rdfs:comment xml:lang="en">According to (Poli,2001), the basic structure of the material stratum is a distinction of physical, chemical and biological levels.
-These levels can be further refined.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Stratum"/>
+    <rdfs:label xml:lang="en">Material stratum</rdfs:label>
+    <skos:definition xml:lang="en">According to (Poli, 2001), the basic structure of the material
+      stratum is a distinction of physical, chemical and biological levels.
+      These levels can be further refined.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Stratum" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_structure">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete_presential"/>
-    <owl:equivalentClass rdf:resource="https://w3id.org/gfo/base/Material_object"/>
+    <rdfs:label xml:lang="en">Material structure</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete_presential" />
+    <owl:equivalentClass rdf:resource="https://w3id.org/gfo/base/Material_object" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_surface">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Material_boundary"/>
+    <rdfs:label xml:lang="en">Material surface</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Material_boundary" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/boundary_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_object"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/boundary_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_object" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_line"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_point"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_line" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_point" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Mental_stratum">
-    <rdfs:comment xml:lang="en">In accordance with the work of R. Poli, we divide the
-psychological/mental stratum into the layer of
-awareness and the layer of
-personality. Awareness comprises most
-of what is studied by cognitive science (perception, memory,
-reasoning, etc). Personality on the other hand concerns the phenomenon
-of will and the way in which someone reacts to her experiences.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Stratum"/>
+    <rdfs:label xml:lang="en">Mental stratum</rdfs:label>
+    <skos:definition xml:lang="en">In accordance with the work of R. Poli, we divide the
+      psychological/mental stratum into the layer of
+      awareness and the layer of
+      personality. Awareness comprises most
+      of what is studied by cognitive science (perception, memory,
+      reasoning, etc). Personality on the other hand concerns the phenomenon
+      of will and the way in which someone reacts to her experiences.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Stratum" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Occurrent">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurents have temporal parts and thus cannot be present at a time-boundary. Time
-belongs to them, because they happen in time and the time of the occurent
-is built into it. The relation between an occurent and a chronoid is
-determined by the projection relation.
+    <rdfs:label xml:lang="en">Occurrent</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents have temporal
+      parts and thus cannot be present at a time-boundary. Time
+      belongs to them, because they happen in time and the time of the occurrent
+      is built into it. The relation between an occurrent and a chronoid is
+      determined by the projection relation.
 
-Occurents are also called generalized processes in the GFO.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Presential"/>
+      Occurrents are also called generalized processes in the GFO.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Presential" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Ontological_layer">
-    <rdfs:comment xml:lang="en">Ontological_layer, all of its subconcepts and the properties layer_of and on_layer are work in progress in a premature beta state.</rdfs:comment>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a collective term for gfo:stratum and gfo:level</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category"/>
+    <rdfs:label xml:lang="en">Ontological layer</rdfs:label>
+    <rdfs:comment xml:lang="en">Ontological_layer, all of its sub concepts and the properties
+      layer_of and on_layer are work in progress in a premature beta state.</rdfs:comment>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collective term for
+      gfo-base:Stratum and gfo-base:Level.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category" />
     <owl:versionInfo xml:lang="en">Beta</owl:versionInfo>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Persistant">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Persistants are GFO's way to capture identity over time.
+    <rdfs:label xml:lang="en">Persistant</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Persistants are GFO's way
+      to capture identity over time.
 
-GFO pursues an approach which
-accounts for persistence by means of a suitable
-universal whose instances are presentials. Such universals are called
-persistants. These do not change and they can be used to
-explain how presentials which have different properties at different
-times can nevertheless be the same.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Universal"/>
+      GFO pursues an approach which
+      accounts for persistence by means of a suitable
+      universal whose instances are presentials. Such universals are called
+      persistants. These do not change and they can be used to
+      explain how presentials which have different properties at different
+      times can nevertheless be the same.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Universal" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instantiated_by"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Presential"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instantiated_by" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Presential" />
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Personality_level">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Level"/>
+    <rdfs:label xml:lang="en">Personality level</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Level" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Mental_stratum"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Mental_stratum" />
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Physical_level">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Level"/>
+    <rdfs:label xml:lang="en">Physical level</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Level" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_stratum"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/abstract_part_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Material_stratum" />
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Point">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Spatial_boundary"/>
+    <rdfs:label xml:lang="en">Point</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Spatial_boundary" />
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/spatial_boundary_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Line"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/spatial_boundary_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Line" />
       </owl:Restriction>
     </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Presential">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A presential exists wholly at exactly one time boundary.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual"/>
+    <rdfs:label xml:lang="en">Presential</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A presential exists wholly
+      at exactly one time boundary.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/exists_at"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Time_boundary"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/exists_at" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Time_boundary" />
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/exists_at"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/exists_at" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Occurrent"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Occurrent" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Process">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processes are a special kind of occurent. Processes are directly in time, they have characteristics which cannot be captured by a collection of time boundaries.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Change"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/History"/>
+    <rdfs:label xml:lang="en">Process</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processes are a special
+      kind of occurrent. Processes are directly in time, they have characteristics which cannot be
+      captured by a collection of time boundaries.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Change" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/History" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Processual_role">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processual roles are dependent processes. They are roles with a process as context.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Role"/>
+    <rdfs:label xml:lang="en">Processual role</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processual roles are
+      dependent processes. They are roles with a process as context.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Role" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/role_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Process"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/role_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Process" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Relational_role"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Social_role"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Relational_role" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Social_role" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Property">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Relator"/>
+    <rdfs:label xml:lang="en">Property</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Relator" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Property_value">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The concept of a property value reflects a relationship between the property of x and the same property as exhibited by another entity y.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent"/>
+    <rdfs:label xml:lang="en">Property value</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The concept of a property
+      value reflects a relationship between the property of x and the same property as exhibited by
+      another entity y.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent" />
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/value_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Property"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/value_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Property" />
       </owl:Restriction>
     </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Relational_role">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Role"/>
+    <rdfs:label xml:lang="en">Relational role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Role" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/role_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Relator"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/role_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Relator" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Processual_role"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Social_role"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Processual_role" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Social_role" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Relator">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Property"/>
+    <rdfs:label xml:lang="en">Relator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Property" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Role">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete"/>
+    <rdfs:label xml:lang="en">Role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Set">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Set is a category pertaining to the individuals in the ZFC set theory.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Entity"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Item"/>
+    <rdfs:label xml:lang="en">Set</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Set is a category
+      pertaining to the individuals in the ZFC set theory.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Entity" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Item" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Situation">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A situation is a special configuration which can be comprehended as a whole and satisfies certain conditions of unity, which are imposed by relations and categories associated with the situation. Herein, we consider situations to be the most complex kind of presentials.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Configuration"/>
+    <rdfs:label xml:lang="en">Situation</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A situation is a special
+      configuration which can be comprehended as a whole and satisfies certain conditions of unity,
+      which are imposed by relations and categories associated with the situation. Herein, we
+      consider situations to be the most complex kind of presentials.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Configuration" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Situoid">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Situoids are processes whose boundaries are situations and which satisfy certain principles of coherence, comprehensibility, and continuity. They are regarded as the most complex integrated wholes of the world. A situoid is, intuitively, a part of the
-world which is a coherent and comprehensible whole and does not need other entities in order to exist. Every situoid has a temporal extent and is framed by a topoid.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Configuroid"/>
+    <rdfs:label xml:lang="en">Situoid</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Situoids are processes
+      whose boundaries are situations and which satisfy certain principles of coherence,
+      comprehensibility, and continuity. They are regarded as the most complex integrated wholes of
+      the world. A situoid is, intuitively, a part of the
+      world which is a coherent and comprehensible whole and does not need other entities in order
+      to exist. Every situoid has a temporal extent and is framed by a topoid.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Configuroid" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Social_role">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Independent"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Role"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Processual_role"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Relational_role"/>
+    <rdfs:label xml:lang="en">Social role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Independent" />
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Role" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Processual_role" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Relational_role" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Social_stratum">
-    <rdfs:comment xml:lang="en">On the one hand, the social stratum is
-divided into Agents and
-Institutions. Agents are the bearers of the social
-roles that humans play. Institutions are defined as systems of
-interrelated social components. On the other hand, a social system can
-be seen as a network in which businesses, politics, art, language (and
-many other facets) both present their own features and
-influence each other.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Stratum"/>
+    <rdfs:label xml:lang="en">Social stratum</rdfs:label>
+    <skos:definition xml:lang="en">On the one hand, the social stratum is
+      divided into Agents and
+      Institutions. Agents are the bearers of the social
+      roles that humans play. Institutions are defined as systems of
+      interrelated social components. On the other hand, a social system can
+      be seen as a network in which businesses, politics, art, language (and
+      many other facets) both present their own features and
+      influence each other.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Stratum" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Space">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GFO uses Brentano space.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space_time"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Time"/>
+    <rdfs:label xml:lang="en">Space</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GFO uses Brentano space.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space_time" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Time" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Space_time">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Abstract"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concrete"/>
+    <rdfs:label xml:lang="en">Space time</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Abstract" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concrete" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Spatial_boundary">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boundaries of regions are surfaces, boundaries of
-surfaces are lines, and boundaries of lines are
-points. As in the case of time-boundaries, spatial
-boundaries have no independent existence, i.e. they depend on the
-spatial entity of which they are  boundaries.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Spatial_region"/>
+    <rdfs:label xml:lang="en">Spatial boundary</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boundaries of regions are
+      surfaces, boundaries of
+      surfaces are lines, and boundaries of lines are
+      points. As in the case of time-boundaries, spatial
+      boundaries have no independent existence, i.e. they depend on the
+      spatial entity of which they are boundaries.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Spatial_region" />
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/spatial_boundary_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Space"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/spatial_boundary_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Space" />
       </owl:Restriction>
     </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Spatial_region">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Space regions are mereological sums of topoids.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Spatial_boundary"/>
+    <rdfs:label xml:lang="en">Spacial region</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Space regions are
+      mereological sums of topoids.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Spatial_boundary" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/State">
-    <rdfs:comment xml:lang="en">A process without an instantanuous change at any of its inner time boundaries is called a state.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process"/>
+    <rdfs:label xml:lang="en">State</rdfs:label>
+    <skos:definition xml:lang="en">A process without an instantaneous change at any of its inner time
+      boundaries is called a state.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Stratum">
-    <rdfs:comment xml:lang="en">According to (Poli, 2001, 2002)  (based 
-on the philosopher Hartmann) we distinguish at least three ontological
-strata of the world: the material stratum, the
-mental/psychological stratum, and the
-social stratum stratum. 
+    <rdfs:label xml:lang="en">Stratum</rdfs:label>
+    <skos:definition xml:lang="en">According to (Poli, 2001, 2002) (based
+      on the philosopher Hartmann) we distinguish at least three ontological
+      strata of the world: the material stratum, the
+      mental/psychological stratum, and the
+      social stratum stratum.
 
-Every entity of the world participates in certain
-strata and levels. We take the position that the layers are
-characterized by integrated systems of categories. Hence, a layer can
-be understood as a meta-category whose instances are categories of
-certain kinds. Among these levels specific forms of categorial and
-existential dependencies hold. For example, a mental entity requires
-an animate material object as its existential bearer.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Ontological_layer"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Level"/>
+      Every entity of the world participates in certain
+      strata and levels. We take the position that the layers are
+      characterized by integrated systems of categories. Hence, a layer can
+      be understood as a meta-category whose instances are categories of
+      certain kinds. Among these levels specific forms of categorial and
+      existential dependencies hold. For example, a mental entity requires
+      an animate material object as its existential bearer.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Level" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Surface">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Spatial_boundary"/>
+    <rdfs:label xml:lang="en">Surface</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Spatial_boundary" />
     <owl:equivalentClass>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/spatial_boundary_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Topoid"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/spatial_boundary_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Topoid" />
       </owl:Restriction>
     </owl:equivalentClass>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Symbol">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Symbol_structure"/>
+    <rdfs:label xml:lang="en">Symbol</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Symbol_structure" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Symbol_sequence">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Symbol_structure"/>
+    <rdfs:label xml:lang="en">Symbol sequence</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Symbol_structure" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Symbol_structure">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concept"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Universal"/>
+    <rdfs:label xml:lang="en">Symbol structure</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concept" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Universal" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Temporal_region">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time Regions are defined as the mereological sum of chronoids,
-i.e. time regions may consist of non-connected intervals of time.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Time"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Time_boundary"/>
+    <rdfs:label xml:lang="en">Temporal region</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time Regions are defined as
+      the mereological sum of chronoids,
+      i.e. time regions may consist of non-connected intervals of time.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Time" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Time_boundary" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Time">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The time model of GFO is based on Brentano and the glass continuum of Allen&amp;Hayes.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space_time"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Space"/>
+    <rdfs:label xml:lang="en">Time</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The time model of GFO is
+      based on Brentano and the glass continuum of Allen&amp;Hayes.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space_time" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Space" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Time_boundary">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time boundaries depend on a chronoids (i.e. they have no independent
-existence) and can coincide.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Time"/>
+    <rdfs:label xml:lang="en">Time boundary</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time boundaries depend on a
+      chronoids (i.e. they have no independent
+      existence) and can coincide.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Time" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/time_boundary_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Chronoid"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/time_boundary_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Chronoid" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Temporal_region"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Temporal_region" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Token">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete"/>
+    <rdfs:label xml:lang="en">Token</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instance_of"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Symbol_structure"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instance_of" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Symbol_structure" />
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Topoid">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Topoids are connected compact regions of space. They have spatial boundaries.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Spatial_region"/>
+    <rdfs:label xml:lang="en">Topoid</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Topoids are connected
+      compact regions of space. They have spatial boundaries.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Spatial_region" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Universal">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Universals are immanent universals. They exist in re.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category"/>
+    <rdfs:label xml:lang="en">Universal</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Universals are immanent
+      universals. They exist in re.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category" />
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instantiated_by"/>
-        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Item"/>
+        <owl:onProperty rdf:resource="https://w3id.org/gfo/base/instantiated_by" />
+        <owl:someValuesFrom rdf:resource="https://w3id.org/gfo/base/Item" />
       </owl:Restriction>
     </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concept"/>
-    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Symbol_structure"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concept" />
+    <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Symbol_structure" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Value_space">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Property values usually appear in groups which are called value structures, value spaces or measurement systems.
-Each of these structures corresponds to some property. More intuitively, one could say that the property may be measured with respect to some measurement system.
-For instance, sizes may be measured with the values ``small'' ``big'' or ``very big'', which are the elements of one value structure.
+    <rdfs:label xml:lang="en">Value space</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Property values usually
+      appear in groups which are called value structures, value spaces or measurement systems.
+      Each of these structures corresponds to some property. More intuitively, one could say that
+      the property may be measured with respect to some measurement system.
+      For instance, sizes may be measured with the values ``small'' ``big'' or ``very big'', which
+      are the elements of one value structure.
 
-The notion of a value structure of a property is similar to a quality dimension in (Gardenfors, 2000).
+      The notion of a value structure of a property is similar to a quality dimension in
+      (Gardenfors, 2000).
 
-Further, value structures are related to quality spaces in DOLCE (Masolo, 2003}. A quality space consists of all ``quales'' (our property values) of some ``quality'' (our property).
-
-Often it seems to be the case that a notion of distance can be defined, and that certain layers of value structures are isomorphic to some subset of real numbers, which allows for a mapping of values to pairs of a real number and a unit, as in the case of ``10 kg''.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Universal"/>
+      Further, value structures are related to quality spaces in DOLCE (Masolo, 2003}. A quality
+      space consists of all "quales" (our property values) of some "quality" (our property).
+      Often it seems to be the case that a notion of distance can be defined, and that certain
+      layers of value structures are isomorphic to some subset of real numbers, which allows for a
+      mapping of values to pairs of a real number and a unit, as in the case of "10 kg".</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Universal" />
   </owl:Class>
 
   <owl:Class rdf:nodeID="b36">
     <owl:unionOf rdf:parseType="Collection">
-      <rdf:Description rdf:about="https://w3id.org/gfo/base/Configuration"/>
-      <rdf:Description rdf:about="https://w3id.org/gfo/base/Configuroid"/>
+      <rdf:Description rdf:about="https://w3id.org/gfo/base/Configuration" />
+      <rdf:Description rdf:about="https://w3id.org/gfo/base/Configuroid" />
     </owl:unionOf>
   </owl:Class>
 
   <owl:Class rdf:nodeID="b4">
     <owl:unionOf rdf:parseType="Collection">
-      <rdf:Description rdf:about="https://w3id.org/gfo/base/Occurrent"/>
-      <rdf:Description rdf:about="https://w3id.org/gfo/base/Presential"/>
+      <rdf:Description rdf:about="https://w3id.org/gfo/base/Occurrent" />
+      <rdf:Description rdf:about="https://w3id.org/gfo/base/Presential" />
     </owl:unionOf>
   </owl:Class>
 
-<!-- Annotation Properties -->
-  <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
-  <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+  <!-- Annotation Properties -->
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment" />
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo" />
 
-<!-- Object Properties -->
+  <!-- Object Properties -->
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/abstract_has_part">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Item"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Item"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/abstract_part_of"/>
+    <rdfs:label xml:lang="en">abstract has part</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty" />
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Item" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Item" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/abstract_part_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/abstract_part_of">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The abstract part-of relation is denoted by p(x,y);
-the argument-types of this relation are not specified, i.e. we allow
-arbitrary entities to be arguments. We assume that p(x,y) satisfies
-the condition of a partial ordering, .i.e. the following axioms: reflexivity, antisymmetry and transitivity.</rdfs:comment>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Item"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Item"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/abstract_has_part"/>
+    <rdfs:label xml:lang="en">abstract part of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty" />
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The abstract part-of
+      relation is denoted by p(x,y);
+      the argument-types of this relation are not specified, i.e. we allow
+      arbitrary entities to be arguments. We assume that p(x,y) satisfies
+      the condition of a partial ordering, .i.e. the following axioms: reflexivity, antisymmetry and
+      transitivity.</skos:definition>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Item" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Item" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/abstract_has_part" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/agent_in">
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/causes"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/participates_in"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_agent"/>
+    <rdfs:label xml:lang="en">agent in</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/causes" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/participates_in" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_agent" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/boundary_of">
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/depends_on"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_boundary"/>
+    <rdfs:label xml:lang="en">boundary of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/depends_on" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_boundary" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/categorial_part_of">
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/abstract_part_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_categorial_part"/>
+    <rdfs:label xml:lang="en">categorial part of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/abstract_part_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_categorial_part" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/category_in_layer">
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/categorial_part_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_category"/>
+    <rdfs:label xml:lang="en">category in layer</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/categorial_part_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_category" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/caused_by">
-    <rdfs:domain rdf:nodeID="b4"/>
-    <rdfs:range rdf:nodeID="b4"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/causes"/>
+    <rdfs:label xml:lang="en">caused by</rdfs:label>
+    <rdfs:domain rdf:nodeID="b4" />
+    <rdfs:range rdf:nodeID="b4" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/causes" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/causes">
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/caused_by"/>
+    <rdfs:label xml:lang="en">causes</rdfs:label>
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/caused_by" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/constituent_part_of">
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/proper_part_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_constituent_part"/>
+    <rdfs:label xml:lang="en">constituent part of</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/proper_part_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_constituent_part" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/depends_on">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relation captures the notion of existential dependence.</rdfs:comment>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Item"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Item"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/necessary_for"/>
+    <rdfs:label xml:lang="en">depends on</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relation captures the
+      notion of existential dependence.</skos:definition>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Item" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Item" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/necessary_for" />
   </owl:ObjectProperty>
 
   <owl:FunctionalProperty rdf:about="https://w3id.org/gfo/base/exists_at">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Presential"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Time_boundary"/>
+    <rdfs:label xml:lang="en">exists at</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Presential" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Time_boundary" />
   </owl:FunctionalProperty>
 
   <owl:FunctionalProperty rdf:about="https://w3id.org/gfo/base/framed_by">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Material_object"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Topoid"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/occupies"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/frames"/>
+    <rdfs:label xml:lang="en">framed by</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Material_object" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Topoid" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/occupies" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/frames" />
   </owl:FunctionalProperty>
 
   <owl:InverseFunctionalProperty rdf:about="https://w3id.org/gfo/base/frames">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Topoid"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Material_object"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/framed_by"/>
+    <rdfs:label xml:lang="en">frames</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Topoid" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Material_object" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/framed_by" />
   </owl:InverseFunctionalProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/function_determinant_of">
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Function"/>
+    <rdfs:label xml:lang="en">function determinant of</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Function" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/function_of">
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_function"/>
+    <rdfs:label xml:lang="en">function of</rdfs:label>
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_function" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/functional_item_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Role"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/function_determinant_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_functional_item"/>
+    <rdfs:label xml:lang="en">functional item of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Role" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/function_determinant_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_functional_item" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/goal_of">
-    <rdfs:comment xml:lang="en">"goal" here refers to "final state" in (Burek, 2006).</rdfs:comment>
-    <rdfs:domain rdf:nodeID="b36"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/function_determinant_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_goal"/>
+    <rdfs:label xml:lang="en">goal of</rdfs:label>
+    <skos:definition xml:lang="en">The term "goal" here refers to "final state" in (Burek, 2006).</skos:definition>
+    <rdfs:domain rdf:nodeID="b36" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/function_determinant_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_goal" />
   </owl:ObjectProperty>
 
-  <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_agent"/>
+  <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_agent" />
   <owl:InverseFunctionalProperty rdf:about="https://w3id.org/gfo/base/has_boundary">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/boundary_of"/>
+    <rdfs:label xml:lang="en">has boundary</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/boundary_of" />
   </owl:InverseFunctionalProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_categorial_part">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Category"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Category"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/abstract_has_part"/>
+    <rdfs:label xml:lang="en">has categorial part</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Category" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Category" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/abstract_has_part" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_category">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Ontological_layer"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Category"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/category_in_layer"/>
+    <rdfs:label xml:lang="en">has category</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Category" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/category_in_layer" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_constituent_part">
-    <rdfs:domain rdf:nodeID="b36"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_proper_part"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/constituent_part_of"/>
+    <rdfs:label xml:lang="en">has constituent part</rdfs:label>
+    <rdfs:domain rdf:nodeID="b36" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_proper_part" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/constituent_part_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_function">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Function"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/function_of"/>
+    <rdfs:label xml:lang="en">has function</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Function" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/function_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_function_determinant">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Function"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/function_determinant_of"/>
+    <rdfs:label xml:lang="en">has function determinant</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Function" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/function_determinant_of" />
   </owl:ObjectProperty>
 
   <owl:FunctionalProperty rdf:about="https://w3id.org/gfo/base/has_functional_item">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Function"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Role"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_function_determinant"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/functional_item_of"/>
+    <rdfs:label xml:lang="en">has functional item</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Function" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Role" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_function_determinant" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/functional_item_of" />
   </owl:FunctionalProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_goal">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Function"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_function_determinant"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/goal_of"/>
+    <rdfs:label xml:lang="en">has goal</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Function" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_function_determinant" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/goal_of" />
   </owl:ObjectProperty>
 
   <owl:FunctionalProperty rdf:about="https://w3id.org/gfo/base/has_left_time_boundary">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_time_boundary"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/left_boundary_of"/>
+    <rdfs:label xml:lang="en">has left time boundary</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_time_boundary" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/left_boundary_of" />
   </owl:FunctionalProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_member">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Set"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Entity"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/member_of"/>
+    <rdfs:label xml:lang="en">has member</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Set" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Entity" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/member_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_part">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Concrete"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Concrete"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/abstract_has_part"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/part_of"/>
+    <rdfs:label xml:lang="en">has part</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty" />
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Concrete" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Concrete" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/abstract_has_part" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/part_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_participant">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Occurrent"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Presential"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/participates_in"/>
+    <rdfs:label xml:lang="en">has participant</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Occurrent" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Presential" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/participates_in" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_proper_part">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_part"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/proper_part_of"/>
+    <rdfs:label xml:lang="en">has proper part</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_part" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/proper_part_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_requirement">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Function"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_function_determinant"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/requirement_of"/>
+    <rdfs:label xml:lang="en">has requirement</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Function" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_function_determinant" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/requirement_of" />
   </owl:ObjectProperty>
 
   <owl:FunctionalProperty rdf:about="https://w3id.org/gfo/base/has_right_time_boundary">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_time_boundary"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/right_boundary_of"/>
+    <rdfs:label xml:lang="en">has right time boundary</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_time_boundary" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/right_boundary_of" />
   </owl:FunctionalProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_sequence_constituent">
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/sequence_constituent_of"/>
+    <rdfs:label xml:lang="en">has sequence constituent</rdfs:label>
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/sequence_constituent_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_spatial_boundary">
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Spatial_boundary"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_boundary"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/spatial_boundary_of"/>
+    <rdfs:label xml:lang="en">has spatial boundary</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Spatial_boundary" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_boundary" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/spatial_boundary_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_time_boundary">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Chronoid"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Time_boundary"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_boundary"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/time_boundary_of"/>
+    <rdfs:label xml:lang="en">has time boundary</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Chronoid" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Time_boundary" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/has_boundary" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/time_boundary_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_token">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Symbol_structure"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Token"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/instantiated_by"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/token_of"/>
+    <rdfs:label xml:lang="en">has token</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Symbol_structure" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Token" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/instantiated_by" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/token_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/has_value">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Property"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Property_value"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/value_of"/>
+    <rdfs:label xml:lang="en">has value</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Property" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Property_value" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/value_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/instance_of">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The instantiation relation holds between a category and an item. It is not a relation between categories and individuals due to higher order categories such as "species".</rdfs:comment>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Entity"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Category"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/instantiated_by"/>
+    <rdfs:label xml:lang="en">instance of</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The instantiation relation
+      holds between a category and an item. It is not a relation between categories and individuals
+      due to higher order categories such as "species".</skos:definition>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Entity" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Category" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/instantiated_by" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/instantiated_by">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Category"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/instance_of"/>
+    <rdfs:label xml:lang="en">instantiated by</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Category" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/instance_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/layer_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Ontological_layer"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/on_layer"/>
+    <rdfs:label xml:lang="en">layer of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/on_layer" />
   </owl:ObjectProperty>
 
   <owl:InverseFunctionalProperty rdf:about="https://w3id.org/gfo/base/left_boundary_of">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Left boundary of a chronoid.</rdfs:comment>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_left_time_boundary"/>
+    <rdfs:label xml:lang="en">left boundary of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Left boundary of a
+      chronoid.</skos:definition>
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_left_time_boundary" />
   </owl:InverseFunctionalProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/level_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Level"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/layer_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/on_level"/>
+    <rdfs:label xml:lang="en">level of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Level" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/layer_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/on_level" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/member_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Entity"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Set"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_member"/>
+    <rdfs:label xml:lang="en">member of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Entity" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Set" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_member" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/necessary_for">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Item"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Item"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/depends_on"/>
+    <rdfs:label xml:lang="en">necessary for</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Item" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Item" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/depends_on" />
   </owl:ObjectProperty>
 
   <owl:InverseFunctionalProperty rdf:about="https://w3id.org/gfo/base/occupied_by">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Space"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Presential"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/occupies"/>
+    <rdfs:label xml:lang="en">occupied by</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Space" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Presential" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/occupies" />
   </owl:InverseFunctionalProperty>
 
   <owl:FunctionalProperty rdf:about="https://w3id.org/gfo/base/occupies">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Presential"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Space"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/occupied_by"/>
+    <rdfs:label xml:lang="en">occupies</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Presential" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Space" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/occupied_by" />
   </owl:FunctionalProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/on_layer">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Ontological_layer"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/layer_of"/>
+    <rdfs:label xml:lang="en">on layer</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/layer_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/on_level">
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Level"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/on_layer"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/level_of"/>
+    <rdfs:label xml:lang="en">on level</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Level" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/on_layer" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/level_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/on_stratum">
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Stratum"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/on_layer"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/stratum_of"/>
+    <rdfs:label xml:lang="en">on stratum</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Stratum" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/on_layer" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/stratum_of" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/part_of">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Concrete"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Concrete"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/abstract_part_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_part"/>
+    <rdfs:label xml:lang="en">part of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty" />
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Concrete" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Concrete" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/abstract_part_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_part" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/participates_in">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Presential"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Occurrent"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_participant"/>
+    <rdfs:label xml:lang="en">participates in</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Presential" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Occurrent" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_participant" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/plays_role">
-    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Role"/>
+    <rdfs:label xml:lang="en">plays role</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Role" />
   </owl:ObjectProperty>
 
   <owl:InverseFunctionalProperty rdf:about="https://w3id.org/gfo/base/projection_of">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">projection of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
   </owl:InverseFunctionalProperty>
 
   <owl:FunctionalProperty rdf:about="https://w3id.org/gfo/base/projects_to">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Occurrent"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Temporal_region"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/projection_of"/>
+    <rdfs:label xml:lang="en">projects to</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Occurrent" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Temporal_region" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/projection_of" />
   </owl:FunctionalProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/proper_part_of">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/part_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_proper_part"/>
+    <rdfs:label xml:lang="en">proper part of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/part_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_proper_part" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/realized_by">
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/realizes"/>
+    <rdfs:label xml:lang="en">realized by</rdfs:label>
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/realizes" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/realizes">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Individual"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Function"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/realized_by"/>
+    <rdfs:label xml:lang="en">realizes</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Individual" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Function" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/realized_by" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/requirement_of">
-    <rdfs:comment xml:lang="en">"requirement" here refers to "initial state" in (Burek, 2006).</rdfs:comment>
-    <rdfs:domain rdf:nodeID="b36"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/function_determinant_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_requirement"/>
+    <rdfs:label xml:lang="en">requirement of</rdfs:label>
+    <skos:definition xml:lang="en">The term "requirement" here refers to "initial state" in (Burek, 2006).</skos:definition>
+    <rdfs:domain rdf:nodeID="b36" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/function_determinant_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_requirement" />
   </owl:ObjectProperty>
 
   <owl:InverseFunctionalProperty rdf:about="https://w3id.org/gfo/base/right_boundary_of">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Right boundary of a chronoid.</rdfs:comment>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_right_time_boundary"/>
+    <rdfs:label xml:lang="en">right boundary of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Right boundary of a
+      chronoid.</skos:definition>
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_right_time_boundary" />
   </owl:InverseFunctionalProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/role_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Role"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Individual"/>
+    <rdfs:label xml:lang="en">role of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Role" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Individual" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/sequence_constituent_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Symbol"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Symbol_sequence"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/categorial_part_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_sequence_constituent"/>
+    <rdfs:label xml:lang="en">sequence constituent of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Symbol" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Symbol_sequence" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/categorial_part_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_sequence_constituent" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/spatial_boundary_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Spatial_boundary"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Space"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/boundary_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_spatial_boundary"/>
+    <rdfs:label xml:lang="en">spatial boundary of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Spatial_boundary" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Space" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/boundary_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_spatial_boundary" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/stratum_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Stratum"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/layer_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/on_stratum"/>
+    <rdfs:label xml:lang="en">stratum of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Stratum" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/layer_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/on_stratum" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/time_boundary_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Time_boundary"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Chronoid"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/boundary_of"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_time_boundary"/>
+    <rdfs:label xml:lang="en">time boundary of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Time_boundary" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Chronoid" />
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/boundary_of" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_time_boundary" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/token_of">
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_token"/>
+    <rdfs:label xml:lang="en">token of</rdfs:label>
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_token" />
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/value_of">
-    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Property_value"/>
-    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Property"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_value"/>
+    <rdfs:label xml:lang="en">value of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Property_value" />
+    <rdfs:range rdf:resource="https://w3id.org/gfo/base/Property" />
+    <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_value" />
   </owl:ObjectProperty>
 
-<!-- Instances -->
-  <Set rdf:about="https://w3id.org/gfo/base/empty_set"/>
+  <!-- Instances -->
+  <Set rdf:about="https://w3id.org/gfo/base/empty_set" />
 </rdf:RDF>
