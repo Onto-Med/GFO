@@ -1423,7 +1423,7 @@
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/on_level">
-    <rdfs:label xml:lang="en">on Ebene</rdfs:label>
+    <rdfs:label xml:lang="en">on level</rdfs:label>
     <rdfs:label xml:lang="de">auf Stufe</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/gfo/base/Level" />
     <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo/base/on_layer" />
