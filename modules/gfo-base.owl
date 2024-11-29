@@ -1357,7 +1357,7 @@
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/layer_of">
     <rdfs:label xml:lang="en">layer of</rdfs:label>
-    <rdfs:label xml:lang="de">Ebene von</rdfs:label>
+    <rdfs:label xml:lang="de">Bereich von</rdfs:label>
     <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
     <rdfs:range rdf:resource="https://w3id.org/gfo/base/Individual" />
     <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/on_layer" />
@@ -1416,7 +1416,7 @@
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/on_layer">
     <rdfs:label xml:lang="en">on layer</rdfs:label>
-    <rdfs:label xml:lang="de">auf Stufe</rdfs:label>
+    <rdfs:label xml:lang="de">im Bereich</rdfs:label>
     <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Individual" />
     <rdfs:range rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
     <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/layer_of" />
