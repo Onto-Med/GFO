@@ -1,0 +1,704 @@
+@prefix : <https://w3id.org/gfo/situation/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@base <https://w3id.org/gfo/situation> .
+
+<https://w3id.org/gfo/core> rdf:type owl:Ontology ;
+                             owl:versionIRI <https://w3id.org/gfo/situation/release/2024-12-03> ;
+                             dc:created "2024-12-03" ;
+                             dc:creator "Alexandr Uciteli" ,
+                                        "Christoph Beger" ,
+                                        "Frank Löbe" ,
+                                        "Franz Matthies" ,
+                                        "Heinrich Herre" ,
+                                        "Konrad Höffner" ,
+                                        "Patryk Burek" ,
+                                        "Ralph Schäfermeier" ;
+                             dc:description "GFO-situation is an ontology module describing a GFO-based situation theory."@en ;
+                             dc:modified "2024-12-03" ;
+                             dc:title "General Formal Ontology (situation module)"@en ;
+                             terms:license <http://creativecommons.org/licenses/by/4.0/> ;
+                             bibo:doi <https://zenodo.org/doi/10.5281/zenodo.5205419> ;
+                             vann:preferredNamespacePrefix "gfo-situation" ;
+                             vann:preferredNamespaceURI "https://w3id.org/gfo/situation/" ;
+                             doap:repository <https://github.com/Onto-Med/GFO> ;
+                             rdfs:label "GFO-situation"@en ;
+                             owl:versionInfo "2024-12-03" ;
+                             foaf:homepage "https://github.com/Onto-Med/GFO" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceURI
+vann:preferredNamespaceURI rdf:type owl:AnnotationProperty .
+
+
+###  http://usefulinc.com/ns/doap#repository
+doap:repository rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/gfo/core/attributiveOf
+:attributiveOf rdf:type owl:ObjectProperty ;
+               owl:inverseOf :hasAttributive ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Attributive
+                                           :PresenticAttributive
+                                         )
+                           ] ;
+               rdfs:range :Individual ;
+               rdfs:label "attributive of"@en .
+
+
+###  https://w3id.org/gfo/core/followUp
+:followUp rdf:type owl:ObjectProperty ;
+          rdfs:domain :PresenticIndividual ;
+          rdfs:range :PresenticIndividual ;
+          rdfs:label "follow up"@en .
+
+
+###  https://w3id.org/gfo/core/hasAttributive
+:hasAttributive rdf:type owl:ObjectProperty ;
+                rdfs:domain :Individual ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( :Attributive
+                                           :PresenticAttributive
+                                         )
+                           ] ;
+                rdfs:label "has attributive"@en .
+
+
+###  https://w3id.org/gfo/core/hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         owl:inverseOf :partOf ;
+         rdfs:domain :Individual ;
+         rdfs:range :Individual ;
+         rdfs:label "has part"@en .
+
+
+###  https://w3id.org/gfo/core/hasParticipant
+:hasParticipant rdf:type owl:ObjectProperty ;
+                owl:inverseOf :participatesIn ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :PresenticSituation
+                                            :Situation
+                                          )
+                            ] ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( :Object
+                                           :PresenticObject
+                                         )
+                           ] ;
+                rdfs:label "has participant"@en .
+
+
+###  https://w3id.org/gfo/core/hasParticipantQuality
+:hasParticipantQuality rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasSituationPart ;
+                       owl:inverseOf :participantQualityOf ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( :PresenticSituation
+                                                   :Situation
+                                                 )
+                                   ] ;
+                       rdfs:range [ rdf:type owl:Class ;
+                                    owl:unionOf ( :PresenticQuality
+                                                  :Quality
+                                                )
+                                  ] ;
+                       rdfs:label "has participant quality"@en .
+
+
+###  https://w3id.org/gfo/core/hasQuality
+:hasQuality rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasAttributive ;
+            owl:inverseOf :qualityOf ;
+            rdfs:domain :Individual ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :PresenticQuality
+                                       :Quality
+                                     )
+                       ] ;
+            rdfs:label "has quality"@en .
+
+
+###  https://w3id.org/gfo/core/hasSituationPart
+:hasSituationPart rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasPart ;
+                  owl:inverseOf :situationPartOf ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :PresenticSituation
+                                              :Situation
+                                            )
+                              ] ;
+                  rdfs:range [ rdf:type owl:Class ;
+                               owl:unionOf ( :Attributive
+                                             :PresenticAttributive
+                                           )
+                             ] ;
+                  rdfs:label "has situation part"@en .
+
+
+###  https://w3id.org/gfo/core/hasTime
+:hasTime rdf:type owl:ObjectProperty ;
+         owl:inverseOf :timeOf ;
+         rdfs:domain :ConcreteIndividual ;
+         rdfs:range :TimeEntity ;
+         rdfs:label "has time"@en .
+
+
+###  https://w3id.org/gfo/core/hasTimeBoundary
+:hasTimeBoundary rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :timeBoundaryOf ;
+                 rdfs:domain :TimeInterval ;
+                 rdfs:range :TimePoint ;
+                 rdfs:label "has time boundary"@en .
+
+
+###  https://w3id.org/gfo/core/partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :Individual ;
+        rdfs:range :Individual ;
+        rdfs:label "part of"@en .
+
+
+###  https://w3id.org/gfo/core/participantQualityOf
+:participantQualityOf rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :situationPartOf ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( :PresenticQuality
+                                                  :Quality
+                                                )
+                                  ] ;
+                      rdfs:range [ rdf:type owl:Class ;
+                                   owl:unionOf ( :PresenticSituation
+                                                 :Situation
+                                               )
+                                 ] ;
+                      rdfs:label "participant quality of"@en .
+
+
+###  https://w3id.org/gfo/core/participatesIn
+:participatesIn rdf:type owl:ObjectProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Object
+                                            :PresenticObject
+                                          )
+                            ] ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( :PresenticSituation
+                                           :Situation
+                                         )
+                           ] ;
+                rdfs:label "participates in"@en .
+
+
+###  https://w3id.org/gfo/core/playedBy
+:playedBy rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :attributiveOf ;
+          owl:inverseOf :plays ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :PresenticRole
+                                      :Role
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Object
+                                     :PresenticObject
+                                   )
+                     ] ;
+          rdfs:label "played by"@en .
+
+
+###  https://w3id.org/gfo/core/plays
+:plays rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :hasAttributive ;
+       rdfs:domain [ rdf:type owl:Class ;
+                     owl:unionOf ( :Object
+                                   :PresenticObject
+                                 )
+                   ] ;
+       rdfs:range [ rdf:type owl:Class ;
+                    owl:unionOf ( :PresenticRole
+                                  :Role
+                                )
+                  ] ;
+       rdfs:label "plays"@en .
+
+
+###  https://w3id.org/gfo/core/qualityOf
+:qualityOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :attributiveOf ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :PresenticQuality
+                                       :Quality
+                                     )
+                       ] ;
+           rdfs:range :Individual ;
+           rdfs:label "quality of"@en .
+
+
+###  https://w3id.org/gfo/core/relatedBy
+:relatedBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasAttributive ;
+           owl:inverseOf :relates ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Object
+                                       :PresenticObject
+                                     )
+                       ] ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :PresenticRelator
+                                      :Relator
+                                    )
+                      ] ;
+           rdfs:label "related by"@en .
+
+
+###  https://w3id.org/gfo/core/relates
+:relates rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :attributiveOf ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :PresenticRelator
+                                     :Relator
+                                   )
+                     ] ;
+         rdfs:range [ rdf:type owl:Class ;
+                      owl:unionOf ( :Object
+                                    :PresenticObject
+                                  )
+                    ] ;
+         rdfs:label "relates"@en .
+
+
+###  https://w3id.org/gfo/core/roleIn
+:roleIn rdf:type owl:ObjectProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :PresenticRole
+                                    :Role
+                                  )
+                    ] ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( :PresenticRelator
+                                   :Relator
+                                 )
+                   ] ;
+        rdfs:label "role in"@en .
+
+
+###  https://w3id.org/gfo/core/situationPartOf
+:situationPartOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :partOf ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( :Attributive
+                                             :PresenticAttributive
+                                           )
+                             ] ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( :PresenticSituation
+                                            :Situation
+                                          )
+                            ] ;
+                 rdfs:label "situation part of"@en .
+
+
+###  https://w3id.org/gfo/core/snapshotOf
+:snapshotOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :PresenticIndividual ;
+            rdfs:range :TimeExtendedIndividual ;
+            rdfs:label "snapshot of"@en .
+
+
+###  https://w3id.org/gfo/core/timeBoundaryOf
+:timeBoundaryOf rdf:type owl:ObjectProperty ;
+                rdfs:domain :TimePoint ;
+                rdfs:range :TimeInterval ;
+                rdfs:label "time boundary of"@en .
+
+
+###  https://w3id.org/gfo/core/timeOf
+:timeOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :TimeEntity ;
+        rdfs:range :ConcreteIndividual ;
+        rdfs:label "time of"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/gfo/core/booleanValue
+:booleanValue rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Attributive ;
+              rdfs:range xsd:boolean ;
+              rdfs:label "boolean value"@en .
+
+
+###  https://w3id.org/gfo/core/dateTimeValue
+:dateTimeValue rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Individual ;
+               rdfs:range xsd:dateTime ;
+               rdfs:label "date time value"@en .
+
+
+###  https://w3id.org/gfo/core/decimalValue
+:decimalValue rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Attributive ;
+              rdfs:range xsd:decimal ;
+              rdfs:label "decimal value"@en .
+
+
+###  https://w3id.org/gfo/core/endDateTimeValue
+:endDateTimeValue rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :dateTimeValue ;
+                  rdfs:label "end date time value"@en .
+
+
+###  https://w3id.org/gfo/core/startDateTimeValue
+:startDateTimeValue rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :dateTimeValue ;
+                    rdfs:label "start date time value"@en .
+
+
+###  https://w3id.org/gfo/core/stringValue
+:stringValue rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Attributive ;
+             rdfs:range xsd:string ;
+             rdfs:label "string value"@en .
+
+
+###  https://w3id.org/gfo/core/unit
+:unit rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Attributive ;
+      rdfs:range xsd:string ;
+      rdfs:label "unit"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/gfo/core/Attributive
+:Attributive rdf:type owl:Class ;
+             rdfs:subClassOf :TimeExtendedIndividual ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :attributiveOf ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :TimeExtendedIndividual
+                             ] ;
+             rdfs:comment "Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category Attributive."@en ;
+             rdfs:label "Attributive"@en ;
+             skos:definition "Attributives are individuals that depend on other individuals by some kind of dependency relation."@en .
+
+
+###  https://w3id.org/gfo/core/ConcreteIndividual
+:ConcreteIndividual rdf:type owl:Class ;
+                    rdfs:subClassOf :Individual ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasTime ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :TimeEntity
+                                    ] ;
+                    rdfs:label "Concrete individual"@en ;
+                    skos:definition "Concrete individuals are entities that have an immediate relation to time or to space-time. They exist in time."@en .
+
+
+###  https://w3id.org/gfo/core/Individual
+:Individual rdf:type owl:Class ;
+            rdfs:label "Individual"@en ;
+            skos:definition "Individuals are entities which cannot be further instantiated."@en .
+
+
+###  https://w3id.org/gfo/core/Object
+:Object rdf:type owl:Class ;
+        rdfs:subClassOf :TimeExtendedIndividual ;
+        rdfs:label "Object"@en ;
+        skos:altLabel "Continuant"@en ;
+        skos:definition "An object is understood as a mutable entity that persists over time, having a finite lifespan of non-zero duration. As such, it specializes gfo:Continuant."@en ;
+        skos:example "Physical, tangible entities such as apples, cells and organisms"@en .
+
+
+###  https://w3id.org/gfo/core/PresenticAttributive
+:PresenticAttributive rdf:type owl:Class ;
+                      rdfs:subClassOf :PresenticIndividual ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :attributiveOf ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :PresenticIndividual
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :snapshotOf ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :Attributive
+                                      ] ;
+                      rdfs:label "Presentic attributive"@en .
+
+
+###  https://w3id.org/gfo/core/PresenticIndividual
+:PresenticIndividual rdf:type owl:Class ;
+                     rdfs:subClassOf :ConcreteIndividual ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasTime ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :TimePoint
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :snapshotOf ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :TimeExtendedIndividual
+                                     ] ;
+                     rdfs:label "Presentic individual"@en .
+
+
+###  https://w3id.org/gfo/core/PresenticObject
+:PresenticObject rdf:type owl:Class ;
+                 rdfs:subClassOf :PresenticIndividual ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :snapshotOf ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :Object
+                                 ] ;
+                 rdfs:label "Presentic object"@en ;
+                 skos:definition "Each object manifests itself at any given time point of its existence as a presentic object (the latter is then a snapshot_of the former). A presentic object is likewise a complete whole, but with a lifetime of a unique time point, at which it is fully present."@en .
+
+
+###  https://w3id.org/gfo/core/PresenticQuality
+:PresenticQuality rdf:type owl:Class ;
+                  rdfs:subClassOf :PresenticAttributive ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :qualityOf ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :PresenticIndividual
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :snapshotOf ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :Quality
+                                  ] ;
+                  rdfs:label "Presentic quality"@en .
+
+
+###  https://w3id.org/gfo/core/PresenticRelator
+:PresenticRelator rdf:type owl:Class ;
+                  rdfs:subClassOf :PresenticAttributive ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :relates ;
+                                    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :PresenticObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :snapshotOf ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :Relator
+                                  ] ;
+                  rdfs:label "Presentic relator"@en .
+
+
+###  https://w3id.org/gfo/core/PresenticRole
+:PresenticRole rdf:type owl:Class ;
+               rdfs:subClassOf :PresenticAttributive ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :playedBy ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :PresenticObject
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :roleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :PresenticRelator
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :snapshotOf ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Role
+                               ] ;
+               rdfs:label "Presentic role"@en .
+
+
+###  https://w3id.org/gfo/core/PresenticSituation
+:PresenticSituation rdf:type owl:Class ;
+                    rdfs:subClassOf :PresenticIndividual ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasParticipant ;
+                                      owl:someValuesFrom :PresenticObject
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasSituationPart ;
+                                      owl:someValuesFrom :PresenticAttributive
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :snapshotOf ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :Situation
+                                    ] ;
+                    rdfs:label "Presentic situation"@en .
+
+
+###  https://w3id.org/gfo/core/Quality
+:Quality rdf:type owl:Class ;
+         rdfs:subClassOf :Attributive ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :qualityOf ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :TimeExtendedIndividual
+                         ] ;
+         rdfs:label "Quality"@en ;
+         skos:definition "A quality links an entity—the necessary quality bearer—to a value, which can be quantitative (e.g., 10 kg, 40 $) or qualitative (e.g., ‘green’, ‘nice’)."@en .
+
+
+###  https://w3id.org/gfo/core/Relator
+:Relator rdf:type owl:Class ;
+         rdfs:subClassOf :Attributive ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :relates ;
+                           owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Object
+                         ] ;
+         rdfs:label "Relator"@en ;
+         skos:definition "Relators are attributives that connect other entities (role players) by relational roles (played by role players)."@en ;
+         skos:example "The marriage (relator) of John and Mary (in which Mary plays the wife role and John the husband role)"@en .
+
+
+###  https://w3id.org/gfo/core/Role
+:Role rdf:type owl:Class ;
+      rdfs:subClassOf :Attributive ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :playedBy ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Object
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :roleIn ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Relator
+                      ] ;
+      rdfs:label "Role"@en ;
+      skos:definition "A role characterizes an entity—its required player—through its context (e.g., relation/relator)."@en .
+
+
+###  https://w3id.org/gfo/core/Situation
+:Situation rdf:type owl:Class ;
+           rdfs:subClassOf :TimeExtendedIndividual ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasParticipant ;
+                             owl:someValuesFrom :Object
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasSituationPart ;
+                             owl:someValuesFrom :Attributive
+                           ] ;
+           rdfs:comment "In line with GFO, we assume that every situation consists of at least one object that participates_in the situation."@en ;
+           rdfs:label "Situation"@en ;
+           skos:definition "Situations as complex entities that are comprehended as wholes"@en .
+
+
+###  https://w3id.org/gfo/core/TimeEntity
+:TimeEntity rdf:type owl:Class ;
+            rdfs:subClassOf :Individual ;
+            rdfs:comment "The time entities defined in GFO are points in time (time boundaries) and time intervals (chronoids), which consist of points in time."@en ;
+            rdfs:label "Time entity"@en .
+
+
+###  https://w3id.org/gfo/core/TimeExtendedIndividual
+:TimeExtendedIndividual rdf:type owl:Class ;
+                        rdfs:subClassOf :ConcreteIndividual ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasTime ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :TimeInterval
+                                        ] ;
+                        rdfs:label "Time-extended individual"@en .
+
+
+###  https://w3id.org/gfo/core/TimeInterval
+:TimeInterval rdf:type owl:Class ;
+              rdfs:subClassOf :TimeEntity ;
+              rdfs:label "Time interval"@en ;
+              skos:altLabel "Chronoid"@en ,
+                            "Time period"@en .
+
+
+###  https://w3id.org/gfo/core/TimePoint
+:TimePoint rdf:type owl:Class ;
+           rdfs:subClassOf :TimeEntity ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :timeBoundaryOf ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :TimeInterval
+                           ] ;
+           rdfs:label "Time point"@en ;
+           skos:altLabel "Point in time"@en ,
+                         "Time boundary"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
