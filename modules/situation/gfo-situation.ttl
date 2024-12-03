@@ -13,7 +13,7 @@
 @prefix terms: <http://purl.org/dc/terms/> .
 @base <https://w3id.org/gfo/situation> .
 
-<https://w3id.org/gfo/core> rdf:type owl:Ontology ;
+<https://w3id.org/gfo/situation> rdf:type owl:Ontology ;
                              owl:versionIRI <https://w3id.org/gfo/situation/release/2024-12-03> ;
                              dc:created "2024-12-03" ;
                              dc:creator "Alexandr Uciteli" ,
