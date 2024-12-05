@@ -687,7 +687,7 @@ GFO pursues an approach which accounts for persistence by means of a suitable un
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Stratum">
     <rdfs:label xml:lang="en">Stratum</rdfs:label>
-    <skos:definition xml:lang="en">According to (Poli, 2001, 2002) (based on the philosopher Hartmann) we distinguish at least three ontological strata of the world: the material stratum, the mental/psychological stratum, and the social stratum stratum.
+    <skos:definition xml:lang="en">According to (Poli, 2001, 2002) (based on the philosopher Hartmann) we distinguish at least three ontological strata of the world: the material stratum, the mental/psychological stratum, and the social stratum.
 Every entity of the world participates in certain strata and levels. We take the position that the layers are characterized by integrated systems of categories. Hence, a layer can be understood as a meta-category whose instances are categories of certain kinds. Among these levels specific forms of categorial and existential dependencies hold. For example, a mental entity requires an animate material object as its existential bearer.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Level" />
