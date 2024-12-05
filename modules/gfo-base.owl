@@ -20,8 +20,7 @@
     <owl:versionIRI rdf:resource="https://w3id.org/gfo/base/release/2024-11-18" />
     <dc:title xml:lang="en">General Formal Ontology Base (GFO-base)</dc:title>
     <rdfs:label xml:lang="en">General Formal Ontology Base (GFO-base)</rdfs:label>
-    <dc:description>The module GFO-base of the General Formal Ontology contains all fundamental
-      classes, properties, and axioms that are relevant for all other GFO modules.</dc:description>
+    <dc:description>The module GFO-base of the General Formal Ontology contains all fundamental classes, properties, and axioms that are relevant for all other GFO modules.</dc:description>
     <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-08-28</dc:created>
     <vann:preferredNamespaceURI>https://w3id.org/gfo/base/</vann:preferredNamespaceURI>
     <vann:preferredNamespacePrefix>gfo-base</vann:preferredNamespacePrefix>
@@ -34,9 +33,8 @@
   <!-- Classes -->
   <owl:Class rdf:about="https://w3id.org/gfo/base/Abstract">
     <rdfs:label xml:lang="en">Abstract</rdfs:label>
-    <skos:definition xml:lang="en">Abstract individuals are independent from time and space (they are
-      not in time and space).
-      Examples: the number "2" or pi.</skos:definition>
+    <skos:definition xml:lang="en">Abstract individuals are independent from time and space (they are not in time and space).
+Examples: the number "2" or pi.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concrete" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Space_time" />
@@ -44,8 +42,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Action">
     <rdfs:label xml:lang="en">Action</rdfs:label>
-    <skos:definition xml:lang="en">Actions are occurrents which are caused by some presential (the
-      agent) at every (inner and outer) time-boundary of the chronoid framing the occurrent.</skos:definition>
+    <skos:definition xml:lang="en">Actions are occurrents which are caused by some presential (the agent) at every (inner and outer) time-boundary of the chronoid framing the occurrent.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent" />
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -86,27 +83,15 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Category">
     <rdfs:label xml:lang="en">Category</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Categories satisfy the
-      following conditions: (1) Categories can be instantiated; (2) Categories can be predicated of
-      other entities.
-      Categories are defined intensional-with-an-s. They are, therefore, closely related to
-      language.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Categories satisfy the following conditions: (1) Categories can be instantiated; (2) Categories can be predicated of other entities. Categories are defined intensional-with-an-s. They are, therefore, closely related to language.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Item" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Individual" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Change">
     <rdfs:label xml:lang="en">Change</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A change in the technical
-      sense refers to a pair of process
-      boundaries. Either at coinciding boundaries (then it comes close to
-      notions like ``punctual'' or ``instantaneous event'' as well as
-      ``moment'' -- in a temporal reading), or at boundaries at the opposite
-      ends of a process of arbitrary extension.
-
-      The notion of change is relative to contradictory conditions
-      between which a transition takes place. These contradictions refer to
-      some collection of pairwise disjoint universals.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A change in the technical sense refers to a pair of process boundaries. Either at coinciding boundaries (then it comes close to notions like ``punctual'' or ``instantaneous event'' as well as ``moment'' -- in a temporal reading), or at boundaries at the opposite ends of a process of arbitrary extension.
+The notion of change is relative to contradictory conditions between which a transition takes place. These contradictions refer to some collection of pairwise disjoint universals.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/History" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Process" />
@@ -125,12 +110,8 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Chronoid">
     <rdfs:label xml:lang="en">Chronoid</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chronoids are entities sui
-      generis.
-
-      Every chronoid has exactly two extremal and
-      infinitely many inner time boundaries which are
-      equivalently called time-points.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chronoids are entities sui generis.
+Every chronoid has exactly two extremal and infinitely many inner time boundaries which are equivalently called time-points.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Temporal_region" />
   </owl:Class>
 
@@ -143,8 +124,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Concrete">
     <rdfs:label xml:lang="en">Concrete</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concrete individuals have a
-      relation to time or space (they are in time and space).</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concrete individuals have a relation to time or space (they are in time and space).</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Abstract" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Space_time" />
@@ -152,11 +132,8 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Configuration">
     <rdfs:label xml:lang="en">Configuration</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We consider a collection of
-      presential facts which exist at the same time-boundary. Such collections may be considered
-      themselves as presentials, and we call them configurations.
-
-      It is further required that configurations contain at least one material object.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We consider a collection of presential facts which exist at the same time-boundary. Such collections may be considered themselves as presentials, and we call them configurations.
+It is further required that configurations contain at least one material object.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Presential" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_boundary" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Material_object" />
@@ -164,9 +141,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Configuroid">
     <rdfs:label xml:lang="en">Configuroid</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Configuroids are, in the
-      simplest case, integrated wholes made up of material structure processes and property
-      processes.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Configuroids are, in the simplest case, integrated wholes made up of material structure processes and property processes.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process" />
   </owl:Class>
 
@@ -183,21 +158,14 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Continuous_change">
     <rdfs:label xml:lang="en">Continuous change</rdfs:label>
-    <skos:definition xml:lang="en">For the purpose of formalizing continuous changes, a minimal
-      chronoid universal D(c) is employed in order to capture the idea of observable differences
-      during certain chronoids, whereas the change itself does not allow the observation of a
-      difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this
-      approach. Continuous changes occur over time (a chronoid).</skos:definition>
+    <skos:definition xml:lang="en">For the purpose of formalizing continuous changes, a minimal chronoid universal D(c) is employed in order to capture the idea of observable differences during certain chronoids, whereas the change itself does not allow the observation of a difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this approach. Continuous changes occur over time (a chronoid).</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change" />
     <owl:equivalentClass rdf:resource="https://w3id.org/gfo/base/Intrinsic_change" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Continuous_process">
     <rdfs:label xml:lang="en">Continuous process</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processes where all
-      non-coinciding internal boundaries are intrinsic changes.
-      These turn out as purely continuous processes, described e.g.
-      in physics by differential equations.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processes where all non-coinciding internal boundaries are intrinsic changes. These turn out as purely continuous processes, described e.g. in physics by differential equations.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Continuous" />
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Discrete_process" />
@@ -235,8 +203,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Discrete_process">
     <rdfs:label xml:lang="en">Discrete process</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discrete processes are made
-      up of alterations of extrinsic changes and states.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discrete processes are made up of alterations of extrinsic changes and states.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete" />
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Continuous_process" />
@@ -244,8 +211,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Entity">
     <rdfs:label xml:lang="en">Entity</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everything which exists is
-      called an entity.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everything which exists is called an entity.</skos:definition>
     <owl:unionOf rdf:parseType="Collection">
       <rdf:Description rdf:about="https://w3id.org/gfo/base/Item" />
       <rdf:Description rdf:about="https://w3id.org/gfo/base/Set" />
@@ -255,34 +221,21 @@
   <owl:Class rdf:about="https://w3id.org/gfo/base/Extrinsic_change">
     <rdfs:label xml:lang="en">obsolete: Extrinsic change</rdfs:label>
     <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
-    <skos:definition xml:lang="en">Extrinsic changes are represented by change(e1,e2, u1,
-      u2, u), where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are
-      disjoint sub-universals of u.</skos:definition>
+    <skos:definition xml:lang="en">Extrinsic changes are represented by change(e1,e2, u1, u2, u), where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are disjoint sub-universals of u.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Intrinsic_change" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Function">
     <rdfs:label xml:lang="en">Function</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A function F is a universal
-      (conceptual structure) defined in purely teleological terms with respect to a given goal G
-      which commonly is ascribed by means of has-function relation to entities that are the
-      realizations of the function F, execute such a realization or are intended to do it.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A function F is a universal (conceptual structure) defined in purely teleological terms with respect to a given goal G which commonly is ascribed by means of has-function relation to entities that are the realizations of the function F, execute such a realization or are intended to do it.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concept" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/History">
     <rdfs:label xml:lang="en">History</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Histories consist of a
-      number of process boundaries.
-
-      We assume that any history can be embedded into a process, which then
-      forms a foundation of the history. If it were not for this foundation,
-      one would face the problem of singling out the right boundaries in
-      order to get a natural history: It is not sensible to measure the
-      temperature of a patient first, then determine his weight, followed by
-      measuring his blood pressure and to consider these strangely arbitrary
-      process boundaries as a history of the patient's body data.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Histories consist of a number of process boundaries.
+We assume that any history can be embedded into a process, which then forms a foundation of the history. If it were not for this foundation, one would face the problem of singling out the right boundaries in order to get a natural history: It is not sensible to measure the temperature of a patient first, then determine his weight, followed by measuring his blood pressure and to consider these strangely arbitrary process boundaries as a history of the patient's body data.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Change" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Process" />
@@ -296,8 +249,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Individual">
     <rdfs:label xml:lang="en">Individual</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Individuals are entities
-      which cannot be further instantiated.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Individuals are entities which cannot be further instantiated.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Item" />
     <rdfs:subClassOf>
       <owl:Class>
@@ -342,10 +294,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Instantaneous_change">
     <rdfs:label xml:lang="en">Instantaneous change</rdfs:label>
-    <skos:definition xml:lang="en">Instantaneous changes are represented by change(e1,e2, u1, u2, u),
-      where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are disjoint
-      sub-universals of u. Instantaneous changes are therefore changes of properties on two
-      coinciding time boundaries.</skos:definition>
+    <skos:definition xml:lang="en">Instantaneous changes are represented by change(e1,e2, u1, u2, u), where e1 and e2 are a pair of coincident process boundaries, and u1 and u2 are disjoint sub-universals of u. Instantaneous changes are therefore changes of properties on two coinciding time boundaries.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change" />
     <owl:equivalentClass rdf:resource="https://w3id.org/gfo/base/Extrinsic_change" />
   </owl:Class>
@@ -353,19 +302,14 @@
   <owl:Class rdf:about="https://w3id.org/gfo/base/Intrinsic_change">
     <rdfs:label xml:lang="en">obsolete: Intrinsic change</rdfs:label>
     <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
-    <skos:definition xml:lang="en">For the purpose of formalizing intrinsic changes, a
-      minimal chronoid universal D(c) is employed in order to capture the idea of observable
-      differences during certain chronoids, whereas the change itself does not allow the observation
-      of a difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this
-      approach.</skos:definition>
+    <skos:definition xml:lang="en">For the purpose of formalizing intrinsic changes, a minimal chronoid universal D(c) is employed in order to capture the idea of observable differences during certain chronoids, whereas the change itself does not allow the observation of a difference. The predicate change(e1,e2, u1, u2, u, D(c)) is intended to formalize this approach.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Change" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Extrinsic_change" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Item">
     <rdfs:label xml:lang="en">Item</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An item is everything which
-      is not a set. Also called ur-element.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An item is everything which is not a set. Also called ur-element.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Entity" />
     <rdfs:subClassOf>
       <owl:Class>
@@ -386,8 +330,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Level">
     <rdfs:label xml:lang="en">Level</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontological level, which
-      is sth. more restricted and "part of" some gfo:Stratum.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontological level, which is sth. more restricted and "part of" some gfo:Stratum.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -445,12 +388,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_object">
     <rdfs:label xml:lang="en">Material object</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material structure is an
-      individual which satisfies the following conditions:
-      it is a presential, it occupies space, it is a bearer of qualities, but other entities cannot
-      have
-      it as quality, and it consists of an amount of substrate, and it instantiates a persistant
-      ("has identity").</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material structure is an individual which satisfies the following conditions: it is a presential, it occupies space, it is a bearer of qualities, but other entities cannot have it as quality, and it consists of an amount of substrate, and it instantiates a persistant ("has identity").</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete_presential" />
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -470,17 +408,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_persistant">
     <rdfs:label xml:lang="en">Material persistant</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Material persistants are
-      particular universals whose instances are
-      material structures; they are related to those entities which are called
-      sometimes continuants or objects, as apples, cars or houses.
-      Material persistants capture the phenomenon of persistance through time of a material
-      object. A material persistant P satisfies a number of necessary conditions. For every
-      material persistant P there exists a process P such that
-      the set of instances of P coincides with the set of process-boundaries
-      of P. This implies the existence of a chronoid c
-      such that for every time-point t of c there exists exactly
-      one instance of P at time point t.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Material persistants are particular universals whose instances are material structures; they are related to those entities which are called sometimes continuants or objects, as apples, cars or houses. Material persistants capture the phenomenon of persistance through time of a material object. A material persistant P satisfies a number of necessary conditions. For every material persistant P there exists a process P such that the set of instances of P coincides with the set of process-boundaries of P. This implies the existence of a chronoid c such that for every time-point t of c there exists exactly one instance of P at time point t.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Persistant" />
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -505,9 +433,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Material_stratum">
     <rdfs:label xml:lang="en">Material stratum</rdfs:label>
-    <skos:definition xml:lang="en">According to (Poli, 2001), the basic structure of the material
-      stratum is a distinction of physical, chemical and biological levels.
-      These levels can be further refined.</skos:definition>
+    <skos:definition xml:lang="en">According to (Poli, 2001), the basic structure of the material stratum is a distinction of physical, chemical and biological levels. These levels can be further refined.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Stratum" />
   </owl:Class>
 
@@ -532,50 +458,30 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Mental_stratum">
     <rdfs:label xml:lang="en">Mental stratum</rdfs:label>
-    <skos:definition xml:lang="en">In accordance with the work of R. Poli, we divide the
-      psychological/mental stratum into the layer of
-      awareness and the layer of
-      personality. Awareness comprises most
-      of what is studied by cognitive science (perception, memory,
-      reasoning, etc). Personality on the other hand concerns the phenomenon
-      of will and the way in which someone reacts to her experiences.</skos:definition>
+    <skos:definition xml:lang="en">In accordance with the work of R. Poli, we divide the psychological/mental stratum into the layer of awareness and the layer of personality. Awareness comprises most of what is studied by cognitive science (perception, memory, reasoning, etc). Personality on the other hand concerns the phenomenon of will and the way in which someone reacts to her experiences.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Stratum" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Occurrent">
     <rdfs:label xml:lang="en">Occurrent</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents have temporal
-      parts and thus cannot be present at a time-boundary. Time
-      belongs to them, because they happen in time and the time of the occurrent
-      is built into it. The relation between an occurrent and a chronoid is
-      determined by the projection relation.
-
-      Occurrents are also called generalized processes in the GFO.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents have temporal parts and thus cannot be present at a time-boundary. Time belongs to them, because they happen in time and the time of the occurrent is built into it. The relation between an occurrent and a chronoid is determined by the projection relation.
+Occurrents are also called generalized processes in the GFO.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Presential" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Ontological_layer">
     <rdfs:label xml:lang="en">Ontological layer</rdfs:label>
-    <rdfs:comment xml:lang="en">Ontological_layer, all of its sub concepts and the properties
-      layer_of and on_layer are work in progress in a premature beta state.</rdfs:comment>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collective term for
-      gfo-base:Stratum and gfo-base:Level.</skos:definition>
+    <rdfs:comment xml:lang="en">Ontological_layer, all of its sub concepts and the properties layer_of and on_layer are work in progress in a premature beta state.</rdfs:comment>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collective term for gfo-base:Stratum and gfo-base:Level.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category" />
     <owl:versionInfo xml:lang="en">Beta</owl:versionInfo>
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Persistant">
     <rdfs:label xml:lang="en">Persistant</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Persistants are GFO's way
-      to capture identity over time.
-
-      GFO pursues an approach which
-      accounts for persistence by means of a suitable
-      universal whose instances are presentials. Such universals are called
-      persistants. These do not change and they can be used to
-      explain how presentials which have different properties at different
-      times can nevertheless be the same.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Persistants are GFO's way to capture identity over time.
+GFO pursues an approach which accounts for persistence by means of a suitable universal whose instances are presentials. Such universals are called persistants. These do not change and they can be used to explain how presentials which have different properties at different times can nevertheless be the same.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Universal" />
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -620,8 +526,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Presential">
     <rdfs:label xml:lang="en">Presential</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A presential exists wholly
-      at exactly one time boundary.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A presential exists wholly at exactly one time boundary.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
     <rdfs:subClassOf>
@@ -641,9 +546,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Process">
     <rdfs:label xml:lang="en">Process</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processes are a special
-      kind of occurrent. Processes are directly in time, they have characteristics which cannot be
-      captured by a collection of time boundaries.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processes are a special kind of occurrent. Processes are directly in time, they have characteristics which cannot be captured by a collection of time boundaries.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Change" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/History" />
@@ -651,8 +554,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Processual_role">
     <rdfs:label xml:lang="en">Processual role</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processual roles are
-      dependent processes. They are roles with a process as context.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processual roles are dependent processes. They are roles with a process as context.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process" />
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Role" />
     <rdfs:subClassOf>
@@ -674,9 +576,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Property_value">
     <rdfs:label xml:lang="en">Property value</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The concept of a property
-      value reflects a relationship between the property of x and the same property as exhibited by
-      another entity y.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The concept of a property value reflects a relationship between the property of x and the same property as exhibited by another entity y.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent" />
     <owl:equivalentClass>
@@ -714,29 +614,20 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Set">
     <rdfs:label xml:lang="en">Set</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Set is a category
-      pertaining to the individuals in the ZFC set theory.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Set is a category pertaining to the individuals in the ZFC set theory.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Entity" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Item" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Situation">
     <rdfs:label xml:lang="en">Situation</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A situation is a special
-      configuration which can be comprehended as a whole and satisfies certain conditions of unity,
-      which are imposed by relations and categories associated with the situation. Herein, we
-      consider situations to be the most complex kind of presentials.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A situation is a special configuration which can be comprehended as a whole and satisfies certain conditions of unity, which are imposed by relations and categories associated with the situation. Herein, we consider situations to be the most complex kind of presentials.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Configuration" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Situoid">
     <rdfs:label xml:lang="en">Situoid</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Situoids are processes
-      whose boundaries are situations and which satisfy certain principles of coherence,
-      comprehensibility, and continuity. They are regarded as the most complex integrated wholes of
-      the world. A situoid is, intuitively, a part of the
-      world which is a coherent and comprehensible whole and does not need other entities in order
-      to exist. Every situoid has a temporal extent and is framed by a topoid.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Situoids are processes whose boundaries are situations and which satisfy certain principles of coherence, comprehensibility, and continuity. They are regarded as the most complex integrated wholes of the world. A situoid is, intuitively, a part of the world which is a coherent and comprehensible whole and does not need other entities in order to exist. Every situoid has a temporal extent and is framed by a topoid.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Configuroid" />
   </owl:Class>
 
@@ -750,14 +641,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Social_stratum">
     <rdfs:label xml:lang="en">Social stratum</rdfs:label>
-    <skos:definition xml:lang="en">On the one hand, the social stratum is
-      divided into Agents and
-      Institutions. Agents are the bearers of the social
-      roles that humans play. Institutions are defined as systems of
-      interrelated social components. On the other hand, a social system can
-      be seen as a network in which businesses, politics, art, language (and
-      many other facets) both present their own features and
-      influence each other.</skos:definition>
+    <skos:definition xml:lang="en">On the one hand, the social stratum is divided into Agents and Institutions. Agents are the bearers of the social roles that humans play. Institutions are defined as systems of interrelated social components. On the other hand, a social system can be seen as a network in which businesses, politics, art, language (and many other facets) both present their own features and influence each other.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Stratum" />
   </owl:Class>
 
@@ -777,12 +661,7 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Spatial_boundary">
     <rdfs:label xml:lang="en">Spatial boundary</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boundaries of regions are
-      surfaces, boundaries of
-      surfaces are lines, and boundaries of lines are
-      points. As in the case of time-boundaries, spatial
-      boundaries have no independent existence, i.e. they depend on the
-      spatial entity of which they are boundaries.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boundaries of regions are surfaces, boundaries of surfaces are lines, and boundaries of lines are points. As in the case of time-boundaries, spatial boundaries have no independent existence, i.e. they depend on the spatial entity of which they are boundaries.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Spatial_region" />
     <owl:equivalentClass>
@@ -795,34 +674,21 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Spatial_region">
     <rdfs:label xml:lang="en">Spacial region</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Space regions are
-      mereological sums of topoids.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Space regions are mereological sums of topoids.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Spatial_boundary" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/State">
     <rdfs:label xml:lang="en">State</rdfs:label>
-    <skos:definition xml:lang="en">A process without an instantaneous change at any of its inner time
-      boundaries is called a state.</skos:definition>
+    <skos:definition xml:lang="en">A process without an instantaneous change at any of its inner time boundaries is called a state.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Process" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Stratum">
     <rdfs:label xml:lang="en">Stratum</rdfs:label>
-    <skos:definition xml:lang="en">According to (Poli, 2001, 2002) (based
-      on the philosopher Hartmann) we distinguish at least three ontological
-      strata of the world: the material stratum, the
-      mental/psychological stratum, and the
-      social stratum stratum.
-
-      Every entity of the world participates in certain
-      strata and levels. We take the position that the layers are
-      characterized by integrated systems of categories. Hence, a layer can
-      be understood as a meta-category whose instances are categories of
-      certain kinds. Among these levels specific forms of categorial and
-      existential dependencies hold. For example, a mental entity requires
-      an animate material object as its existential bearer.</skos:definition>
+    <skos:definition xml:lang="en">According to (Poli, 2001, 2002) (based on the philosopher Hartmann) we distinguish at least three ontological strata of the world: the material stratum, the mental/psychological stratum, and the social stratum.
+Every entity of the world participates in certain strata and levels. We take the position that the layers are characterized by integrated systems of categories. Hence, a layer can be understood as a meta-category whose instances are categories of certain kinds. Among these levels specific forms of categorial and existential dependencies hold. For example, a mental entity requires an animate material object as its existential bearer.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Level" />
   </owl:Class>
@@ -857,26 +723,21 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Temporal_region">
     <rdfs:label xml:lang="en">Temporal region</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time Regions are defined as
-      the mereological sum of chronoids,
-      i.e. time regions may consist of non-connected intervals of time.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time Regions are defined as the mereological sum of chronoids, i.e. time regions may consist of non-connected intervals of time.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Time" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Time_boundary" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Time">
     <rdfs:label xml:lang="en">Time</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The time model of GFO is
-      based on Brentano and the glass continuum of Allen&amp;Hayes.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The time model of GFO is based on Brentano and the glass continuum of Allen&amp;Hayes.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Space_time" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Space" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Time_boundary">
     <rdfs:label xml:lang="en">Time boundary</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time boundaries depend on a
-      chronoids (i.e. they have no independent
-      existence) and can coincide.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time boundaries depend on a chronoids (i.e. they have no independent existence) and can coincide.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Time" />
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -900,15 +761,13 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Topoid">
     <rdfs:label xml:lang="en">Topoid</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Topoids are connected
-      compact regions of space. They have spatial boundaries.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Topoids are connected compact regions of space. They have spatial boundaries.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Spatial_region" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Universal">
     <rdfs:label xml:lang="en">Universal</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Universals are immanent
-      universals. They exist in re.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Universals are immanent universals. They exist in re.</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category" />
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -922,21 +781,10 @@
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Value_space">
     <rdfs:label xml:lang="en">Value space</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Property values usually
-      appear in groups which are called value structures, value spaces or measurement systems.
-      Each of these structures corresponds to some property. More intuitively, one could say that
-      the property may be measured with respect to some measurement system.
-      For instance, sizes may be measured with the values ``small'' ``big'' or ``very big'', which
-      are the elements of one value structure.
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Property values usually appear in groups which are called value structures, value spaces or measurement systems. Each of these structures corresponds to some property. More intuitively, one could say that the property may be measured with respect to some measurement system. For instance, sizes may be measured with the values ``small'' ``big'' or ``very big'', which are the elements of one value structure.
 
-      The notion of a value structure of a property is similar to a quality dimension in
-      (Gardenfors, 2000).
-
-      Further, value structures are related to quality spaces in DOLCE (Masolo, 2003}. A quality
-      space consists of all "quales" (our property values) of some "quality" (our property).
-      Often it seems to be the case that a notion of distance can be defined, and that certain
-      layers of value structures are isomorphic to some subset of real numbers, which allows for a
-      mapping of values to pairs of a real number and a unit, as in the case of "10 kg".</skos:definition>
+The notion of a value structure of a property is similar to a quality dimension in (Gardenfors, 2000).
+Further, value structures are related to quality spaces in DOLCE (Masolo, 2003). A quality space consists of all "quales" (our property values) of some "quality" (our property). Often it seems to be the case that a notion of distance can be defined, and that certain layers of value structures are isomorphic to some subset of real numbers, which allows for a mapping of values to pairs of a real number and a unit, as in the case of "10 kg".</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Universal" />
   </owl:Class>
 
@@ -970,12 +818,7 @@
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/abstract_part_of">
     <rdfs:label xml:lang="en">abstract part of</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty" />
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The abstract part-of
-      relation is denoted by p(x,y);
-      the argument-types of this relation are not specified, i.e. we allow
-      arbitrary entities to be arguments. We assume that p(x,y) satisfies
-      the condition of a partial ordering, .i.e. the following axioms: reflexivity, antisymmetry and
-      transitivity.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The abstract part-of relation is denoted by p(x,y); the argument-types of this relation are not specified, i.e. we allow arbitrary entities to be arguments. We assume that p(x,y) satisfies the condition of a partial ordering, .i.e. the following axioms: reflexivity, antisymmetry and transitivity.</skos:definition>
     <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Item" />
     <rdfs:range rdf:resource="https://w3id.org/gfo/base/Item" />
     <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/abstract_has_part" />
@@ -1026,8 +869,7 @@
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/depends_on">
     <rdfs:label xml:lang="en">depends on</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relation captures the
-      notion of existential dependence.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relation captures the notion of existential dependence.</skos:definition>
     <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Item" />
     <rdfs:range rdf:resource="https://w3id.org/gfo/base/Item" />
     <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/necessary_for" />
@@ -1228,9 +1070,7 @@
 
   <owl:ObjectProperty rdf:about="https://w3id.org/gfo/base/instance_of">
     <rdfs:label xml:lang="en">instance of</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The instantiation relation
-      holds between a category and an item. It is not a relation between categories and individuals
-      due to higher order categories such as "species".</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The instantiation relation holds between a category and an item. It is not a relation between categories and individuals due to higher order categories such as "species".</skos:definition>
     <rdfs:domain rdf:resource="https://w3id.org/gfo/base/Entity" />
     <rdfs:range rdf:resource="https://w3id.org/gfo/base/Category" />
     <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/instantiated_by" />
@@ -1252,8 +1092,7 @@
   <owl:InverseFunctionalProperty rdf:about="https://w3id.org/gfo/base/left_boundary_of">
     <rdfs:label xml:lang="en">left boundary of</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Left boundary of a
-      chronoid.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Left boundary of a chronoid.</skos:definition>
     <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_left_time_boundary" />
   </owl:InverseFunctionalProperty>
 
@@ -1380,8 +1219,7 @@
   <owl:InverseFunctionalProperty rdf:about="https://w3id.org/gfo/base/right_boundary_of">
     <rdfs:label xml:lang="en">right boundary of</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Right boundary of a
-      chronoid.</skos:definition>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Right boundary of a chronoid.</skos:definition>
     <owl:inverseOf rdf:resource="https://w3id.org/gfo/base/has_right_time_boundary" />
   </owl:InverseFunctionalProperty>
 
