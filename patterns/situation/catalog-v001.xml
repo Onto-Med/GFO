@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/extended-object-situation/release/2024-12-06" uri="extended-object-situation.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/situation/release/2024-12-03" uri="../../modules/situation/gfo-situation.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>
