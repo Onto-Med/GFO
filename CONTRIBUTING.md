@@ -41,6 +41,12 @@ If you want to contribute changes, please do so by:
 
 ## Development Hints
 
+### Editing Ontology Files
+
+We recommend [Protégé](https://protege.stanford.edu/) as a user-friendly ontology editor. Please make
+sure that you use the same version that was used to create the file. Otherwise, unnecessary formatting
+changes may be added, making it difficult to review changes.
+
 ### Building GFO Artifacts
 
 GFO artifacts are built with [Widoco](https://github.com/dgarijo/Widoco) and published via [GitHub Pages](https://pages.github.com/)
