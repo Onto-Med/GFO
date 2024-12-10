@@ -34,3 +34,7 @@ jobs:
 
       # - run: robot report --input gfo-light.owl --profile qc_report/profile.txt
       - run: robot report --input modules/gfo-base.owl --profile qc_report/profile.txt
+
+      # Output the content of profile.txt so it is possible to inspect issues online
+      # without the need to run robot locally
+      - run: cat qc_report/profile.txt
