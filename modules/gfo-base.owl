@@ -38,6 +38,7 @@
     <skos:definition xml:lang="en">Abstract individuals are independent from time and space (they are
       not in time and space).
       Examples: the number "2" or pi.</skos:definition>
+    <rdfs:comment xml:lang="de">Ein abstraktives Individuum ist ein Individuum und existiert unabhängig von Raum und Zeit (z.B. eine Zahl).</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concrete" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Space_time" />
@@ -97,6 +98,7 @@
       other entities.
       Categories are defined intensional-with-an-s. They are, therefore, closely related to
       language.</skos:definition>
+    <rdfs:comment xml:lang="de">Eine Kategorie ist eine Entität, die eine Bezeichnung trägt und durch prädikative Begriffe einer formalen bzw. natürlichen Sprache beschrieben wird. Ein prädikativer Begriff ist ein sprachlicher Ausdruck, der die Bedingungen angibt, die jede Entität erfüllen muss, wenn sie Teil der Kategorie sein soll. Ein Ausdruck ist eine geordnete Menge von Zeichen in einer Sprache (z.B. Deutsch).</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Item" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Individual" />
   </owl:Class>
@@ -140,12 +142,14 @@
       Every chronoid has exactly two extremal and
       infinitely many inner time boundaries which are
       equivalently called time-points.</skos:definition>
+    <rdfs:comment xml:lang="de">Ein Chronoid ist eine Zeit-Entität und besitzt eine zeitliche Ausdehnung (Zeitinterval) mit einem Start- und Endzeitpunkt. Weiterhin besitzt er unendlich viele Zeitpunkte, auch innere Zeitgrenzen genannt.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Temporal_region" />
   </owl:Class>
 
   <owl:Class rdf:about="https://w3id.org/gfo/base/Concept">
     <rdfs:label xml:lang="en">Concept</rdfs:label>
     <rdfs:label xml:lang="de">Konzept</rdfs:label>
+    <rdfs:comment xml:lang="de">Ein Konzept K (B, A, V) ist eine Kategorie K und besteht aus einer Bezeichnung  B (= geordnete Menge von Zeichen), einer Menge von Ausdrücken A und einer Vorstellung im Kopf V. Ein Konzept drückt vereinfacht gesagt eine Vorstellung im Kopf durch eine Menge von Ausdrücken (und Bezeichnungen) aus. Es gibt eine wechselseitige Abhängigkeit zwischen Konzepten und Ausdrücken. Ausdrücke verwenden Konzepte, um Sätze zu bilden und Charakteristiken zu beschreiben. Konzepte wiederum fassen eine Reihe von Ausdrücken zusammen.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Symbol_structure" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Universal" />
@@ -267,6 +271,7 @@
     <rdfs:label xml:lang="de">Entität</rdfs:label>
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everything which exists is
       called an entity.</skos:definition>
+    <rdfs:comment xml:lang="de">Eine Entität referenziert alles, was in einer der ontologischen Ebenen existieren kann und wird eingeteilt in Kategorien und Individuen (ohne Überschneidungen).</rdfs:comment>
     <owl:unionOf rdf:parseType="Collection">
       <rdf:Description rdf:about="https://w3id.org/gfo/base/Item" />
       <rdf:Description rdf:about="https://w3id.org/gfo/base/Set" />
@@ -322,6 +327,7 @@
     <rdfs:label xml:lang="de">Individuum</rdfs:label>
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Individuals are entities
       which cannot be further instantiated.</skos:definition>
+    <rdfs:comment xml:lang="de">Ein Individuum ist ein Element und eine konkrete Ausprägung einer Kategorie (Universal, Konzept oder Symbolstruktur). Ausprägung heißt hier, dass ein Individuum eine konkrete Menge an Charakteristiken übernimmt, die die Kategorie "vorschreibt". Individuen sind in der Hierarchie nur ein Zwischenschritt und existieren nicht eigenständig.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Item" />
     <rdfs:subClassOf>
       <owl:Class>
@@ -483,6 +489,7 @@
       have
       it as quality, and it consists of an amount of substrate, and it instantiates a persistant
       ("has identity").</skos:definition>
+    <rdfs:comment xml:lang="de">Ein materielles Objekt ist ein materieller Kontinuant und besetzt einen dreidimensionalen Raum.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Discrete_presential" />
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -690,6 +697,7 @@
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Processes are a special
       kind of occurrent. Processes are directly in time, they have characteristics which cannot be
       captured by a collection of time boundaries.</skos:definition>
+    <rdfs:comment xml:lang="de">Ein Prozess ist eine prozessuale Entität und hat eine zeitliche Ausdehnung (= Chronoid).</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Occurrent" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Change" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/History" />
@@ -715,6 +723,7 @@
   <owl:Class rdf:about="https://w3id.org/gfo/base/Property">
     <rdfs:label xml:lang="en">Property</rdfs:label>
     <rdfs:label xml:lang="de">Eigenschaft</rdfs:label>
+    <rdfs:comment xml:lang="de">Eine Eigenschaft repräsentiert die spezifischen Charakteristiken einer Entität und lässt sich in 3 Bestandteile aufteilen. (1) Das Eigenschafts-Universal (z.B. Farbe) referenziert ein Universal. (2) Das Eigenschafts-Individuum ist eine Instanz des Eigenschafts-Universals (z.B. Blau) und ihm ist eine Menge von Wertestrukturen zugeordnet. (3) Eine Wertestruktur beschreibt mögliche Werte und wie diese in die Struktur eingeordnet werden (z.B. hexadezimale Farbwerte für ein ganz bestimmtes Blau).</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Relator" />
@@ -726,6 +735,7 @@
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The concept of a property
       value reflects a relationship between the property of x and the same property as exhibited by
       another entity y.</skos:definition>
+    <rdfs:comment xml:lang="de">Ein Eigenschaftswert ist einem Eigenschafts-Individuum zugeordnet und besitzt eine Menge von Wertestrukturen. Eine Wertestruktur beschreibt mögliche Werte und wie diese in die Struktur eingeordnet werden (z.B. hexadezimale Farbwerte für ein ganz bestimmtes Blau).</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Dependent" />
     <owl:equivalentClass>
@@ -754,6 +764,7 @@
   <owl:Class rdf:about="https://w3id.org/gfo/base/Relator">
     <rdfs:label xml:lang="en">Relator</rdfs:label>
     <rdfs:label xml:lang="de">Relator</rdfs:label>
+    <rdfs:comment xml:lang="de">Ein Relator ist der Kontext in einer relationalen Rolle.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Individual" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Property" />
   </owl:Class>
@@ -761,6 +772,7 @@
   <owl:Class rdf:about="https://w3id.org/gfo/base/Role">
     <rdfs:label xml:lang="en">Role</rdfs:label>
     <rdfs:label xml:lang="de">Rolle</rdfs:label>
+    <rdfs:comment xml:lang="de">Eine Rolle ist ein Attributiv und relationale Entität, die eine Menge von Entitäten ("Spieler") im Rahmen eines Kontextes verknüpft, in denen die "Spieler" etwas tun oder repräsentieren. Handelt es sich um eine relationale Rolle, so nennt man den Kontext auch Relator.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Concrete" />
   </owl:Class>
 
@@ -792,6 +804,7 @@
       the world. A situoid is, intuitively, a part of the
       world which is a coherent and comprehensible whole and does not need other entities in order
       to exist. Every situoid has a temporal extent and is framed by a topoid.</skos:definition>
+    <rdfs:comment xml:lang="de">Ein Situoid ist eine Zeit Entität und ist ein Teil der raum-zeitlichen Welt. Er entsteht aus einer Objektsituation, wenn alle Objekte durch die entsprechenden Prozesse ersetzt werden.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Configuroid" />
   </owl:Class>
 
@@ -886,6 +899,7 @@
       certain kinds. Among these levels specific forms of categorial and
       existential dependencies hold. For example, a mental entity requires
       an animate material object as its existential bearer.</skos:definition>
+    <rdfs:comment xml:lang="de">Unsere Realität lässt sich in 4 ontologische Ebenen (auch Strata genannt) einteilen, in denen alles uns Bekannte existiert. Die 4 Ontologischen Ebenen sind die materielle Ebene (Raum-Zeit), geistige Ebene (im Kopf eines Menschen), ideelle Ebene (Bereich der Ideen) und soziale Ebene (u.a. unsere Beziehungen).</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Ontological_layer" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Level" />
   </owl:Class>
@@ -917,6 +931,7 @@
   <owl:Class rdf:about="https://w3id.org/gfo/base/Symbol_structure">
     <rdfs:label xml:lang="en">Symbol structure</rdfs:label>
     <rdfs:label xml:lang="de">Symbolstruktur</rdfs:label>
+    <rdfs:comment xml:lang="de">Eine Symbolstruktur ist eine Kategorie und besteht aus einer geordneten Menge an einzelnen Symbolen. Jedes Symbol wird durch ein Zeichen (engl. Token) instanziiert und damit in der materiellen Ebene präsent, z.B. die Buchstaben auf einer ausgedruckten A4-Seite.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Concept" />
     <owl:disjointWith rdf:resource="https://w3id.org/gfo/base/Universal" />
@@ -947,6 +962,7 @@
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time boundaries depend on a
       chronoids (i.e. they have no independent
       existence) and can coincide.</skos:definition>
+    <rdfs:comment xml:lang="de">Eine zeitliche Grenze ist eine Zeit-Entität und markiert einen konkreten Zeitpunkt.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Time" />
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -982,6 +998,7 @@
     <rdfs:label xml:lang="de">Universal</rdfs:label>
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Universals are immanent
       universals. They exist in re.</skos:definition>
+    <rdfs:comment xml:lang="de">Ein Universal ist eine Kategorie und hat eine, von einem Betrachter unabhängige, objektive Existenz in der realen Welt. Weiterhin ist sie mit einer Invarianz der materiellen Ebene verbunden und ist etwas Abstraktes, das Dingen innewohnt.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/gfo/base/Category" />
     <rdfs:subClassOf>
       <owl:Restriction>
