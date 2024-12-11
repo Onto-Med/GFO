@@ -31,7 +31,7 @@
                                          terms:license <http://creativecommons.org/licenses/by/4.0/> ;
                                          bibo:doi <https://zenodo.org/doi/10.5281/zenodo.5205419> ;
                                          vann:preferredNamespacePrefix "gfo-situation-simple" ;
-                                         vann:preferredNamespaceURI "https://w3id.org/gfo/situation/" ;
+                                         vann:preferredNamespaceURI "https://w3id.org/gfo/situation/simple" ;
                                          doap:repository <https://github.com/Onto-Med/GFO> ;
                                          rdfs:label "GFO-situation-simple"@en ;
                                          owl:versionInfo "2024-12-11" ;
