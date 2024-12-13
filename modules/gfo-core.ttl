@@ -293,8 +293,7 @@ gfo-core:Attributive rdf:type owl:Class ;
                      rdfs:subClassOf gfo-core:ConcreteIndividual ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty gfo-core:attributiveOf ;
-                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                       owl:onClass gfo-core:Individual
+                                       owl:someValuesFrom gfo-core:Individual
                                      ] ;
                      rdfs:comment "Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category Attributive."@en ;
                      rdfs:label "Attributive"@en ;
