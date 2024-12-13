@@ -15,8 +15,8 @@
 @base <https://w3id.org/gfo/core/> .
 
 <https://w3id.org/gfo/core> rdf:type owl:Ontology ;
-                             owl:versionIRI <https://w3id.org/gfo/core/release/2024-12-11> ;
-                             dc:created "2024-12-03" ;
+                             owl:versionIRI <https://w3id.org/gfo/core/release/2024-12-13> ;
+                             dc:created "2024-12-11" ;
                              dc:creator "Alexandr Uciteli" ,
                                         "Christoph Beger" ,
                                         "Frank Löbe" ,
@@ -26,7 +26,7 @@
                                         "Patryk Burek" ,
                                         "Ralph Schäfermeier" ;
                              dc:description "GFO-core is an ontology module describing the core GFO entities."@en ;
-                             dc:modified "2024-12-11" ;
+                             dc:modified "2024-12-13" ;
                              dc:title "General Formal Ontology (core module)"@en ;
                              terms:license <http://creativecommons.org/licenses/by/4.0/> ;
                              bibo:doi <https://zenodo.org/doi/10.5281/zenodo.5205419> ;
@@ -34,7 +34,7 @@
                              vann:preferredNamespaceURI "https://w3id.org/gfo/core/" ;
                              doap:repository <https://github.com/Onto-Med/GFO> ;
                              rdfs:label "GFO-core"@en ;
-                             owl:versionInfo "2024-12-11" ;
+                             owl:versionInfo "2024-12-13" ;
                              foaf:homepage "https://github.com/Onto-Med/GFO" .
 
 #################################################################
@@ -135,7 +135,11 @@ gfo-core:hasPart rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/gfo/core/hasParticipant
 gfo-core:hasParticipant rdf:type owl:ObjectProperty ;
                         owl:inverseOf gfo-core:participatesIn ;
-                        rdfs:domain gfo-core:Process ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( gfo-core:ProcessualEntity
+                                                    gfo-core:Situation
+                                                  )
+                                    ] ;
                         rdfs:range gfo-core:Object ;
                         rdfs:label "has participant"@en .
 
@@ -175,7 +179,11 @@ gfo-core:partOf rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/gfo/core/participatesIn
 gfo-core:participatesIn rdf:type owl:ObjectProperty ;
                         rdfs:domain gfo-core:Object ;
-                        rdfs:range gfo-core:Process ;
+                        rdfs:range [ rdf:type owl:Class ;
+                                     owl:unionOf ( gfo-core:ProcessualEntity
+                                                   gfo-core:Situation
+                                                 )
+                                   ] ;
                         rdfs:label "participates in"@en .
 
 
@@ -243,63 +251,12 @@ gfo-core:timeOf rdf:type owl:ObjectProperty ;
 
 
 #################################################################
-#    Data properties
-#################################################################
-
-###  https://w3id.org/gfo/core/booleanValue
-gfo-core:booleanValue rdf:type owl:DatatypeProperty ;
-                      rdfs:domain gfo-core:Attributive ;
-                      rdfs:range xsd:boolean ;
-                      rdfs:label "boolean value"@en .
-
-
-###  https://w3id.org/gfo/core/dateTimeValue
-gfo-core:dateTimeValue rdf:type owl:DatatypeProperty ;
-                       rdfs:domain gfo-core:Individual ;
-                       rdfs:range xsd:dateTime ;
-                       rdfs:label "date time value"@en .
-
-
-###  https://w3id.org/gfo/core/decimalValue
-gfo-core:decimalValue rdf:type owl:DatatypeProperty ;
-                      rdfs:domain gfo-core:Attributive ;
-                      rdfs:range xsd:decimal ;
-                      rdfs:label "decimal value"@en .
-
-
-###  https://w3id.org/gfo/core/endDateTimeValue
-gfo-core:endDateTimeValue rdf:type owl:DatatypeProperty ;
-                          rdfs:subPropertyOf gfo-core:dateTimeValue ;
-                          rdfs:label "end date time value"@en .
-
-
-###  https://w3id.org/gfo/core/startDateTimeValue
-gfo-core:startDateTimeValue rdf:type owl:DatatypeProperty ;
-                            rdfs:subPropertyOf gfo-core:dateTimeValue ;
-                            rdfs:label "start date time value"@en .
-
-
-###  https://w3id.org/gfo/core/stringValue
-gfo-core:stringValue rdf:type owl:DatatypeProperty ;
-                     rdfs:domain gfo-core:Attributive ;
-                     rdfs:range xsd:string ;
-                     rdfs:label "string value"@en .
-
-
-###  https://w3id.org/gfo/core/unit
-gfo-core:unit rdf:type owl:DatatypeProperty ;
-              rdfs:domain gfo-core:Attributive ;
-              rdfs:range xsd:string ;
-              rdfs:label "unit"@en .
-
-
-#################################################################
 #    Classes
 #################################################################
 
 ###  https://w3id.org/gfo/core/Attributive
 gfo-core:Attributive rdf:type owl:Class ;
-                     rdfs:subClassOf gfo-core:TimeExtendedIndividual ,
+                     rdfs:subClassOf gfo-core:ConcreteIndividual ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty gfo-core:attributiveOf ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -330,17 +287,17 @@ gfo-core:Individual rdf:type owl:Class ;
 
 ###  https://w3id.org/gfo/core/Object
 gfo-core:Object rdf:type owl:Class ;
-                rdfs:subClassOf gfo-core:TimeExtendedIndividual ;
+                rdfs:subClassOf gfo-core:ConcreteIndividual ;
                 rdfs:label "Object"@en ;
                 skos:altLabel "Continuant"@en ;
                 skos:definition "An object is understood as a mutable entity that persists over time, having a finite lifespan of non-zero duration. As such, it specializes gfo:Continuant."@en ;
                 skos:example "Physical, tangible entities such as apples, cells and organisms"@en .
 
 
-###  https://w3id.org/gfo/core/Process
-gfo-core:Process rdf:type owl:Class ;
-                 rdfs:subClassOf gfo-core:TimeExtendedIndividual ;
-                 rdfs:label "Process"@en .
+###  https://w3id.org/gfo/core/ProcessualEntity
+gfo-core:ProcessualEntity rdf:type owl:Class ;
+                          rdfs:subClassOf gfo-core:ConcreteIndividual ;
+                          rdfs:label "Processual entity"@en .
 
 
 ###  https://w3id.org/gfo/core/Quality
@@ -385,22 +342,17 @@ gfo-core:Role rdf:type owl:Class ;
               skos:definition "A role characterizes an entity—its required player—through its context (e.g., relation/relator)."@en .
 
 
+###  https://w3id.org/gfo/core/Situation
+gfo-core:Situation rdf:type owl:Class ;
+                   rdfs:subClassOf gfo-core:ConcreteIndividual ;
+                   rdfs:label "Situation"@en .
+
+
 ###  https://w3id.org/gfo/core/TimeEntity
 gfo-core:TimeEntity rdf:type owl:Class ;
                     rdfs:subClassOf gfo-core:Individual ;
                     rdfs:comment "The time entities defined in GFO are points in time (time boundaries) and time intervals (chronoids), which consist of points in time."@en ;
                     rdfs:label "Time entity"@en .
-
-
-###  https://w3id.org/gfo/core/TimeExtendedIndividual
-gfo-core:TimeExtendedIndividual rdf:type owl:Class ;
-                                rdfs:subClassOf gfo-core:ConcreteIndividual ,
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty gfo-core:hasTime ;
-                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                  owl:onClass gfo-core:TimeInterval
-                                                ] ;
-                                rdfs:label "Time-extended individual"@en .
 
 
 ###  https://w3id.org/gfo/core/TimeInterval
