@@ -144,6 +144,15 @@ gfo-core:hasParticipant rdf:type owl:ObjectProperty ;
                         rdfs:label "has participant"@en .
 
 
+###  https://w3id.org/gfo/core/hasParticipantQuality
+gfo-core:hasParticipantQuality rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf gfo-core:hasSituationPart ;
+                               owl:inverseOf gfo-core:participantQualityOf ;
+                               rdfs:domain gfo-core:Situation ;
+                               rdfs:range gfo-core:Quality ;
+                               rdfs:label "has participant quality"@en .
+
+
 ###  https://w3id.org/gfo/core/hasQuality
 gfo-core:hasQuality rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf gfo-core:hasAttributive ;
@@ -151,6 +160,15 @@ gfo-core:hasQuality rdf:type owl:ObjectProperty ;
                     rdfs:domain gfo-core:Individual ;
                     rdfs:range gfo-core:Quality ;
                     rdfs:label "has quality"@en .
+
+
+###  https://w3id.org/gfo/core/hasSituationPart
+gfo-core:hasSituationPart rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf gfo-core:hasPart ;
+                          owl:inverseOf gfo-core:situationPartOf ;
+                          rdfs:domain gfo-core:Situation ;
+                          rdfs:range gfo-core:Attributive ;
+                          rdfs:label "has situation part"@en .
 
 
 ###  https://w3id.org/gfo/core/hasTime
@@ -174,6 +192,14 @@ gfo-core:partOf rdf:type owl:ObjectProperty ;
                 rdfs:domain gfo-core:Individual ;
                 rdfs:range gfo-core:Individual ;
                 rdfs:label "part of"@en .
+
+
+###  https://w3id.org/gfo/core/participantQualityOf
+gfo-core:participantQualityOf rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf gfo-core:situationPartOf ;
+                              rdfs:domain gfo-core:Quality ;
+                              rdfs:range gfo-core:Situation ;
+                              rdfs:label "participant quality of"@en .
 
 
 ###  https://w3id.org/gfo/core/participatesIn
@@ -234,6 +260,14 @@ gfo-core:roleIn rdf:type owl:ObjectProperty ;
                 rdfs:domain gfo-core:Role ;
                 rdfs:range gfo-core:Relator ;
                 rdfs:label "role in"@en .
+
+
+###  https://w3id.org/gfo/core/situationPartOf
+gfo-core:situationPartOf rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf gfo-core:partOf ;
+                         rdfs:domain gfo-core:Attributive ;
+                         rdfs:range gfo-core:Situation ;
+                         rdfs:label "situation part of"@en .
 
 
 ###  https://w3id.org/gfo/core/timeBoundaryOf
@@ -344,7 +378,11 @@ gfo-core:Role rdf:type owl:Class ;
 
 ###  https://w3id.org/gfo/core/Situation
 gfo-core:Situation rdf:type owl:Class ;
-                   rdfs:subClassOf gfo-core:ConcreteIndividual ;
+                   rdfs:subClassOf gfo-core:ConcreteIndividual ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty gfo-core:hasSituationPart ;
+                                     owl:someValuesFrom gfo-core:Attributive
+                                   ] ;
                    rdfs:label "Situation"@en .
 
 
