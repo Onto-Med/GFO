@@ -2,6 +2,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
@@ -13,7 +14,7 @@
 @base <https://w3id.org/gfo/light/> .
 
 <https://w3id.org/gfo/light> rdf:type owl:Ontology ;
-                              owl:versionIRI <https://w3id.org/gfo/light/release/2024-08-29> ;
+                              owl:versionIRI <https://w3id.org/gfo/light/release/2025-01-06> ;
                               dc:created "2023-01-01" ;
                               dc:creator "Alexandr Uciteli" ,
                                          "Christoph Beger" ,
@@ -24,7 +25,7 @@
                                          "Patryk Burek" ,
                                          "Ralph Schäfermeier" ;
                               dc:description "GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO) and is designed as a framework for the efficient development and foundation of domain/application ontologies."@en ;
-                              dc:modified "2024-08-29" ;
+                              dc:modified "2025-01-06" ;
                               dc:title "General Formal Ontology Light (GFO-light)"@en ;
                               terms:license <http://creativecommons.org/licenses/by/4.0/> ;
                               bibo:doi <https://zenodo.org/doi/10.5281/zenodo.5205419> ;
@@ -32,7 +33,7 @@
                               vann:preferredNamespaceURI "https://w3id.org/gfo/light/" ;
                               doap:repository <https://github.com/Onto-Med/GFO> ;
                               rdfs:label "GFO-light"@en ;
-                              owl:versionInfo "2024-08-29" ;
+                              owl:versionInfo "2025-01-06" ;
                               foaf:homepage "https://github.com/Onto-Med/GFO" .
 
 #################################################################
@@ -107,12 +108,26 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  https://w3id.org/gfo/light/after
+:after rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :temporallyRelatedWith ;
+       owl:inverseOf :before ;
+       rdfs:label "after"@en .
+
+
 ###  https://w3id.org/gfo/light/attributiveOf
 :attributiveOf rdf:type owl:ObjectProperty ;
                owl:inverseOf :hasAttributive ;
                rdfs:domain :Attributive ;
                rdfs:range :Individual ;
                rdfs:label "attributive of"@en .
+
+
+###  https://w3id.org/gfo/light/before
+:before rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :temporallyRelatedWith ;
+        rdfs:label "before"@en ;
+        skos:definition "X before Y: Xf < Ys"@en .
 
 
 ###  https://w3id.org/gfo/light/boundaryOf
@@ -131,58 +146,55 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/causedBy
 :causedBy rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :isAfter ;
+          rdfs:subPropertyOf :resultsFrom ;
           owl:inverseOf :causes ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :ProcessualEntity
-                                      :Situation
-                                    )
-                      ] ;
-          rdfs:range [ rdf:type owl:Class ;
-                       owl:unionOf ( :ProcessualEntity
-                                     :Situation
-                                   )
-                     ] ;
           rdfs:label "caused by"@en .
 
 
 ###  https://w3id.org/gfo/light/causes
 :causes rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :isBefore ;
-        rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( :ProcessualEntity
-                                    :Situation
-                                  )
-                    ] ;
-        rdfs:range [ rdf:type owl:Class ;
-                     owl:unionOf ( :ProcessualEntity
-                                   :Situation
-                                 )
-                   ] ;
+        rdfs:subPropertyOf :leadsTo ;
         rdfs:label "causes"@en .
 
 
-###  https://w3id.org/gfo/light/endPointInTimeOf
-:endPointInTimeOf rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :pointInTimeOf ;
-                  owl:inverseOf :hasEndPointInTime ;
-                  rdfs:label "end point in time of"@en .
+###  https://w3id.org/gfo/light/containsRole
+:containsRole rdf:type owl:ObjectProperty ;
+              owl:inverseOf :roleIn ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Continuant
+                                          :Process
+                                          :Relator
+                                          :Situation
+                                        )
+                          ] ;
+              rdfs:range :Role ;
+              rdfs:label "contains role"@en .
 
 
-###  https://w3id.org/gfo/light/endsOn
-:endsOn rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :passesThrough ;
-        rdfs:label "ends on"@en .
+###  https://w3id.org/gfo/light/during
+:during rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :temporallyRelatedWith ;
+        owl:inverseOf :temporallyContains ;
+        rdfs:label "during"@en ;
+        skos:definition "X during Y: Xs > Ys and Xf < Yf"@en .
 
 
-###  https://w3id.org/gfo/light/existsIn
-:existsIn rdf:type owl:ObjectProperty ;
+###  https://w3id.org/gfo/light/existsAt
+:existsAt rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasTime ;
           rdfs:domain [ rdf:type owl:Class ;
                         owl:unionOf ( :Attributive
                                       :Situation
                                     )
                       ] ;
-          rdfs:range :ProcessualEntity ;
+          rdfs:range :TimeBoundary ;
+          rdfs:label "exists at"@en .
+
+
+###  https://w3id.org/gfo/light/existsIn
+:existsIn rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasTime ;
+          rdfs:range :Chronoid ;
           rdfs:label "exists in"@en .
 
 
@@ -205,12 +217,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
              rdfs:label "has boundary"@en .
 
 
-###  https://w3id.org/gfo/light/hasEndPointInTime
-:hasEndPointInTime rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf :hasPointInTime ;
-                   rdfs:label "has end point in time"@en .
-
-
 ###  https://w3id.org/gfo/light/hasInnerBoundary
 :hasInnerBoundary rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :hasBoundary ;
@@ -223,7 +229,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
            rdfs:subPropertyOf :hasPart ;
            owl:inverseOf :memberOf ;
            rdfs:domain :MaterialAggregate ;
-           rdfs:range :Continuant ;
+           rdfs:range :MaterialContinuant ;
            rdfs:label "has member"@en .
 
 
@@ -254,17 +260,27 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/gfo/light/hasParticipant
 :hasParticipant rdf:type owl:ObjectProperty ;
                 owl:inverseOf :participatesIn ;
-                rdfs:domain :ProcessualEntity ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Process
+                                            :Situation
+                                          )
+                            ] ;
                 rdfs:range :Continuant ;
                 rdfs:label "has participant"@en .
 
 
-###  https://w3id.org/gfo/light/hasPointInTime
-:hasPointInTime rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :hasTime ;
-                owl:inverseOf :pointInTimeOf ;
-                rdfs:range :TimeBoundary ;
-                rdfs:label "has point in time"@en .
+###  https://w3id.org/gfo/light/hasProcessPart
+:hasProcessPart rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasPart ;
+                owl:inverseOf :processPartOf ;
+                rdfs:domain :Process ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( :Attributive
+                                           :Process
+                                           :Situation
+                                         )
+                           ] ;
+                rdfs:label "has process part"@en .
 
 
 ###  https://w3id.org/gfo/light/hasQuality
@@ -276,45 +292,24 @@ foaf:homepage rdf:type owl:AnnotationProperty .
             rdfs:label "has quality"@en .
 
 
-###  https://w3id.org/gfo/light/hasRole
-:hasRole rdf:type owl:ObjectProperty ;
-         owl:inverseOf :roleOf ;
-         rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :Continuant
-                                     :ProcessualEntity
-                                     :Relator
-                                   )
-                     ] ;
-         rdfs:range :Role ;
-         rdfs:label "has role"@en .
-
-
-###  https://w3id.org/gfo/light/hasStartPointInTime
-:hasStartPointInTime rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf :hasPointInTime ;
-                     owl:inverseOf :startPointInTimeOf ;
-                     rdfs:label "has start point in time"@en .
+###  https://w3id.org/gfo/light/hasSituationPart
+:hasSituationPart rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasPart ;
+                  owl:inverseOf :situationPartOf ;
+                  rdfs:domain :Situation ;
+                  rdfs:range [ rdf:type owl:Class ;
+                               owl:unionOf ( :Attributive
+                                             :Situation
+                                           )
+                             ] ;
+                  rdfs:label "has situation part"@en .
 
 
 ###  https://w3id.org/gfo/light/hasTime
 :hasTime rdf:type owl:ObjectProperty ;
-         owl:inverseOf :timeOf ;
-         rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :Chronoid
-                                     :ConcreteIndividual
-                                   )
-                     ] ;
+         rdfs:domain :ConcreteIndividual ;
          rdfs:range :TimeEntity ;
          rdfs:label "has time"@en .
-
-
-###  https://w3id.org/gfo/light/hasTimePeriod
-:hasTimePeriod rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf :hasTime ;
-               owl:inverseOf :timePeriodOf ;
-               rdfs:domain :ConcreteIndividual ;
-               rdfs:range :Chronoid ;
-               rdfs:label "has time period"@en .
 
 
 ###  https://w3id.org/gfo/light/innerBoundaryOf
@@ -338,35 +333,20 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                 rdfs:label "instantiated by"@en .
 
 
-###  https://w3id.org/gfo/light/isAfter
-:isAfter rdf:type owl:ObjectProperty ;
-         owl:inverseOf :isBefore ;
+###  https://w3id.org/gfo/light/leadsTo
+:leadsTo rdf:type owl:ObjectProperty ;
+         owl:inverseOf :resultsFrom ;
          rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :ProcessualEntity
+                       owl:unionOf ( :Process
                                      :Situation
                                    )
                      ] ;
          rdfs:range [ rdf:type owl:Class ;
-                      owl:unionOf ( :ProcessualEntity
+                      owl:unionOf ( :Process
                                     :Situation
                                   )
                     ] ;
-         rdfs:label "is after"@en .
-
-
-###  https://w3id.org/gfo/light/isBefore
-:isBefore rdf:type owl:ObjectProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :ProcessualEntity
-                                      :Situation
-                                    )
-                      ] ;
-          rdfs:range [ rdf:type owl:Class ;
-                       owl:unionOf ( :ProcessualEntity
-                                     :Situation
-                                   )
-                     ] ;
-          rdfs:label "is before"@en .
+         rdfs:label "leads to"@en .
 
 
 ###  https://w3id.org/gfo/light/locatedIn
@@ -374,12 +354,13 @@ foaf:homepage rdf:type owl:AnnotationProperty .
            owl:inverseOf :locationOf ;
            rdfs:domain [ rdf:type owl:Class ;
                          owl:unionOf ( :MaterialObject
-                                       :ProcessualEntity
+                                       :Process
+                                       :Situation
                                      )
                        ] ;
            rdfs:range :MaterialObject ;
            rdfs:comment "Material objects can be located in other material objects (locatedIn, e.g., the driver is located in the car)."@en ,
-                        "Processual entities can take place (locatedIn) in material objects (e.g., a football match in a stadium or an illness in a person)."@en ;
+                        "Processes and situations can take place (locatedIn) in material objects (e.g., a football match in a stadium or an illness in a person)."@en ;
            rdfs:label "located in"@en .
 
 
@@ -388,7 +369,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
             rdfs:domain :MaterialObject ;
             rdfs:range [ rdf:type owl:Class ;
                          owl:unionOf ( :MaterialObject
-                                       :ProcessualEntity
+                                       :Process
+                                       :Situation
                                      )
                        ] ;
             rdfs:label "location of"@en .
@@ -397,9 +379,9 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/gfo/light/memberOf
 :memberOf rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf :partOf ;
-          rdfs:domain :Continuant ;
+          rdfs:domain :MaterialContinuant ;
           rdfs:range :MaterialAggregate ;
-          rdfs:comment "To model the membership of a member in a group/aggregate, the more specific object properties hasMember/memberOf should be used"@en ;
+          rdfs:comment "To model the membership of a member in a group/aggregate, the more specific object properties hasMember/memberOf should be used instead of hasPart/PartOf."@en ;
           rdfs:label "member of"@en .
 
 
@@ -426,28 +408,20 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/gfo/light/participatesIn
 :participatesIn rdf:type owl:ObjectProperty ;
                 rdfs:domain :Continuant ;
-                rdfs:range :ProcessualEntity ;
-                rdfs:comment "Continuants can participate in processual entities (participatesIn, hasParticipant), e.g., the teams A and B participate in the football match or the player A1 participates in the goal event."@en ;
-                rdfs:label "participates in"@en .
-
-
-###  https://w3id.org/gfo/light/passesThrough
-:passesThrough rdf:type owl:ObjectProperty ;
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( :Line
-                                           :Surface
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( :Process
+                                           :Situation
                                          )
                            ] ;
-               rdfs:range [ rdf:type owl:Class ;
-                            owl:unionOf ( :ImmaterialContinuant
-                                          :MaterialObject
-                                        )
-                          ] ;
-               rdfs:label "passes through"@en .
+                rdfs:comment "Continuants can participate in processes and situations (participatesIn, hasParticipant)."@en ;
+                rdfs:label "participates in"@en ;
+                skos:example "Player A1 participates in a goal situation."@en ,
+                             "Teams A and B participate in a football match."@en .
 
 
 ###  https://w3id.org/gfo/light/playedBy
 :playedBy rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :attributiveOf ;
           owl:inverseOf :plays ;
           rdfs:domain :Role ;
           rdfs:range :Continuant ;
@@ -456,17 +430,24 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/plays
 :plays rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :hasAttributive ;
        rdfs:domain :Continuant ;
        rdfs:range :Role ;
        rdfs:comment "The role players are associated with the roles they play using object properties plays or playedBy."@en ;
        rdfs:label "plays"@en .
 
 
-###  https://w3id.org/gfo/light/pointInTimeOf
-:pointInTimeOf rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf :timeOf ;
-               rdfs:domain :TimeBoundary ;
-               rdfs:label "point in time of"@en .
+###  https://w3id.org/gfo/light/processPartOf
+:processPartOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :partOf ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Attributive
+                                           :Process
+                                           :Situation
+                                         )
+                           ] ;
+               rdfs:range :Process ;
+               rdfs:label "process part of"@en .
 
 
 ###  https://w3id.org/gfo/light/qualityOf
@@ -477,59 +458,201 @@ foaf:homepage rdf:type owl:AnnotationProperty .
            rdfs:label "quality of"@en .
 
 
-###  https://w3id.org/gfo/light/roleOf
-:roleOf rdf:type owl:ObjectProperty ;
+###  https://w3id.org/gfo/light/relatedBy
+:relatedBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasAttributive ;
+           owl:inverseOf :relates ;
+           rdfs:domain :Continuant ;
+           rdfs:range :Relator ;
+           rdfs:label "related by"@en .
+
+
+###  https://w3id.org/gfo/light/relates
+:relates rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :attributiveOf ;
+         rdfs:domain :Relator ;
+         rdfs:range :Continuant ;
+         rdfs:label "relates"@en .
+
+
+###  https://w3id.org/gfo/light/resultsFrom
+:resultsFrom rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Process
+                                         :Situation
+                                       )
+                         ] ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Process
+                                        :Situation
+                                      )
+                        ] ;
+             rdfs:label "results from"@en .
+
+
+###  https://w3id.org/gfo/light/roleIn
+:roleIn rdf:type owl:ObjectProperty ;
         rdfs:domain :Role ;
         rdfs:range [ rdf:type owl:Class ;
                      owl:unionOf ( :Continuant
-                                   :ProcessualEntity
+                                   :Process
                                    :Relator
+                                   :Situation
                                  )
                    ] ;
-        rdfs:comment "Roles are assigned to the corresponding context entity (continuant, processual entity, relator) using object properties roleOf or hasRole."@en ;
-        rdfs:label "role of"@en .
+        rdfs:comment "Roles are assigned to the corresponding context entity (continuant, process, situation, relator) using object properties roleIn or containsRole."@en ;
+        rdfs:label "role in"@en .
 
 
-###  https://w3id.org/gfo/light/startPointInTimeOf
-:startPointInTimeOf rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf :pointInTimeOf ;
-                    rdfs:label "start point in time of"@en .
+###  https://w3id.org/gfo/light/situationPartOf
+:situationPartOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :partOf ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( :Attributive
+                                             :Situation
+                                           )
+                             ] ;
+                 rdfs:range :Situation ;
+                 rdfs:label "situation part of"@en .
 
 
-###  https://w3id.org/gfo/light/startsOn
-:startsOn rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :passesThrough ;
-          rdfs:label "starts on"@en .
+###  https://w3id.org/gfo/light/spatiallyEndsOn
+:spatiallyEndsOn rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :spatiallyPassesThrough ;
+                 rdfs:label "spatially ends on"@en .
 
 
-###  https://w3id.org/gfo/light/timeOf
-:timeOf rdf:type owl:ObjectProperty ;
-        rdfs:domain :TimeEntity ;
-        rdfs:range [ rdf:type owl:Class ;
-                     owl:unionOf ( :Chronoid
-                                   :ConcreteIndividual
-                                 )
-                   ] ;
-        rdfs:label "time of"@en .
+###  https://w3id.org/gfo/light/spatiallyPassesThrough
+:spatiallyPassesThrough rdf:type owl:ObjectProperty ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( :Line
+                                                    :Surface
+                                                  )
+                                    ] ;
+                        rdfs:range [ rdf:type owl:Class ;
+                                     owl:unionOf ( :ImmaterialContinuant
+                                                   :MaterialObject
+                                                 )
+                                   ] ;
+                        rdfs:label "spatially passes through"@en .
 
 
-###  https://w3id.org/gfo/light/timePeriodOf
-:timePeriodOf rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :timeOf ;
-              rdfs:domain :Chronoid ;
-              rdfs:range :ConcreteIndividual ;
-              rdfs:label "time period of"@en .
+###  https://w3id.org/gfo/light/spatiallyStartsOn
+:spatiallyStartsOn rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :spatiallyPassesThrough ;
+                   rdfs:label "spatially starts on"@en .
+
+
+###  https://w3id.org/gfo/light/temporallyContains
+:temporallyContains rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :temporallyRelatedWith ;
+                    rdfs:label "temporally contains"@en .
+
+
+###  https://w3id.org/gfo/light/temporallyEqual
+:temporallyEqual rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :temporallyRelatedWith ;
+                 rdfs:label "temporally equal"@en ;
+                 skos:definition "X equal Y: Xs = Ys and Xf = Yf"@en .
+
+
+###  https://w3id.org/gfo/light/temporallyFinishedBy
+:temporallyFinishedBy rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :temporallyRelatedWith ;
+                      owl:inverseOf :temporallyFinishes ;
+                      rdfs:label "temporally finished by"@en .
+
+
+###  https://w3id.org/gfo/light/temporallyFinishes
+:temporallyFinishes rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :temporallyRelatedWith ;
+                    rdfs:label "temporally finishes"@en ;
+                    skos:definition "X finishes Y: Xs > Ys and Xf = Yf"@en .
+
+
+###  https://w3id.org/gfo/light/temporallyMeets
+:temporallyMeets rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :temporallyRelatedWith ;
+                 owl:inverseOf :temporallyMetBy ;
+                 rdfs:label "temporally meets"@en ;
+                 skos:definition "X meets Y: Xf = Ys"@en .
+
+
+###  https://w3id.org/gfo/light/temporallyMetBy
+:temporallyMetBy rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :temporallyRelatedWith ;
+                 rdfs:label "temporally met by"@en .
+
+
+###  https://w3id.org/gfo/light/temporallyOverlappedBy
+:temporallyOverlappedBy rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :temporallyRelatedWith ;
+                        owl:inverseOf :temporallyOverlaps ;
+                        rdfs:label "temporally overlapped by"@en .
+
+
+###  https://w3id.org/gfo/light/temporallyOverlaps
+:temporallyOverlaps rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :temporallyRelatedWith ;
+                    rdfs:label "temporally overlaps"@en ;
+                    skos:definition "X overlaps Y: Xs < Ys and Xf > Ys and Xf < Yf"@en .
+
+
+###  https://w3id.org/gfo/light/temporallyRelatedWith
+:temporallyRelatedWith rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Individual ;
+                       rdfs:range :Individual ;
+                       rdfs:comment "If a temporal relation is applied to other concrete individuals as time intervals (attributive, continuant, process, situation), it is propagated to their existence times (hasTime)."@en ,
+                                    "In the definitions of the relations, the variables Xs, Xf, Ys and Yf represent the start (s) and finish (f) of the time intervals X and Y."@en ,
+                                    "Some temporal relations can also be applied to points in time (before/after, equal) or a point in time and a time interval (before, starts, finishes, during or their inverse relations)."@en ;
+                       rdfs:label "temporally related with"@en ;
+                       skos:definition "Temporal relations between time intervals based on Allen, J. F. (1983). Maintaining knowledge about temporal intervals. Communications of the ACM, 26(11), 832-843."@en .
+
+
+###  https://w3id.org/gfo/light/temporallyStartedBy
+:temporallyStartedBy rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :temporallyRelatedWith ;
+                     owl:inverseOf :temporallyStarts ;
+                     rdfs:label "temporally started by"@en .
+
+
+###  https://w3id.org/gfo/light/temporallyStarts
+:temporallyStarts rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :temporallyRelatedWith ;
+                  rdfs:label "temporally starts"@en ;
+                  skos:definition "X starts Y: Xs = Ys and Xf < Yf"@en .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
+###  https://w3id.org/gfo/light/afterDateTimeValue
+:afterDateTimeValue rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :dateTimeValue ;
+                    rdfs:comment "Shortcut for 'after'"@en ;
+                    rdfs:label "after date time value"@en .
+
+
+###  https://w3id.org/gfo/light/beforeDateTimeValue
+:beforeDateTimeValue rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf :dateTimeValue ;
+                     rdfs:comment "Shortcut for 'before'"@en ;
+                     rdfs:label "before date time value"@en .
+
+
 ###  https://w3id.org/gfo/light/booleanValue
 :booleanValue rdf:type owl:DatatypeProperty ;
               rdfs:domain :Attributive ;
               rdfs:range xsd:boolean ;
               rdfs:label "boolean value"@en .
+
+
+###  https://w3id.org/gfo/light/containsDateTimeValue
+:containsDateTimeValue rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf :dateTimeValue ;
+                       rdfs:comment "Shortcut for 'temporallyContains'"@en ;
+                       rdfs:label "contains date time value"@en .
 
 
 ###  https://w3id.org/gfo/light/dateTimeValue
@@ -546,16 +669,25 @@ foaf:homepage rdf:type owl:AnnotationProperty .
               rdfs:label "decimal value"@en .
 
 
-###  https://w3id.org/gfo/light/endDateTimeValue
-:endDateTimeValue rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf :dateTimeValue ;
-                  rdfs:label "end date time value"@en .
+###  https://w3id.org/gfo/light/existsAtDateTimeValue
+:existsAtDateTimeValue rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf :dateTimeValue ;
+                       rdfs:comment "Shortcut for 'existsAt'"@en ;
+                       rdfs:label "exists at date time value"@en .
 
 
-###  https://w3id.org/gfo/light/startDateTimeValue
-:startDateTimeValue rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf :dateTimeValue ;
-                    rdfs:label "start date time value"@en .
+###  https://w3id.org/gfo/light/finishedByDateTimeValue
+:finishedByDateTimeValue rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf :dateTimeValue ;
+                         rdfs:comment "Shortcut for 'temporallyFinishedBy'"@en ;
+                         rdfs:label "finished by date time value"@en .
+
+
+###  https://w3id.org/gfo/light/startedByDateTimeValue
+:startedByDateTimeValue rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf :dateTimeValue ;
+                        rdfs:comment "Shortcut for 'temporallyStartedBy'"@en ;
+                        rdfs:label "started by date time value"@en .
 
 
 ###  https://w3id.org/gfo/light/stringValue
@@ -578,7 +710,11 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/Attributive
 :Attributive rdf:type owl:Class ;
-             rdfs:subClassOf :ConcreteIndividual ;
+             rdfs:subClassOf :ConcreteIndividual ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :attributiveOf ;
+                               owl:someValuesFrom :Individual
+                             ] ;
              rdfs:comment "Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category Attributive."@en ;
              rdfs:label "Attributive"@en ;
              skos:definition "Attributives are individuals that depend on other individuals by some kind of dependency relation."@en .
@@ -586,9 +722,18 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/Category
 :Category rdf:type owl:Class ;
-          rdfs:subClassOf :Entity ;
+          rdfs:subClassOf :Entity ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :instantiatedBy ;
+                            owl:allValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( :Category
+                                                              :Individual
+                                                            )
+                                              ]
+                          ] ;
           rdfs:label "Category"@en ;
           skos:altLabel "Class"@en ,
+                        "Kind"@en ,
                         "Type"@en ;
           skos:definition "The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities."@en .
 
@@ -598,12 +743,12 @@ foaf:homepage rdf:type owl:AnnotationProperty .
           rdfs:subClassOf :TimeEntity ,
                           [ rdf:type owl:Class ;
                             owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty :hasEndPointInTime ;
+                                                                   owl:onProperty :temporallyFinishedBy ;
                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                    owl:onClass :TimeBoundary
                                                                  ]
                                                                  [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty :hasStartPointInTime ;
+                                                                   owl:onProperty :temporallyStartedBy ;
                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                    owl:onClass :TimeBoundary
                                                                  ]
@@ -611,12 +756,12 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                             rdf:type owl:Class
                                           ]
                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty :endDateTimeValue ;
+                                                                   owl:onProperty :finishedByDateTimeValue ;
                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                    owl:onDataRange xsd:dateTime
                                                                  ]
                                                                  [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty :startDateTimeValue ;
+                                                                   owl:onProperty :startedByDateTimeValue ;
                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                    owl:onDataRange xsd:dateTime
                                                                  ]
@@ -636,13 +781,33 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :ConcreteIndividual rdf:type owl:Class ;
                     rdfs:subClassOf :Individual ,
                                     [ rdf:type owl:Class ;
-                                      owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :hasTime ;
-                                                      owl:someValuesFrom :TimeEntity
+                                      owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :finishedByDateTimeValue ;
+                                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                             owl:onDataRange xsd:dateTime
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :startedByDateTimeValue ;
+                                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                             owl:onDataRange xsd:dateTime
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
                                                     ]
                                                     [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :dateTimeValue ;
-                                                      owl:someValuesFrom xsd:dateTime
+                                                      owl:onProperty :existsAt ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass :TimeBoundary
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :existsIn ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass :Chronoid
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :existsAtDateTimeValue ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:dateTime
                                                     ]
                                                   )
                                     ] ;
@@ -655,25 +820,12 @@ foaf:homepage rdf:type owl:AnnotationProperty .
             rdfs:subClassOf :ConcreteIndividual ,
                             [ rdf:type owl:Class ;
                               owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :hasEndPointInTime ;
-                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                     owl:onClass :TimeBoundary
-                                                                   ]
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :hasStartPointInTime ;
-                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                     owl:onClass :TimeBoundary
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ]
-                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :endDateTimeValue ;
+                                                                     owl:onProperty :finishedByDateTimeValue ;
                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                      owl:onDataRange xsd:dateTime
                                                                    ]
                                                                    [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :startDateTimeValue ;
+                                                                     owl:onProperty :startedByDateTimeValue ;
                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                      owl:onDataRange xsd:dateTime
                                                                    ]
@@ -681,7 +833,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                               rdf:type owl:Class
                                             ]
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty :hasTimePeriod ;
+                                              owl:onProperty :existsIn ;
                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                               owl:onClass :Chronoid
                                             ]
@@ -697,7 +849,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :ContinuantPartRole rdf:type owl:Class ;
                     rdfs:subClassOf :Role ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty :roleOf ;
+                                      owl:onProperty :roleIn ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass :Continuant
                                     ] ;
@@ -712,29 +864,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :Entity rdf:type owl:Class ;
         rdfs:label "Entity"@en ;
         skos:definition "Everything that exists is called an entity."@en .
-
-
-###  https://w3id.org/gfo/light/Event
-:Event rdf:type owl:Class ;
-       rdfs:subClassOf :ProcessualEntity ,
-                       [ rdf:type owl:Class ;
-                         owl:unionOf ( [ rdf:type owl:Restriction ;
-                                         owl:onProperty :hasPointInTime ;
-                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onClass :TimeBoundary
-                                       ]
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :dateTimeValue ;
-                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onDataRange xsd:dateTime
-                                       ]
-                                     )
-                       ] ;
-       rdfs:comment "An event can be assigned to a process (be part of the process), i.e., happen at a point in the process time, result from a process or trigger a process."@en ;
-       rdfs:label "Event"@en ;
-       skos:definition "Events are instantaneous processual entities (i.e., they occur at one point in time)."@en ;
-       skos:example "A goal as a result of an attack in a football match"@en ,
-                    "Big Bang"@en .
 
 
 ###  https://w3id.org/gfo/light/ImmaterialContinuant
@@ -780,13 +909,13 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                    rdfs:subClassOf :MaterialContinuant ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :hasMember ;
-                                     owl:someValuesFrom :Continuant
+                                     owl:someValuesFrom :MaterialContinuant
                                    ] ;
                    rdfs:comment "The members of a material aggregate are regarded as its parts, similar to the parts of an object (e.g., John is part/member of the football team and plays the role of forward)."@en ;
                    rdfs:label "Material aggregate"@en ;
                    skos:altLabel "Collective"@en ,
                                  "Group"@en ;
-                   skos:definition "A material aggregate is a unit consisting of multiple material objects."@en ;
+                   skos:definition "A material aggregate is a unit consisting of multiple material objects or further aggregates."@en ;
                    skos:example "Research group"@en ,
                                 "Sports team"@en .
 
@@ -843,28 +972,15 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/Process
 :Process rdf:type owl:Class ;
-         rdfs:subClassOf :ProcessualEntity ,
+         rdfs:subClassOf :ConcreteIndividual ,
                          [ rdf:type owl:Class ;
                            owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty :hasEndPointInTime ;
-                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                  owl:onClass :TimeBoundary
-                                                                ]
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty :hasStartPointInTime ;
-                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                  owl:onClass :TimeBoundary
-                                                                ]
-                                                              ) ;
-                                           rdf:type owl:Class
-                                         ]
-                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty :endDateTimeValue ;
+                                                                  owl:onProperty :finishedByDateTimeValue ;
                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                   owl:onDataRange xsd:dateTime
                                                                 ]
                                                                 [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty :startDateTimeValue ;
+                                                                  owl:onProperty :startedByDateTimeValue ;
                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                   owl:onDataRange xsd:dateTime
                                                                 ]
@@ -872,39 +988,45 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                            rdf:type owl:Class
                                          ]
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty :hasTimePeriod ;
+                                           owl:onProperty :existsIn ;
                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                            owl:onClass :Chronoid
                                          ]
                                        )
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessPart ;
+                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( :Attributive
+                                                              :Process
+                                                              :Situation
+                                                            )
+                                              ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasParticipant ;
+                           owl:allValuesFrom :Continuant
                          ] ;
+         rdfs:comment "Processes represent dynamic knowledge."@en ;
          rdfs:label "Process"@en ;
-         skos:definition "Processes are processual entities that have a temporal extension (a chronoid)."@en ;
+         skos:definition "Processes are concrete individuals that happen in time and have a temporal extension (a chronoid)."@en ;
          skos:example "A treatment of a patient in a hospital"@en ,
                       "Football match"@en ,
                       "The course of an illness"@en ,
                       "The first half of the match"@en .
 
 
-###  https://w3id.org/gfo/light/ProcessualEntity
-:ProcessualEntity rdf:type owl:Class ;
-                  rdfs:subClassOf :ConcreteIndividual ;
-                  rdfs:comment "They can be instantaneous (events) or have a temporal extension (processes)."@en ;
-                  rdfs:label "Processual entity"@en ;
-                  skos:definition "Processual entities are concrete individuals that happen/occur in time."@en .
-
-
 ###  https://w3id.org/gfo/light/ProcessualRole
 :ProcessualRole rdf:type owl:Class ;
                 rdfs:subClassOf :Role ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty :roleOf ;
+                                  owl:onProperty :roleIn ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass :ProcessualEntity
+                                  owl:onClass :Process
                                 ] ;
                 owl:disjointWith :RelationalRole ;
                 rdfs:label "Processual role"@en ;
-                skos:definition "A processual role is the role that a participant plays in a processual entity."@en ;
+                skos:definition "A processual role is the role that a participant plays in a process."@en ;
                 skos:example "Team A plays the home team role and team B plays the visiting team role in a football match."@en .
 
 
@@ -933,7 +1055,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :RelationalRole rdf:type owl:Class ;
                 rdfs:subClassOf :Role ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty :roleOf ;
+                                  owl:onProperty :roleIn ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onClass :Relator
                                 ] ;
@@ -948,8 +1070,13 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :Relator rdf:type owl:Class ;
          rdfs:subClassOf :Attributive ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasRole ;
+                           owl:onProperty :containsRole ;
                            owl:someValuesFrom :RelationalRole
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :relates ;
+                           owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Continuant
                          ] ;
          rdfs:comment "A relator represents an individual relation instance."@en ;
          rdfs:label "Relator"@en ;
@@ -967,7 +1094,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onClass :Continuant
                       ] ;
-      rdfs:comment "We distinguish between continuant part roles, processual roles and relational roles."@en ;
+      rdfs:comment "We distinguish between continuant part roles, processual roles, situational roles and relational roles."@en ;
       rdfs:label "Role"@en ;
       skos:definition "A role is a relational entity that links a continuant (role player) with some context, in which the continuant plays that role."@en .
 
@@ -976,15 +1103,37 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :Situation rdf:type owl:Class ;
            rdfs:subClassOf :ConcreteIndividual ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasPart ;
-                             owl:someValuesFrom :Attributive
+                             owl:onProperty :hasSituationPart ;
+                             owl:someValuesFrom [ rdf:type owl:Class ;
+                                                  owl:unionOf ( :Attributive
+                                                                :Situation
+                                                              )
+                                                ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasParticipant ;
+                             owl:allValuesFrom :Continuant
                            ] ;
-           rdfs:comment "A situation can exist at a specific point in time or during a time period and may arise in a processual entity or result from a processual entity."@en ;
+           rdfs:comment "A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation."@en ,
+                        "Situations represent static knowledge."@en ;
            rdfs:label "Situation"@en ;
            skos:definition "Situations are combinations/constellations of attributives that belong together in the context of the use case under consideration."@en ;
            skos:example "A risk situation when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time"@en ,
                         "The situation after the wedding of John and Mary (i.e., the situation in which they are married containing the marriage relator with a husband and a wife role)"@en ,
                         "The situation at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role"@en .
+
+
+###  https://w3id.org/gfo/light/SituationalRole
+:SituationalRole rdf:type owl:Class ;
+                 rdfs:subClassOf :Role ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :roleIn ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :Situation
+                                 ] ;
+                 rdfs:label "Situational role"@en ;
+                 skos:definition "A situational role is the role that a participant plays in a situation."@en ;
+                 skos:example "Roles played by a doctor and a patient in a risk/adverse situation in hospital"@en .
 
 
 ###  https://w3id.org/gfo/light/Surface
@@ -1021,4 +1170,4 @@ foaf:homepage rdf:type owl:AnnotationProperty .
             rdfs:label "Time entity"@en .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
