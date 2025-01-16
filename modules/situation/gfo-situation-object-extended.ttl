@@ -141,7 +141,7 @@ gfo-core:relatedBy rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/gfo/core/roleIn
 gfo-core:roleIn rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty .
+                rdfs:label "role in"@en .
 
 
 #################################################################
@@ -210,7 +210,11 @@ gfo-core:Role rdf:type owl:Class ;
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty gfo-core:roleIn ;
                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass gfo-core:Relator
+                                owl:onClass [ rdf:type owl:Class ;
+                                              owl:unionOf ( gfo-core:Relator
+                                                            :Situation
+                                                          )
+                                            ]
                               ] ;
               rdfs:label "Role"@en ;
               skos:definition "A role characterizes an entity—its required player—through its context (e.g., relation/relator)."@en .
@@ -218,24 +222,28 @@ gfo-core:Role rdf:type owl:Class ;
 
 ###  https://w3id.org/gfo/situation/Situation
 :Situation rdf:type owl:Class ;
-           rdfs:subClassOf _:genid6 ,
-                           _:genid8 ;
+           rdfs:subClassOf _:genid9 ,
+                           _:genid14 ;
            rdfs:comment "In line with GFO, we assume that every situation consists of at least one object that participates_in the situation."@en ;
            rdfs:label "Situation"@en ;
            skos:definition "Situations as complex entities that are comprehended as wholes"@en .
 
-_:genid6 rdf:type owl:Restriction ;
+_:genid9 rdf:type owl:Restriction ;
           owl:onProperty gfo-core:hasPart ;
-          owl:allValuesFrom :Situation .
+          owl:allValuesFrom [ rdf:type owl:Class ;
+                              owl:unionOf ( gfo-core:Attributive
+                                            :Situation
+                                          )
+                            ] .
 
-_:genid8 rdf:type owl:Restriction ;
-          owl:onProperty gfo-core:hasParticipantQuality ;
-          owl:allValuesFrom gfo-core:Quality .
+_:genid14 rdf:type owl:Restriction ;
+           owl:onProperty gfo-core:hasParticipantQuality ;
+           owl:allValuesFrom gfo-core:Quality .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :Situation ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid6 ;
+   owl:annotatedTarget _:genid9 ;
    rdfs:comment "As opposed to PresenticSituation hasPart only PresenticSituation" ,
                 "Should this axiom be part of gfo-core?"
  ] .
@@ -243,7 +251,7 @@ _:genid8 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :Situation ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid8 ;
+   owl:annotatedTarget _:genid14 ;
    rdfs:comment "As opposed to PresenticSituation hasPArticipantQuality only PresenticQuality" ,
                 "Should this axiom be part of gfo-core?"
  ] .

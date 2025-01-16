@@ -111,7 +111,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/core/hasAttributive
 gfo-core:hasAttributive rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf owl:topObjectProperty ;
                         rdfs:label "has attributive"@en .
 
 
@@ -122,19 +121,16 @@ gfo-core:hasPart rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/gfo/core/hasTime
 gfo-core:hasTime rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
                  rdfs:label "has time"@en .
 
 
 ###  https://w3id.org/gfo/core/participatesIn
 gfo-core:participatesIn rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf owl:topObjectProperty ;
                         rdfs:label "participates in"@en .
 
 
 ###  https://w3id.org/gfo/core/snapshotOf
 gfo-core:snapshotOf rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf owl:topObjectProperty ;
                     rdfs:label "snapshot of"@en .
 
 

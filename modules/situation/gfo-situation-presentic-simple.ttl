@@ -126,7 +126,6 @@ gfo-core:hasQuality rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/gfo/core/hasTime
 gfo-core:hasTime rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
                  rdfs:label "has time"@en .
 
 
