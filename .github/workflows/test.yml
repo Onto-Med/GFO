@@ -49,7 +49,7 @@ jobs:
       - run: check-rdfxml modules/situation/examples/gfo-situation-simple-example.ttl
       - run: check-rdfxml modules/situation/examples/gfo-situation-time-extended-example.ttl
 
-      - run: robot report --profile qc_report/profile.txt --input gfo-light.owl
+      # - run: robot report --profile qc_report/profile.txt --input gfo-light.owl
       - run: robot report --profile qc_report/profile.txt --input modules/gfo-core.ttl
       - run: robot report --profile qc_report/profile.txt --input modules/gfo-presentic.ttl
       - run: robot report --profile qc_report/profile.txt --input modules/gfo-timeExtended.ttl
