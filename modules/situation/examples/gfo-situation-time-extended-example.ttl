@@ -1,0 +1,207 @@
+@prefix : <https://w3id.org/gfo/situation/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rio: <https://w3id.org/rio/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix rio-ex: <https://w3id.org/rio/example/> .
+@prefix gfo-core: <https://w3id.org/gfo/core/> .
+@base <https://w3id.org/gfo/situation/> .
+
+<https://w3id.org/gfo/pattern/situation/time-extended-example> rdf:type owl:Ontology ;
+                                                                owl:versionIRI <https://w3id.org/gfo/pattern/situation/time-extended-example/release/2024-12-19> ;
+                                                                owl:imports <https://w3id.org/gfo/pattern/situation/time-extended> ;
+                                                                dc:created "2024-12-11" ;
+                                                                dc:creator "Alexandr Uciteli" ,
+                                                                           "Christoph Beger" ,
+                                                                           "Frank Löbe" ,
+                                                                           "Franz Matthies" ,
+                                                                           "Heinrich Herre" ,
+                                                                           "Konrad Höffner" ,
+                                                                           "Patryk Burek" ,
+                                                                           "Ralph Schäfermeier" ;
+                                                                dc:description "GFO-time-extended-situation-example is an example for the time-extended design pattern for modeling time-extended situations."@en ;
+                                                                dc:modified "2024-12-11" ;
+                                                                dc:title "General Formal Ontology (time-extended situation pattern example)"@en ;
+                                                                terms:license <http://creativecommons.org/licenses/by/4.0/> ;
+                                                                bibo:doi <https://zenodo.org/doi/10.5281/zenodo.5205419> ;
+                                                                vann:preferredNamespacePrefix "gfo-time-extended-situation-example" ;
+                                                                vann:preferredNamespaceURI "https://w3id.org/gfo/pattern/situation/time-extended-example" ;
+                                                                doap:repository <https://github.com/Onto-Med/GFO> ;
+                                                                rdfs:label "GFO time-extended situation pattern example"@en ;
+                                                                owl:versionInfo "2024-12-11" ;
+                                                                foaf:homepage "https://github.com/Onto-Med/GFO" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceURI
+vann:preferredNamespaceURI rdf:type owl:AnnotationProperty .
+
+
+###  http://usefulinc.com/ns/doap#repository
+doap:repository rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/rio/RiskSeverity
+rio:RiskSeverity rdf:type owl:Class ;
+                 rdfs:subClassOf gfo-core:Attributive .
+
+
+###  https://w3id.org/rio/RiskSituation
+rio:RiskSituation rdf:type owl:Class ;
+                  rdfs:subClassOf :Situation ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty gfo-core:hasQuality ;
+                                    owl:someValuesFrom rio:RiskSeverity
+                                  ] .
+
+
+###  https://w3id.org/rio/Patient
+rio-ex:Patient rdf:type owl:Class ;
+               rdfs:subClassOf gfo-core:Object .
+
+
+###  https://w3id.org/rio/example/PatientSnapshot
+rio-ex:PatientSnapshot rdf:type owl:Class ;
+                       rdfs:subClassOf gfo-core:PresenticObject .
+
+
+###  https://w3id.org/rio/example/RiskSeveritySnapshot
+rio-ex:RiskSeveritySnapshot rdf:type owl:Class ;
+                            rdfs:subClassOf gfo-core:PresenticAttributive .
+
+
+###  https://w3id.org/rio/example/RiskSituationSnapshot
+rio-ex:RiskSituationSnapshot rdf:type owl:Class ;
+                             rdfs:subClassOf :PresenticSituation .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/rio/example/highly_severe
+rio-ex:highly_severe rdf:type owl:NamedIndividual ,
+                              rio:RiskSeverity ;
+                     gfo-core:hasTime rio-ex:timeinterval_1 .
+
+
+###  https://w3id.org/rio/example/highly_severe_presentic
+rio-ex:highly_severe_presentic rdf:type owl:NamedIndividual ,
+                                        rio-ex:RiskSeveritySnapshot ;
+                               gfo-core:hasTime rio-ex:timepoint_1 ;
+                               gfo-core:snapshotOf rio-ex:highly_severe .
+
+
+###  https://w3id.org/rio/example/patient_1
+rio-ex:patient_1 rdf:type owl:NamedIndividual ,
+                          rio-ex:Patient ;
+                 gfo-core:hasTime rio-ex:timeinterval_1 ;
+                 gfo-core:participatesIn rio-ex:risk_sit1 .
+
+
+###  https://w3id.org/rio/example/patient_1_snapshot
+rio-ex:patient_1_snapshot rdf:type owl:NamedIndividual ,
+                                   rio-ex:PatientSnapshot ;
+                          gfo-core:hasTime rio-ex:timepoint_1 ;
+                          gfo-core:participatesIn rio-ex:risk_sit1_snapshot ;
+                          gfo-core:snapshotOf rio-ex:patient_1 .
+
+
+###  https://w3id.org/rio/example/risk_sit1
+rio-ex:risk_sit1 rdf:type owl:NamedIndividual ,
+                          rio:RiskSituation ;
+                 gfo-core:hasPart rio-ex:highly_severe ;
+                 gfo-core:hasTime rio-ex:timeinterval_1 ;
+                 gfo-core:hasQuality rio-ex:highly_severe .
+
+
+###  https://w3id.org/rio/example/risk_sit1_snapshot
+rio-ex:risk_sit1_snapshot rdf:type owl:NamedIndividual ,
+                                   rio-ex:RiskSituationSnapshot ;
+                          gfo-core:hasPart rio-ex:highly_severe_presentic ;
+                          gfo-core:hasTime rio-ex:timepoint_1 ;
+                          gfo-core:snapshotOf rio-ex:risk_sit1 .
+
+
+###  https://w3id.org/rio/example/timeinterval_1
+rio-ex:timeinterval_1 rdf:type owl:NamedIndividual ,
+                               gfo-core:TimeInterval .
+
+
+###  https://w3id.org/rio/example/timepoint_1
+rio-ex:timepoint_1 rdf:type owl:NamedIndividual ,
+                            gfo-core:TimePoint .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/simple" uri="../gfo-situation-simple.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/time-extended" uri="../gfo-situation-time-extended.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/object" uri="../gfo-situation-object.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/object-extended" uri="../gfo-situation-object-extended.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/presentic-simple" uri="../gfo-situation-presentic-simple.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/presentic-object" uri="../gfo-situation-presentic-object.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/presentic-object-reified-presentic-attributives" uri="../gfo-situation-presentic-object-reified-presentic-attributives.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/presentic-object-reified-presentic-objects" uri="../gfo-situation-presentic-object-reified-presentic-objects.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/simple-example" uri="gfo-situation-simple-example.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/time-extended-example" uri="gfo-situation-time-extended-example.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/object-example" uri="gfo-situation-object-example.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/object-extended-example" uri="gfo-situation-object-extended-example.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/presentic-simple-example" uri="gfo-situation-presentic-simple-example.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/presentic-object-example" uri="gfo-situation-presentic-object-example.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/presentic-object-reified-presentic-attributives-example" uri="gfo-situation-presentic-object-reified-presentic-attributives-example.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/gfo/pattern/situation/presentic-object-reified-presentic-objects-example" uri="gfo-situation-presentic-object-reified-presentic-objects-example.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

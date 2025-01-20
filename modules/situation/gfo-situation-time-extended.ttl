@@ -1,0 +1,194 @@
+@prefix : <https://w3id.org/gfo/situation/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix gfo-core: <https://w3id.org/gfo/core/> .
+@base <https://w3id.org/gfo/situation/> .
+
+<https://w3id.org/gfo/pattern/situation/time-extended> rdf:type owl:Ontology ;
+                                                        owl:versionIRI <https://w3id.org/gfo/pattern/situation/time-extended/release/2024-12-19> ;
+                                                        dc:created "2024-12-11" ;
+                                                        dc:creator "Alexandr Uciteli" ,
+                                                                   "Christoph Beger" ,
+                                                                   "Frank Löbe" ,
+                                                                   "Franz Matthies" ,
+                                                                   "Heinrich Herre" ,
+                                                                   "Konrad Höffner" ,
+                                                                   "Patryk Burek" ,
+                                                                   "Ralph Schäfermeier" ;
+                                                        dc:description "GFO-time-extended-situation is an ontology design pattern for modeling time-extended situations."@en ;
+                                                        dc:modified "2024-12-11" ;
+                                                        dc:title "General Formal Ontology (time-extended situation pattern)"@en ;
+                                                        terms:license <http://creativecommons.org/licenses/by/4.0/> ;
+                                                        bibo:doi <https://zenodo.org/doi/10.5281/zenodo.5205419> ;
+                                                        vann:preferredNamespacePrefix "gfo-time-extended-situation" ;
+                                                        vann:preferredNamespaceURI "https://w3id.org/gfo/pattern/situation/time-extended" ;
+                                                        doap:repository <https://github.com/Onto-Med/GFO> ;
+                                                        rdfs:label "GFO time-extended situation pattern"@en ;
+                                                        owl:versionInfo "2024-12-11" ;
+                                                        foaf:homepage "https://github.com/Onto-Med/GFO" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceURI
+vann:preferredNamespaceURI rdf:type owl:AnnotationProperty .
+
+
+###  http://usefulinc.com/ns/doap#repository
+doap:repository rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/gfo/core/followUp
+gfo-core:followUp rdf:type owl:ObjectProperty ;
+                  rdfs:label "follow up"@en .
+
+
+###  https://w3id.org/gfo/core/hasPart
+gfo-core:hasPart rdf:type owl:ObjectProperty ;
+                 rdfs:label "has part"@en .
+
+
+###  https://w3id.org/gfo/core/hasTime
+gfo-core:hasTime rdf:type owl:ObjectProperty ;
+                 rdfs:label "has time"@en .
+
+
+###  https://w3id.org/gfo/core/participatesIn
+gfo-core:participatesIn rdf:type owl:ObjectProperty ;
+                        rdfs:label "participates in"@en .
+
+
+###  https://w3id.org/gfo/core/snapshotOf
+gfo-core:snapshotOf rdf:type owl:ObjectProperty ;
+                    rdfs:label "snapshot of"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/gfo/core/Attributive
+gfo-core:Attributive rdf:type owl:Class ;
+                     rdfs:comment "Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category Attributive."@en ;
+                     rdfs:label "Attributive"@en ;
+                     skos:definition "Attributives are individuals that depend on other individuals by some kind of dependency relation."@en .
+
+
+###  https://w3id.org/gfo/core/Object
+gfo-core:Object rdf:type owl:Class ;
+                rdfs:label "Object"@en ;
+                skos:altLabel "Continuant"@en ;
+                skos:definition "An object is understood as a mutable entity that persists over time, having a finite lifespan of non-zero duration. As such, it specializes gfo:Continuant."@en ;
+                skos:example "Physical, tangible entities such as apples, cells and organisms"@en .
+
+
+###  https://w3id.org/gfo/core/PresenticAttributive
+gfo-core:PresenticAttributive rdf:type owl:Class ;
+                              rdfs:label "Presentic attributive"@en .
+
+
+###  https://w3id.org/gfo/core/PresenticObject
+gfo-core:PresenticObject rdf:type owl:Class ;
+                         rdfs:label "Presentic object"@en ;
+                         skos:definition "Each object manifests itself at any given time point of its existence as a presentic object (the latter is then a snapshot_of the former). A presentic object is likewise a complete whole, but with a lifetime of a unique time point, at which it is fully present."@en .
+
+
+###  https://w3id.org/gfo/core/TimeInterval
+gfo-core:TimeInterval rdf:type owl:Class ;
+                      rdfs:label "Time interval"@en ;
+                      skos:altLabel "Chronoid"@en ,
+                                    "Time period"@en .
+
+
+###  https://w3id.org/gfo/core/TimePoint
+gfo-core:TimePoint rdf:type owl:Class .
+
+
+###  https://w3id.org/gfo/situation/PresenticSituation
+:PresenticSituation rdf:type owl:Class ;
+                    rdfs:label "Presentic situation"@en .
+
+
+###  https://w3id.org/gfo/situation/Situation
+:Situation rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty gfo-core:hasPart ;
+                             owl:allValuesFrom :Situation
+                           ] ;
+           rdfs:comment "In line with GFO, we assume that every situation consists of at least one object that participates_in the situation."@en ;
+           rdfs:label "Situation"@en ;
+           skos:definition "Situations as complex entities that are comprehended as wholes"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
