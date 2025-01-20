@@ -27,7 +27,7 @@ Work on GFO has started in 1999 in the context of the GOL project (General Ontol
 The "native" formalization language for GFO is [first-order logic (FOL)](https://en.wikipedia.org/wiki/First-order_logic). Partial axiomatizations of GFO in FOL exist in report working drafts, but are not yet available to the public.
 
 ### Release Strategy
-[modules/gfo-base.owl](modules/gfo-base.owl) forms the core module of GFO. We are going to continually provide further modules/extensions, dedicated to several of our research domains, like time, space, processes, etc. There may be parallel extensions for these domains, and not all extensions will be consistent with each other. All module files are provided with their own namespaces (e.g., https://w3id.org/gfo/time) and can be used separately. A selection of those modules will be unified in the next version of [gfo.owl](gfo.owl) (under the namespace https://w3id.org/gfo).
+[modules/gfo-core.owl](modules/gfo-core.owl) forms the core module of GFO. We are going to continually provide further modules/extensions, dedicated to several of our research domains, like time, space, processes, etc. There may be parallel extensions for these domains, and not all extensions will be consistent with each other. All module files are provided with their own namespaces (e.g., https://w3id.org/gfo/time) and can be used separately. A selection of those modules will be unified in the next version of [gfo.owl](gfo.owl) (under the namespace https://w3id.org/gfo).
 
 All versions of GFO and it's modules are available via `owl:versionIRI`. e.g.: https://w3id.org/gfo/release/2024-07-05
 
