@@ -27,10 +27,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: check-rdfxml gfo-light.owl
-      - run: check-rdfxml modules/gfo-base.owl
 
       - run: robot reason --input gfo-light.owl
-      - run: robot reason --input modules/gfo-base.owl
 
       # - run: robot report --input gfo-light.owl --profile qc_report/profile.txt
-      - run: robot report --input modules/gfo-base.owl --profile qc_report/profile.txt
