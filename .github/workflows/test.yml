@@ -26,6 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - run: check-rdfxml gfo.owl
       - run: check-rdfxml gfo-light.owl
       - run: check-rdfxml modules/gfo-core.ttl
       - run: check-rdfxml modules/gfo-presentic.ttl
@@ -49,6 +50,7 @@ jobs:
       - run: check-rdfxml modules/situation/examples/gfo-situation-simple-example.ttl
       - run: check-rdfxml modules/situation/examples/gfo-situation-time-extended-example.ttl
 
+      - run: robot report --profile qc_report/profile.txt --input gfo.owl
       # - run: robot report --profile qc_report/profile.txt --input gfo-light.owl
       - run: robot report --profile qc_report/profile.txt --input modules/gfo-core.ttl
       - run: robot report --profile qc_report/profile.txt --input modules/gfo-presentic.ttl
