@@ -12,7 +12,6 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix gfo-core: <https://w3id.org/gfo/core/> .
-@prefix gfo-time-extended: <https://w3id.org/gfo/time-extended/> .
 @base <https://w3id.org/gfo/time-extended/> .
 
 <https://w3id.org/gfo/time-extended> rdf:type owl:Ontology ;
@@ -120,63 +119,63 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  https://w3id.org/gfo/time-extended/Process
-gfo-time-extended:Process rdf:type owl:Class ;
-                          rdfs:subClassOf gfo-core:ProcessualEntity ,
-                                          gfo-time-extended:TimeExtendedIndividual ;
-                          rdfs:label "Process"@en .
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf gfo-core:ProcessualEntity ,
+                         :TimeExtendedIndividual ;
+         rdfs:label "Process"@en .
 
 
 ###  https://w3id.org/gfo/time-extended/TimeExtendedAttributive
-gfo-time-extended:TimeExtendedAttributive rdf:type owl:Class ;
-                                          rdfs:subClassOf gfo-core:Attributive ,
-                                                          gfo-time-extended:TimeExtendedIndividual ;
-                                          rdfs:label "Time-extended attributive"@en .
+:TimeExtendedAttributive rdf:type owl:Class ;
+                         rdfs:subClassOf gfo-core:Attributive ,
+                                         :TimeExtendedIndividual ;
+                         rdfs:label "Time-extended attributive"@en .
 
 
 ###  https://w3id.org/gfo/time-extended/TimeExtendedIndividual
-gfo-time-extended:TimeExtendedIndividual rdf:type owl:Class ;
-                                         rdfs:subClassOf gfo-core:ConcreteIndividual ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty gfo-core:hasTime ;
-                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass gfo-core:TimeInterval
-                                                         ] ;
-                                         rdfs:label "Time-extended individual"@en .
+:TimeExtendedIndividual rdf:type owl:Class ;
+                        rdfs:subClassOf gfo-core:ConcreteIndividual ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty gfo-core:hasTime ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass gfo-core:TimeInterval
+                                        ] ;
+                        rdfs:label "Time-extended individual"@en .
 
 
 ###  https://w3id.org/gfo/time-extended/TimeExtendedObject
-gfo-time-extended:TimeExtendedObject rdf:type owl:Class ;
-                                     rdfs:subClassOf gfo-core:Object ,
-                                                     gfo-time-extended:TimeExtendedIndividual ;
-                                     rdfs:label "Time-extended object"@en .
+:TimeExtendedObject rdf:type owl:Class ;
+                    rdfs:subClassOf gfo-core:Object ,
+                                    :TimeExtendedIndividual ;
+                    rdfs:label "Time-extended object"@en .
 
 
 ###  https://w3id.org/gfo/time-extended/TimeExtendedQuality
-gfo-time-extended:TimeExtendedQuality rdf:type owl:Class ;
-                                      rdfs:subClassOf gfo-core:Quality ,
-                                                      gfo-time-extended:TimeExtendedAttributive ;
-                                      rdfs:label "Time-extended quality"@en .
+:TimeExtendedQuality rdf:type owl:Class ;
+                     rdfs:subClassOf gfo-core:Quality ,
+                                     :TimeExtendedAttributive ;
+                     rdfs:label "Time-extended quality"@en .
 
 
 ###  https://w3id.org/gfo/time-extended/TimeExtendedRelator
-gfo-time-extended:TimeExtendedRelator rdf:type owl:Class ;
-                                      rdfs:subClassOf gfo-core:Relator ,
-                                                      gfo-time-extended:TimeExtendedAttributive ;
-                                      rdfs:label "Time-extended relator"@en .
+:TimeExtendedRelator rdf:type owl:Class ;
+                     rdfs:subClassOf gfo-core:Relator ,
+                                     :TimeExtendedAttributive ;
+                     rdfs:label "Time-extended relator"@en .
 
 
 ###  https://w3id.org/gfo/time-extended/TimeExtendedRole
-gfo-time-extended:TimeExtendedRole rdf:type owl:Class ;
-                                   rdfs:subClassOf gfo-core:Role ,
-                                                   gfo-time-extended:TimeExtendedAttributive ;
-                                   rdfs:label "Time-extended role"@en .
+:TimeExtendedRole rdf:type owl:Class ;
+                  rdfs:subClassOf gfo-core:Role ,
+                                  :TimeExtendedAttributive ;
+                  rdfs:label "Time-extended role"@en .
 
 
 ###  https://w3id.org/gfo/time-extended/TimeExtendedSituation
-gfo-time-extended:TimeExtendedSituation rdf:type owl:Class ;
-                                        rdfs:subClassOf gfo-core:Situation ,
-                                                        gfo-time-extended:TimeExtendedIndividual ;
-                                        rdfs:label "Time-extended situation"@en .
+:TimeExtendedSituation rdf:type owl:Class ;
+                       rdfs:subClassOf gfo-core:Situation ,
+                                       :TimeExtendedIndividual ;
+                       rdfs:label "Time-extended situation"@en .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

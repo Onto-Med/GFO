@@ -12,7 +12,6 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix gfo-core: <https://w3id.org/gfo/core/> .
-@prefix gfo-presentic: <https://w3id.org/gfo/presentic/> .
 @base <https://w3id.org/gfo/presentic/> .
 
 <https://w3id.org/gfo/presentic> rdf:type owl:Ontology ;
@@ -120,10 +119,10 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  https://w3id.org/gfo/presentic/followUp
-gfo-presentic:followUp rdf:type owl:ObjectProperty ;
-                       rdfs:domain gfo-presentic:PresenticIndividual ;
-                       rdfs:range gfo-presentic:PresenticIndividual ;
-                       rdfs:label "follow up"@en .
+:followUp rdf:type owl:ObjectProperty ;
+          rdfs:domain :PresenticIndividual ;
+          rdfs:range :PresenticIndividual ;
+          rdfs:label "follow up"@en .
 
 
 #################################################################
@@ -131,64 +130,64 @@ gfo-presentic:followUp rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  https://w3id.org/gfo/presentic/Event
-gfo-presentic:Event rdf:type owl:Class ;
-                    rdfs:subClassOf gfo-core:ProcessualEntity ,
-                                    gfo-presentic:PresenticIndividual ;
-                    rdfs:label "Event"@en .
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf gfo-core:ProcessualEntity ,
+                       :PresenticIndividual ;
+       rdfs:label "Event"@en .
 
 
 ###  https://w3id.org/gfo/presentic/PresenticAttributive
-gfo-presentic:PresenticAttributive rdf:type owl:Class ;
-                                   rdfs:subClassOf gfo-core:Attributive ,
-                                                   gfo-presentic:PresenticIndividual ;
-                                   rdfs:label "Presentic attributive"@en .
+:PresenticAttributive rdf:type owl:Class ;
+                      rdfs:subClassOf gfo-core:Attributive ,
+                                      :PresenticIndividual ;
+                      rdfs:label "Presentic attributive"@en .
 
 
 ###  https://w3id.org/gfo/presentic/PresenticIndividual
-gfo-presentic:PresenticIndividual rdf:type owl:Class ;
-                                  rdfs:subClassOf gfo-core:ConcreteIndividual ,
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty gfo-core:hasTime ;
-                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                    owl:onClass gfo-core:TimePoint
-                                                  ] ;
-                                  rdfs:label "Presentic individual"@en .
+:PresenticIndividual rdf:type owl:Class ;
+                     rdfs:subClassOf gfo-core:ConcreteIndividual ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty gfo-core:hasTime ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass gfo-core:TimePoint
+                                     ] ;
+                     rdfs:label "Presentic individual"@en .
 
 
 ###  https://w3id.org/gfo/presentic/PresenticObject
-gfo-presentic:PresenticObject rdf:type owl:Class ;
-                              rdfs:subClassOf gfo-core:Object ,
-                                              gfo-presentic:PresenticIndividual ;
-                              rdfs:label "Presentic object"@en ;
-                              skos:definition "Each object manifests itself at any given time point of its existence as a presentic object (the latter is then a snapshot_of the former). A presentic object is likewise a complete whole, but with a lifetime of a unique time point, at which it is fully present."@en .
+:PresenticObject rdf:type owl:Class ;
+                 rdfs:subClassOf gfo-core:Object ,
+                                 :PresenticIndividual ;
+                 rdfs:label "Presentic object"@en ;
+                 skos:definition "Each object manifests itself at any given time point of its existence as a presentic object (the latter is then a snapshot_of the former). A presentic object is likewise a complete whole, but with a lifetime of a unique time point, at which it is fully present."@en .
 
 
 ###  https://w3id.org/gfo/presentic/PresenticQuality
-gfo-presentic:PresenticQuality rdf:type owl:Class ;
-                               rdfs:subClassOf gfo-core:Quality ,
-                                               gfo-presentic:PresenticAttributive ;
-                               rdfs:label "Presentic quality"@en .
+:PresenticQuality rdf:type owl:Class ;
+                  rdfs:subClassOf gfo-core:Quality ,
+                                  :PresenticAttributive ;
+                  rdfs:label "Presentic quality"@en .
 
 
 ###  https://w3id.org/gfo/presentic/PresenticRelator
-gfo-presentic:PresenticRelator rdf:type owl:Class ;
-                               rdfs:subClassOf gfo-core:Relator ,
-                                               gfo-presentic:PresenticAttributive ;
-                               rdfs:label "Presentic relator"@en .
+:PresenticRelator rdf:type owl:Class ;
+                  rdfs:subClassOf gfo-core:Relator ,
+                                  :PresenticAttributive ;
+                  rdfs:label "Presentic relator"@en .
 
 
 ###  https://w3id.org/gfo/presentic/PresenticRole
-gfo-presentic:PresenticRole rdf:type owl:Class ;
-                            rdfs:subClassOf gfo-core:Role ,
-                                            gfo-presentic:PresenticAttributive ;
-                            rdfs:label "Presentic role"@en .
+:PresenticRole rdf:type owl:Class ;
+               rdfs:subClassOf gfo-core:Role ,
+                               :PresenticAttributive ;
+               rdfs:label "Presentic role"@en .
 
 
 ###  https://w3id.org/gfo/presentic/PresenticSituation
-gfo-presentic:PresenticSituation rdf:type owl:Class ;
-                                 rdfs:subClassOf gfo-core:Situation ,
-                                                 gfo-presentic:PresenticIndividual ;
-                                 rdfs:label "Presentic situation"@en .
+:PresenticSituation rdf:type owl:Class ;
+                    rdfs:subClassOf gfo-core:Situation ,
+                                    :PresenticIndividual ;
+                    rdfs:label "Presentic situation"@en .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
