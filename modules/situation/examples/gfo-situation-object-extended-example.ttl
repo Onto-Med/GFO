@@ -113,12 +113,14 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://example.org/surgical-navigation-situation/BirthDate
 nav:BirthDate rdf:type owl:Class ;
-              rdfs:subClassOf gfo-core:Quality .
+              rdfs:subClassOf gfo-core:Quality ;
+              rdfs:label "Birth date"@en .
 
 
 ###  https://example.org/surgical-navigation-situation/JobProfile
 nav:JobProfile rdf:type owl:Class ;
-               rdfs:subClassOf gfo-core:Quality .
+               rdfs:subClassOf gfo-core:Quality ;
+               rdfs:label "Job profile"@en .
 
 
 ###  https://example.org/surgical-navigation-situation/Operator
@@ -127,7 +129,8 @@ nav:Operator rdf:type owl:Class ;
                              [ rdf:type owl:Restriction ;
                                owl:onProperty gfo-core:roleIn ;
                                owl:someValuesFrom nav:Surgery
-                             ] .
+                             ] ;
+             rdfs:label "Operator"@en .
 
 
 ###  https://example.org/surgical-navigation-situation/Patient
@@ -140,12 +143,14 @@ nav:Patient rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty gfo-core:roleIn ;
                               owl:someValuesFrom nav:Surgery
-                            ] .
+                            ] ;
+            rdfs:label "Patient"@en .
 
 
 ###  https://example.org/surgical-navigation-situation/PatientAge
 nav:PatientAge rdf:type owl:Class ;
-               rdfs:subClassOf gfo-core:Quality .
+               rdfs:subClassOf gfo-core:Quality ;
+               rdfs:label "Patient age"@en .
 
 
 ###  https://example.org/surgical-navigation-situation/Person
@@ -165,12 +170,14 @@ nav:Person rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty gfo-core:hasQuality ;
                              owl:someValuesFrom nav:BirthDate
-                           ] .
+                           ] ;
+           rdfs:label "Person"@en .
 
 
 ###  https://example.org/surgical-navigation-situation/Surgery
 nav:Surgery rdf:type owl:Class ;
-            rdfs:subClassOf :Situation .
+            rdfs:subClassOf :Situation ;
+            rdfs:label "Surgery"@en .
 
 
 #################################################################

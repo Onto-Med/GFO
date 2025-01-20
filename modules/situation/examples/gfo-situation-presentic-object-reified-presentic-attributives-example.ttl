@@ -2,6 +2,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rio: <https://w3id.org/rio/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
@@ -11,9 +12,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix terms: <http://purl.org/dc/terms/> .
-@prefix gfo-core: <https://w3id.org/gfo/core/> .
-@prefix rio: <https://w3id.org/rio/> .
 @prefix rio-ex: <https://w3id.org/rio/example/> .
+@prefix gfo-core: <https://w3id.org/gfo/core/> .
 @base <https://w3id.org/gfo/situation/> .
 
 <https://w3id.org/gfo/pattern/situation/presentic-object-reified-presentic-attributives-example> rdf:type owl:Ontology ;
@@ -112,19 +112,22 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-###  https://w3id.org/rio/PatientAgeSnapshot
-<https://w3id.org/rio/PatientAgeSnapshot> rdf:type owl:Class ;
-                                          rdfs:subClassOf gfo-core:PresenticAttributive .
-
-
 ###  https://w3id.org/rio/Patient
-<https://w3id.org/rio/Patient> rdf:type owl:Class ;
-                                       rdfs:subClassOf gfo-core:Object .
+rio:Patient rdf:type owl:Class ;
+            rdfs:subClassOf gfo-core:Object ;
+            rdfs:label "Patient"@en .
+
+
+###  https://w3id.org/rio/PatientAgeSnapshot
+rio:PatientAgeSnapshot rdf:type owl:Class ;
+                       rdfs:subClassOf gfo-core:PresenticAttributive ;
+                       rdfs:label "Patient age snapshot"@en .
 
 
 ###  https://w3id.org/rio/example/RiskSituationSnapshot
-<https://w3id.org/rio/example/RiskSituationSnapshot> rdf:type owl:Class ;
-                                                     rdfs:subClassOf :PresenticSituation .
+rio-ex:RiskSituationSnapshot rdf:type owl:Class ;
+                             rdfs:subClassOf :PresenticSituation ;
+                             rdfs:label "Risk situation snapshot"@en .
 
 
 #################################################################
@@ -132,34 +135,34 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  https://w3id.org/rio/example/patient_1
-<https://w3id.org/rio/example/patient_1> rdf:type owl:NamedIndividual ,
-                                                  <https://w3id.org/rio/Patient> ;
-                                         gfo-core:hasAttributive <https://w3id.org/rio/example/10_months_presentic> ;
-                                         gfo-core:hasTime <https://w3id.org/rio/example/patient_1_lifespan> ;
-                                         gfo-core:participatesIn <https://w3id.org/rio/example/risk_sit1_snapshot> .
+rio-ex:patient_1 rdf:type owl:NamedIndividual ,
+                          rio:Patient ;
+                 gfo-core:hasAttributive <https://w3id.org/rio/example/10_months_presentic> ;
+                 gfo-core:hasTime rio-ex:patient_1_lifespan ;
+                 gfo-core:participatesIn rio-ex:risk_sit1_snapshot .
 
 
 ###  https://w3id.org/rio/example/patient_1_lifespan
-<https://w3id.org/rio/example/patient_1_lifespan> rdf:type owl:NamedIndividual ,
-                                                           gfo-core:TimeInterval .
+rio-ex:patient_1_lifespan rdf:type owl:NamedIndividual ,
+                                   gfo-core:TimeInterval .
 
 
 ###  https://w3id.org/rio/example/risk_sit1_snapshot
-<https://w3id.org/rio/example/risk_sit1_snapshot> rdf:type owl:NamedIndividual ,
-                                                           <https://w3id.org/rio/example/RiskSituationSnapshot> ;
-                                                  gfo-core:hasPart <https://w3id.org/rio/example/10_months_presentic> ;
-                                                  gfo-core:hasTime <https://w3id.org/rio/example/timepoint_1> .
+rio-ex:risk_sit1_snapshot rdf:type owl:NamedIndividual ,
+                                   rio-ex:RiskSituationSnapshot ;
+                          gfo-core:hasPart <https://w3id.org/rio/example/10_months_presentic> ;
+                          gfo-core:hasTime rio-ex:timepoint_1 .
 
 
 ###  https://w3id.org/rio/example/timepoint_1
-<https://w3id.org/rio/example/timepoint_1> rdf:type owl:NamedIndividual ,
-                                                    gfo-core:TimePoint .
+rio-ex:timepoint_1 rdf:type owl:NamedIndividual ,
+                            gfo-core:TimePoint .
 
 
 ###  https://w3id.org/rio/example/10_months_presentic
 <https://w3id.org/rio/example/10_months_presentic> rdf:type owl:NamedIndividual ,
-                                                            <https://w3id.org/rio/PatientAgeSnapshot> ;
-                                                   gfo-core:hasTime <https://w3id.org/rio/example/timepoint_1> .
+                                                            rio:PatientAgeSnapshot ;
+                                                   gfo-core:hasTime rio-ex:timepoint_1 .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

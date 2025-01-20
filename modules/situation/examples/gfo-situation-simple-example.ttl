@@ -122,22 +122,26 @@ rio:GroupRiskSituation rdf:type owl:Class ;
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty gfo-core:hasQuality ;
                                          owl:someValuesFrom rio:NumberOfPatients
-                                       ] .
+                                       ] ;
+                       rdfs:label "Group risk situation"@en .
 
 
 ###  https://w3id.org/rio/NumberOfPatients
 rio:NumberOfPatients rdf:type owl:Class ;
-                     rdfs:subClassOf gfo-core:Quality .
+                     rdfs:subClassOf gfo-core:Quality ;
+                     rdfs:label "Number of patients"@en .
 
 
 ###  https://w3id.org/rio/PatientAge
 rio:PatientAge rdf:type owl:Class ;
-               rdfs:subClassOf gfo-core:Quality .
+               rdfs:subClassOf gfo-core:Quality ;
+               rdfs:label "Patient age"@en .
 
 
 ###  https://w3id.org/rio/RiskSeverity
 rio:RiskSeverity rdf:type owl:Class ;
-                 rdfs:subClassOf gfo-core:Quality .
+                 rdfs:subClassOf gfo-core:Quality ;
+                 rdfs:label "Risk severity"@en .
 
 
 ###  https://w3id.org/rio/RiskSituation
@@ -150,7 +154,8 @@ rio:RiskSituation rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty gfo-core:hasQuality ;
                                     owl:someValuesFrom rio:RiskSeverity
-                                  ] .
+                                  ] ;
+                  rdfs:label "Risk Situation"@en .
 
 
 #################################################################

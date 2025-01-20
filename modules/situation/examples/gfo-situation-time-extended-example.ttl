@@ -114,7 +114,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/rio/RiskSeverity
 rio:RiskSeverity rdf:type owl:Class ;
-                 rdfs:subClassOf gfo-core:Attributive .
+                 rdfs:subClassOf gfo-core:Attributive ;
+                 rdfs:label "Risk severity"@en .
 
 
 ###  https://w3id.org/rio/RiskSituation
@@ -123,27 +124,32 @@ rio:RiskSituation rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty gfo-core:hasQuality ;
                                     owl:someValuesFrom rio:RiskSeverity
-                                  ] .
+                                  ] ;
+                  rdfs:label "Risk situation"@en .
 
 
-###  https://w3id.org/rio/Patient
+###  https://w3id.org/rio/example/Patient
 rio-ex:Patient rdf:type owl:Class ;
-               rdfs:subClassOf gfo-core:Object .
+               rdfs:subClassOf gfo-core:Object ;
+               rdfs:label "Patient"@en .
 
 
 ###  https://w3id.org/rio/example/PatientSnapshot
 rio-ex:PatientSnapshot rdf:type owl:Class ;
-                       rdfs:subClassOf gfo-core:PresenticObject .
+                       rdfs:subClassOf gfo-core:PresenticObject ;
+                       rdfs:label "Patient snapshot"@en .
 
 
 ###  https://w3id.org/rio/example/RiskSeveritySnapshot
 rio-ex:RiskSeveritySnapshot rdf:type owl:Class ;
-                            rdfs:subClassOf gfo-core:PresenticAttributive .
+                            rdfs:subClassOf gfo-core:PresenticAttributive ;
+                            rdfs:label "Risk severity snapshot"@en .
 
 
 ###  https://w3id.org/rio/example/RiskSituationSnapshot
 rio-ex:RiskSituationSnapshot rdf:type owl:Class ;
-                             rdfs:subClassOf :PresenticSituation .
+                             rdfs:subClassOf :PresenticSituation ;
+                             rdfs:label "Risk situation snapshot"@en .
 
 
 #################################################################
