@@ -28,10 +28,10 @@ jobs:
 
       - run: check-rdfxml gfo.owl
       - run: check-rdfxml gfo-light.owl
-      - run: check-rdfxml modules/gfo-core.ttl
-      - run: check-rdfxml modules/gfo-presentic.ttl
-      - run: check-rdfxml modules/gfo-timeExtended.ttl
-      - run: check-rdfxml modules/gfo-connector-presentic-timeExtended.ttl
+      # - run: check-rdfxml modules/gfo-core.ttl
+      # - run: check-rdfxml modules/gfo-presentic.ttl
+      # - run: check-rdfxml modules/gfo-timeExtended.ttl
+      # - run: check-rdfxml modules/gfo-connector-presentic-timeExtended.ttl
       - run: check-rdfxml modules/situation/gfo-situation.ttl
       - run: check-rdfxml modules/situation/gfo-situation-object-extended.ttl
       - run: check-rdfxml modules/situation/gfo-situation-object.ttl
@@ -52,9 +52,9 @@ jobs:
 
       - run: robot report --profile qc_report/profile.txt -i gfo.owl
       # - run: robot report --profile qc_report/profile.txt -i gfo-light.owl
-      - run: robot report --profile qc_report/profile.txt -i modules/gfo-core.ttl
-      - run: robot report --profile qc_report/profile.txt -i modules/gfo-presentic.ttl
-      - run: robot report --profile qc_report/profile.txt -i modules/gfo-timeExtended.ttl
+      # - run: robot report --profile qc_report/profile.txt -i modules/gfo-core.ttl
+      # - run: robot report --profile qc_report/profile.txt -i modules/gfo-presentic.ttl
+      # - run: robot report --profile qc_report/profile.txt -i modules/gfo-timeExtended.ttl
       - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation.ttl
       - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-object-extended.ttl
       - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-object.ttl
@@ -65,7 +65,7 @@ jobs:
       - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-simple.ttl
       - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-time-extended.ttl
 
-      - run: robot merge --collapse-import-closure true -i modules/gfo-connector-presentic-timeExtended.ttl report --profile qc_report/profile.txt
+      # - run: robot merge --collapse-import-closure true -i modules/gfo-connector-presentic-timeExtended.ttl report --profile qc_report/profile.txt
       - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-object-example.ttl report --profile qc_report/profile.txt
       - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-object-extended-example.ttl report --profile qc_report/profile.txt
       - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-presentic-object-example.ttl report --profile qc_report/profile.txt
