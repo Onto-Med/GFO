@@ -157,10 +157,10 @@ rio-ex:risk_sit1_snapshot rdf:type owl:NamedIndividual ,
                           rdfs:label "risk_sit1_snapshot"@en .
 
 
-###  https://w3id.org/rio/example/risk_sit_1_timespan
-rio-ex:risk_sit_1_timespan rdf:type owl:NamedIndividual ,
+###  https://w3id.org/rio/example/10_months_timespan
+rio-ex:10_months_timespan rdf:type owl:NamedIndividual ,
                                     gfo-core:TimeInterval ;
-                           rdfs:label "risk_sit_1_timespan"@en .
+                           rdfs:label "10_months_timespan"@en .
 
 
 ###  https://w3id.org/rio/example/timepoint_1
@@ -172,7 +172,7 @@ rio-ex:timepoint_1 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/rio/example/10_months
 <https://w3id.org/rio/example/10_months> rdf:type owl:NamedIndividual ,
                                                   rio:PatientAge ;
-                                         gfo-core:hasTime rio-ex:risk_sit_1_timespan ;
+                                         gfo-core:hasTime rio-ex:10_months_timespan ;
                                          rdfs:label "10_months"@en .
 
 
