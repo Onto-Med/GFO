@@ -1,0 +1,151 @@
+@prefix : <https://w3id.org/gfo/situation/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix gfo-core: <https://w3id.org/gfo/core/> .
+@base <https://w3id.org/gfo/situation/> .
+
+<https://w3id.org/gfo/pattern/situation/simple> rdf:type owl:Ontology ;
+                                                 owl:versionIRI <https://w3id.org/gfo/pattern/situation/simple/release/2024-12-19> ;
+                                                 dc:created "2024-12-11" ;
+                                                 dc:creator "Alexandr Uciteli" ,
+                                                            "Christoph Beger" ,
+                                                            "Frank Löbe" ,
+                                                            "Franz Matthies" ,
+                                                            "Heinrich Herre" ,
+                                                            "Konrad Höffner" ,
+                                                            "Patryk Burek" ,
+                                                            "Ralph Schäfermeier" ;
+                                                 dc:description "GFO-simple-situation is an ontology design pattern for modeling simple situations."@en ;
+                                                 dc:modified "2024-12-11" ;
+                                                 dc:title "General Formal Ontology (simple situation pattern)"@en ;
+                                                 terms:license <http://creativecommons.org/licenses/by/4.0/> ;
+                                                 bibo:doi <https://zenodo.org/doi/10.5281/zenodo.5205419> ;
+                                                 vann:preferredNamespacePrefix "gfo-simple-situation" ;
+                                                 vann:preferredNamespaceURI "https://w3id.org/gfo/pattern/situation/simple" ;
+                                                 doap:repository <https://github.com/Onto-Med/GFO> ;
+                                                 rdfs:label "GFO simple situation pattern"@en ;
+                                                 owl:versionInfo "2024-12-11" ;
+                                                 foaf:homepage "https://github.com/Onto-Med/GFO" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceURI
+vann:preferredNamespaceURI rdf:type owl:AnnotationProperty .
+
+
+###  http://usefulinc.com/ns/doap#repository
+doap:repository rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/gfo/core/hasPart
+gfo-core:hasPart rdf:type owl:ObjectProperty ;
+                 rdfs:label "has part"@en .
+
+
+###  https://w3id.org/gfo/core/hasParticipantQuality
+gfo-core:hasParticipantQuality rdf:type owl:ObjectProperty ;
+                               rdfs:label "has participant quality"@en .
+
+
+###  https://w3id.org/gfo/core/hasQuality
+gfo-core:hasQuality rdf:type owl:ObjectProperty ;
+                    rdfs:label "has quality"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/gfo/core/Individual
+gfo-core:Individual rdf:type owl:Class ;
+                    rdfs:label "Individual"@en ;
+                    skos:definition "Individuals are entities which cannot be further instantiated."@en .
+
+
+###  https://w3id.org/gfo/core/Quality
+gfo-core:Quality rdf:type owl:Class ;
+                 rdfs:label "Quality"@en ;
+                 skos:definition "A quality links an entity—the necessary quality bearer—to a value, which can be quantitative (e.g., 10 kg, 40 $) or qualitative (e.g., ‘green’, ‘nice’)."@en .
+
+
+###  https://w3id.org/gfo/situation/Situation
+:Situation rdf:type owl:Class ;
+           rdfs:subClassOf gfo-core:Individual ;
+           rdfs:comment "In line with GFO, we assume that every situation consists of at least one object that participates_in the situation."@en ;
+           rdfs:label "Situation"@en ;
+           skos:definition "Situations as complex entities that are comprehended as wholes"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

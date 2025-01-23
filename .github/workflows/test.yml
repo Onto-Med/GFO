@@ -26,11 +26,51 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - run: check-rdfxml gfo.owl
       - run: check-rdfxml gfo-light.owl
-      - run: check-rdfxml modules/gfo-base.owl
+      # - run: check-rdfxml modules/gfo-core.ttl
+      # - run: check-rdfxml modules/gfo-presentic.ttl
+      # - run: check-rdfxml modules/gfo-timeExtended.ttl
+      # - run: check-rdfxml modules/gfo-connector-presentic-timeExtended.ttl
+      - run: check-rdfxml modules/situation/gfo-situation.ttl
+      - run: check-rdfxml modules/situation/gfo-situation-object-extended.ttl
+      - run: check-rdfxml modules/situation/gfo-situation-object.ttl
+      - run: check-rdfxml modules/situation/gfo-situation-presentic-object-reified-presentic-attributives.ttl
+      - run: check-rdfxml modules/situation/gfo-situation-presentic-object-reified-presentic-objects.ttl
+      - run: check-rdfxml modules/situation/gfo-situation-presentic-object.ttl
+      - run: check-rdfxml modules/situation/gfo-situation-presentic-simple.ttl
+      - run: check-rdfxml modules/situation/gfo-situation-simple.ttl
+      - run: check-rdfxml modules/situation/gfo-situation-time-extended.ttl
+      - run: check-rdfxml modules/situation/examples/gfo-situation-object-example.ttl
+      - run: check-rdfxml modules/situation/examples/gfo-situation-object-extended-example.ttl
+      - run: check-rdfxml modules/situation/examples/gfo-situation-presentic-object-example.ttl
+      - run: check-rdfxml modules/situation/examples/gfo-situation-presentic-object-reified-presentic-attributives-example.ttl
+      - run: check-rdfxml modules/situation/examples/gfo-situation-presentic-object-reified-presentic-objects-example.ttl
+      - run: check-rdfxml modules/situation/examples/gfo-situation-presentic-simple-example.ttl
+      - run: check-rdfxml modules/situation/examples/gfo-situation-simple-example.ttl
+      - run: check-rdfxml modules/situation/examples/gfo-situation-time-extended-example.ttl
 
-      - run: robot reason --input gfo-light.owl
-      - run: robot reason --input modules/gfo-base.owl
+      - run: robot report --profile qc_report/profile.txt -i gfo.owl
+      # - run: robot report --profile qc_report/profile.txt -i gfo-light.owl
+      # - run: robot report --profile qc_report/profile.txt -i modules/gfo-core.ttl
+      # - run: robot report --profile qc_report/profile.txt -i modules/gfo-presentic.ttl
+      # - run: robot report --profile qc_report/profile.txt -i modules/gfo-timeExtended.ttl
+      - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation.ttl
+      - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-object-extended.ttl
+      - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-object.ttl
+      - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-presentic-object-reified-presentic-attributives.ttl
+      - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-presentic-object-reified-presentic-objects.ttl
+      - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-presentic-object.ttl
+      - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-presentic-simple.ttl
+      - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-simple.ttl
+      - run: robot report --profile qc_report/profile.txt -i modules/situation/gfo-situation-time-extended.ttl
 
-      # - run: robot report --input gfo-light.owl --profile qc_report/profile.txt
-      - run: robot report --input modules/gfo-base.owl --profile qc_report/profile.txt
+      # - run: robot merge --collapse-import-closure true -i modules/gfo-connector-presentic-timeExtended.ttl report --profile qc_report/profile.txt
+      - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-object-example.ttl report --profile qc_report/profile.txt
+      - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-object-extended-example.ttl report --profile qc_report/profile.txt
+      - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-presentic-object-example.ttl report --profile qc_report/profile.txt
+      - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-presentic-object-reified-presentic-attributives-example.ttl report --profile qc_report/profile.txt
+      - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-presentic-object-reified-presentic-objects-example.ttl report --profile qc_report/profile.txt
+      - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-presentic-simple-example.ttl report --profile qc_report/profile.txt
+      - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-simple-example.ttl report --profile qc_report/profile.txt
+      - run: robot merge --collapse-import-closure true -i modules/situation/examples/gfo-situation-time-extended-example.ttl report --profile qc_report/profile.txt

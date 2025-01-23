@@ -24,9 +24,9 @@ If you want to contribute changes, please do so by:
    Edit the ontology files using a suitable ontology editor or text editor.
    Adhere to the GFO's existing coding style and conventions.
    Ensure your changes are well-documented and understandable.
-   You can run the following command with docker to check your changes locally (in this case `modules/gfo-base.owl` is checked):
+   You can run the following command with docker to check your changes locally (in this case `modules/gfo-core.owl` is checked):
 
-       docker run -it -v .:/gfo -w /gfo obolibrary/odklite robot report --input modules/gfo-base.owl --profile qc_report/profile.txt
+       docker run -it -v .:/gfo -w /gfo obolibrary/odklite robot report --input modules/gfo-core.owl --profile qc_report/profile.txt
 
 4. Commit and push all changes.
 5. Create a [pull request](https://github.com/Onto-Med/GFO/pulls).
