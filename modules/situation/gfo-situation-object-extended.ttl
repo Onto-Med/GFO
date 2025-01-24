@@ -29,7 +29,7 @@
                                                           dc:modified "2024-12-11" ;
                                                           dc:title "General Formal Ontology (extended object situation pattern)"@en ;
                                                           terms:license <http://creativecommons.org/licenses/by/4.0/> ;
-                                                          bibo:doi <https://zenodo.org/doi/10.5281/zenodo.5205419> ;
+                                                          bibo:doi "10.5281/zenodo.5205419" ;
                                                           vann:preferredNamespacePrefix "gfo-object-extended-situation" ;
                                                           vann:preferredNamespaceURI "https://w3id.org/gfo/pattern/situation/object-extended" ;
                                                           doap:repository <https://github.com/Onto-Med/GFO> ;
