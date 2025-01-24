@@ -5,7 +5,7 @@
 <https://w3id.org/gfo> <http://purl.org/dc/elements/1.1/modified> "2024-11-18"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/gfo> <http://purl.org/dc/elements/1.1/title> "General Formal Ontology (GFO)"@en .
 <https://w3id.org/gfo> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> .
-<https://w3id.org/gfo> <http://purl.org/ontology/bibo/doi> <https://zenodo.org/doi/10.5281/zenodo.5205419> .
+<https://w3id.org/gfo> <http://purl.org/ontology/bibo/doi> "10.5281/zenodo.5205419" .
 <https://w3id.org/gfo> <http://purl.org/vocab/vann/preferredNamespacePrefix> "gfo" .
 <https://w3id.org/gfo> <http://purl.org/vocab/vann/preferredNamespaceURI> "https://w3id.org/gfo/" .
 <https://w3id.org/gfo> <http://usefulinc.com/ns/doap#repository> <https://github.com/Onto-Med/GFO> .

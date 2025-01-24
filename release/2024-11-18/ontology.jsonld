@@ -447,7 +447,7 @@
     "@id" : "http://creativecommons.org/licenses/by/4.0/"
   } ],
   "http://purl.org/ontology/bibo/doi" : [ {
-    "@id" : "https://zenodo.org/doi/10.5281/zenodo.5205419"
+    "@value" : "10.5281/zenodo.5205419"
   } ],
   "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
     "@value" : "gfo"

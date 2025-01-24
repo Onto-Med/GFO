@@ -19,7 +19,7 @@
         <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-05</dc:modified>
         <dc:title xml:lang="en">General Formal Ontology (GFO)</dc:title>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205419"/>
+        <bibo:doi>10.5281/zenodo.5205419</bibo:doi>
         <vann:preferredNamespacePrefix>gfo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceURI>https://w3id.org/gfo/</vann:preferredNamespaceURI>
         <doap:repository rdf:resource="https://github.com/Onto-Med/GFO"/>
