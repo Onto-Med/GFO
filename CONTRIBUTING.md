@@ -38,3 +38,30 @@ If you want to contribute changes, please do so by:
 
    Be prepared to address feedback and suggestions from the GFO community and maintainers.
    Work collaboratively with other contributors to refine your changes.
+
+## Development Hints
+
+### Editing Ontology Files
+
+We recommend [Protégé](https://protege.stanford.edu/) as a user-friendly ontology editor. Please make
+sure that you use the same version that was used to create the file. Otherwise, unnecessary formatting
+changes may be added, making it difficult to review changes.
+
+### Building GFO Artifacts
+
+GFO artifacts are built with [Widoco](https://github.com/dgarijo/Widoco) and published via [GitHub Pages](https://pages.github.com/)
+in the [gh-pages](https://github.com/Onto-Med/GFO/tree/gh-pages) branch.
+
+You can run Widoco manually using docker and the following command:
+
+```sh
+docker run -it --rm \
+  -v .:/usr/local/widoco/gfo ghcr.io/dgarijo/widoco \
+  -ontFile gfo/gfo.owl \
+  -outFolder gfo/release/latest \
+  -rewriteAll \
+  -includeAnnotationProperties \
+  -uniteSections \
+  -noPlaceHolderText \
+  -includeImportedOntologies
+```
