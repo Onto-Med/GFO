@@ -38,3 +38,24 @@ If you want to contribute changes, please do so by:
 
    Be prepared to address feedback and suggestions from the GFO community and maintainers.
    Work collaboratively with other contributors to refine your changes.
+
+## Development Hints
+
+### Building GFO Artifacts
+
+GFO artifacts are built with [Widoco](https://github.com/dgarijo/Widoco) and published via [GitHub Pages](https://pages.github.com/)
+in the [gh-pages](https://github.com/Onto-Med/GFO/tree/gh-pages) branch.
+
+You can run Widoco manually using docker and the following command:
+
+```sh
+docker run -it --rm \
+  -v .:/usr/local/widoco/gfo ghcr.io/dgarijo/widoco \
+  -ontFile gfo/gfo.owl \
+  -outFolder gfo/release/latest \
+  -rewriteAll \
+  -includeAnnotationProperties \
+  -uniteSections \
+  -noPlaceHolderText \
+  -includeImportedOntologies
+```
