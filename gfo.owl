@@ -17,7 +17,7 @@
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-18</owl:versionInfo>
     <owl:versionIRI rdf:resource="https://w3id.org/gfo/release/2024-11-18" />
     <owl:priorVersion rdf:resource="https://w3id.org/gfo/release/2024-07-05" />
-    <owl:imports rdf:resource="https://w3id.org/gfo/base/" />
+    <owl:imports rdf:resource="https://w3id.org/gfo/base" />
     <dc:title xml:lang="en">General Formal Ontology (GFO)</dc:title>
     <rdfs:label xml:lang="en">General Formal Ontology (GFO)</rdfs:label>
     <dc:description xml:lang="en">The General Formal Ontology is a top-level ontology for conceptual
@@ -28,7 +28,7 @@
     <vann:preferredNamespacePrefix>gfo</vann:preferredNamespacePrefix>
     <foaf:homepage>https://github.com/Onto-Med/GFO</foaf:homepage>
     <doap:repository rdf:resource="https://github.com/Onto-Med/GFO" />
-    <bibo:doi rdf:resource="https://zenodo.org/doi/10.5281/zenodo.5205419" />
+    <bibo:doi>10.5281/zenodo.5205419</bibo:doi>
     <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
   </owl:Ontology>
 </rdf:RDF>

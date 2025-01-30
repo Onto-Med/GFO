@@ -1,0 +1,257 @@
+@prefix : <https://w3id.org/gfo/situation/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix nav: <https://example.org/surgical-navigation-situation/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix gfo-core: <https://w3id.org/gfo/core/> .
+@base <https://w3id.org/gfo/situation/> .
+
+<https://w3id.org/gfo/pattern/situation/object-extended-example> rdf:type owl:Ontology ;
+                                                                  owl:versionIRI <https://w3id.org/gfo/pattern/situation/object-extended-example/release/2024-12-19> ;
+                                                                  owl:imports <https://w3id.org/gfo/pattern/situation/object-extended> ;
+                                                                  dc:created "2024-12-11" ;
+                                                                  dc:creator "Alexandr Uciteli" ,
+                                                                             "Christoph Beger" ,
+                                                                             "Frank Löbe" ,
+                                                                             "Franz Matthies" ,
+                                                                             "Heinrich Herre" ,
+                                                                             "Konrad Höffner" ,
+                                                                             "Patryk Burek" ,
+                                                                             "Ralph Schäfermeier" ;
+                                                                  dc:description "GFO-object-extended-situation-example is an example for the object-extended design pattern for modeling extended object situations."@en ;
+                                                                  dc:modified "2024-12-11" ;
+                                                                  dc:title "General Formal Ontology (extended object situation pattern example)"@en ;
+                                                                  terms:license <http://creativecommons.org/licenses/by/4.0/> ;
+                                                                  bibo:doi "10.5281/zenodo.5205419" ;
+                                                                  vann:preferredNamespacePrefix "gfo-object-extended-situation-example" ;
+                                                                  vann:preferredNamespaceURI "https://w3id.org/gfo/pattern/situation/object-extended-example" ;
+                                                                  doap:repository <https://github.com/Onto-Med/GFO> ;
+                                                                  rdfs:label "GFO object-extended situation pattern example"@en ;
+                                                                  owl:versionInfo "2024-12-11" ;
+                                                                  foaf:homepage "https://github.com/Onto-Med/GFO" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceURI
+vann:preferredNamespaceURI rdf:type owl:AnnotationProperty .
+
+
+###  http://usefulinc.com/ns/doap#repository
+doap:repository rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://example.org/surgical-navigation-situation/BirthDate
+nav:BirthDate rdf:type owl:Class ;
+              rdfs:subClassOf gfo-core:Quality ;
+              rdfs:label "Birth date"@en .
+
+
+###  https://example.org/surgical-navigation-situation/JobProfile
+nav:JobProfile rdf:type owl:Class ;
+               rdfs:subClassOf gfo-core:Quality ;
+               rdfs:label "Job profile"@en .
+
+
+###  https://example.org/surgical-navigation-situation/Operator
+nav:Operator rdf:type owl:Class ;
+             rdfs:subClassOf gfo-core:Role ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty gfo-core:roleIn ;
+                               owl:someValuesFrom nav:Surgery
+                             ] ;
+             rdfs:label "Operator"@en .
+
+
+###  https://example.org/surgical-navigation-situation/Patient
+nav:Patient rdf:type owl:Class ;
+            rdfs:subClassOf gfo-core:Role ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty gfo-core:hasQuality ;
+                              owl:someValuesFrom nav:PatientAge
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty gfo-core:roleIn ;
+                              owl:someValuesFrom nav:Surgery
+                            ] ;
+            rdfs:label "Patient"@en .
+
+
+###  https://example.org/surgical-navigation-situation/PatientAge
+nav:PatientAge rdf:type owl:Class ;
+               rdfs:subClassOf gfo-core:Quality ;
+               rdfs:label "Patient age"@en .
+
+
+###  https://example.org/surgical-navigation-situation/Person
+nav:Person rdf:type owl:Class ;
+           rdfs:subClassOf gfo-core:Object ,
+                           [ rdf:type owl:Class ;
+                             owl:unionOf ( [ rdf:type owl:Restriction ;
+                                             owl:onProperty gfo-core:plays ;
+                                             owl:someValuesFrom nav:Operator
+                                           ]
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty gfo-core:plays ;
+                                             owl:someValuesFrom nav:Patient
+                                           ]
+                                         )
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty gfo-core:hasQuality ;
+                             owl:someValuesFrom nav:BirthDate
+                           ] ;
+           rdfs:label "Person"@en .
+
+
+###  https://example.org/surgical-navigation-situation/Surgery
+nav:Surgery rdf:type owl:Class ;
+            rdfs:subClassOf :Situation ;
+            rdfs:label "Surgery"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://example.org/surgical-navigation-situation/operator_1
+nav:operator_1 rdf:type owl:NamedIndividual ,
+                        nav:Operator ;
+               gfo-core:roleIn nav:surgery_1 ;
+               rdfs:label "operator_1"@en .
+
+
+###  https://example.org/surgical-navigation-situation/operator_2
+nav:operator_2 rdf:type owl:NamedIndividual ,
+                        nav:Operator ;
+               gfo-core:roleIn nav:surgery_1 ;
+               rdfs:label "operator_2"@en .
+
+
+###  https://example.org/surgical-navigation-situation/patient_1
+nav:patient_1 rdf:type owl:NamedIndividual ,
+                       nav:Patient ;
+              gfo-core:hasQuality <https://example.org/surgical-navigation-situation/10_months> ;
+              gfo-core:roleIn nav:surgery_1 ;
+              rdfs:label "patient_1"@en .
+
+
+###  https://example.org/surgical-navigation-situation/person_1
+nav:person_1 rdf:type owl:NamedIndividual ,
+                      nav:Person ;
+             gfo-core:hasQuality <https://example.org/surgical-navigation-situation/10-07-2024> ;
+             gfo-core:plays nav:patient_1 ;
+             rdfs:label "person_1"@en .
+
+
+###  https://example.org/surgical-navigation-situation/person_2
+nav:person_2 rdf:type owl:NamedIndividual ,
+                      nav:Person ;
+             gfo-core:hasQuality nav:surgeon ;
+             gfo-core:plays nav:operator_1 ;
+             rdfs:label "person_2"@en .
+
+
+###  https://example.org/surgical-navigation-situation/person_3
+nav:person_3 rdf:type owl:NamedIndividual ,
+                      nav:Person ;
+             gfo-core:hasQuality nav:surgeon ;
+             gfo-core:plays nav:operator_2 ;
+             rdfs:label "person_3"@en .
+
+
+###  https://example.org/surgical-navigation-situation/surgeon
+nav:surgeon rdf:type owl:NamedIndividual ,
+                     nav:JobProfile ;
+            rdfs:label "surgeon"@en .
+
+
+###  https://example.org/surgical-navigation-situation/surgery_1
+nav:surgery_1 rdf:type owl:NamedIndividual ,
+                       nav:Surgery ;
+              rdfs:label "surgery_1"@en .
+
+
+###  https://example.org/surgical-navigation-situation/10_months
+<https://example.org/surgical-navigation-situation/10_months> rdf:type owl:NamedIndividual ,
+                                                                       nav:PatientAge ;
+                                                              rdfs:label "10_months"@en .
+
+
+###  https://example.org/surgical-navigation-situation/10-07-2024
+<https://example.org/surgical-navigation-situation/10-07-2024> rdf:type owl:NamedIndividual ,
+                                                                        nav:BirthDate ;
+                                                               rdfs:label "10-07-2024"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
