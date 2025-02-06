@@ -90,8 +90,8 @@
       <path d="M237.78 -357.403 L242.78 -369.403 L237.78 -366.403 L232.78 -369.403 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <rect x="251.4927" y="-384.8506" clip-path="url(#clipPath2)" fill="white" width="92.0547" height="18.7012" stroke="none"/>
       <text x="253.4927" xml:space="preserve" y="-370.7861" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">hasSituationPart</text>
-      <path fill="none" d="M-17.6752 -97.4186 L-17.6752 -85.3828" clip-path="url(#clipPath2)"/>
-      <path d="M-17.6752 -77.3828 L-12.6752 -89.3828 L-17.6752 -86.3828 L-22.6752 -89.3828 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path fill="none" d="M-17.6752 -89.4186 L-17.6752 -77.3828" clip-path="url(#clipPath2)"/>
+      <path d="M-17.6752 -97.4186 L-22.6752 -85.4186 L-17.6752 -88.4186 L-12.6752 -85.4186 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <text x="-11.6752" xml:space="preserve" y="-82.6657" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">boundaryOf</text>
       <path fill="none" d="M-95.6586 -147.3795 L-105.6752 -147.3795 L-105.6752 -322.3698" clip-path="url(#clipPath2)"/>
       <path fill="white" d="M-105.6752 -337.3698 L-111.6752 -321.3698 L-99.6752 -321.3698 Z" clip-path="url(#clipPath2)" stroke="none"/>
@@ -116,17 +116,13 @@
       <path fill="none" d="M-75.6811 -27.3795 L-85.6752 -27.3795 L-85.6752 -122.3893" clip-path="url(#clipPath2)"/>
       <path fill="white" d="M-85.6752 -137.3893 L-91.6752 -121.3893 L-79.6752 -121.3893 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M-85.6752 -137.3893 L-91.6752 -121.3893 L-79.6752 -121.3893 Z" clip-path="url(#clipPath2)"/>
-      <path fill="none" d="M-17.6752 -57.4186 L-17.6752 -45.3828" clip-path="url(#clipPath2)"/>
-      <path d="M-17.6752 -37.3828 L-12.6752 -49.3828 L-17.6752 -46.3828 L-22.6752 -49.3828 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path fill="none" d="M-17.6752 -49.4186 L-17.6752 -37.3828" clip-path="url(#clipPath2)"/>
+      <path d="M-17.6752 -57.4186 L-22.6752 -45.4186 L-17.6752 -48.4186 L-12.6752 -45.4186 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <text x="-11.6752" xml:space="preserve" y="-42.6657" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">boundaryOf</text>
-      <path fill="none" d="M40.3134 -267.3795 L56.4133 -267.3795 L56.4133 -192.3795 L48.3134 -192.3795" clip-path="url(#clipPath2)"/>
-      <path d="M40.3134 -192.3795 L52.3134 -187.3795 L49.3134 -192.3795 L52.3134 -197.3795 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="22.7346" y="-256.8429" clip-path="url(#clipPath2)" fill="white" width="67.3574" height="18.7012" stroke="none"/>
-      <text x="24.7346" xml:space="preserve" y="-242.7785" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">hasMember</text>
-      <path fill="none" d="M40.315 -27.3795 L56.4133 -27.3795 L56.4133 -182.3795 L48.3134 -182.3795" clip-path="url(#clipPath2)"/>
-      <path d="M40.3134 -182.3795 L52.3134 -177.3795 L49.3134 -182.3795 L52.3134 -187.3795 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="23.0598" y="-138.3965" clip-path="url(#clipPath2)" fill="white" width="66.707" height="18.7012" stroke="none"/>
-      <text x="25.0598" xml:space="preserve" y="-124.3321" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">boundaryOf</text>
+      <path fill="none" d="M40.315 -107.3795 L56.4133 -107.3795 L56.4133 -187.3795 L48.3134 -187.3795" clip-path="url(#clipPath2)"/>
+      <path d="M40.3134 -187.3795 L52.3134 -182.3795 L49.3134 -187.3795 L52.3134 -192.3795 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <rect x="23.0598" y="-137.9284" clip-path="url(#clipPath2)" fill="white" width="66.707" height="18.7012" stroke="none"/>
+      <text x="25.0598" xml:space="preserve" y="-123.864" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">boundaryOf</text>
       <path fill="none" d="M-15.4224 -217.4186 L-15.4224 -205.3828" clip-path="url(#clipPath2)"/>
       <path d="M-15.4224 -197.3828 L-10.4224 -209.3828 L-15.4224 -206.3828 L-20.4224 -209.3828 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <text x="-9.4224" xml:space="preserve" y="-202.6657" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">partOf</text>
@@ -149,6 +145,9 @@
       <path fill="none" d="M-71.1743 -227.3795 L-79.3887 -227.3795 L-79.3887 -282.4186" clip-path="url(#clipPath2)"/>
       <path fill="white" d="M-79.3887 -297.4186 L-85.3887 -281.4186 L-73.3887 -281.4186 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M-79.3887 -297.4186 L-85.3887 -281.4186 L-73.3887 -281.4186 Z" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M-15.4224 -277.3666 L-15.4224 -289.37" clip-path="url(#clipPath2)"/>
+      <path d="M-15.4224 -297.37 L-20.4224 -285.37 L-15.4224 -288.37 L-10.4224 -285.37 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <text x="-9.4224" xml:space="preserve" y="-282.6657" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">hasMember</text>
     </g>
     <g fill="rgb(150,150,150)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(2,0,0,2,238,996)" stroke="rgb(150,150,150)">
       <rect x="294.699" y="-465.6995" clip-path="url(#clipPath2)" width="70" rx="4" ry="4" height="20" stroke="none"/>
@@ -285,7 +284,7 @@
       <rect x="-71.1584" y="-277.3795" clip-path="url(#clipPath2)" fill="none" width="111.472" rx="4" ry="4" height="20"/>
     </g>
     <g stroke-linecap="butt" transform="matrix(2,0,0,2,238,996)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" font-weight="bold" stroke-miterlimit="1.45">
-      <text x="-39.6859" xml:space="preserve" y="-22.6657" clip-path="url(#clipPath2)" stroke="none">Surface</text>
+      <text x="-32.6723" xml:space="preserve" y="-22.6657" clip-path="url(#clipPath2)" stroke="none">Point</text>
     </g>
     <g stroke-linecap="butt" transform="matrix(2,0,0,2,238,996)" fill="rgb(243,101,35)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="rgb(243,101,35)" stroke-miterlimit="1.45">
       <rect x="-75.664" y="-37.3795" clip-path="url(#clipPath2)" fill="none" width="115.9776" rx="4" ry="4" height="20"/>
@@ -297,7 +296,7 @@
       <rect x="-71.1584" y="-197.3795" clip-path="url(#clipPath2)" fill="none" width="111.472" rx="4" ry="4" height="20"/>
     </g>
     <g stroke-linecap="butt" transform="matrix(2,0,0,2,238,996)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" font-weight="bold" stroke-miterlimit="1.45">
-      <text x="-32.6723" xml:space="preserve" y="-102.6657" clip-path="url(#clipPath2)" stroke="none">Point</text>
+      <text x="-39.6859" xml:space="preserve" y="-102.6657" clip-path="url(#clipPath2)" stroke="none">Surface</text>
     </g>
     <g stroke-linecap="butt" transform="matrix(2,0,0,2,238,996)" fill="rgb(243,101,35)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="rgb(243,101,35)" stroke-miterlimit="1.45">
       <rect x="-75.664" y="-117.3795" clip-path="url(#clipPath2)" fill="none" width="115.9776" rx="4" ry="4" height="20"/>
