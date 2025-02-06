@@ -680,7 +680,7 @@ gfo-light-exam:a3RoleInTeam rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/gfo/light/football_match_exam/aBallPossessionEndOfFirstHalf
 gfo-light-exam:aBallPossessionEndOfFirstHalf rdf:type owl:NamedIndividual ,
                                                       gfo-light-exam:BallPossession ;
-                                             gfo-light:existsAt gfo-light-exam:endOfFirstHalf ;
+                                             gfo-light:hasTime gfo-light-exam:endOfFirstHalf ;
                                              gfo-light:processPartOf gfo-light-exam:matchX ;
                                              gfo-light:qualityOf gfo-light-exam:teamA ;
                                              gfo-light:decimalValue 60 ;
@@ -690,7 +690,7 @@ gfo-light-exam:aBallPossessionEndOfFirstHalf rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/gfo/light/football_match_exam/aBallPossessionEndOfMatch
 gfo-light-exam:aBallPossessionEndOfMatch rdf:type owl:NamedIndividual ,
                                                   gfo-light-exam:BallPossession ;
-                                         gfo-light:existsAt gfo-light-exam:endOfMatch ;
+                                         gfo-light:hasTime gfo-light-exam:endOfMatch ;
                                          gfo-light:processPartOf gfo-light-exam:matchX ;
                                          gfo-light:qualityOf gfo-light-exam:teamA ;
                                          gfo-light:decimalValue 70 ;
@@ -701,14 +701,14 @@ gfo-light-exam:aBallPossessionEndOfMatch rdf:type owl:NamedIndividual ,
 gfo-light-exam:aGoal1 rdf:type owl:NamedIndividual ,
                                gfo-light-exam:Goal ;
                       gfo-light:processPartOf gfo-light-exam:half1 ;
-                      gfo-light:existsAtDateTimeValue "2020-05-05T21:20:00"^^xsd:dateTime .
+                      gfo-light:dateTimeValue "2020-05-05T21:20:00"^^xsd:dateTime .
 
 
 ###  https://w3id.org/gfo/light/football_match_exam/aGoal2
 gfo-light-exam:aGoal2 rdf:type owl:NamedIndividual ,
                                gfo-light-exam:Goal ;
                       gfo-light:processPartOf gfo-light-exam:half2 ;
-                      gfo-light:existsAtDateTimeValue "2020-05-05T22:30:00"^^xsd:dateTime .
+                      gfo-light:dateTimeValue "2020-05-05T22:30:00"^^xsd:dateTime .
 
 
 ###  https://w3id.org/gfo/light/football_match_exam/aGoalsEndOfFirstHalf
@@ -836,7 +836,7 @@ gfo-light-exam:sectorBFieldBoundary rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/gfo/light/football_match_exam/situationEndOfFirstHalf
 gfo-light-exam:situationEndOfFirstHalf rdf:type owl:NamedIndividual ,
                                                 gfo-light-exam:MatchSituation ;
-                                       gfo-light:existsAt gfo-light-exam:endOfFirstHalf ;
+                                       gfo-light:hasTime gfo-light-exam:endOfFirstHalf ;
                                        gfo-light:hasSituationPart gfo-light-exam:a1GoalsEndOfFirstHalf ,
                                                                   gfo-light-exam:a1RoleInTeam ,
                                                                   gfo-light-exam:a2AssistsEndOfFirstHalf ,
@@ -850,7 +850,7 @@ gfo-light-exam:situationEndOfFirstHalf rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/gfo/light/football_match_exam/situationEndOfMatch
 gfo-light-exam:situationEndOfMatch rdf:type owl:NamedIndividual ,
                                             gfo-light-exam:MatchSituation ;
-                                   gfo-light:existsAt gfo-light-exam:endOfMatch ;
+                                   gfo-light:hasTime gfo-light-exam:endOfMatch ;
                                    gfo-light:hasSituationPart gfo-light-exam:a1GoalsEndOfMatch ,
                                                               gfo-light-exam:a1RoleInTeam ,
                                                               gfo-light-exam:a22RoleInTeam ,
@@ -907,7 +907,7 @@ gfo-light-exam:teamBRole rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/gfo/light/football_match_exam/winnerLoserRelatorEndOfMatch
 gfo-light-exam:winnerLoserRelatorEndOfMatch rdf:type owl:NamedIndividual ,
                                                      gfo-light-exam:WinnerLoserRelator ;
-                                            gfo-light:existsAt gfo-light-exam:endOfMatch ;
+                                            gfo-light:hasTime gfo-light-exam:endOfMatch ;
                                             gfo-light:processPartOf gfo-light-exam:matchX .
 
 
