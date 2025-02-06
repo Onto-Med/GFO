@@ -15,7 +15,7 @@ The General Formal Ontology is a [top-level ontology](http://en.wikipedia.org/wi
 ## How to Use
 The entire GFO ontology can be imported via IRI https://w3id.org/gfo. GFO is divided into modules, which are stored in separate OWL files under [modules/](modules/). Modules of interest can be imported into your ontology via their IRI (e.g., https://w3id.org/gfo/base).
 
-**GFO-light** is a simplified view of the entire GFO. It does not build on single modules but combines all basic concepts and simplified axioms of the GFO. It is primarily intended to found domain or application ontologies and can be imported via IRI https://w3id.org/gfo/light.
+[GFO-light](https://github.com/Onto-Med/gfo-light) is a simplified view of the entire GFO. It does not build on single modules but combines all basic concepts and simplified axioms of the GFO. It is primarily intended to found domain or application ontologies and can be imported via IRI https://w3id.org/gfo-light.
 
 ## How to Contribute
 Please see our [Contributing Guide](CONTRIBUTING.md).
@@ -61,4 +61,4 @@ The following is the general form of citation for Part I, where the correspondin
 | 2003 | Formal Ontology and Principles of GOL                                           | Heller B, Herre H              | Onto-Med Report Nr. 1. Research Group Ontologies in Medicine (Onto-Med), University of Leipzig. [PDF](https://www.onto-med.de/sites/www.onto-med.de/files/files/uploads/Publications/2003/heller-b-2003-a.pdf) |
 
 ### Further Documentation
-Apart from the GFO reports, we have not yet completed the work on more introductory or tutorial material. This is going to happen in the nearer future. Currently, the easiest way to access the basic categories of GFO is to view the file [gfo-light.ttl](./gfo-light.ttl) in an ontology editor (e.g. [Protégé](https://protege.stanford.edu)). In particular, that file provides short descriptions for each category.
+Apart from the GFO reports, we have not yet completed the work on more introductory or tutorial material. This is going to happen in the nearer future. Currently, the easiest way to access the basic categories of GFO is to use [GFO-light](https://github.com/Onto-Med/gfo-light). In particular, GFO-light provides short descriptions for each category.
