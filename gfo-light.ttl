@@ -173,7 +173,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/during
 :during rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :temporallyRelatedWith ;
+        rdfs:subPropertyOf :temporalPartOf ;
         owl:inverseOf :temporallyContains ;
         rdfs:label "during"@en ;
         skos:definition "X during Y: Xs > Ys and Xf < Yf"@en .
@@ -284,6 +284,13 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                            )
                              ] ;
                   rdfs:label "has situation part"@en .
+
+
+###  https://w3id.org/gfo/light/hasTemporalPart
+:hasTemporalPart rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :temporallyRelatedWith ;
+                 owl:inverseOf :temporalPartOf ;
+                 rdfs:label "has temporal part"@en .
 
 
 ###  https://w3id.org/gfo/light/hasTime
@@ -521,9 +528,16 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                    rdfs:label "spatially starts on"@en .
 
 
+###  https://w3id.org/gfo/light/temporalPartOf
+:temporalPartOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :temporallyRelatedWith ;
+                rdfs:label "temporal part of"@en ;
+                skos:definition "X temporal part of Y: X starts Y or X finishes Y or X during Y"@en .
+
+
 ###  https://w3id.org/gfo/light/temporallyContains
 :temporallyContains rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf :temporallyRelatedWith ;
+                    rdfs:subPropertyOf :hasTemporalPart ;
                     rdfs:label "temporally contains"@en .
 
 
@@ -536,14 +550,14 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/temporallyFinishedBy
 :temporallyFinishedBy rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf :temporallyRelatedWith ;
+                      rdfs:subPropertyOf :hasTemporalPart ;
                       owl:inverseOf :temporallyFinishes ;
                       rdfs:label "temporally finished by"@en .
 
 
 ###  https://w3id.org/gfo/light/temporallyFinishes
 :temporallyFinishes rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf :temporallyRelatedWith ;
+                    rdfs:subPropertyOf :temporalPartOf ;
                     rdfs:label "temporally finishes"@en ;
                     skos:definition "X finishes Y: Xs > Ys and Xf = Yf"@en .
 
@@ -589,14 +603,14 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/temporallyStartedBy
 :temporallyStartedBy rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf :temporallyRelatedWith ;
+                     rdfs:subPropertyOf :hasTemporalPart ;
                      owl:inverseOf :temporallyStarts ;
                      rdfs:label "temporally started by"@en .
 
 
 ###  https://w3id.org/gfo/light/temporallyStarts
 :temporallyStarts rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :temporallyRelatedWith ;
+                  rdfs:subPropertyOf :temporalPartOf ;
                   rdfs:label "temporally starts"@en ;
                   skos:definition "X starts Y: Xs = Ys and Xf < Yf"@en .
 
@@ -635,7 +649,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/containsDateTimeValue
 :containsDateTimeValue rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf :dateTimeValue ;
+                       rdfs:subPropertyOf :hasTemporalPartDateTimeValue ;
                        rdfs:comment "Shortcut for 'temporallyContains'"@en ;
                        rdfs:label "contains date time value"@en .
 
@@ -656,14 +670,21 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/finishedByDateTimeValue
 :finishedByDateTimeValue rdf:type owl:DatatypeProperty ;
-                         rdfs:subPropertyOf :dateTimeValue ;
+                         rdfs:subPropertyOf :hasTemporalPartDateTimeValue ;
                          rdfs:comment "Shortcut for 'temporallyFinishedBy'"@en ;
                          rdfs:label "finished by date time value"@en .
 
 
+###  https://w3id.org/gfo/light/hasTemporalPartDateTimeValue
+:hasTemporalPartDateTimeValue rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf :dateTimeValue ;
+                              rdfs:comment "Shortcut for 'hasTemporalPart'"@en ;
+                              rdfs:label "has temporal part date time value"@en .
+
+
 ###  https://w3id.org/gfo/light/startedByDateTimeValue
 :startedByDateTimeValue rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf :dateTimeValue ;
+                        rdfs:subPropertyOf :hasTemporalPartDateTimeValue ;
                         rdfs:comment "Shortcut for 'temporallyStartedBy'"@en ;
                         rdfs:label "started by date time value"@en .
 
