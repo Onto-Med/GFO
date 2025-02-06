@@ -10,7 +10,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix terms: <http://purl.org/dc/terms/> .
-@base <https://w3id.org/gfo/light> .
+@base <https://w3id.org/gfo/light/> .
 
 <https://w3id.org/gfo/light> rdf:type owl:Ontology ;
                               owl:versionIRI <https://w3id.org/gfo/light/release/2024-08-29> ;
@@ -111,7 +111,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :attributiveOf rdf:type owl:ObjectProperty ;
                owl:inverseOf :hasAttributive ;
                rdfs:domain :Attributive ;
-               rdfs:range :Individual .
+               rdfs:range :Individual ;
+               rdfs:label "attributive of"@en .
 
 
 ###  https://w3id.org/gfo/light/boundaryOf
@@ -124,7 +125,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                        :Surface
                                      )
                        ] ;
-            rdfs:comment "Immaterial continuants can be considered as (outer or inner) boundaries (boundaryOf). Note that surfaces are boundaries of material continuants, lines are boundaries of surfaces and points are boundaries of lines."@en .
+            rdfs:comment "Immaterial continuants can be considered as (outer or inner) boundaries (boundaryOf). Note that surfaces are boundaries of material continuants, lines are boundaries of surfaces and points are boundaries of lines."@en ;
+            rdfs:label "boundary of"@en .
 
 
 ###  https://w3id.org/gfo/light/causedBy
@@ -140,7 +142,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                        owl:unionOf ( :ProcessualEntity
                                      :Situation
                                    )
-                     ] .
+                     ] ;
+          rdfs:label "caused by"@en .
 
 
 ###  https://w3id.org/gfo/light/causes
@@ -155,18 +158,21 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                      owl:unionOf ( :ProcessualEntity
                                    :Situation
                                  )
-                   ] .
+                   ] ;
+        rdfs:label "causes"@en .
 
 
 ###  https://w3id.org/gfo/light/endPointInTimeOf
 :endPointInTimeOf rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :pointInTimeOf ;
-                  owl:inverseOf :hasEndPointInTime .
+                  owl:inverseOf :hasEndPointInTime ;
+                  rdfs:label "end point in time of"@en .
 
 
 ###  https://w3id.org/gfo/light/endsOn
 :endsOn rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :passesThrough .
+        rdfs:subPropertyOf :passesThrough ;
+        rdfs:label "ends on"@en .
 
 
 ###  https://w3id.org/gfo/light/existsIn
@@ -176,13 +182,15 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                       :Situation
                                     )
                       ] ;
-          rdfs:range :ProcessualEntity .
+          rdfs:range :ProcessualEntity ;
+          rdfs:label "exists in"@en .
 
 
 ###  https://w3id.org/gfo/light/hasAttributive
 :hasAttributive rdf:type owl:ObjectProperty ;
                 rdfs:domain :Individual ;
-                rdfs:range :Attributive .
+                rdfs:range :Attributive ;
+                rdfs:label "has attributive"@en .
 
 
 ###  https://w3id.org/gfo/light/hasBoundary
@@ -193,18 +201,21 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                          :Surface
                                        )
                          ] ;
-             rdfs:range :ImmaterialContinuant .
+             rdfs:range :ImmaterialContinuant ;
+             rdfs:label "has boundary"@en .
 
 
 ###  https://w3id.org/gfo/light/hasEndPointInTime
 :hasEndPointInTime rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf :hasPointInTime .
+                   rdfs:subPropertyOf :hasPointInTime ;
+                   rdfs:label "has end point in time"@en .
 
 
 ###  https://w3id.org/gfo/light/hasInnerBoundary
 :hasInnerBoundary rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :hasBoundary ;
-                  owl:inverseOf :innerBoundaryOf .
+                  owl:inverseOf :innerBoundaryOf ;
+                  rdfs:label "has inner boundary"@en .
 
 
 ###  https://w3id.org/gfo/light/hasMember
@@ -212,13 +223,15 @@ foaf:homepage rdf:type owl:AnnotationProperty .
            rdfs:subPropertyOf :hasPart ;
            owl:inverseOf :memberOf ;
            rdfs:domain :MaterialAggregate ;
-           rdfs:range :Continuant .
+           rdfs:range :Continuant ;
+           rdfs:label "has member"@en .
 
 
 ###  https://w3id.org/gfo/light/hasNaturalBoundary
 :hasNaturalBoundary rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf :hasBoundary ;
-                    owl:inverseOf :naturalBoundaryOf .
+                    owl:inverseOf :naturalBoundaryOf ;
+                    rdfs:label "has natural boundary"@en .
 
 
 ###  https://w3id.org/gfo/light/hasOwner
@@ -226,28 +239,32 @@ foaf:homepage rdf:type owl:AnnotationProperty .
           owl:inverseOf :ownerOf ;
           rdfs:domain :ImmaterialContinuant ;
           rdfs:range :MaterialContinuant ;
-          rdfs:comment "Immaterial continuants can be assigned to a corresponding material continuant using the object property hasOwner."@en .
+          rdfs:comment "Immaterial continuants can be assigned to a corresponding material continuant using the object property hasOwner."@en ;
+          rdfs:label "has owner"@en .
 
 
 ###  https://w3id.org/gfo/light/hasPart
 :hasPart rdf:type owl:ObjectProperty ;
          owl:inverseOf :partOf ;
          rdfs:domain :Individual ;
-         rdfs:range :Individual .
+         rdfs:range :Individual ;
+         rdfs:label "has part"@en .
 
 
 ###  https://w3id.org/gfo/light/hasParticipant
 :hasParticipant rdf:type owl:ObjectProperty ;
                 owl:inverseOf :participatesIn ;
                 rdfs:domain :ProcessualEntity ;
-                rdfs:range :Continuant .
+                rdfs:range :Continuant ;
+                rdfs:label "has participant"@en .
 
 
 ###  https://w3id.org/gfo/light/hasPointInTime
 :hasPointInTime rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :hasTime ;
                 owl:inverseOf :pointInTimeOf ;
-                rdfs:range :TimeBoundary .
+                rdfs:range :TimeBoundary ;
+                rdfs:label "has point in time"@en .
 
 
 ###  https://w3id.org/gfo/light/hasQuality
@@ -255,7 +272,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
             rdfs:subPropertyOf :hasAttributive ;
             owl:inverseOf :qualityOf ;
             rdfs:domain :Individual ;
-            rdfs:range :Quality .
+            rdfs:range :Quality ;
+            rdfs:label "has quality"@en .
 
 
 ###  https://w3id.org/gfo/light/hasRole
@@ -267,13 +285,15 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                      :Relator
                                    )
                      ] ;
-         rdfs:range :Role .
+         rdfs:range :Role ;
+         rdfs:label "has role"@en .
 
 
 ###  https://w3id.org/gfo/light/hasStartPointInTime
 :hasStartPointInTime rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf :hasPointInTime ;
-                     owl:inverseOf :startPointInTimeOf .
+                     owl:inverseOf :startPointInTimeOf ;
+                     rdfs:label "has start point in time"@en .
 
 
 ###  https://w3id.org/gfo/light/hasTime
@@ -284,7 +304,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                      :ConcreteIndividual
                                    )
                      ] ;
-         rdfs:range :TimeEntity .
+         rdfs:range :TimeEntity ;
+         rdfs:label "has time"@en .
 
 
 ###  https://w3id.org/gfo/light/hasTimePeriod
@@ -292,25 +313,29 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                rdfs:subPropertyOf :hasTime ;
                owl:inverseOf :timePeriodOf ;
                rdfs:domain :ConcreteIndividual ;
-               rdfs:range :Chronoid .
+               rdfs:range :Chronoid ;
+               rdfs:label "has time period"@en .
 
 
 ###  https://w3id.org/gfo/light/innerBoundaryOf
 :innerBoundaryOf rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :boundaryOf .
+                 rdfs:subPropertyOf :boundaryOf ;
+                 rdfs:label "inner boundary of"@en .
 
 
 ###  https://w3id.org/gfo/light/instanceOf
 :instanceOf rdf:type owl:ObjectProperty ;
             owl:inverseOf :instantiatedBy ;
             rdfs:domain :Entity ;
-            rdfs:range :Category .
+            rdfs:range :Category ;
+            rdfs:label "instance of"@en .
 
 
 ###  https://w3id.org/gfo/light/instantiatedBy
 :instantiatedBy rdf:type owl:ObjectProperty ;
                 rdfs:domain :Category ;
-                rdfs:range :Entity .
+                rdfs:range :Entity ;
+                rdfs:label "instantiated by"@en .
 
 
 ###  https://w3id.org/gfo/light/isAfter
@@ -325,7 +350,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                       owl:unionOf ( :ProcessualEntity
                                     :Situation
                                   )
-                    ] .
+                    ] ;
+         rdfs:label "is after"@en .
 
 
 ###  https://w3id.org/gfo/light/isBefore
@@ -339,7 +365,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                        owl:unionOf ( :ProcessualEntity
                                      :Situation
                                    )
-                     ] .
+                     ] ;
+          rdfs:label "is before"@en .
 
 
 ###  https://w3id.org/gfo/light/locatedIn
@@ -352,7 +379,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                        ] ;
            rdfs:range :MaterialObject ;
            rdfs:comment "Material objects can be located in other material objects (locatedIn, e.g., the driver is located in the car)."@en ,
-                        "Processual entities can take place (locatedIn) in material objects (e.g., a football match in a stadium or an illness in a person)."@en .
+                        "Processual entities can take place (locatedIn) in material objects (e.g., a football match in a stadium or an illness in a person)."@en ;
+           rdfs:label "located in"@en .
 
 
 ###  https://w3id.org/gfo/light/locationOf
@@ -362,7 +390,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                          owl:unionOf ( :MaterialObject
                                        :ProcessualEntity
                                      )
-                       ] .
+                       ] ;
+            rdfs:label "location of"@en .
 
 
 ###  https://w3id.org/gfo/light/memberOf
@@ -370,31 +399,36 @@ foaf:homepage rdf:type owl:AnnotationProperty .
           rdfs:subPropertyOf :partOf ;
           rdfs:domain :Continuant ;
           rdfs:range :MaterialAggregate ;
-          rdfs:comment "To model the membership of a member in a group/aggregate, the more specific object properties hasMember/memberOf should be used"@en .
+          rdfs:comment "To model the membership of a member in a group/aggregate, the more specific object properties hasMember/memberOf should be used"@en ;
+          rdfs:label "member of"@en .
 
 
 ###  https://w3id.org/gfo/light/naturalBoundaryOf
 :naturalBoundaryOf rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf :boundaryOf .
+                   rdfs:subPropertyOf :boundaryOf ;
+                   rdfs:label "natural boundary of"@en .
 
 
 ###  https://w3id.org/gfo/light/ownerOf
 :ownerOf rdf:type owl:ObjectProperty ;
          rdfs:domain :MaterialContinuant ;
-         rdfs:range :ImmaterialContinuant .
+         rdfs:range :ImmaterialContinuant ;
+         rdfs:label "owner of"@en .
 
 
 ###  https://w3id.org/gfo/light/partOf
 :partOf rdf:type owl:ObjectProperty ;
         rdfs:domain :Individual ;
-        rdfs:range :Individual .
+        rdfs:range :Individual ;
+        rdfs:label "part of"@en .
 
 
 ###  https://w3id.org/gfo/light/participatesIn
 :participatesIn rdf:type owl:ObjectProperty ;
                 rdfs:domain :Continuant ;
                 rdfs:range :ProcessualEntity ;
-                rdfs:comment "Continuants can participate in processual entities (participatesIn, hasParticipant), e.g., the teams A and B participate in the football match or the player A1 participates in the goal event."@en .
+                rdfs:comment "Continuants can participate in processual entities (participatesIn, hasParticipant), e.g., the teams A and B participate in the football match or the player A1 participates in the goal event."@en ;
+                rdfs:label "participates in"@en .
 
 
 ###  https://w3id.org/gfo/light/passesThrough
@@ -408,34 +442,39 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                             owl:unionOf ( :ImmaterialContinuant
                                           :MaterialObject
                                         )
-                          ] .
+                          ] ;
+               rdfs:label "passes through"@en .
 
 
 ###  https://w3id.org/gfo/light/playedBy
 :playedBy rdf:type owl:ObjectProperty ;
           owl:inverseOf :plays ;
           rdfs:domain :Role ;
-          rdfs:range :Continuant .
+          rdfs:range :Continuant ;
+          rdfs:label "played by"@en .
 
 
 ###  https://w3id.org/gfo/light/plays
 :plays rdf:type owl:ObjectProperty ;
        rdfs:domain :Continuant ;
        rdfs:range :Role ;
-       rdfs:comment "The role players are associated with the roles they play using object properties plays or playedBy."@en .
+       rdfs:comment "The role players are associated with the roles they play using object properties plays or playedBy."@en ;
+       rdfs:label "plays"@en .
 
 
 ###  https://w3id.org/gfo/light/pointInTimeOf
 :pointInTimeOf rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :timeOf ;
-               rdfs:domain :TimeBoundary .
+               rdfs:domain :TimeBoundary ;
+               rdfs:label "point in time of"@en .
 
 
 ###  https://w3id.org/gfo/light/qualityOf
 :qualityOf rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :attributiveOf ;
            rdfs:domain :Quality ;
-           rdfs:range :Individual .
+           rdfs:range :Individual ;
+           rdfs:label "quality of"@en .
 
 
 ###  https://w3id.org/gfo/light/roleOf
@@ -447,17 +486,20 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                    :Relator
                                  )
                    ] ;
-        rdfs:comment "Roles are assigned to the corresponding context entity (continuant, processual entity, relator) using object properties roleOf or hasRole."@en .
+        rdfs:comment "Roles are assigned to the corresponding context entity (continuant, processual entity, relator) using object properties roleOf or hasRole."@en ;
+        rdfs:label "role of"@en .
 
 
 ###  https://w3id.org/gfo/light/startPointInTimeOf
 :startPointInTimeOf rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf :pointInTimeOf .
+                    rdfs:subPropertyOf :pointInTimeOf ;
+                    rdfs:label "start point in time of"@en .
 
 
 ###  https://w3id.org/gfo/light/startsOn
 :startsOn rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :passesThrough .
+          rdfs:subPropertyOf :passesThrough ;
+          rdfs:label "starts on"@en .
 
 
 ###  https://w3id.org/gfo/light/timeOf
@@ -467,14 +509,16 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                      owl:unionOf ( :Chronoid
                                    :ConcreteIndividual
                                  )
-                   ] .
+                   ] ;
+        rdfs:label "time of"@en .
 
 
 ###  https://w3id.org/gfo/light/timePeriodOf
 :timePeriodOf rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :timeOf ;
               rdfs:domain :Chronoid ;
-              rdfs:range :ConcreteIndividual .
+              rdfs:range :ConcreteIndividual ;
+              rdfs:label "time period of"@en .
 
 
 #################################################################
@@ -484,41 +528,48 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/gfo/light/booleanValue
 :booleanValue rdf:type owl:DatatypeProperty ;
               rdfs:domain :Attributive ;
-              rdfs:range xsd:boolean .
+              rdfs:range xsd:boolean ;
+              rdfs:label "boolean value"@en .
 
 
 ###  https://w3id.org/gfo/light/dateTimeValue
 :dateTimeValue rdf:type owl:DatatypeProperty ;
                rdfs:domain :Individual ;
-               rdfs:range xsd:dateTime .
+               rdfs:range xsd:dateTime ;
+               rdfs:label "date time value"@en .
 
 
 ###  https://w3id.org/gfo/light/decimalValue
 :decimalValue rdf:type owl:DatatypeProperty ;
               rdfs:domain :Attributive ;
-              rdfs:range xsd:decimal .
+              rdfs:range xsd:decimal ;
+              rdfs:label "decimal value"@en .
 
 
 ###  https://w3id.org/gfo/light/endDateTimeValue
 :endDateTimeValue rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf :dateTimeValue .
+                  rdfs:subPropertyOf :dateTimeValue ;
+                  rdfs:label "end date time value"@en .
 
 
 ###  https://w3id.org/gfo/light/startDateTimeValue
 :startDateTimeValue rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf :dateTimeValue .
+                    rdfs:subPropertyOf :dateTimeValue ;
+                    rdfs:label "start date time value"@en .
 
 
 ###  https://w3id.org/gfo/light/stringValue
 :stringValue rdf:type owl:DatatypeProperty ;
              rdfs:domain :Attributive ;
-             rdfs:range xsd:string .
+             rdfs:range xsd:string ;
+             rdfs:label "string value"@en .
 
 
 ###  https://w3id.org/gfo/light/unit
 :unit rdf:type owl:DatatypeProperty ;
       rdfs:domain :Attributive ;
-      rdfs:range xsd:string .
+      rdfs:range xsd:string ;
+      rdfs:label "unit"@en .
 
 
 #################################################################
