@@ -529,11 +529,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                                     :Surface
                                                   )
                                     ] ;
-                        rdfs:range [ rdf:type owl:Class ;
-                                     owl:unionOf ( :ImmaterialContinuant
-                                                   :MaterialObject
-                                                 )
-                                   ] ;
+                        rdfs:range :Continuant ;
                         rdfs:label "spatially passes through"@en .
 
 
@@ -795,14 +791,9 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                                       rdf:type owl:Class
                                                     ]
                                                     [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :existsAt ;
+                                                      owl:onProperty :hasTime ;
                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                      owl:onClass :TimeBoundary
-                                                    ]
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :existsIn ;
-                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                      owl:onClass :Chronoid
+                                                      owl:onClass :TimeEntity
                                                     ]
                                                     [ rdf:type owl:Restriction ;
                                                       owl:onProperty :existsAtDateTimeValue ;
@@ -857,7 +848,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                     skos:altLabel "Object part role"@en ;
                     skos:definition "A continuant part role is the role that a continuant part plays in the whole continuant."@en ;
                     skos:example "John is part/member of the football team and plays the role of midfielder."@en ,
-                                 "The processor is part of the computer and has the task/function//role to process commands."@en .
+                                 "The processor is part of the computer and has the task/function/role to process commands."@en .
 
 
 ###  https://w3id.org/gfo/light/Entity
