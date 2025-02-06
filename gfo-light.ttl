@@ -1,0 +1,974 @@
+@prefix : <https://w3id.org/gfo/light/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@base <https://w3id.org/gfo/light> .
+
+<https://w3id.org/gfo/light> rdf:type owl:Ontology ;
+                              owl:versionIRI <https://w3id.org/gfo/light/release/2024-08-29> ;
+                              dc:created "2023-01-01" ;
+                              dc:creator "Alexandr Uciteli" ,
+                                         "Christoph Beger" ,
+                                         "Frank Löbe" ,
+                                         "Franz Matthies" ,
+                                         "Heinrich Herre" ,
+                                         "Konrad Höffner" ,
+                                         "Patryk Burek" ,
+                                         "Ralph Schäfermeier" ;
+                              dc:description "GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO) and is designed as a framework for the efficient development and foundation of domain/application ontologies."@en ;
+                              dc:modified "2024-08-29" ;
+                              dc:title "General Formal Ontology Light (GFO-light)"@en ;
+                              terms:license <http://creativecommons.org/licenses/by/4.0/> ;
+                              bibo:doi "10.5281/zenodo.5205419" ;
+                              vann:preferredNamespacePrefix "gfo-light" ;
+                              vann:preferredNamespaceURI "https://w3id.org/gfo/light/" ;
+                              doap:repository <https://github.com/Onto-Med/GFO> ;
+                              rdfs:label "GFO-light"@en ;
+                              owl:versionInfo "2024-08-29" ;
+                              foaf:homepage "https://github.com/Onto-Med/GFO" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceURI
+vann:preferredNamespaceURI rdf:type owl:AnnotationProperty .
+
+
+###  http://usefulinc.com/ns/doap#repository
+doap:repository rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/gfo/light/attributiveOf
+:attributiveOf rdf:type owl:ObjectProperty ;
+               owl:inverseOf :hasAttributive ;
+               rdfs:domain :Attributive ;
+               rdfs:range :Individual .
+
+
+###  https://w3id.org/gfo/light/boundaryOf
+:boundaryOf rdf:type owl:ObjectProperty ;
+            owl:inverseOf :hasBoundary ;
+            rdfs:domain :ImmaterialContinuant ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :Line
+                                       :MaterialObject
+                                       :Surface
+                                     )
+                       ] ;
+            rdfs:comment "Immaterial continuants can be considered as (outer or inner) boundaries (boundaryOf). Note that surfaces are boundaries of material continuants, lines are boundaries of surfaces and points are boundaries of lines."@en .
+
+
+###  https://w3id.org/gfo/light/causedBy
+:causedBy rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :isAfter ;
+          owl:inverseOf :causes ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :ProcessualEntity
+                                      :Situation
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :ProcessualEntity
+                                     :Situation
+                                   )
+                     ] .
+
+
+###  https://w3id.org/gfo/light/causes
+:causes rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :isBefore ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :ProcessualEntity
+                                    :Situation
+                                  )
+                    ] ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( :ProcessualEntity
+                                   :Situation
+                                 )
+                   ] .
+
+
+###  https://w3id.org/gfo/light/endPointInTimeOf
+:endPointInTimeOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :pointInTimeOf ;
+                  owl:inverseOf :hasEndPointInTime .
+
+
+###  https://w3id.org/gfo/light/endsOn
+:endsOn rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :passesThrough .
+
+
+###  https://w3id.org/gfo/light/existsIn
+:existsIn rdf:type owl:ObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Attributive
+                                      :Situation
+                                    )
+                      ] ;
+          rdfs:range :ProcessualEntity .
+
+
+###  https://w3id.org/gfo/light/hasAttributive
+:hasAttributive rdf:type owl:ObjectProperty ;
+                rdfs:domain :Individual ;
+                rdfs:range :Attributive .
+
+
+###  https://w3id.org/gfo/light/hasBoundary
+:hasBoundary rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Line
+                                         :MaterialObject
+                                         :Surface
+                                       )
+                         ] ;
+             rdfs:range :ImmaterialContinuant .
+
+
+###  https://w3id.org/gfo/light/hasEndPointInTime
+:hasEndPointInTime rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :hasPointInTime .
+
+
+###  https://w3id.org/gfo/light/hasInnerBoundary
+:hasInnerBoundary rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasBoundary ;
+                  owl:inverseOf :innerBoundaryOf .
+
+
+###  https://w3id.org/gfo/light/hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasPart ;
+           owl:inverseOf :memberOf ;
+           rdfs:domain :MaterialAggregate ;
+           rdfs:range :Continuant .
+
+
+###  https://w3id.org/gfo/light/hasNaturalBoundary
+:hasNaturalBoundary rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasBoundary ;
+                    owl:inverseOf :naturalBoundaryOf .
+
+
+###  https://w3id.org/gfo/light/hasOwner
+:hasOwner rdf:type owl:ObjectProperty ;
+          owl:inverseOf :ownerOf ;
+          rdfs:domain :ImmaterialContinuant ;
+          rdfs:range :MaterialContinuant ;
+          rdfs:comment "Immaterial continuants can be assigned to a corresponding material continuant using the object property hasOwner."@en .
+
+
+###  https://w3id.org/gfo/light/hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         owl:inverseOf :partOf ;
+         rdfs:domain :Individual ;
+         rdfs:range :Individual .
+
+
+###  https://w3id.org/gfo/light/hasParticipant
+:hasParticipant rdf:type owl:ObjectProperty ;
+                owl:inverseOf :participatesIn ;
+                rdfs:domain :ProcessualEntity ;
+                rdfs:range :Continuant .
+
+
+###  https://w3id.org/gfo/light/hasPointInTime
+:hasPointInTime rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasTime ;
+                owl:inverseOf :pointInTimeOf ;
+                rdfs:range :TimeBoundary .
+
+
+###  https://w3id.org/gfo/light/hasQuality
+:hasQuality rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasAttributive ;
+            owl:inverseOf :qualityOf ;
+            rdfs:domain :Individual ;
+            rdfs:range :Quality .
+
+
+###  https://w3id.org/gfo/light/hasRole
+:hasRole rdf:type owl:ObjectProperty ;
+         owl:inverseOf :roleOf ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Continuant
+                                     :ProcessualEntity
+                                     :Relator
+                                   )
+                     ] ;
+         rdfs:range :Role .
+
+
+###  https://w3id.org/gfo/light/hasStartPointInTime
+:hasStartPointInTime rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasPointInTime ;
+                     owl:inverseOf :startPointInTimeOf .
+
+
+###  https://w3id.org/gfo/light/hasTime
+:hasTime rdf:type owl:ObjectProperty ;
+         owl:inverseOf :timeOf ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Chronoid
+                                     :ConcreteIndividual
+                                   )
+                     ] ;
+         rdfs:range :TimeEntity .
+
+
+###  https://w3id.org/gfo/light/hasTimePeriod
+:hasTimePeriod rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasTime ;
+               owl:inverseOf :timePeriodOf ;
+               rdfs:domain :ConcreteIndividual ;
+               rdfs:range :Chronoid .
+
+
+###  https://w3id.org/gfo/light/innerBoundaryOf
+:innerBoundaryOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :boundaryOf .
+
+
+###  https://w3id.org/gfo/light/instanceOf
+:instanceOf rdf:type owl:ObjectProperty ;
+            owl:inverseOf :instantiatedBy ;
+            rdfs:domain :Entity ;
+            rdfs:range :Category .
+
+
+###  https://w3id.org/gfo/light/instantiatedBy
+:instantiatedBy rdf:type owl:ObjectProperty ;
+                rdfs:domain :Category ;
+                rdfs:range :Entity .
+
+
+###  https://w3id.org/gfo/light/isAfter
+:isAfter rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isBefore ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :ProcessualEntity
+                                     :Situation
+                                   )
+                     ] ;
+         rdfs:range [ rdf:type owl:Class ;
+                      owl:unionOf ( :ProcessualEntity
+                                    :Situation
+                                  )
+                    ] .
+
+
+###  https://w3id.org/gfo/light/isBefore
+:isBefore rdf:type owl:ObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :ProcessualEntity
+                                      :Situation
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :ProcessualEntity
+                                     :Situation
+                                   )
+                     ] .
+
+
+###  https://w3id.org/gfo/light/locatedIn
+:locatedIn rdf:type owl:ObjectProperty ;
+           owl:inverseOf :locationOf ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :MaterialObject
+                                       :ProcessualEntity
+                                     )
+                       ] ;
+           rdfs:range :MaterialObject ;
+           rdfs:comment "Material objects can be located in other material objects (locatedIn, e.g., the driver is located in the car)."@en ,
+                        "Processual entities can take place (locatedIn) in material objects (e.g., a football match in a stadium or an illness in a person)."@en .
+
+
+###  https://w3id.org/gfo/light/locationOf
+:locationOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :MaterialObject ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :MaterialObject
+                                       :ProcessualEntity
+                                     )
+                       ] .
+
+
+###  https://w3id.org/gfo/light/memberOf
+:memberOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :partOf ;
+          rdfs:domain :Continuant ;
+          rdfs:range :MaterialAggregate ;
+          rdfs:comment "To model the membership of a member in a group/aggregate, the more specific object properties hasMember/memberOf should be used"@en .
+
+
+###  https://w3id.org/gfo/light/naturalBoundaryOf
+:naturalBoundaryOf rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :boundaryOf .
+
+
+###  https://w3id.org/gfo/light/ownerOf
+:ownerOf rdf:type owl:ObjectProperty ;
+         rdfs:domain :MaterialContinuant ;
+         rdfs:range :ImmaterialContinuant .
+
+
+###  https://w3id.org/gfo/light/partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :Individual ;
+        rdfs:range :Individual .
+
+
+###  https://w3id.org/gfo/light/participatesIn
+:participatesIn rdf:type owl:ObjectProperty ;
+                rdfs:domain :Continuant ;
+                rdfs:range :ProcessualEntity ;
+                rdfs:comment "Continuants can participate in processual entities (participatesIn, hasParticipant), e.g., the teams A and B participate in the football match or the player A1 participates in the goal event."@en .
+
+
+###  https://w3id.org/gfo/light/passesThrough
+:passesThrough rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Line
+                                           :Surface
+                                         )
+                           ] ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :ImmaterialContinuant
+                                          :MaterialObject
+                                        )
+                          ] .
+
+
+###  https://w3id.org/gfo/light/playedBy
+:playedBy rdf:type owl:ObjectProperty ;
+          owl:inverseOf :plays ;
+          rdfs:domain :Role ;
+          rdfs:range :Continuant .
+
+
+###  https://w3id.org/gfo/light/plays
+:plays rdf:type owl:ObjectProperty ;
+       rdfs:domain :Continuant ;
+       rdfs:range :Role ;
+       rdfs:comment "The role players are associated with the roles they play using object properties plays or playedBy."@en .
+
+
+###  https://w3id.org/gfo/light/pointInTimeOf
+:pointInTimeOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :timeOf ;
+               rdfs:domain :TimeBoundary .
+
+
+###  https://w3id.org/gfo/light/qualityOf
+:qualityOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :attributiveOf ;
+           rdfs:domain :Quality ;
+           rdfs:range :Individual .
+
+
+###  https://w3id.org/gfo/light/roleOf
+:roleOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :Role ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( :Continuant
+                                   :ProcessualEntity
+                                   :Relator
+                                 )
+                   ] ;
+        rdfs:comment "Roles are assigned to the corresponding context entity (continuant, processual entity, relator) using object properties roleOf or hasRole."@en .
+
+
+###  https://w3id.org/gfo/light/startPointInTimeOf
+:startPointInTimeOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :pointInTimeOf .
+
+
+###  https://w3id.org/gfo/light/startsOn
+:startsOn rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :passesThrough .
+
+
+###  https://w3id.org/gfo/light/timeOf
+:timeOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :TimeEntity ;
+        rdfs:range [ rdf:type owl:Class ;
+                     owl:unionOf ( :Chronoid
+                                   :ConcreteIndividual
+                                 )
+                   ] .
+
+
+###  https://w3id.org/gfo/light/timePeriodOf
+:timePeriodOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :timeOf ;
+              rdfs:domain :Chronoid ;
+              rdfs:range :ConcreteIndividual .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/gfo/light/booleanValue
+:booleanValue rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Attributive ;
+              rdfs:range xsd:boolean .
+
+
+###  https://w3id.org/gfo/light/dateTimeValue
+:dateTimeValue rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Individual ;
+               rdfs:range xsd:dateTime .
+
+
+###  https://w3id.org/gfo/light/decimalValue
+:decimalValue rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Attributive ;
+              rdfs:range xsd:decimal .
+
+
+###  https://w3id.org/gfo/light/endDateTimeValue
+:endDateTimeValue rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :dateTimeValue .
+
+
+###  https://w3id.org/gfo/light/startDateTimeValue
+:startDateTimeValue rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :dateTimeValue .
+
+
+###  https://w3id.org/gfo/light/stringValue
+:stringValue rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Attributive ;
+             rdfs:range xsd:string .
+
+
+###  https://w3id.org/gfo/light/unit
+:unit rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Attributive ;
+      rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/gfo/light/Attributive
+:Attributive rdf:type owl:Class ;
+             rdfs:subClassOf :ConcreteIndividual ;
+             rdfs:comment "Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category Attributive."@en ;
+             rdfs:label "Attributive"@en ;
+             skos:definition "Attributives are individuals that depend on other individuals by some kind of dependency relation."@en .
+
+
+###  https://w3id.org/gfo/light/Category
+:Category rdf:type owl:Class ;
+          rdfs:subClassOf :Entity ;
+          rdfs:label "Category"@en ;
+          skos:altLabel "Class"@en ,
+                        "Type"@en ;
+          skos:definition "The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities."@en .
+
+
+###  https://w3id.org/gfo/light/Chronoid
+:Chronoid rdf:type owl:Class ;
+          rdfs:subClassOf :TimeEntity ,
+                          [ rdf:type owl:Class ;
+                            owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasEndPointInTime ;
+                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                   owl:onClass :TimeBoundary
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasStartPointInTime ;
+                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                   owl:onClass :TimeBoundary
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ]
+                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :endDateTimeValue ;
+                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                   owl:onDataRange xsd:dateTime
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :startDateTimeValue ;
+                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                   owl:onDataRange xsd:dateTime
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ]
+                                        )
+                          ] ;
+          rdfs:label "Chronoid"@en ;
+          skos:altLabel "Time interval"@en ,
+                        "Time period"@en ;
+          skos:definition "Chronoids are real-valued time intervals with endpoints."@en ;
+          skos:example "The time (extension) of a football match (from the start point in time to the end point in time)"@en .
+
+
+###  https://w3id.org/gfo/light/ConcreteIndividual
+:ConcreteIndividual rdf:type owl:Class ;
+                    rdfs:subClassOf :Individual ,
+                                    [ rdf:type owl:Class ;
+                                      owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasTime ;
+                                                      owl:someValuesFrom :TimeEntity
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :dateTimeValue ;
+                                                      owl:someValuesFrom xsd:dateTime
+                                                    ]
+                                                  )
+                                    ] ;
+                    rdfs:label "Concrete individual"@en ;
+                    skos:definition "Concrete individuals are entities that have an immediate relation to time or to space-time. They exist in time."@en .
+
+
+###  https://w3id.org/gfo/light/Continuant
+:Continuant rdf:type owl:Class ;
+            rdfs:subClassOf :ConcreteIndividual ,
+                            [ rdf:type owl:Class ;
+                              owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :hasEndPointInTime ;
+                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                     owl:onClass :TimeBoundary
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :hasStartPointInTime ;
+                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                     owl:onClass :TimeBoundary
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ]
+                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :endDateTimeValue ;
+                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                     owl:onDataRange xsd:dateTime
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :startDateTimeValue ;
+                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                     owl:onDataRange xsd:dateTime
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ]
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasTimePeriod ;
+                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass :Chronoid
+                                            ]
+                                          )
+                            ] ;
+            rdfs:comment "Material three-dimensional objects, their aggregates (groups) and parts as well as immaterial two-, one- and zero-dimensional entities (i.e., surfaces, lines and points) are subsumed under the category Continuant."@en ;
+            rdfs:label "Continuant"@en ;
+            skos:altLabel "Object"@en ;
+            skos:definition "Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime)."@en .
+
+
+###  https://w3id.org/gfo/light/ContinuantPartRole
+:ContinuantPartRole rdf:type owl:Class ;
+                    rdfs:subClassOf :Role ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :roleOf ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :Continuant
+                                    ] ;
+                    rdfs:label "Continuant part role"@en ;
+                    skos:altLabel "Object part role"@en ;
+                    skos:definition "A continuant part role is the role that a continuant part plays in the whole continuant."@en ;
+                    skos:example "John is part/member of the football team and plays the role of midfielder."@en ,
+                                 "The processor is part of the computer and has the task/function//role to process commands."@en .
+
+
+###  https://w3id.org/gfo/light/Entity
+:Entity rdf:type owl:Class ;
+        rdfs:label "Entity"@en ;
+        skos:definition "Everything that exists is called an entity."@en .
+
+
+###  https://w3id.org/gfo/light/Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf :ProcessualEntity ,
+                       [ rdf:type owl:Class ;
+                         owl:unionOf ( [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasPointInTime ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :TimeBoundary
+                                       ]
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :dateTimeValue ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onDataRange xsd:dateTime
+                                       ]
+                                     )
+                       ] ;
+       rdfs:comment "An event can be assigned to a process (be part of the process), i.e., happen at a point in the process time, result from a process or trigger a process."@en ;
+       rdfs:label "Event"@en ;
+       skos:definition "Events are instantaneous processual entities (i.e., they occur at one point in time)."@en ;
+       skos:example "A goal as a result of an attack in a football match"@en ,
+                    "Big Bang"@en .
+
+
+###  https://w3id.org/gfo/light/ImmaterialContinuant
+:ImmaterialContinuant rdf:type owl:Class ;
+                      rdfs:subClassOf :Continuant ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasOwner ;
+                                        owl:someValuesFrom :MaterialContinuant
+                                      ] ;
+                      rdfs:comment "Immaterial continuants can border material continuants (natural boundaries) or be located inside them (inner boundaries). Boundaries of material continuants are surfaces, boundaries of surfaces are lines and boundaries of lines are points."@en ;
+                      rdfs:label "Immaterial continuant"@en ;
+                      skos:altLabel "Object boundary"@en ;
+                      skos:definition "Immaterial continuants are 0-, 1-, or 2-dimensional immaterial (visible or imaginary) entities (i.e., points, lines and surfaces) that are located on material continuants or in them."@en .
+
+
+###  https://w3id.org/gfo/light/Individual
+:Individual rdf:type owl:Class ;
+            rdfs:subClassOf :Entity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :instanceOf ;
+                              owl:someValuesFrom :Category
+                            ] ;
+            rdfs:label "Individual"@en ;
+            skos:definition "Individuals are entities which cannot be further instantiated."@en .
+
+
+###  https://w3id.org/gfo/light/Line
+:Line rdf:type owl:Class ;
+      rdfs:subClassOf :ImmaterialContinuant ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :boundaryOf ;
+                        owl:allValuesFrom :Surface
+                      ] ;
+      rdfs:comment "Lines are not necessarily straight. They can be, for example, curves or broken lines that pass through various points and form a corner, a triangle or a polygon."@en ;
+      rdfs:label "Line"@en ;
+      skos:definition "A line is a 1-dimensional immaterial continuant."@en ;
+      skos:example "Boundary line of the football field"@en ,
+                   "Longitudinal axis of the human skeleton"@en .
+
+
+###  https://w3id.org/gfo/light/MaterialAggregate
+:MaterialAggregate rdf:type owl:Class ;
+                   rdfs:subClassOf :MaterialContinuant ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasMember ;
+                                     owl:someValuesFrom :Continuant
+                                   ] ;
+                   rdfs:comment "The members of a material aggregate are regarded as its parts, similar to the parts of an object (e.g., John is part/member of the football team and plays the role of forward)."@en ;
+                   rdfs:label "Material aggregate"@en ;
+                   skos:altLabel "Collective"@en ,
+                                 "Group"@en ;
+                   skos:definition "A material aggregate is a unit consisting of multiple material objects."@en ;
+                   skos:example "Research group"@en ,
+                                "Sports team"@en .
+
+
+###  https://w3id.org/gfo/light/MaterialContinuant
+:MaterialContinuant rdf:type owl:Class ;
+                    rdfs:subClassOf :Continuant ;
+                    rdfs:comment "Usually, connected objects are considered as single material objects, i.e., the object parts are firmly connected to the whole object, while loose objects can form a group/aggregate. When modelling a person, for example, you could consider their skeleton as a (connected) material object and as part of the human body. However, if we look at bone finds in the context of anthropology, the skeleton can be modelled as an aggregate of individual bones."@en ;
+                    rdfs:label "Material continuant"@en ;
+                    skos:definition "Material continuants are any 3-dimensional material objects, aggregates and parts."@en .
+
+
+###  https://w3id.org/gfo/light/MaterialObject
+:MaterialObject rdf:type owl:Class ;
+                rdfs:subClassOf :MaterialContinuant ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasNaturalBoundary ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Surface
+                                ] ;
+                rdfs:label "Material object"@en ;
+                skos:definition "Material objects are connected material entities that consist of an amount of stuff and have a natural boundary."@en ;
+                skos:example "Bone"@en ,
+                             "Chopstick"@en ,
+                             "Computer"@en ,
+                             "Person"@en .
+
+
+###  https://w3id.org/gfo/light/MaterialPart
+:MaterialPart rdf:type owl:Class ;
+              rdfs:subClassOf :MaterialContinuant ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :partOf ;
+                                owl:someValuesFrom :MaterialObject
+                              ] ;
+              rdfs:label "Material part"@en ;
+              skos:definition "Material parts are parts of material objects that have no natural boundary with the whole object (e.g., part of a bone)."@en ;
+              skos:example "Part of a bone"@en ,
+                           "Part of a chopstick"@en .
+
+
+###  https://w3id.org/gfo/light/Point
+:Point rdf:type owl:Class ;
+       rdfs:subClassOf :ImmaterialContinuant ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :boundaryOf ;
+                         owl:allValuesFrom :Line
+                       ] ;
+       rdfs:label "Point"@en ;
+       skos:definition "A point is a 0-dimensional immaterial continuant."@en ;
+       skos:example "Gonion"@en ,
+                    "Penalty spot"@en .
+
+
+###  https://w3id.org/gfo/light/Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf :ProcessualEntity ,
+                         [ rdf:type owl:Class ;
+                           owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasEndPointInTime ;
+                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                  owl:onClass :TimeBoundary
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasStartPointInTime ;
+                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                  owl:onClass :TimeBoundary
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ]
+                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :endDateTimeValue ;
+                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                  owl:onDataRange xsd:dateTime
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :startDateTimeValue ;
+                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                  owl:onDataRange xsd:dateTime
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ]
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasTimePeriod ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :Chronoid
+                                         ]
+                                       )
+                         ] ;
+         rdfs:label "Process"@en ;
+         skos:definition "Processes are processual entities that have a temporal extension (a chronoid)."@en ;
+         skos:example "A treatment of a patient in a hospital"@en ,
+                      "Football match"@en ,
+                      "The course of an illness"@en ,
+                      "The first half of the match"@en .
+
+
+###  https://w3id.org/gfo/light/ProcessualEntity
+:ProcessualEntity rdf:type owl:Class ;
+                  rdfs:subClassOf :ConcreteIndividual ;
+                  rdfs:comment "They can be instantaneous (events) or have a temporal extension (processes)."@en ;
+                  rdfs:label "Processual entity"@en ;
+                  skos:definition "Processual entities are concrete individuals that happen/occur in time."@en .
+
+
+###  https://w3id.org/gfo/light/ProcessualRole
+:ProcessualRole rdf:type owl:Class ;
+                rdfs:subClassOf :Role ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :roleOf ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :ProcessualEntity
+                                ] ;
+                owl:disjointWith :RelationalRole ;
+                rdfs:label "Processual role"@en ;
+                skos:definition "A processual role is the role that a participant plays in a processual entity."@en ;
+                skos:example "Team A plays the home team role and team B plays the visiting team role in a football match."@en .
+
+
+###  https://w3id.org/gfo/light/Quality
+:Quality rdf:type owl:Class ;
+         rdfs:subClassOf :Attributive ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :qualityOf ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Individual
+                         ] ;
+         rdfs:comment "Qualities can possess values."@en ;
+         rdfs:label "Quality"@en ;
+         skos:altLabel "Attribute"@en ,
+                       "Characteristic"@en ,
+                       "Feature"@en ,
+                       "Property"@en ,
+                       "Trait"@en ;
+         skos:definition "Qualities are attributives that typically inhere in its bearer."@en ;
+         skos:example "Observable or measurable characteristics of single objects, e.g., persons, (such as weight and height, laboratory parameters or symptoms)"@en ,
+                      "Qualities of object groups (e.g., goals scored by a football team in a match)"@en ,
+                      "Qualities of processes (e.g., the number of spectators as quality of a football match)"@en .
+
+
+###  https://w3id.org/gfo/light/RelationalRole
+:RelationalRole rdf:type owl:Class ;
+                rdfs:subClassOf :Role ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :roleOf ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Relator
+                                ] ;
+                rdfs:label "Relational role"@en ;
+                skos:definition "A relational role is the role that an entity plays in a relation (relator)."@en ;
+                skos:example "Target object role and reference object role of a relative location relator (describes the relative location of an object playing the target object role in relation to another object playing the reference object role)"@en ,
+                             "Wife role and husband role of the marriage relator"@en ,
+                             "Winner team role and loser team role of the winner-loser relator"@en .
+
+
+###  https://w3id.org/gfo/light/Relator
+:Relator rdf:type owl:Class ;
+         rdfs:subClassOf :Attributive ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRole ;
+                           owl:someValuesFrom :RelationalRole
+                         ] ;
+         rdfs:comment "A relator represents an individual relation instance."@en ;
+         rdfs:label "Relator"@en ;
+         skos:definition "Relators are attributives that connect other entities (role players) by relational roles (played by role players)."@en ;
+         skos:example "A relator describing the relative location of an object (playing the target object role) in relation to another object (playing the reference object role), e.g., the location of a person relative to the city centre or the location of an anatomical structure relative to the longitudinal axis"@en ,
+                      "A winner-loser relator connecting a winner and a loser team by a winner and a loser role"@en ,
+                      "The marriage (relator) of John and Mary (in which Mary plays the wife role and John the husband role)"@en .
+
+
+###  https://w3id.org/gfo/light/Role
+:Role rdf:type owl:Class ;
+      rdfs:subClassOf :Attributive ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :playedBy ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Continuant
+                      ] ;
+      rdfs:comment "We distinguish between continuant part roles, processual roles and relational roles."@en ;
+      rdfs:label "Role"@en ;
+      skos:definition "A role is a relational entity that links a continuant (role player) with some context, in which the continuant plays that role."@en .
+
+
+###  https://w3id.org/gfo/light/Situation
+:Situation rdf:type owl:Class ;
+           rdfs:subClassOf :ConcreteIndividual ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasPart ;
+                             owl:someValuesFrom :Attributive
+                           ] ;
+           rdfs:comment "A situation can exist at a specific point in time or during a time period and may arise in a processual entity or result from a processual entity."@en ;
+           rdfs:label "Situation"@en ;
+           skos:definition "Situations are combinations/constellations of attributives that belong together in the context of the use case under consideration."@en ;
+           skos:example "A risk situation when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time"@en ,
+                        "The situation after the wedding of John and Mary (i.e., the situation in which they are married containing the marriage relator with a husband and a wife role)"@en ,
+                        "The situation at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role"@en .
+
+
+###  https://w3id.org/gfo/light/Surface
+:Surface rdf:type owl:Class ;
+         rdfs:subClassOf :ImmaterialContinuant ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :boundaryOf ;
+                           owl:allValuesFrom :MaterialObject
+                         ] ;
+         rdfs:label "Surface"@en ;
+         skos:definition "A surface is a 2-dimensional immaterial continuant."@en ;
+         skos:example "Frontal plane of the human skeleton"@en ,
+                      "Surface of the football field"@en .
+
+
+###  https://w3id.org/gfo/light/TimeBoundary
+:TimeBoundary rdf:type owl:Class ;
+              rdfs:subClassOf :TimeEntity ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :dateTimeValue ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:dateTime
+                              ] ;
+              rdfs:label "Time boundary"@en ;
+              skos:altLabel "Point in time"@en ,
+                            "Time point"@en ;
+              skos:example "Start point in time of a football match"@en .
+
+
+###  https://w3id.org/gfo/light/TimeEntity
+:TimeEntity rdf:type owl:Class ;
+            rdfs:subClassOf :Individual ;
+            rdfs:comment "The time entities defined in GFO-light are points in time (time boundaries) and time intervals/periods (chronoids), which consist of points in time."@en ;
+            rdfs:label "Time entity"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
