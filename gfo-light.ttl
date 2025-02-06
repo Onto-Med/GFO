@@ -179,25 +179,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
         skos:definition "X during Y: Xs > Ys and Xf < Yf"@en .
 
 
-###  https://w3id.org/gfo/light/existsAt
-:existsAt rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :hasTime ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :Attributive
-                                      :Situation
-                                    )
-                      ] ;
-          rdfs:range :TimeBoundary ;
-          rdfs:label "exists at"@en .
-
-
-###  https://w3id.org/gfo/light/existsIn
-:existsIn rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :hasTime ;
-          rdfs:range :Chronoid ;
-          rdfs:label "exists in"@en .
-
-
 ###  https://w3id.org/gfo/light/hasAttributive
 :hasAttributive rdf:type owl:ObjectProperty ;
                 rdfs:domain :Individual ;
@@ -307,6 +288,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo/light/hasTime
 :hasTime rdf:type owl:ObjectProperty ;
+         owl:inverseOf :timeOf ;
          rdfs:domain :ConcreteIndividual ;
          rdfs:range :TimeEntity ;
          rdfs:label "has time"@en .
@@ -619,6 +601,13 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                   skos:definition "X starts Y: Xs = Ys and Xf < Yf"@en .
 
 
+###  https://w3id.org/gfo/light/timeOf
+:timeOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :TimeEntity ;
+        rdfs:range :ConcreteIndividual ;
+        rdfs:label "time of"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -663,13 +652,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
               rdfs:domain :Attributive ;
               rdfs:range xsd:decimal ;
               rdfs:label "decimal value"@en .
-
-
-###  https://w3id.org/gfo/light/existsAtDateTimeValue
-:existsAtDateTimeValue rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf :dateTimeValue ;
-                       rdfs:comment "Shortcut for 'existsAt'"@en ;
-                       rdfs:label "exists at date time value"@en .
 
 
 ###  https://w3id.org/gfo/light/finishedByDateTimeValue
@@ -796,7 +778,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                                       owl:onClass :TimeEntity
                                                     ]
                                                     [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :existsAtDateTimeValue ;
+                                                      owl:onProperty :dateTimeValue ;
                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                       owl:onDataRange xsd:dateTime
                                                     ]
@@ -824,7 +806,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                               rdf:type owl:Class
                                             ]
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty :existsIn ;
+                                              owl:onProperty :hasTime ;
                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                               owl:onClass :Chronoid
                                             ]
@@ -979,7 +961,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                            rdf:type owl:Class
                                          ]
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty :existsIn ;
+                                           owl:onProperty :hasTime ;
                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                            owl:onClass :Chronoid
                                          ]
