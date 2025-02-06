@@ -16,11 +16,11 @@
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(2,0,0,2,-1506,-896)" stroke-linecap="butt">
       <path fill="none" d="M1020.516 555.238 L1020.516 593.8467" clip-path="url(#clipPath2)"/>
       <path d="M1020.516 601.8467 L1025.516 589.8467 L1020.516 592.8467 L1015.516 589.8467 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <text x="1024.516" xml:space="preserve" y="583.2543" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">existsIn</text>
+      <text x="1024.516" xml:space="preserve" y="583.2543" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">hasTime</text>
       <path fill="none" d="M882.9592 616.8204 L980.5112 616.8204" clip-path="url(#clipPath2)"/>
       <path d="M988.5112 616.8204 L976.5112 611.8204 L979.5112 616.8204 L976.5112 621.8204 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="913.3752" y="607.4699" clip-path="url(#clipPath2)" fill="white" width="44.6816" height="18.7012" stroke="none"/>
-      <text x="915.3752" xml:space="preserve" y="621.5343" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">existsIn</text>
+      <rect x="910.7092" y="607.4699" clip-path="url(#clipPath2)" fill="white" width="50.0137" height="18.7012" stroke="none"/>
+      <text x="912.7092" xml:space="preserve" y="621.5343" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">hasTime</text>
       <path fill="none" d="M1052.5323 545.2604 L1065 545.2604 L1065 518 L1020.516 518 L1020.516 527.2774" clip-path="url(#clipPath2)"/>
       <path d="M1020.516 535.2774 L1025.516 523.2774 L1020.516 526.2774 L1015.516 523.2774 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <text x="1018.838" xml:space="preserve" y="499.6625" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">hasProcessPart</text>
