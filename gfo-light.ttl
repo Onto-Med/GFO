@@ -18,7 +18,7 @@
                               dc:created "2023-01-01" ;
                               dc:creator "Alexandr Uciteli" ,
                                          "Christoph Beger" ,
-                                         "Frank Löbe" ,
+                                         "Frank Loebe" ,
                                          "Franz Matthies" ,
                                          "Heinrich Herre" ,
                                          "Konrad Höffner" ,
