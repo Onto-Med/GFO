@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - run: check-rdfxml gfo.owl
       # - run: check-rdfxml modules/gfo-core.ttl
